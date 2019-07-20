@@ -12,6 +12,9 @@ class Nodes_Types(Enum):
     BARBERSHOP = 6
     GARDEN = 7
 
+    ORANGE = 8
+    SURPRISE = 9
+
     @staticmethod
     def types_dict():
         return list(map(lambda c: c.value, Nodes_Types))
@@ -19,7 +22,7 @@ class Nodes_Types(Enum):
 
 class Board:
 
-    def __init__(self, num_players, starting_point=(0, 0), end_point=()):
+    def __init__(self, num_players, starting_point=(0, 1), end_point=(21, 27)):
         self.board_w = 31
         self.board_h = 23
         self.starting_point = starting_point
@@ -30,6 +33,7 @@ class Board:
         self.transition_matrix = np.full((self.board_h, self.board_w), -1, np.int8)
 
         self.transition_dict = {}
+        self.init_dict()
 
     def init_state(self):
         pass
@@ -38,4 +42,8 @@ class Board:
         pass
 
     def init_dict(self):
-        pass
+        for x in range(self.board_w):
+            for y in range(self.board_h):
+                self.transition_dict[(x,y)] = {}
+
+        #
