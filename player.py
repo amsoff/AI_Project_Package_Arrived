@@ -1,3 +1,4 @@
+from dice import dice
 class Player:
     money = 1500
     has_grandmas_marriage_certificate = False
@@ -14,6 +15,11 @@ class Player:
     has_package = False
     package_cost = 0
     come_back_spots = []
+    cell = (0,0)
+    dice = dice()
+    dice_value = 0
+    stops_left = 0
+
 
     def pay(self, cost, is_surprise = False):
         if self.money >= cost:
@@ -29,3 +35,6 @@ class Player:
     def receive_money(self, amount):
         self.money += amount
         return True
+
+    def build_problem(self):
+        pass
