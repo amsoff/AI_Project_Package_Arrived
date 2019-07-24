@@ -7,66 +7,70 @@ ADD = 2
 DEL = 3
 PROP_FORMAT = "d%s_p%s" # disk x on peg y
 ACTION_FORMAT = "Md%s_Fp%s_Tp%s" # move disk x from peg y to peg z
-NOT_OWE_FORMAT = "Not_Owe_%s"
+
+MAXIMUM_PAY = 101
+MAXIMUM_POCKET = 201
+BOARD_WIDTH = 23
+BOARD_HEIGHT = 31
 
 
-
+# NOT_OWE_FORMAT = "Not_Owe_%s"
 MONEY_FORMAT = "Money_%s"
 AT_FORMAT = "At_%s_%s"
 CERTIFICATES_FORMAT = "has_%s"
+NOT_NEEDS_FORMAT = "not_needs_%s"
 DICE_FORMAT = "dice_%s"
-PAY_FORMAT = "Name: pay_%s_from_%s\nPre: Money_%s\nadd: Not_Owe_%s\n Money_%s\n del: Money_%s" # pay x money from the y money you have
+COME_BACK_FORMAT = "Come_back_to_%s_%s"
+NOT_STOP_FORMAT = "Not_Stop_%s"
 
-def create_not_owe():
-    no = []
-    for x in range(101):
-        no.append(NOT_OWE_FORMAT.format(str(50*x)))
-    return no
+erez_dic = dict()
 
 
-def create_pay():
+FIRST_STOP_FORMAT = "Name: Stop_1\nPre: \nadd: Not_Stop_1\n del:"
+STOP_FORMAT = "Name: Stop_%s\nPre: Not_Stop_%s\nadd: Not_Stop_%s\n del:"
+PAY_SURPRISE_FORMAT = "Name: pay_%s_from_%s\nPre: Money_%s\nadd: Not_Owe_%s Money_%s\n del: Money_%s" # pay x money from the y money you have
+PAY_150_FORMAT = "Name: Pay_150_from_%s_%s_to_%s_%s_with_%s\n Pre: at_%s_%s Money_%s\n add: at_%s_%s Money_%s\n del: at_%s_%s Money_%s"
+# pay 150 to jump from p1 to p2 with x money, pre at p1, money x, add at p2, money x-150, del at p1 money x.
+GOTO_FORMAT = "Name: Goto_%s_%s\n Pre: Come_back_to_%s_%s at_%s_%s\n add: at_%s_%s has_%s\n del: at_%s_%s Come_back_to_%s_%s needs_%s"
+GOTO_MONEY_FORMAT = "Name: Goto_%s_%s\n Pre: Come_back_to_%s_%s at_%s_%s\n add: at_%s_%s has_%s\n del: at_%s_%s Come_back_to_%s_%s needs_%s"
+# goto p2, pre comeback to p2, at specific p1, add at p2 has X (id) del at_p1 comeback p2, needs x
+
+def create_pay_150():
+    pass
+
+
+#def create_not_owe():
+#    no = []
+#    for x in range(101):
+#        no.append(NOT_OWE_FORMAT.format(str(50*x)))
+#    return no
+
+
+def create_pay_surprise():
     pay = []
-    for x in range(101):
-        for y in range(201):
-            pay.append(PAY_FORMAT.format(str(x), str(y), str(y),str(y-x), str(x)))
+    for x in range(MAXIMUM_PAY):
+        for y in range(MAXIMUM_POCKET):
+                                             #pay x from y pre money y add notoweX money(y-(x or y)) del money y
+            pay.append(PAY_SURPRISE_FORMAT.format(str(x), str(y), str(y), str(x), str(y - min(y, x)), str(y)))
 
 
+def create_not_stop():
+    not_stop = []
+    for x in range(1, 5):
+        not_stop.append(NOT_STOP_FORMAT.format(str(x)))
+    return not_stop
 
+def create_stop_action():
+    stop = [FIRST_STOP_FORMAT]
+    for x in range(2, 5):
+        stop.append(STOP_FORMAT.format(str(x), str(x-1), str(x)))
+    return stop
 
-def create_has_money(amount):
+def create_has_money():
     has = []
-    for x in range(201):
+    for x in range(MAXIMUM_POCKET):
         has.append(MONEY_FORMAT.format(str(50*x)))
 
-
-def create_has_money_problem(amount):
-    has = []
-    if amount >= 10:
-        has.append(MONEY_FORMAT.format(str(10)))
-    if amount >= 35:
-        has.append(MONEY_FORMAT.format(str(35)))
-    if amount >= 50:
-        has.append(MONEY_FORMAT.format(str(50)))
-    if amount >= 95:
-        has.append(MONEY_FORMAT.format(str(95)))
-    if amount >= 120:
-        has.append(MONEY_FORMAT.format(str(120)))
-    if amount >= 250:
-        has.append(MONEY_FORMAT.format(str(250)))
-    if amount >= 330:
-        has.append(MONEY_FORMAT.format(str(330)))
-    if amount >= 540:
-        has.append(MONEY_FORMAT.format(str(540)))
-    if amount >= 750:
-        has.append(MONEY_FORMAT.format(str(750)))
-    if amount >= 850:
-        has.append(MONEY_FORMAT.format(str(850)))
-    if amount >= 1320:
-        has.append(MONEY_FORMAT.format(str(1320)))
-    if amount >= 2150:
-        has.append(MONEY_FORMAT.format(str(2150)))
-    if amount >= 3680:
-        has.append(MONEY_FORMAT.format(str(3680)))
 
 def create_dice():
     dice = []
@@ -77,11 +81,26 @@ def create_dice():
 
 def create_at():
     at = []
-    for x in range(23):
-        for y in range(31):
-            at.append(AT_FORMAT.format(str(x),str(y)))
+    for x, y in erez_dic.keys():
+        at.append(AT_FORMAT.format(str(x),str(y)))
     return at
 
+def create_not_needs_certificates():
+    certificates = []
+    certificates.append(NOT_NEEDS_FORMAT.format("grandmas_marriage_certificate"))
+    certificates.append(NOT_NEEDS_FORMAT.format("integrity_certificate"))
+    certificates.append(NOT_NEEDS_FORMAT.format("birth_certificate"))
+    certificates.append(NOT_NEEDS_FORMAT.format("id"))
+    certificates.append(NOT_NEEDS_FORMAT.format("rabies_certificate"))
+    certificates.append(NOT_NEEDS_FORMAT.format("passport_photo"))
+    certificates.append(NOT_NEEDS_FORMAT.format("military_pad"))
+    certificates.append(NOT_NEEDS_FORMAT.format("tax_payment_authorization"))
+    certificates.append(NOT_NEEDS_FORMAT.format("entrance_to_port"))
+    certificates.append(NOT_NEEDS_FORMAT.format("glasses"))
+    certificates.append(NOT_NEEDS_FORMAT.format("hat"))
+    certificates.append(NOT_NEEDS_FORMAT.format("package"))
+    certificates.append(NOT_NEEDS_FORMAT.format("money"))
+    return certificates
 
 def create_certificates():
     certificates = []
