@@ -13,4 +13,5 @@ class Certificate(Enum):
     PORT = "entrance_to_port"
     GLASSES = "glasses"
     HAT = "hat"
+    HAIRCUT = 'haitcut'
     PACKAGE = "package"

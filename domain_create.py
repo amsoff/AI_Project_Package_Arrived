@@ -102,6 +102,7 @@ def create_not_needs_certificates():
                     NOT_NEEDS_FORMAT.format(Certificate.GLASSES),
                     NOT_NEEDS_FORMAT.format(Certificate.HAT),
                     NOT_NEEDS_FORMAT.format(Certificate.PACKAGE),
+                    NOT_NEEDS_FORMAT.format(Certificate.HAIRCUT),
                     NOT_NEEDS_FORMAT.format("money")]
     return certificates
 
@@ -118,7 +119,8 @@ def create_certificates():
                     CERTIFICATES_FORMAT.format(Certificate.PORT),
                     CERTIFICATES_FORMAT.format(Certificate.GLASSES),
                     CERTIFICATES_FORMAT.format(Certificate.HAT),
-                    CERTIFICATES_FORMAT.format(Certificate.PACKAGE)]
+                    CERTIFICATES_FORMAT.format(Certificate.PACKAGE),
+                    CERTIFICATES_FORMAT.format(Certificate.HAIRCUT)]
     return certificates
 
 
