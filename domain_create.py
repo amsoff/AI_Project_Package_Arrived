@@ -1,4 +1,5 @@
 import sys
+from Certificates import Certificate
 
 
 NAME = 0
