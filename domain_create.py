@@ -61,11 +61,13 @@ def create_not_stop():
         not_stop.append(NOT_STOP_FORMAT.format(str(x)))
     return not_stop
 
+
 def create_stop_action():
     stop = [FIRST_STOP_FORMAT]
     for x in range(2, 5):
         stop.append(STOP_FORMAT.format(str(x), str(x-1), str(x)))
     return stop
+
 
 def create_has_money():
     has = []
@@ -86,37 +88,37 @@ def create_at():
         at.append(AT_FORMAT.format(str(x),str(y)))
     return at
 
+
 def create_not_needs_certificates():
-    certificates = []
-    certificates.append(NOT_NEEDS_FORMAT.format("grandmas_marriage_certificate"))
-    certificates.append(NOT_NEEDS_FORMAT.format("integrity_certificate"))
-    certificates.append(NOT_NEEDS_FORMAT.format("birth_certificate"))
-    certificates.append(NOT_NEEDS_FORMAT.format("id"))
-    certificates.append(NOT_NEEDS_FORMAT.format("rabies_certificate"))
-    certificates.append(NOT_NEEDS_FORMAT.format("passport_photo"))
-    certificates.append(NOT_NEEDS_FORMAT.format("military_pad"))
-    certificates.append(NOT_NEEDS_FORMAT.format("tax_payment_authorization"))
-    certificates.append(NOT_NEEDS_FORMAT.format("entrance_to_port"))
-    certificates.append(NOT_NEEDS_FORMAT.format("glasses"))
-    certificates.append(NOT_NEEDS_FORMAT.format("hat"))
-    certificates.append(NOT_NEEDS_FORMAT.format("package"))
-    certificates.append(NOT_NEEDS_FORMAT.format("money"))
+    certificates = [NOT_NEEDS_FORMAT.format(Certificate.GRANDMA),
+                    NOT_NEEDS_FORMAT.format(Certificate.INTEGRITY),
+                    NOT_NEEDS_FORMAT.format(Certificate.BIRTH),
+                    NOT_NEEDS_FORMAT.format(Certificate.ID),
+                    NOT_NEEDS_FORMAT.format(Certificate.RABIES),
+                    NOT_NEEDS_FORMAT.format(Certificate.PASSPORT),
+                    NOT_NEEDS_FORMAT.format(Certificate.MILITARY),
+                    NOT_NEEDS_FORMAT.format(Certificate.TAX),
+                    NOT_NEEDS_FORMAT.format(Certificate.PORT),
+                    NOT_NEEDS_FORMAT.format(Certificate.GLASSES),
+                    NOT_NEEDS_FORMAT.format(Certificate.HAT),
+                    NOT_NEEDS_FORMAT.format(Certificate.PACKAGE),
+                    NOT_NEEDS_FORMAT.format("money")]
     return certificates
 
+
 def create_certificates():
-    certificates = []
-    certificates.append(CERTIFICATES_FORMAT.format("grandmas_marriage_certificate"))
-    certificates.append(CERTIFICATES_FORMAT.format("integrity_certificate"))
-    certificates.append(CERTIFICATES_FORMAT.format("birth_certificate"))
-    certificates.append(CERTIFICATES_FORMAT.format("id"))
-    certificates.append(CERTIFICATES_FORMAT.format("rabies_certificate"))
-    certificates.append(CERTIFICATES_FORMAT.format("passport_photo"))
-    certificates.append(CERTIFICATES_FORMAT.format("military_pad"))
-    certificates.append(CERTIFICATES_FORMAT.format("tax_payment_authorization"))
-    certificates.append(CERTIFICATES_FORMAT.format("entrance_to_port"))
-    certificates.append(CERTIFICATES_FORMAT.format("glasses"))
-    certificates.append(CERTIFICATES_FORMAT.format("hat"))
-    certificates.append(CERTIFICATES_FORMAT.format("package"))
+    certificates = [NOT_NEEDS_FORMAT.format(Certificate.GRANDMA),
+                    CERTIFICATES_FORMAT.format(Certificate.INTEGRITY),
+                    CERTIFICATES_FORMAT.format(Certificate.BIRTH),
+                    CERTIFICATES_FORMAT.format(Certificate.ID),
+                    CERTIFICATES_FORMAT.format(Certificate.RABIES),
+                    CERTIFICATES_FORMAT.format(Certificate.PASSPORT),
+                    CERTIFICATES_FORMAT.format(Certificate.MILITARY),
+                    CERTIFICATES_FORMAT.format(Certificate.TAX),
+                    CERTIFICATES_FORMAT.format(Certificate.PORT),
+                    CERTIFICATES_FORMAT.format(Certificate.GLASSES),
+                    CERTIFICATES_FORMAT.format(Certificate.HAT),
+                    CERTIFICATES_FORMAT.format(Certificate.PACKAGE)]
     return certificates
 
 
