@@ -6,6 +6,7 @@ JUMP = 'jump'
 PAY = 'pay'
 GET = 'get'
 WAIT = 'wait'
+NEED  = "need"
 HAS = 'has'
 ORANGE = 150
 ONE = 1
@@ -425,21 +426,21 @@ class Board:
         self.transition_dict[(16, 3)] = {1: [(16, 2)],  # ORANGE
                                          3: [(15, 1)],
                                          5: [(15, 1)]}
-        self.transition_dict[(16, 2)] = {1: [((15, 1))],  # BLJUE
+        self.transition_dict[(16, 2)] = {1: [(15, 1)],  # BLJUE
                                          3: [(15, 1)],
                                          5: [(15, 1)]}
-        self.transition_dict[(16, 0)] = {1: [((17, 0), (15, 0))],
+        self.transition_dict[(16, 0)] = {1: [(17, 0), (15, 0)],
                                          3: [(17, 12), (13, 0)],
                                          5: [(17, 4), (16, 3), (12, 1), (11, 0)]}
 
     def init_row15(self):
-        self.transition_dict[(15, 30)] = {1: [((16, 30))],  # BLJUE
+        self.transition_dict[(15, 30)] = {1: [(16, 30)],  # BLJUE
                                           3: [(16, 28)],
                                           5: [(17, 29)]}
-        self.transition_dict[(15, 29)] = {1: [((15, 30))],  # BLJUE
+        self.transition_dict[(15, 29)] = {1: [(15, 30)],  # BLJUE
                                           3: [(16, 29)],
                                           5: [(17, 28)]}
-        self.transition_dict[(15, 28)] = {1: [((14, 28))],  # BLJUE
+        self.transition_dict[(15, 28)] = {1: [(14, 28)],  # BLJUE
                                           3: [(13, 29)],
                                           5: [(14, 30)]}
         self.transition_dict[(15, 27)] = {1: [(16, 27), (14, 27), (15, 28)],
@@ -589,7 +590,7 @@ class Board:
         self.transition_dict[(13, 9)] = {1: [(13, 10)],
                                          3: [(13, 9)],
                                          5: [(13, 9)],
-                                         ORANGE[(13, 10)]}
+                                         ORANGE: (13, 10)}
         self.transition_dict[(13, 8)] = {1: [(14, 8), (12, 8)],
                                          3: [(12, 10), (13, 9), (16, 8), (14, 6), (12, 5), (10, 8), (10, 9)],
                                          5: [(12, 12), (17, 9), (17, 7), (14, 4), (12, 4), (7, 8), (8, 10)]}
