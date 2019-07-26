@@ -84,7 +84,7 @@ def create_move():
 
                 action["Pre: "] = DICE_FORMAT.format(d) + " " + AT_FORMAT.format(tile1[0], tile1[1]) + " " + NOT_NEED_PAY_SURPRISE
                 for s in range(1, MAX_STOPS):
-                    move["Pre: "] += " " + NOT_STOP_FORMAT.format(s)
+                    action["Pre: "] += " " + NOT_STOP_FORMAT.format(s)
 
                 action["Add: "] = AT_FORMAT.format(tile2[0], tile2[1])
                 if player == MEAN:
@@ -108,7 +108,7 @@ def create_move():
                     action["Pre: "] += " " + CERTIFICATES_FORMAT.format(tile1[board.NEED])
 
 
-                if tile2[board.WAIT] is not None:
+                if tile2[board.WAIT] is not None: # if we need to STOP
                     for i in range(1, tile2[board.WAIT]+1):
                         action["del: "] += " " + NOT_STOP_FORMAT(i)
 
