@@ -9,64 +9,198 @@ DEL = 3
 PROP_FORMAT = "d%s_p%s" # disk x on peg y
 ACTION_FORMAT = "Md%s_Fp%s_Tp%s" # move disk x from peg y to peg z
 
-MAXIMUM_PAY = 101
-MAXIMUM_POCKET = 201
-BOARD_WIDTH = 23
-BOARD_HEIGHT = 31
+MAXIMUM_PAY = 100
+MAXIMUM_POCKET = 200
+BOARD_WIDTH = 22
+BOARD_HEIGHT = 30
+MAX_STOPS = 4
 
+OPTIMI = 1
+MEAN = 2
+players = [OPTIMI, MEAN]
+
+MEAN_SURPRISE = -100
+OPTIMI_SURPRISE = 2000
 
 # NOT_OWE_FORMAT = "Not_Owe_%s"
 MONEY_FORMAT = "Money_%s"
-VISITED_FORMAT = "Visited_%s_%s"
 AT_FORMAT = "At_%s_%s"
 CERTIFICATES_FORMAT = "has_%s"
 NOT_NEEDS_FORMAT = "not_needs_%s"
 DICE_FORMAT = "dice_%s"
 COME_BACK_FORMAT = "Come_back_to_%s_%s"
 NOT_STOP_FORMAT = "Not_Stop_%s"
+NOT_NEED_PAY_SURPRISE = "not_need_pay_surprise"
+
+NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
+
+# check option to add X not_comebacks and make goal be all not_comebacks and  not need glasses and hat and at END
 
 erez_dic = dict()
 
+# ACTIONS:
 
+# STOP:
 FIRST_STOP_FORMAT = "Name: Stop_1\nPre: \nadd: Not_Stop_1\n del:"
 STOP_FORMAT = "Name: Stop_%s\nPre: Not_Stop_%s\nadd: Not_Stop_%s\n del:"
-PAY_SURPRISE_FORMAT = "Name: pay_%s_from_%s\nPre: Money_%s\nadd: Not_Owe_%s Money_%s\n del: Money_%s" # pay x money from the y money you have
+
+# PAYMENTS:
+
+#in surprise you pay the maximum between what you have and the surprise.
+PAY_SURPRISE_FORMAT = "Name: pay_surprise_from_%s\nPre: Money_%s\nadd: Money_%s not_need_pay_surprise\n del: Money_%s" # pay x money from the y money you have
+
+# from certain locations in the map you can pay 150 shekels to get where you need.
 PAY_150_FORMAT = "Name: Pay_150_from_%s_%s_to_%s_%s_with_%s\n Pre: at_%s_%s Money_%s\n add: at_%s_%s Money_%s\n del: at_%s_%s Money_%s"
 # pay 150 to jump from p1 to p2 with x money, pre at p1, money x, add at p2, money x-150, del at p1 money x.
-GOTO_FORMAT = "Name: Goto_%s_%s\n Pre: Come_back_to_%s_%s at_%s_%s\n add: at_%s_%s has_%s\n del: at_%s_%s Come_back_to_%s_%s needs_%s"
-GOTO_MONEY_FORMAT = "Name: Goto_%s_%s\n Pre: Come_back_to_%s_%s at_%s_%s\n add: at_%s_%s has_%s\n del: at_%s_%s Come_back_to_%s_%s needs_%s"
-# goto p2, pre comeback to p2, at specific p1, add at p2 has X (id) del at_p1 comeback p2, needs x
+
+# jump to techef ashuv block
+GOTO_FORMAT = "Name: Goto_%s_%s_from_%s_%s\n Pre: Come_back_to_%s_%s at_%s_%s\n add: at_%s_%s Not_Come_back_%s_%s\n del: Come_back_to_%s_%s at_%s_%s " # FROM_COMEBACK
+# goto p2 from p1, pre comeback to p2, at specific p1, add at p2 not_CB_p2 del at_p1 comeback p2, needs x
 
 
-def create_pay_150():
-    pass
+# # no need for take certificate?
+# TAKE_CERTIFICATE = "Name: Take_%s\n Pre: at_%s_%s\n add: has_%s\n del:"
+# # take id pre at p1 add has id
+# SHOW_CERTIFICATE = "Name: Show_%s\n Pre: has_%s\n add: not_needs_%s\n del:"
+# # show id pre has id add not needs id
+
+# put comeback:
+
+PUT_COMEBACK = "Name: place_comeback_%s_%s\n Pre: at_%s_%s \n add: Come_back_to_%s_%s\n del: Not_Come_back_%s_%s"
+# place comeback at p1 pre: at p1 add: comeback p1 del: not_CB_p1
+
+JUMP_TO_ENTRANCE = "Name: jump_to_%s_%s_from_%s_%s\n Pre: Come_back_to_%s_%s at_%s_%s\n add: at_%s_%s \n del: at_%s_%s"
+# jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
 
-#def create_not_owe():
-#    no = []
-#    for x in range(101):
-#        no.append(NOT_OWE_FORMAT.format(str(50*x)))
-#    return no
+def create_move():
+    moves = dict()
+    for tile1 in erez_dic:  # lekol mishbetzet
+        for d in [1,3,5]:  # lekol gilgul_kubia
+            for tile2 in tile1[d]: # lekol mishbetzet she'efshar lehagia elia
+                action = dict()
+
+                action["Name: "] = "Move_from_%s_%s_to_%s_%s".format(tile1[0], tile1[1], tile2[0], tile2[1])
+
+                action["Pre: "] = DICE_FORMAT.format(d) + " " + AT_FORMAT.format(tile1[0], tile1[1]) + " " + NOT_NEED_PAY_SURPRISE
+                for s in range(1, MAX_STOPS):
+                    move["Pre: "] += " " + NOT_STOP_FORMAT.format(s)
+
+                action["Add: "] = AT_FORMAT.format(tile2[0], tile2[1])
+                if player == MEAN:
+                    action["Add: "] += " " + DICE_FORMAT.format(3)
+                elif player == OPTIMI:
+                    for d1 in [1,3,5]:
+                        action["Add: "] += " " + DICE_FORMAT.format(d1)
+
+                action["del: "] = AT_FORMAT.format(tile1[0], tile1[1]) + DICE_FORMAT.format(d)
+
+                # surprise
+                if tile2[board.SURPRISE] is not None: # heganu lehaftaa
+                    action["del: "] += " " + NOT_NEED_PAY_SURPRISE
+
+                # take certificate:
+                if tile2[board.HAS] is not None:
+                    action["Add: "] += " " + CERTIFICATES_FORMAT.format(tile2[board.HAS])
+
+                # show certificate:
+                if tile1[board.NEED] is not None:  # eem zu mishbetzet shezarich lehazig teuda, zarich sheihihe teuda
+                    action["Pre: "] += " " + CERTIFICATES_FORMAT.format(tile1[board.NEED])
+
+                
+                if tile2[board.WAIT] is not None:
+                    for i in range(1, tile2[board.WAIT]+1):
+                        action["del: "] += " " + NOT_STOP_FORMAT(i)
+
+
+
+
+                # pay - tomorrow
+                # orange?
+
+
+
+
+def create_jump_to_entrance():
+    jumps = []
+    for tile in erez_dic:
+        if (tile[board.NEEDS] is not None or tile[board.PAY] is not None) and tile[board.JUMP] is not None:
+            for tile2 in tile[board.JUMP]:
+                jumps.append(JUMP_TO_ENTRANCE.format(tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
+    return jumps
+
+
+def create_put_comeback():
+    comeback = []
+    for tile in erez_dic:
+        if tile[board.NEED] is not None or tile[board.PAY] is not None: # then there can be techef ashuv
+                            # place comeback at p1,           pre: at p1,        add: comeback p1 del not CB p1
+            comeback.append(PUT_COMEBACK.format(tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1]))
+    return comeback
 
 
 def create_pay_surprise():
-    pay = []
-    for x in range(MAXIMUM_PAY):
-        for y in range(MAXIMUM_POCKET):
-                                             #pay x from y pre money y add notoweX money(y-(x or y)) del money y
-            pay.append(PAY_SURPRISE_FORMAT.format(str(x), str(y), str(y), str(x), str(y - min(y, x)), str(y)))
+        pays = []
+        for tile in erez_dic:
+            if tile[board.SURPRISE] is not None:  # check if not bug -> meaning of if: if there is a key surprise
+                surprise = -1
+                if player == OPTIMI:
+                    surprise = OPTIMI_SURPRISE
+                elif player == MEAN:
+                    surprise = MEAN_SURPRISE
+                for m in range(0, 50 * MAXIMUM_POCKET+1, 50):
+                    pays.append(PAY_SURPRISE_FORMAT.format(m, m, m-min(m, surprise), m))
+
+        return pays
+
+
+def create_pay_150():
+    pays = []
+    for tile in erez_dic:
+        if tile[board.ORANGE] is not None: # check if not bug -> if there is a key orange
+            for value in tile[board.ORANGE]:
+                for m in range(150,50*MAXIMUM_POCKET):  # can only pay 150 if you have at least 150
+                                                        # from p1              to p2    with m money  pre at p1 m money add at p2 money m-150 del at p1 money m
+                    pays.append(PAY_150_FORMAT.format(tile[0], tile[1], value[0], value[1], m,  tile[0], tile[1], m, value[0], value[1], m-150, tile[0], tile[1], m))
+    return pays
+
+
+def create_goto_from_comeback():
+    goto = []
+    for tile in erez_dic:
+        if tile[board.JUMP] is not None:  # check if not bug -> if there is a key jump
+            for value in tile[board.JUMP]:
+                                            # goto      p2      from      p1  pre comeback to p2              at p1   add        at p2                not CB p2     del: pre
+                goto.append(GOTO_FORMAT.format(value[0], value[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
+    return goto
+
+
+def create_take_certificate():
+    takes = []
+    for tile in erez_dic:
+        if tile[board.HAS] is not None:
+            takes.append(TAKE_CERTIFICATE.format(tile[board.HAS], tile[0], tile[1], tile[board.HAS]))
+    return takes
+
+
+def create_show_certificate():
+    show = []
+    for tile in erez_dic:
+        if tile[board.NEED] is not None:
+            takes.append(SHOW_CERTIFICATE.format(tile[board.NEED], tile[board.NEED], tile[board.NEED]))
+    return show
 
 
 def create_not_stop():
     not_stop = []
-    for x in range(1, 5):
+    for x in range(1, MAX_STOPS+1):
         not_stop.append(NOT_STOP_FORMAT.format(str(x)))
     return not_stop
 
 
 def create_stop_action():
     stop = [FIRST_STOP_FORMAT]
-    for x in range(2, 5):
+    for x in range(2, MAX_STOPS+1):
         stop.append(STOP_FORMAT.format(str(x), str(x-1), str(x)))
     return stop
 
@@ -75,6 +209,7 @@ def create_has_money():
     has = []
     for x in range(MAXIMUM_POCKET):
         has.append(MONEY_FORMAT.format(str(50*x)))
+    return has
 
 
 def create_dice():
@@ -91,26 +226,23 @@ def create_at():
     return at
 
 
-def create_not_needs_certificates():
-    certificates = [NOT_NEEDS_FORMAT.format(Certificate.GRANDMA),
-                    NOT_NEEDS_FORMAT.format(Certificate.INTEGRITY),
-                    NOT_NEEDS_FORMAT.format(Certificate.BIRTH),
-                    NOT_NEEDS_FORMAT.format(Certificate.ID),
-                    NOT_NEEDS_FORMAT.format(Certificate.RABIES),
-                    NOT_NEEDS_FORMAT.format(Certificate.PASSPORT),
-                    NOT_NEEDS_FORMAT.format(Certificate.MILITARY),
-                    NOT_NEEDS_FORMAT.format(Certificate.TAX),
-                    NOT_NEEDS_FORMAT.format(Certificate.PORT),
-                    NOT_NEEDS_FORMAT.format(Certificate.GLASSES),
-                    NOT_NEEDS_FORMAT.format(Certificate.HAT),
-                    NOT_NEEDS_FORMAT.format(Certificate.PACKAGE),
-                    NOT_NEEDS_FORMAT.format(Certificate.HAIRCUT),
-                    NOT_NEEDS_FORMAT.format("money")]
+def create_come_back():
+    cbs = []
+    for tile in erez_dic:
+        if tile[board.NEED] is not None or tile[board.PAY] is not None:
+            cbs.append(COME_BACK_FORMAT.format(tile[0, tile[1]]))
+            cbs.append(NOT_COME_BACK_FORMAT.format(tile[0], tile[1]))
+    return cbs
+
+
+def create_not_needs_items():
+    certificates = [NOT_NEEDS_FORMAT.format(Certificate.GLASSES),
+                    NOT_NEEDS_FORMAT.format(Certificate.HAT)]
     return certificates
 
 
 def create_certificates():
-    certificates = [NOT_NEEDS_FORMAT.format(Certificate.GRANDMA),
+    certificates = [CERTIFICATES_FORMAT.format(Certificate.GRANDMA),
                     CERTIFICATES_FORMAT.format(Certificate.INTEGRITY),
                     CERTIFICATES_FORMAT.format(Certificate.BIRTH),
                     CERTIFICATES_FORMAT.format(Certificate.ID),
@@ -128,7 +260,6 @@ def create_certificates():
 
 def get_actions(disks, pegs):
     """
-
     :param disks:
     :param pegs:
     :return:
