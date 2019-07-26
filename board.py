@@ -7,7 +7,6 @@ JUMP = 'jump'
 PAY = 'pay'
 GET = 'get'
 WAIT = 'wait'
-NEED  = "need"
 HAS = 'has'
 ORANGE = 150
 ONE = 1
@@ -155,9 +154,18 @@ class Board:
                                           5: [(17, 14), (17, 12), (16, 13), (18, 15), (22, 17), (21, 18)]}
 
     def init_row20(self):
-        self.transition_dict[(20, 30)] = {1: [], 3: [], 5: []}  # TODO COMPLETE ME
-        self.transition_dict[(20, 29)] = {1: [], 3: [], 5: []}  # TODO COMPLETE ME
-        self.transition_dict[(20, 28)] = {1: [], 3: [], 5: []}  # TODO COMPLETE ME
+        self.transition_dict[(20, 30)] = {1: [(20,29)],
+                                          3: [(20,30)],
+                                          5: [(20,30)],
+                                          ORANGE: (21,29),
+                                          NEED: [Certificate.GRANDMA],
+                                          JUMP:(22,27)}
+        self.transition_dict[(20, 29)] = {1: [(21,29)],
+                                          3: [(20,29)],
+                                          5: [(20,29)],
+                                          ORANGE: (21, 29),
+                                          NEED: [Certificate.INTEGRITY],
+                                          JUMP:(22,27)}
         self.transition_dict[(20, 27)] = {1: [(21, 27), (19, 27)], 3: [(18, 26), (17, 27), (22, 26), (21, 25)],
                                           5: [(19, 24), (17, 24), (15, 27), (17, 25), (21, 23), (20, 24)]}
 
@@ -191,7 +199,10 @@ class Board:
                                           5: [(21, 17), (19, 15), (17, 15), (17, 11), (15, 13)]}
 
     def init_row19(self):
-        self.transition_dict[(19, 30)] = {1: [(20, 30)], 3: [(21, 29)], 5: [(21, 29)]}  # BLUE
+        self.transition_dict[(19, 30)] = {1: [(20, 30)],
+                                          3: [(21, 29)],
+                                          5: [(21, 29)],
+                                          NEED: [Certificate.BIRTH]}  # BLUE
         self.transition_dict[(19, 29)] = {1: [(19, 30)], 3: [(20, 29)], 5: [(21, 29)]}  # BLUE
         self.transition_dict[(19, 28)] = {1: [(19, 29)], 3: [(20, 30)], 5: [(21, 29)]}  # BLUE
         self.transition_dict[(19, 27)] = {1: [(18, 27), (20, 27)], 3: [(21, 26), (17, 26), (16, 27), (18, 24)],
@@ -225,8 +236,13 @@ class Board:
                                               (15, 12), (17, 10)]}
 
     def init_row18(self):
-        self.transition_dict[(18, 30)] = {1: [(18, 29)], 3: [(19, 28)], 5: [(19, 30)]}  # BLUE
-        self.transition_dict[(18, 29)] = {1: [(18, 28)], 3: [(19, 29)], 5: [(20, 30)]}  # BLUE
+        self.transition_dict[(18, 30)] = {1: [(18, 29)],
+                                          3: [(19, 28)],
+                                          5: [(19, 30)]}  # BLUE
+        self.transition_dict[(18, 29)] = {1: [(18, 28)],
+                                          3: [(19, 29)],
+                                          5: [(20, 30)],
+                                          NEED: [Certificate.TAX]}  # BLUE
         self.transition_dict[(18, 28)] = {1: [(19, 28)], 3: [(19, 30)], 5: [(20, 29)]}  # BLUE
         self.transition_dict[(18, 27)] = {1: [(18, 26), (19, 27), (17, 27)],
                                           3: [(21, 27), (15, 27), (17, 25), (19, 24), (17, 24)],
@@ -265,7 +281,10 @@ class Board:
 
     def init_row17(self):
         self.transition_dict[(17, 30)] = {1: [(18, 30)], 3: [(18, 28)], 5: [(19, 29)], WAIT: 2}  # BLUE
-        self.transition_dict[(17, 29)] = {1: [(17, 30)], 3: [(18, 29)], 5: [(19, 28)], PAY: 20}  # BLUE
+        self.transition_dict[(17, 29)] = {1: [(17, 30)],
+                                          3: [(18, 29)],
+                                          5: [(19, 28)],
+                                          PAY: 20}  # BLUE
         self.transition_dict[(17, 28)] = {1: [(17, 29)], 3: [(18, 30)], 5: [(18, 28)]}  # BLUE
         self.transition_dict[(17, 27)] = {1: [(18, 27), (16, 27), (17, 26)],
                                           3: [(20, 27), (17, 24), (18, 24), (14, 27), (15, 28)],
@@ -381,7 +400,9 @@ class Board:
                                           5: [(17, 30)]}
         self.transition_dict[(16, 29)] = {1: [(16, 28)],  # BLUE
                                           3: [(17, 29)],
-                                          5: [(18, 30)], NEED: Certificate.INTEGRITY, JUMP: [(22, 27)]}
+                                          5: [(18, 30)],
+                                          NEED: [Certificate.INTEGRITY],
+                                          JUMP: [(22, 27)]}
         self.transition_dict[(16, 28)] = {1: [(17, 28)],  # BLUE NEED INTEGRITY
                                           3: [(17, 30)],
                                           5: [(18, 29)]}
@@ -443,7 +464,9 @@ class Board:
     def init_row15(self):
         self.transition_dict[(15, 30)] = {1: [(16, 30)],  # BLJUE
                                           3: [(16, 28)],
-                                          5: [(17, 29)]}
+                                          5: [(17, 29)],
+                                          NEED: [Certificate.INTEGRITY],
+                                          JUMP: [(22, 27)]}
         self.transition_dict[(15, 29)] = {1: [(15, 30)],  # BLJUE
                                           3: [(16, 29)],
                                           5: [(17, 28)]}
@@ -500,10 +523,14 @@ class Board:
     def init_row14(self):
         self.transition_dict[(14, 30)] = {1: [(14, 29)],  # BLUE
                                           3: [(15, 30)],
-                                          5: [(16, 29)]}
+                                          5: [(16, 29)],
+                                          NEED: [Certificate.RABIES],
+                                          JUMP: [(22, 27)]}
         self.transition_dict[(14, 29)] = {1: [(15, 29)],  # BLUE
                                           3: [(16, 30)],
-                                          5: [(16, 28)]}
+                                          5: [(16, 28)],
+                                          NEED:[Certificate.INTEGRITY, Certificate.GRANDMA, Certificate.ID, Certificate.BIRTH],
+                                          JUMP: [(22, 27)]}
         self.transition_dict[(14, 28)] = {1: [(13, 28)],  # BLUE
                                           3: [(13, 30)],
                                           5: [(14, 29)]}
@@ -571,7 +598,8 @@ class Board:
                                           5: [(16, 30)]}
         self.transition_dict[(13, 29)] = {1: [(13, 30)],  # BLUE  NEED GRANDMA WEDDING CERT
                                           3: [(14, 29)],
-                                          5: [(15, 30)], }
+                                          5: [(15, 30)],
+                                          NEED:Certificate.GRANDMA}
         self.transition_dict[(13, 28)] = {1: [(13, 28)],  # BLUE  WAIT 1
                                           3: [(14, 30)],
                                           5: [(15, 29)], WAIT: 1}
