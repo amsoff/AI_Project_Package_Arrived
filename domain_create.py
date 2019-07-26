@@ -17,6 +17,7 @@ BOARD_HEIGHT = 31
 
 # NOT_OWE_FORMAT = "Not_Owe_%s"
 MONEY_FORMAT = "Money_%s"
+VISITED_FORMAT = "Visited_%s_%s"
 AT_FORMAT = "At_%s_%s"
 CERTIFICATES_FORMAT = "has_%s"
 NOT_NEEDS_FORMAT = "not_needs_%s"
@@ -35,6 +36,7 @@ PAY_150_FORMAT = "Name: Pay_150_from_%s_%s_to_%s_%s_with_%s\n Pre: at_%s_%s Mone
 GOTO_FORMAT = "Name: Goto_%s_%s\n Pre: Come_back_to_%s_%s at_%s_%s\n add: at_%s_%s has_%s\n del: at_%s_%s Come_back_to_%s_%s needs_%s"
 GOTO_MONEY_FORMAT = "Name: Goto_%s_%s\n Pre: Come_back_to_%s_%s at_%s_%s\n add: at_%s_%s has_%s\n del: at_%s_%s Come_back_to_%s_%s needs_%s"
 # goto p2, pre comeback to p2, at specific p1, add at p2 has X (id) del at_p1 comeback p2, needs x
+
 
 def create_pay_150():
     pass
