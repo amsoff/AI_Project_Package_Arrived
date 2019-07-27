@@ -241,7 +241,7 @@ def create_show_certificate():
     show = []
     for tile in board_game:
         if board.NEED in board_game[tile]:
-            show.append(SHOW_CERTIFICATE % (board_game[tile][board.NEED], board_game[tile][board.NEED], board_game[tile][board.NEED]))
+            show.extend([SHOW_CERTIFICATE % (d,d,d) for d in board_game[tile][board.NEED]])
     return show
 
 
@@ -321,6 +321,7 @@ def create_not_come_back():
 def create_not_needs_items():
     certificates = [NOT_NEEDS_FORMAT % Certificate.GRANDMA,
                     NOT_NEEDS_FORMAT % Certificate.INTEGRITY,
+                    NOT_NEEDS_FORMAT % Certificate.BIRTH,
                     NOT_NEEDS_FORMAT % Certificate.ID,
                     NOT_NEEDS_FORMAT % Certificate.RABIES,
                     NOT_NEEDS_FORMAT % Certificate.PASSPORT,
