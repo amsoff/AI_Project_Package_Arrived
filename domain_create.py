@@ -279,8 +279,8 @@ def create_not_stop():
 
 def create_has_money():
     has = []
-    for x in range(50*MAXIMUM_POCKET+1, 50):
-        has.append(MONEY_FORMAT % (str(50*x)))
+    for x in range(0, 50*MAXIMUM_POCKET+1, 50):
+        has.append(MONEY_FORMAT % (str(x)))
     return has
 
 
