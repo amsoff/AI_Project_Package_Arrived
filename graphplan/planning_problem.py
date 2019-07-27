@@ -197,7 +197,7 @@ if __name__ == '__main__':
 
         # write propositions to file
         file.write("Plan:\n")
-        file.write("\n".join(plan))
+        file.write("\n".join([action.name for action in plan]))
         file.write("\n")
         file.close()
     else:
