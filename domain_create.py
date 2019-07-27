@@ -36,7 +36,8 @@ NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
 
 #  make goal be all not_comebacks and  not needs and at END
 
-erez_dic = dict()
+
+board_game = board.Board(1).transition_dict
 
 # ACTIONS:
 
@@ -82,7 +83,7 @@ PAY_CELL = "Name: pay_%s_at_%s_%s_from_%s\n Pre: at_%s_%s Money_%s \n Add: Money
 def create_move(player):
     moves = dict()
     ret = []
-    for tile1 in erez_dic:  # lekol mishbetzet
+    for tile1 in board_game:  # lekol mishbetzet
         for d in [1,3,5]:  # lekol gilgul_kubia
             for tile2 in tile1[d]: # lekol mishbetzet she'efshar lehagia elia
                 action = dict()
@@ -146,7 +147,7 @@ def create_move(player):
 
 def create_pay_cell():
     actions = []
-    for tile in erez_dic:
+    for tile in board_game:
         if tile[board.BALANCE] is not None:
             for m in range(-tile[board.BALANCE], 50*MAXIMUM_POCKET+1, 50):
                 actions.append(PAY_CELL.format(-tile[board.BALANCE], tile[0], tile[1], m, tile[0], tile[1], m, m+tile[board.BALANCE], tile[0], tile[1], m))
@@ -155,7 +156,7 @@ def create_pay_cell():
 
 def create_jump_to_entrance():
     jumps = []
-    for tile in erez_dic:
+    for tile in board_game:
         if (tile[board.NEED] is not None or tile[board.BALANCE] is not None or tile[board.SURPRISE] is not None) and tile[board.ENTRANCE] is not None:
             tile2 = tile[board.ENTRANCE]
             jumps.append(JUMP_TO_ENTRANCE.format(tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
@@ -164,7 +165,7 @@ def create_jump_to_entrance():
 
 def create_put_comeback():
     comeback = []
-    for tile in erez_dic:
+    for tile in board_game:
         if tile[board.NEED] is not None or tile[board.BALANCE] is not None or tile[board.SURPRISE] is not None: # then there can be techef ashuv
                             # place comeback at p1,           Pre: at p1,        Add: comeback p1 del not CB p1
             comeback.append(PUT_COMEBACK.format(tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1]))
@@ -173,7 +174,7 @@ def create_put_comeback():
 
 def create_pay_surprise(player):
         pays = []
-        for tile in erez_dic:
+        for tile in board_game:
             if tile[board.SURPRISE] is not None:  # check if not bug -> meaning of if: if there is a key surprise
                 surprise = -1
                 if player == OPTIMI:
@@ -187,7 +188,7 @@ def create_pay_surprise(player):
 
 def create_pay_150():
     pays = []
-    for tile in erez_dic:
+    for tile in board_game:
         if tile[board.ORANGE] is not None: # check if not bug -> if there is a key orange
             for value in tile[board.ORANGE]:
                 for m in range(150,50*MAXIMUM_POCKET+1, 50):  # can only pay 150 if you have at least 150
@@ -198,7 +199,7 @@ def create_pay_150():
 
 def create_goto_from_comeback():
     goto = []
-    for tile in erez_dic:
+    for tile in board_game:
         if tile[board.JUMP] is not None:  # check if not bug -> if there is a key jump
             for value in tile[board.JUMP]:
                                             # goto      p2      from      p1  pre comeback to p2              at p1   add        at p2                not CB p2     delete: pre
@@ -217,7 +218,7 @@ def create_goto_from_comeback():
 
 def create_show_certificate():
     show = []
-    for tile in erez_dic:
+    for tile in board_game:
         if tile[board.NEED] is not None:
             show.append(SHOW_CERTIFICATE.format(tile[board.NEED], tile[board.NEED], tile[board.NEED]))
     return show
@@ -235,7 +236,7 @@ def create_stop_action():
 
 def create_not_need_pay():
     pays = []
-    for tile in erez_dic:
+    for tile in board_game:
         if tile[board.BALANCE] is not None or tile[board.SURPRISE] is not None:
             pays.append(NOT_NEED_PAY_CELL.format(tile[0], tile[1]))
     return pays
@@ -264,14 +265,14 @@ def create_dice():
 
 def create_at():
     at = []
-    for x, y in erez_dic.keys():
+    for x, y in board_game.keys():
         at.append(AT_FORMAT.format(str(x),str(y)))
     return at
 
 
 def create_come_back():
     cbs = []
-    for tile in erez_dic:
+    for tile in board_game:
         if tile[board.NEED] is not None or tile[board.BALANCE] is not None or tile[board.SURPRISE] is not None:
             if tile[board.BALANCE] is not None and tile[board.BALANCE] > 0:
                 continue
@@ -315,26 +316,28 @@ def create_certificates():
 #############################################################################
 
 def get_propositions():
-    props = [create_not_need_pay(),
-             create_certificates(),
-             create_not_needs_items(),
-             create_come_back(),
-             create_at(),
-             create_dice(),
-             create_has_money(),
-             create_not_stop()]
+    props = []
+    props.extend(create_not_need_pay())
+    props.extend(create_certificates())
+    props.extend(create_not_needs_items())
+    props.extend(create_come_back())
+    props.extend(create_at())
+    props.extend(create_dice())
+    props.extend(create_has_money())
+    props.extend(create_not_stop())
     return props
 
 
 def get_actions(player):
-    actions = [create_move(player),
-               create_pay_cell(),
-               create_jump_to_entrance(),
-               create_put_comeback(),
-               create_pay_surprise(player),
-               create_pay_150(),
-               create_show_certificate(),
-               create_stop_action()]
+    actions = []
+    actions.extend(create_move(player))
+    actions.extend(create_pay_cell())
+    actions.extend(create_jump_to_entrance())
+    actions.extend(create_put_comeback())
+    actions.extend(create_pay_surprise(player))
+    actions.extend(create_pay_150())
+    actions.extend(create_show_certificate())
+    actions.extend(create_stop_action())
     return actions
 
 
@@ -377,7 +380,7 @@ def create_domain_file(domain_file_name, player):
 #
 
 if __name__ == '__main__':
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 2:
         print('Usage: domain_create.py agent_code')
         sys.exit(2)
 
