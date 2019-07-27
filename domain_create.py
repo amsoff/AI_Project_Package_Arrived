@@ -90,7 +90,7 @@ def create_move(player):
                 action["Name: "] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
 
                 action["Pre: "] = DICE_FORMAT % (d) + " " + AT_FORMAT % (tile1[0], tile1[1])
-                for s in range(1, MAX_STOPS):
+                for s in range(1, MAX_STOPS+1):
                     action["Pre: "] += " " + NOT_STOP_FORMAT % (s)
 
                 action["Add: "] = AT_FORMAT % (tile2[0], tile2[1])
