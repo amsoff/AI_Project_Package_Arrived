@@ -1,5 +1,6 @@
 import sys
 from Certificates import Certificate
+import board
 
 
 NAME = 0
@@ -128,13 +129,13 @@ def create_move(player):
 
                 if tile2[board.WAIT] is not None:  # eem heganu leazor, naazor
                     for i in range(1, tile2[board.WAIT]+1):
-                        action["delete: "] += " " + NOT_STOP_FORMAT(i)
+                        action["delete: "] += " " + NOT_STOP_FORMAT.format(i)
 
                 moves[(tile1, tile2)] = action
 
     for move in moves:
-        str = '\n'.join(['%s%s' % (k,v) for k,v in move.iteritems()])
-        ret.append(str)
+        strng = '\n'.join(['%s%s' % (k,v) for k,v in move.iteritems()])
+        ret.append(strng)
     return ret
 
 
@@ -155,7 +156,7 @@ def create_pay_cell():
 def create_jump_to_entrance():
     jumps = []
     for tile in erez_dic:
-        if (tile[board.NEEDS] is not None or tile[board.BALANCE] is not None or tile[board.SURPRISE] is not None) and tile[board.ENTRANCE] is not None:
+        if (tile[board.NEED] is not None or tile[board.BALANCE] is not None or tile[board.SURPRISE] is not None) and tile[board.ENTRANCE] is not None:
             tile2 = tile[board.ENTRANCE]
             jumps.append(JUMP_TO_ENTRANCE.format(tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
     return jumps
@@ -206,19 +207,19 @@ def create_goto_from_comeback():
 
 
 # don't use for now
-def create_take_certificate():
-    takes = []
-    for tile in erez_dic:
-        if tile[board.HAS] is not None:
-            takes.append(TAKE_CERTIFICATE.format(tile[board.HAS], tile[0], tile[1], tile[board.HAS]))
-    return takes
+# def create_take_certificate():
+#     takes = []
+#     for tile in erez_dic:
+#         if tile[board.HAS] is not None:
+#             takes.append(TAKE_CERTIFICATE.format(tile[board.HAS], tile[0], tile[1], tile[board.HAS]))
+#     return takes
 
 
 def create_show_certificate():
     show = []
     for tile in erez_dic:
         if tile[board.NEED] is not None:
-            takes.append(SHOW_CERTIFICATE.format(tile[board.NEED], tile[board.NEED], tile[board.NEED]))
+            show.append(SHOW_CERTIFICATE.format(tile[board.NEED], tile[board.NEED], tile[board.NEED]))
     return show
 
 
@@ -272,7 +273,7 @@ def create_come_back():
     cbs = []
     for tile in erez_dic:
         if tile[board.NEED] is not None or tile[board.BALANCE] is not None or tile[board.SURPRISE] is not None:
-            if tile[board.balance] is not None and tile[board.BALANCE] > 0:
+            if tile[board.BALANCE] is not None and tile[board.BALANCE] > 0:
                 continue
             cbs.append(COME_BACK_FORMAT.format(tile[0, tile[1]]))
             cbs.append(NOT_COME_BACK_FORMAT.format(tile[0], tile[1]))
@@ -296,7 +297,7 @@ def create_not_needs_items():
 
 
 def create_certificates():
-    certificates = [CERTIFICATES_FORMAT.format(Certificate.GRANDMA),
+    certificates = {CERTIFICATES_FORMAT.format(Certificate.GRANDMA),
                     CERTIFICATES_FORMAT.format(Certificate.INTEGRITY),
                     CERTIFICATES_FORMAT.format(Certificate.BIRTH),
                     CERTIFICATES_FORMAT.format(Certificate.ID),
@@ -308,34 +309,32 @@ def create_certificates():
                     CERTIFICATES_FORMAT.format(Certificate.GLASSES),
                     CERTIFICATES_FORMAT.format(Certificate.HAT),
                     CERTIFICATES_FORMAT.format(Certificate.PACKAGE),
-                    CERTIFICATES_FORMAT.format(Certificate.HAIRCUT)]
+                    CERTIFICATES_FORMAT.format(Certificate.HAIRCUT)}
     return certificates
 
 #############################################################################
 
 def get_propositions():
-    props = []
-    props.append(create_not_need_pay())
-    props.append(create_certificates())
-    props.append(create_not_needs_items())
-    props.append(create_come_back())
-    props.append(create_at())
-    props.append(create_dice())
-    props.append(create_has_money())
-    props.append(create_not_stop())
+    props = [create_not_need_pay(),
+             create_certificates(),
+             create_not_needs_items(),
+             create_come_back(),
+             create_at(),
+             create_dice(),
+             create_has_money(),
+             create_not_stop()]
     return props
 
 
 def get_actions(player):
-    actions = []
-    actions.append(create_move(player))
-    actions.append(create_pay_cell())
-    actions.append(create_jump_to_entrance())
-    actions.append(create_put_comeback())
-    actions.append(create_pay_surprise(player))
-    actions.append(create_pay_150())
-    actions.append(create_show_certificate())
-    actions.append(create_stop_action())
+    actions = [create_move(player),
+               create_pay_cell(),
+               create_jump_to_entrance(),
+               create_put_comeback(),
+               create_pay_surprise(player),
+               create_pay_150(),
+               create_show_certificate(),
+               create_stop_action()]
     return actions
 
 
@@ -348,7 +347,7 @@ def create_domain_file(domain_file_name, player):
 
     # write propositions to file
     domain_file.write("Propositions:\n")
-    props = get_props()
+    props = get_propositions()
     domain_file.write(" ".join(props))
 
     # write actions to file
@@ -361,21 +360,21 @@ def create_domain_file(domain_file_name, player):
 
 
 ### change ###
-def create_problem_file(problem_file_name_, n_, m_):
-    disks = ['d_%s' % i for i in list(range(n_))]  # [d_0,..., d_(n_ - 1)]
-    pegs = ['p_%s' % i for i in list(range(m_))]  # [p_0,..., p_(m_ - 1)]
-    problem_file = open(problem_file_name_, 'w')  # use problem_file.write(str) to write to problem_file
-    initial = "Initial state: "
-    goal = "Goal state: "
-    for d in range(n_):
-        initial += PROP_FORMAT % (d, 0)  # all disks start on peg 0
-        initial += " "
-        goal += PROP_FORMAT % (d, m-1) + ' ' # all disks go to last peg
-
-    problem_file.write(initial + '\n')
-    problem_file.write(goal)
-    problem_file.close()
-
+# def create_problem_file(problem_file_name_, n_, m_):
+#     disks = ['d_%s' % i for i in list(range(n_))]  # [d_0,..., d_(n_ - 1)]
+#     pegs = ['p_%s' % i for i in list(range(m_))]  # [p_0,..., p_(m_ - 1)]
+#     problem_file = open(problem_file_name_, 'w')  # use problem_file.write(str) to write to problem_file
+#     initial = "Initial state: "
+#     goal = "Goal state: "
+#     for d in range(n_):
+#         initial += PROP_FORMAT % (d, 0)  # all disks start on peg 0
+#         initial += " "
+#         goal += PROP_FORMAT % (d, m-1) + ' ' # all disks go to last peg
+#
+#     problem_file.write(initial + '\n')
+#     problem_file.write(goal)
+#     problem_file.close()
+#
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
@@ -388,4 +387,4 @@ if __name__ == '__main__':
     problem_file_name = 'problem.txt'
 
     create_domain_file(domain_file_name, code)
-    create_problem_file(problem_file_name, code)
+    # create_problem_file(problem_file_name, code)
