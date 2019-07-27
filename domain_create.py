@@ -108,10 +108,10 @@ def create_move(player):
 
 
                 # payments:
-                if board.BALANCE in board_game[tile2] or board.SURPRISE in board_game[tile2]:
+                if (board.BALANCE in board_game[tile2] and board_game[tile2][board.BALANCE]<0) or board.SURPRISE in board_game[tile2]:
                     action["delete: "] += " " + NOT_NEED_PAY_CELL % (tile2[0], tile2[1])
 
-                if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
+                if (board.BALANCE in board_game[tile1] and board_game[tile1][board.BALANCE]<0) or board.SURPRISE in board_game[tile1]:
                     action["pre: "] += " " + NOT_NEED_PAY_CELL % (tile1[0], tile1[1])
 
 
@@ -177,7 +177,7 @@ def create_jump_to_entrance():
 def create_put_comeback():
     comeback = []
     for tile in board_game:
-        if board.NEED in board_game[tile] or board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]: # then there can be techef ashuv
+        if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE]<0) or board.SURPRISE in board_game[tile]: # then there can be techef ashuv
                             # place comeback at p1,           pre: at p1,        add: comeback p1 del not CB p1
             comeback.append(PUT_COMEBACK % (tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1]))
     return comeback
