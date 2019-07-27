@@ -1,5 +1,5 @@
 Propositions:
-not_need_pay_1_15 not_need_pay_1_12 not_need_pay_2_13 not_need_pay_3_16 not_need_pay_5_10 not_need_pay_4_5 not_need_pay_6_17 not_need_pay_6_23 not_need_pay_6_11 not_need_pay_7_24 not_need_pay_7_17 not_need_pay_8_2 not_need_pay_9_30 not_need_pay_9_28 not_need_pay_7_26 not_need_pay_9_25 not_need_pay_9_4 not_need_pay_10_20 not_need_pay_10_15 not_need_pay_11_20 not_need_pay_11_12 not_need_pay_11_8 not_need_pay_12_20 not_need_pay_12_6 not_need_pay_13_27 not_need_pay_14_21 not_need_pay_15_29 not_need_pay_15_8 not_need_pay_16_23 not_need_pay_16_17 not_need_pay_17_29 not_need_pay_17_15 not_need_pay_17_6 not_need_pay_18_25 not_need_pay_19_14 not_need_pay_20_27 not_need_pay_20_22 not_need_pay_20_13 not_need_pay_21_29 not_need_pay_21_24 not_need_pay_21_16 not_need_pay_22_16 not_need_pay_22_15 has_Certificate.BIRTH has_Certificate.ID has_Certificate.PASSPORT has_Certificate.INTEGRITY has_Certificate.HAT has_Certificate.PORT has_Certificate.RABIES has_Certificate.GRANDMA has_Certificate.TAX has_Certificate.MILITARY has_Certificate.PACKAGE has_Certificate.GLASSES has_Certificate.HAIRCUT not_needs_Certificate.GRANDMA not_needs_Certificate.INTEGRITY not_needs_Certificate.ID not_needs_Certificate.RABIES not_needs_Certificate.PASSPORT not_needs_Certificate.MILITARY not_needs_Certificate.TAX not_needs_Certificate.PORT not_needs_Certificate.PACKAGE not_needs_Certificate.HAIRCUT not_needs_Certificate.GLASSES not_needs_Certificate.HAT Come_back_to_1_15 Not_Come_back_1_15 Come_back_to_1_12 Not_Come_back_1_12 Come_back_to_2_14 Not_Come_back_2_14 Come_back_to_2_13 Not_Come_back_2_13 Come_back_to_3_16 Not_Come_back_3_16 Come_back_to_4_5 Not_Come_back_4_5 Come_back_to_5_23 Not_Come_back_5_23 Come_back_to_6_24 Not_Come_back_6_24 Come_back_to_6_23 Not_Come_back_6_23 Come_back_to_6_11 Not_Come_back_6_11 Come_back_to_6_8 Not_Come_back_6_8 Come_back_to_7_24 Not_Come_back_7_24 Come_back_to_7_17 Not_Come_back_7_17 Come_back_to_7_4 Not_Come_back_7_4 Come_back_to_9_30 Not_Come_back_9_30 Come_back_to_9_28 Not_Come_back_9_28 Come_back_to_9_25 Not_Come_back_9_25 Come_back_to_9_4 Not_Come_back_9_4 Come_back_to_10_20 Not_Come_back_10_20 Come_back_to_10_15 Not_Come_back_10_15 Come_back_to_11_20 Not_Come_back_11_20 Come_back_to_11_12 Not_Come_back_11_12 Come_back_to_11_8 Not_Come_back_11_8 Come_back_to_12_20 Not_Come_back_12_20 Come_back_to_12_6 Not_Come_back_12_6 Come_back_to_13_29 Not_Come_back_13_29 Come_back_to_13_27 Not_Come_back_13_27 Come_back_to_14_30 Not_Come_back_14_30 Come_back_to_14_29 Not_Come_back_14_29 Come_back_to_14_21 Not_Come_back_14_21 Come_back_to_15_30 Not_Come_back_15_30 Come_back_to_15_29 Not_Come_back_15_29 Come_back_to_15_28 Not_Come_back_15_28 Come_back_to_15_8 Not_Come_back_15_8 Come_back_to_16_29 Not_Come_back_16_29 Come_back_to_16_23 Not_Come_back_16_23 Come_back_to_16_22 Not_Come_back_16_22 Come_back_to_16_17 Not_Come_back_16_17 Come_back_to_16_12 Not_Come_back_16_12 Come_back_to_17_29 Not_Come_back_17_29 Come_back_to_17_15 Not_Come_back_17_15 Come_back_to_17_6 Not_Come_back_17_6 Come_back_to_18_29 Not_Come_back_18_29 Come_back_to_18_28 Not_Come_back_18_28 Come_back_to_18_16 Not_Come_back_18_16 Come_back_to_19_30 Not_Come_back_19_30 Come_back_to_19_29 Not_Come_back_19_29 Come_back_to_19_28 Not_Come_back_19_28 Come_back_to_20_30 Not_Come_back_20_30 Come_back_to_20_29 Not_Come_back_20_29 Come_back_to_20_27 Not_Come_back_20_27 Come_back_to_20_22 Not_Come_back_20_22 Come_back_to_20_20 Not_Come_back_20_20 Come_back_to_20_13 Not_Come_back_20_13 Come_back_to_21_29 Not_Come_back_21_29 Come_back_to_21_24 Not_Come_back_21_24 Come_back_to_21_16 Not_Come_back_21_16 Come_back_to_22_16 Not_Come_back_22_16 Come_back_to_22_15 Not_Come_back_22_15 At_0_27 At_0_26 At_0_25 At_0_24 At_0_23 At_0_22 At_0_21 At_0_20 At_0_11 At_0_8 At_0_9 At_0_4 At_1_25 At_1_20 At_1_15 At_1_14 At_1_13 At_1_12 At_1_11 At_1_8 At_1_4 At_1_0 At_2_29 At_2_28 At_2_26 At_2_25 At_2_20 At_2_15 At_2_14 At_2_13 At_2_12 At_2_11 At_2_8 At_2_4 At_3_30 At_3_29 At_3_28 At_3_27 At_3_26 At_3_25 At_3_20 At_3_19 At_3_18 At_3_17 At_3_16 At_3_15 At_3_14 At_3_13 At_3_12 At_3_11 At_3_10 At_3_9 At_3_8 At_3_7 At_3_6 At_3_5 At_3_4 At_4_30 At_4_29 At_4_28 At_4_27 At_4_25 At_4_20 At_4_18 At_4_17 At_4_16 At_4_14 At_4_11 At_4_10 At_5_10 At_4_9 At_4_8 At_4_7 At_4_6 At_4_5 At_4_4 At_5_30 At_5_29 At_5_28 At_5_27 At_5_25 At_5_24 At_5_23 At_5_22 At_5_21 At_5_20 At_5_18 At_5_17 At_6_17 At_5_16 At_5_14 At_5_13 At_5_12 At_5_11 At_5_8 At_5_4 At_6_30 At_6_28 At_6_27 At_6_26 At_6_25 At_6_24 At_6_23 At_6_22 At_6_20 At_6_18 At_6_16 At_6_14 At_6_13 At_6_11 At_6_8 At_6_4 At_7_30 At_7_28 At_7_25 At_7_24 At_7_23 At_7_22 At_7_21 At_7_20 At_7_19 At_7_18 At_7_17 At_7_16 At_7_15 At_7_14 At_7_13 At_7_12 At_7_11 At_7_10 At_7_9 At_7_8 At_7_7 At_7_6 At_7_5 At_7_4 At_7_3 At_7_2 At_7_1 At_7_0 At_8_30 At_8_28 At_8_25 At_8_21 At_8_20 At_8_17 At_8_16 At_8_13 At_8_10 At_8_9 At_8_8 At_8_7 At_8_6 At_8_4 At_8_3 At_8_2 At_9_30 At_9_28 At_9_27 At_9_26 At_7_26 At_9_25 At_9_21 At_9_20 At_9_17 At_9_16 At_9_12 At_9_9 At_9_8 At_9_6 At_9_4 At_9_3 At_10_30 At_10_28 At_10_25 At_10_21 At_10_20 At_10_17 At_10_16 At_10_15 At_10_12 At_10_9 At_10_8 At_10_4 At_10_3 At_10_2 At_10_1 At_10_0 At_11_30 At_11_28 At_11_25 At_11_21 At_11_20 At_11_19 At_11_18 At_11_17 At_11_16 At_11_15 At_11_12 At_11_9 At_11_8 At_11_4 At_11_0 At_12_30 At_12_29 At_12_28 At_12_27 At_12_26 At_12_25 At_12_24 At_12_23 At_12_22 At_12_21 At_12_20 At_12_19 At_12_18 At_12_17 At_12_15 At_12_14 At_12_13 At_12_12 At_12_11 At_12_10 At_12_9 At_12_8 At_12_7 At_12_6 At_12_5 At_12_4 At_12_3 At_12_2 At_12_1 At_12_0 At_13_30 At_13_29 At_13_28 At_13_27 At_13_24 At_13_20 At_13_18 At_13_13 At_13_10 At_13_9 At_13_8 At_13_4 At_13_0 At_14_30 At_14_29 At_14_28 At_14_27 At_14_24 At_14_23 At_14_22 At_14_21 At_14_20 At_14_18 At_14_13 At_14_9 At_14_8 At_14_7 At_14_6 At_14_5 At_14_4 At_14_1 At_14_0 At_15_30 At_15_29 At_15_28 At_15_27 At_15_24 At_15_20 At_15_18 At_15_17 At_15_15 At_15_14 At_15_13 At_15_12 At_15_8 At_15_4 At_15_1 At_15_0 At_16_30 At_16_29 At_16_28 At_16_27 At_16_24 At_16_23 At_16_22 At_16_21 At_16_20 At_16_17 At_16_15 At_16_13 At_16_12 At_16_11 At_16_8 At_16_4 At_16_3 At_16_2 At_16_1 At_16_0 At_17_30 At_17_29 At_17_28 At_17_27 At_17_26 At_17_25 At_17_24 At_17_23 At_17_22 At_17_21 At_17_20 At_17_19 At_17_18 At_17_17 At_17_16 At_17_15 At_17_14 At_17_13 At_17_12 At_17_11 At_17_10 At_17_9 At_17_8 At_17_7 At_17_6 At_17_5 At_17_4 At_17_3 At_17_2 At_17_1 At_17_0 At_18_30 At_18_29 At_18_28 At_18_27 At_18_26 At_18_25 At_18_24 At_18_19 At_18_18 At_18_17 At_18_16 At_18_15 At_18_14 At_19_14 At_18_13 At_19_30 At_19_29 At_19_28 At_19_27 At_19_24 At_19_19 At_19_18 At_19_17 At_19_16 At_19_15 At_19_13 At_20_30 At_20_29 At_20_27 At_20_24 At_20_23 At_20_22 At_20_21 At_20_20 At_20_19 At_20_15 At_20_13 At_21_30 At_21_29 At_21_28 At_21_27 At_21_26 At_21_25 At_21_24 At_21_23 At_21_22 At_21_21 At_21_20 At_21_19 At_21_18 At_21_17 At_21_16 At_21_15 At_21_14 At_21_13 At_22_29 At_22_28 At_22_27 At_22_26 At_22_25 At_22_24 At_22_23 At_22_21 At_22_19 At_22_18 At_22_17 At_22_16 At_22_15 At_22_14 At_22_13 dice_1 dice_3 dice_5 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4Actions:
+not_need_pay_1_15 not_need_pay_1_12 not_need_pay_2_13 not_need_pay_3_16 not_need_pay_5_10 not_need_pay_4_5 not_need_pay_6_17 not_need_pay_6_23 not_need_pay_6_11 not_need_pay_7_24 not_need_pay_7_17 not_need_pay_8_2 not_need_pay_9_30 not_need_pay_9_28 not_need_pay_7_26 not_need_pay_9_25 not_need_pay_9_4 not_need_pay_10_20 not_need_pay_10_15 not_need_pay_11_20 not_need_pay_11_12 not_need_pay_11_8 not_need_pay_12_20 not_need_pay_12_6 not_need_pay_13_27 not_need_pay_14_21 not_need_pay_15_29 not_need_pay_15_8 not_need_pay_16_23 not_need_pay_16_17 not_need_pay_17_29 not_need_pay_17_15 not_need_pay_17_6 not_need_pay_18_25 not_need_pay_19_14 not_need_pay_20_27 not_need_pay_20_22 not_need_pay_20_13 not_need_pay_21_29 not_need_pay_21_24 not_need_pay_21_16 not_need_pay_22_16 not_need_pay_22_15 has_Certificate.PACKAGE has_Certificate.GLASSES has_Certificate.ID has_Certificate.PORT has_Certificate.RABIES has_Certificate.HAIRCUT has_Certificate.INTEGRITY has_Certificate.HAT has_Certificate.GRANDMA has_Certificate.BIRTH has_Certificate.TAX has_Certificate.MILITARY has_Certificate.PASSPORT not_needs_Certificate.GRANDMA not_needs_Certificate.INTEGRITY not_needs_Certificate.ID not_needs_Certificate.RABIES not_needs_Certificate.PASSPORT not_needs_Certificate.MILITARY not_needs_Certificate.TAX not_needs_Certificate.PORT not_needs_Certificate.PACKAGE not_needs_Certificate.HAIRCUT not_needs_Certificate.GLASSES not_needs_Certificate.HAT Come_back_to_1_15 Not_Come_back_1_15 Come_back_to_1_12 Not_Come_back_1_12 Come_back_to_2_14 Not_Come_back_2_14 Come_back_to_2_13 Not_Come_back_2_13 Come_back_to_3_16 Not_Come_back_3_16 Come_back_to_4_5 Not_Come_back_4_5 Come_back_to_5_23 Not_Come_back_5_23 Come_back_to_6_24 Not_Come_back_6_24 Come_back_to_6_23 Not_Come_back_6_23 Come_back_to_6_11 Not_Come_back_6_11 Come_back_to_6_8 Not_Come_back_6_8 Come_back_to_7_24 Not_Come_back_7_24 Come_back_to_7_17 Not_Come_back_7_17 Come_back_to_7_4 Not_Come_back_7_4 Come_back_to_9_30 Not_Come_back_9_30 Come_back_to_9_28 Not_Come_back_9_28 Come_back_to_9_25 Not_Come_back_9_25 Come_back_to_9_4 Not_Come_back_9_4 Come_back_to_10_20 Not_Come_back_10_20 Come_back_to_10_15 Not_Come_back_10_15 Come_back_to_11_20 Not_Come_back_11_20 Come_back_to_11_12 Not_Come_back_11_12 Come_back_to_11_8 Not_Come_back_11_8 Come_back_to_12_20 Not_Come_back_12_20 Come_back_to_12_6 Not_Come_back_12_6 Come_back_to_13_29 Not_Come_back_13_29 Come_back_to_13_27 Not_Come_back_13_27 Come_back_to_14_30 Not_Come_back_14_30 Come_back_to_14_29 Not_Come_back_14_29 Come_back_to_14_21 Not_Come_back_14_21 Come_back_to_15_30 Not_Come_back_15_30 Come_back_to_15_29 Not_Come_back_15_29 Come_back_to_15_28 Not_Come_back_15_28 Come_back_to_15_8 Not_Come_back_15_8 Come_back_to_16_29 Not_Come_back_16_29 Come_back_to_16_23 Not_Come_back_16_23 Come_back_to_16_22 Not_Come_back_16_22 Come_back_to_16_17 Not_Come_back_16_17 Come_back_to_16_12 Not_Come_back_16_12 Come_back_to_17_29 Not_Come_back_17_29 Come_back_to_17_15 Not_Come_back_17_15 Come_back_to_17_6 Not_Come_back_17_6 Come_back_to_18_29 Not_Come_back_18_29 Come_back_to_18_28 Not_Come_back_18_28 Come_back_to_18_16 Not_Come_back_18_16 Come_back_to_19_30 Not_Come_back_19_30 Come_back_to_19_29 Not_Come_back_19_29 Come_back_to_19_28 Not_Come_back_19_28 Come_back_to_20_30 Not_Come_back_20_30 Come_back_to_20_29 Not_Come_back_20_29 Come_back_to_20_27 Not_Come_back_20_27 Come_back_to_20_22 Not_Come_back_20_22 Come_back_to_20_20 Not_Come_back_20_20 Come_back_to_20_13 Not_Come_back_20_13 Come_back_to_21_29 Not_Come_back_21_29 Come_back_to_21_24 Not_Come_back_21_24 Come_back_to_21_16 Not_Come_back_21_16 Come_back_to_22_16 Not_Come_back_22_16 Come_back_to_22_15 Not_Come_back_22_15 At_0_27 At_0_26 At_0_25 At_0_24 At_0_23 At_0_22 At_0_21 At_0_20 At_0_11 At_0_8 At_0_9 At_0_4 At_1_25 At_1_20 At_1_15 At_1_14 At_1_13 At_1_12 At_1_11 At_1_8 At_1_4 At_1_0 At_2_29 At_2_28 At_2_26 At_2_25 At_2_20 At_2_15 At_2_14 At_2_13 At_2_12 At_2_11 At_2_8 At_2_4 At_3_30 At_3_29 At_3_28 At_3_27 At_3_26 At_3_25 At_3_20 At_3_19 At_3_18 At_3_17 At_3_16 At_3_15 At_3_14 At_3_13 At_3_12 At_3_11 At_3_10 At_3_9 At_3_8 At_3_7 At_3_6 At_3_5 At_3_4 At_4_30 At_4_29 At_4_28 At_4_27 At_4_25 At_4_20 At_4_18 At_4_17 At_4_16 At_4_14 At_4_11 At_4_10 At_5_10 At_4_9 At_4_8 At_4_7 At_4_6 At_4_5 At_4_4 At_5_30 At_5_29 At_5_28 At_5_27 At_5_25 At_5_24 At_5_23 At_5_22 At_5_21 At_5_20 At_5_18 At_5_17 At_6_17 At_5_16 At_5_14 At_5_13 At_5_12 At_5_11 At_5_8 At_5_4 At_6_30 At_6_28 At_6_27 At_6_26 At_6_25 At_6_24 At_6_23 At_6_22 At_6_20 At_6_18 At_6_16 At_6_14 At_6_13 At_6_11 At_6_8 At_6_4 At_7_30 At_7_28 At_7_25 At_7_24 At_7_23 At_7_22 At_7_21 At_7_20 At_7_19 At_7_18 At_7_17 At_7_16 At_7_15 At_7_14 At_7_13 At_7_12 At_7_11 At_7_10 At_7_9 At_7_8 At_7_7 At_7_6 At_7_5 At_7_4 At_7_3 At_7_2 At_7_1 At_7_0 At_8_30 At_8_28 At_8_25 At_8_21 At_8_20 At_8_17 At_8_16 At_8_13 At_8_10 At_8_9 At_8_8 At_8_7 At_8_6 At_8_4 At_8_3 At_8_2 At_9_30 At_9_28 At_9_27 At_9_26 At_7_26 At_9_25 At_9_21 At_9_20 At_9_17 At_9_16 At_9_12 At_9_9 At_9_8 At_9_6 At_9_4 At_9_3 At_10_30 At_10_28 At_10_25 At_10_21 At_10_20 At_10_17 At_10_16 At_10_15 At_10_12 At_10_9 At_10_8 At_10_4 At_10_3 At_10_2 At_10_1 At_10_0 At_11_30 At_11_28 At_11_25 At_11_21 At_11_20 At_11_19 At_11_18 At_11_17 At_11_16 At_11_15 At_11_12 At_11_9 At_11_8 At_11_4 At_11_0 At_12_30 At_12_29 At_12_28 At_12_27 At_12_26 At_12_25 At_12_24 At_12_23 At_12_22 At_12_21 At_12_20 At_12_19 At_12_18 At_12_17 At_12_15 At_12_14 At_12_13 At_12_12 At_12_11 At_12_10 At_12_9 At_12_8 At_12_7 At_12_6 At_12_5 At_12_4 At_12_3 At_12_2 At_12_1 At_12_0 At_13_30 At_13_29 At_13_28 At_13_27 At_13_24 At_13_20 At_13_18 At_13_13 At_13_10 At_13_9 At_13_8 At_13_4 At_13_0 At_14_30 At_14_29 At_14_28 At_14_27 At_14_24 At_14_23 At_14_22 At_14_21 At_14_20 At_14_18 At_14_13 At_14_9 At_14_8 At_14_7 At_14_6 At_14_5 At_14_4 At_14_1 At_14_0 At_15_30 At_15_29 At_15_28 At_15_27 At_15_24 At_15_20 At_15_18 At_15_17 At_15_15 At_15_14 At_15_13 At_15_12 At_15_8 At_15_4 At_15_1 At_15_0 At_16_30 At_16_29 At_16_28 At_16_27 At_16_24 At_16_23 At_16_22 At_16_21 At_16_20 At_16_17 At_16_15 At_16_13 At_16_12 At_16_11 At_16_8 At_16_4 At_16_3 At_16_2 At_16_1 At_16_0 At_17_30 At_17_29 At_17_28 At_17_27 At_17_26 At_17_25 At_17_24 At_17_23 At_17_22 At_17_21 At_17_20 At_17_19 At_17_18 At_17_17 At_17_16 At_17_15 At_17_14 At_17_13 At_17_12 At_17_11 At_17_10 At_17_9 At_17_8 At_17_7 At_17_6 At_17_5 At_17_4 At_17_3 At_17_2 At_17_1 At_17_0 At_18_30 At_18_29 At_18_28 At_18_27 At_18_26 At_18_25 At_18_24 At_18_19 At_18_18 At_18_17 At_18_16 At_18_15 At_18_14 At_19_14 At_18_13 At_19_30 At_19_29 At_19_28 At_19_27 At_19_24 At_19_19 At_19_18 At_19_17 At_19_16 At_19_15 At_19_13 At_20_30 At_20_29 At_20_27 At_20_24 At_20_23 At_20_22 At_20_21 At_20_20 At_20_19 At_20_15 At_20_13 At_21_30 At_21_29 At_21_28 At_21_27 At_21_26 At_21_25 At_21_24 At_21_23 At_21_22 At_21_21 At_21_20 At_21_19 At_21_18 At_21_17 At_21_16 At_21_15 At_21_14 At_21_13 At_22_29 At_22_28 At_22_27 At_22_26 At_22_25 At_22_24 At_22_23 At_22_21 At_22_19 At_22_18 At_22_17 At_22_16 At_22_15 At_22_14 At_22_13 dice_1 dice_3 dice_5 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4Actions:
 Name: Move_from_0_27_to_0_26
 Pre: dice_1 At_0_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_0_26 dice_1 dice_3 dice_5
@@ -1285,63 +1285,63 @@ Pre: dice_5 At_3_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_3_12 dice_1 dice_3 dice_5
 delete: At_3_17 dice_5
 Name: Move_from_3_16_to_3_17
-Pre: dice_1 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_1 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_17 dice_1 dice_3 dice_5
 delete: At_3_16 dice_1
 Name: Move_from_3_16_to_3_15
-Pre: dice_1 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_1 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_15 dice_1 dice_3 dice_5
 delete: At_3_16 dice_1
 Name: Move_from_3_16_to_4_16
-Pre: dice_1 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_1 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_4_16 dice_1 dice_3 dice_5
 delete: At_3_16 dice_1
 Name: Move_from_3_16_to_3_19
-Pre: dice_3 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_3 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_19 dice_1 dice_3 dice_5
 delete: At_3_16 dice_3
 Name: Move_from_3_16_to_4_18
-Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_4_18 dice_1 dice_3 dice_5
 delete: At_3_16 dice_5
 Name: Move_from_3_16_to_5_17
-Pre: dice_3 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_3 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_5_17 dice_1 dice_3 dice_5
 delete: At_3_16 dice_3
 Name: Move_from_3_16_to_6_16
-Pre: dice_3 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_3 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_16 dice_1 dice_3 dice_5
 delete: At_3_16 dice_3
 Name: Move_from_3_16_to_3_13
-Pre: dice_3 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_3 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_13 dice_1 dice_3 dice_5
 delete: At_3_16 dice_3
 Name: Move_from_3_16_to_7_17
-Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_17 dice_1 dice_3 dice_5
 delete: At_3_16 dice_5 not_need_pay_7_17
 Name: Move_from_3_16_to_7_15
-Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_15 dice_1 dice_3 dice_5
 delete: At_3_16 dice_5
 Name: Move_from_3_16_to_6_18
-Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_18 dice_1 dice_3 dice_5
 delete: At_3_16 dice_5
 Name: Move_from_3_16_to_4_20
-Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_4_20 dice_1 dice_3 dice_5
 delete: At_3_16 dice_5
 Name: Move_from_3_16_to_2_20
-Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_2_20 dice_1 dice_3 dice_5
 delete: At_3_16 dice_5
 Name: Move_from_3_16_to_2_12
-Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_2_12 dice_1 dice_3 dice_5
 delete: At_3_16 dice_5
 Name: Move_from_3_16_to_3_11
-Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16
+Pre: dice_5 At_3_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_3_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_11 dice_1 dice_3 dice_5
 delete: At_3_16 dice_5
 Name: Move_from_3_15_to_3_16
@@ -3981,83 +3981,83 @@ Pre: dice_5 At_6_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_3_13 dice_1 dice_3 dice_5
 delete: At_6_13 dice_5
 Name: Move_from_6_11_to_6_11
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_11 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5 not_need_pay_6_11
 Name: Move_from_6_11_to_7_11
-Pre: dice_1 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_1 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_11 dice_1 dice_3 dice_5
 delete: At_6_11 dice_1
 Name: Move_from_6_11_to_5_11
-Pre: dice_1 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_1 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_5_11 dice_1 dice_3 dice_5
 delete: At_6_11 dice_1
 Name: Move_from_6_11_to_4_10
-Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_4_10 dice_1 dice_3 dice_5
 delete: At_6_11 dice_3
 Name: Move_from_6_11_to_3_11
-Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_11 dice_1 dice_3 dice_5
 delete: At_6_11 dice_3
 Name: Move_from_6_11_to_7_13
-Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_13 dice_1 dice_3 dice_5
 delete: At_6_11 dice_3
 Name: Move_from_6_11_to_7_9
-Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_9 dice_1 dice_3 dice_5
 delete: At_6_11 dice_3
 Name: Move_from_6_11_to_8_10
-Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_10 dice_1 dice_3 dice_5
 delete: At_6_11 dice_3
 Name: Move_from_6_11_to_5_13
-Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_3 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_5_13 dice_1 dice_3 dice_5
 delete: At_6_11 dice_3 Not_Stop_1
 Name: Move_from_6_11_to_4_8
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_4_8 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_2_12
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_2_12 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_3_13
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_13 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_3_9
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_9 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_1_11
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_1_11 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_7_15
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_15 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_8_8
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_8 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_7_7
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_7 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_9_9
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_9 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_7_10
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_10 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5
 Name: Move_from_6_11_to_6_8
-Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11
+Pre: dice_5 At_6_11 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_6_11 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_8 dice_1 dice_3 dice_5
 delete: At_6_11 dice_5 not_needs_Certificate.GLASSES
 Name: Move_from_6_8_to_6_8
@@ -4313,67 +4313,67 @@ Pre: dice_5 At_7_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_12_25 dice_1 dice_3 dice_5
 delete: At_7_25 dice_5
 Name: Move_from_7_24_to_7_24
-Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_24 dice_1 dice_3 dice_5
 delete: At_7_24 dice_3 not_need_pay_7_24
 Name: Move_from_7_24_to_7_25
-Pre: dice_1 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_1 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_25 dice_1 dice_3 dice_5
 delete: At_7_24 dice_1
 Name: Move_from_7_24_to_7_23
-Pre: dice_1 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_1 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_23 dice_1 dice_3 dice_5
 delete: At_7_24 dice_1
 Name: Move_from_7_24_to_7_21
-Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_21 dice_1 dice_3 dice_5
 delete: At_7_24 dice_3
 Name: Move_from_7_24_to_6_22
-Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_22 dice_1 dice_3 dice_5
 delete: At_7_24 dice_3 Not_Stop_1
 Name: Move_from_7_24_to_9_25
-Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_25 dice_1 dice_3 dice_5
 delete: At_7_24 dice_3 not_need_pay_9_25
 Name: Move_from_7_24_to_5_25
-Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_5_25 dice_1 dice_3 dice_5
 delete: At_7_24 dice_3
 Name: Move_from_7_24_to_6_26
-Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_3 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_26 dice_1 dice_3 dice_5
 delete: At_7_24 dice_3
 Name: Move_from_7_24_to_8_20
-Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_20 dice_1 dice_3 dice_5
 delete: At_7_24 dice_5
 Name: Move_from_7_24_to_9_21
-Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_21 dice_1 dice_3 dice_5
 delete: At_7_24 dice_5
 Name: Move_from_7_24_to_7_19
-Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_19 dice_1 dice_3 dice_5
 delete: At_7_24 dice_5
 Name: Move_from_7_24_to_6_20
-Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_20 dice_1 dice_3 dice_5
 delete: At_7_24 dice_5
 Name: Move_from_7_24_to_11_25
-Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_25 dice_1 dice_3 dice_5
 delete: At_7_24 dice_5
 Name: Move_from_7_24_to_6_28
-Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_28 dice_1 dice_3 dice_5
 delete: At_7_24 dice_5
 Name: Move_from_7_24_to_3_25
-Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_25 dice_1 dice_3 dice_5
 delete: At_7_24 dice_5
 Name: Move_from_7_24_to_6_24
-Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24
+Pre: dice_5 At_7_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_24 dice_1 dice_3 dice_5
 delete: At_7_24 dice_5
 Name: Move_from_7_23_to_7_24
@@ -4797,75 +4797,75 @@ Pre: dice_5 At_7_18 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_6_22 dice_1 dice_3 dice_5
 delete: At_7_18 dice_5 Not_Stop_1
 Name: Move_from_7_17_to_7_18
-Pre: dice_1 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_1 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_18 dice_1 dice_3 dice_5
 delete: At_7_17 dice_1
 Name: Move_from_7_17_to_7_16
-Pre: dice_1 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_1 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_16 dice_1 dice_3 dice_5
 delete: At_7_17 dice_1
 Name: Move_from_7_17_to_8_17
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_17 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_7_20
-Pre: dice_3 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_3 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_20 dice_1 dice_3 dice_5
 delete: At_7_17 dice_3
 Name: Move_from_7_17_to_5_18
-Pre: dice_3 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_3 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_5_18 dice_1 dice_3 dice_5
 delete: At_7_17 dice_3
 Name: Move_from_7_17_to_5_16
-Pre: dice_3 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_3 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_5_16 dice_1 dice_3 dice_5
 delete: At_7_17 dice_3
 Name: Move_from_7_17_to_7_14
-Pre: dice_3 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_3 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_14 dice_1 dice_3 dice_5
 delete: At_7_17 dice_3
 Name: Move_from_7_17_to_10_17
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_17 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_9_16
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_16 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_8_13
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_13 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_3_16
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_16 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5 not_need_pay_3_16
 Name: Move_from_7_17_to_7_22
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_22 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_8_21
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_21 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_5_20
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_5_20 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_3_18
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_3_18 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_7_12
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_12 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_12_17
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_17 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_17_to_11_16
-Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17
+Pre: dice_5 At_7_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_16 dice_1 dice_3 dice_5
 delete: At_7_17 dice_5
 Name: Move_from_7_16_to_7_16
@@ -6593,67 +6593,67 @@ Pre: dice_5 At_8_2 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_8_2
 Add: At_10_0 dice_1 dice_3 dice_5
 delete: At_8_2 dice_5
 Name: Move_from_9_30_to_10_30
-Pre: dice_1 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30
+Pre: dice_1 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_30 dice_1 dice_3 dice_5
 delete: At_9_30 dice_1
 Name: Move_from_9_30_to_8_30
-Pre: dice_1 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30
+Pre: dice_1 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_30 dice_1 dice_3 dice_5
 delete: At_9_30 dice_1
 Name: Move_from_9_30_to_12_30
-Pre: dice_3 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30
+Pre: dice_3 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_30 dice_1 dice_3 dice_5
 delete: At_9_30 dice_3
 Name: Move_from_9_30_to_6_30
-Pre: dice_3 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30
+Pre: dice_3 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_30 dice_1 dice_3 dice_5
 delete: At_9_30 dice_3
 Name: Move_from_9_30_to_5_29
-Pre: dice_5 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30
+Pre: dice_5 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30 not_owe_100 not_owe_200 not_owe_300
 Add: At_5_29 dice_1 dice_3 dice_5
 delete: At_9_30 dice_5
 Name: Move_from_9_30_to_12_28
-Pre: dice_5 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30
+Pre: dice_5 At_9_30 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_30 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_28 dice_1 dice_3 dice_5
 delete: At_9_30 dice_5
 Name: Move_from_9_28_to_10_28
-Pre: dice_1 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_1 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_28 dice_1 dice_3 dice_5
 delete: At_9_28 dice_1
 Name: Move_from_9_28_to_8_28
-Pre: dice_1 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_1 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_28 dice_1 dice_3 dice_5
 delete: At_9_28 dice_1
 Name: Move_from_9_28_to_12_28
-Pre: dice_3 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_3 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_28 dice_1 dice_3 dice_5
 delete: At_9_28 dice_3
 Name: Move_from_9_28_to_6_28
-Pre: dice_3 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_3 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_28 dice_1 dice_3 dice_5
 delete: At_9_28 dice_3
 Name: Move_from_9_28_to_12_30
-Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_30 dice_1 dice_3 dice_5
 delete: At_9_28 dice_5
 Name: Move_from_9_28_to_12_26
-Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_26 dice_1 dice_3 dice_5
 delete: At_9_28 dice_5
 Name: Move_from_9_28_to_13_27
-Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_27 dice_1 dice_3 dice_5
 delete: At_9_28 dice_5 not_need_pay_13_27
 Name: Move_from_9_28_to_6_26
-Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_26 dice_1 dice_3 dice_5
 delete: At_9_28 dice_5
 Name: Move_from_9_28_to_4_28
-Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_4_28 dice_1 dice_3 dice_5
 delete: At_9_28 dice_5
 Name: Move_from_9_28_to_5_29
-Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28
+Pre: dice_5 At_9_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_28 not_owe_100 not_owe_200 not_owe_300
 Add: At_5_29 dice_1 dice_3 dice_5
 delete: At_9_28 dice_5
 Name: Move_from_9_27_to_9_28
@@ -6721,63 +6721,63 @@ Pre: dice_5 At_7_26 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_7_2
 Add: At_12_28 dice_1 dice_3 dice_5
 delete: At_7_26 dice_5
 Name: Move_from_9_25_to_9_26
-Pre: dice_1 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_1 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_26 dice_1 dice_3 dice_5
 delete: At_9_25 dice_1
 Name: Move_from_9_25_to_10_25
-Pre: dice_1 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_1 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_25 dice_1 dice_3 dice_5
 delete: At_9_25 dice_1
 Name: Move_from_9_25_to_8_25
-Pre: dice_1 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_1 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_25 dice_1 dice_3 dice_5
 delete: At_9_25 dice_1
 Name: Move_from_9_25_to_6_25
-Pre: dice_3 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_3 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_25 dice_1 dice_3 dice_5
 delete: At_9_25 dice_3
 Name: Move_from_9_25_to_12_25
-Pre: dice_3 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_3 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_25 dice_1 dice_3 dice_5
 delete: At_9_25 dice_3
 Name: Move_from_9_25_to_9_28
-Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_28 dice_1 dice_3 dice_5
 delete: At_9_25 dice_5 not_need_pay_9_28
 Name: Move_from_9_25_to_7_24
-Pre: dice_3 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_3 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_24 dice_1 dice_3 dice_5
 delete: At_9_25 dice_3 not_need_pay_7_24
 Name: Move_from_9_25_to_13_24
-Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_24 dice_1 dice_3 dice_5
 delete: At_9_25 dice_5
 Name: Move_from_9_25_to_7_22
-Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_22 dice_1 dice_3 dice_5
 delete: At_9_25 dice_5
 Name: Move_from_9_25_to_6_27
-Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_27 dice_1 dice_3 dice_5
 delete: At_9_25 dice_5
 Name: Move_from_9_25_to_11_28
-Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_28 dice_1 dice_3 dice_5
 delete: At_9_25 dice_5
 Name: Move_from_9_25_to_7_28
-Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_28 dice_1 dice_3 dice_5
 delete: At_9_25 dice_5
 Name: Move_from_9_25_to_12_23
-Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_23 dice_1 dice_3 dice_5
 delete: At_9_25 dice_5
 Name: Move_from_9_25_to_12_27
-Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_27 dice_1 dice_3 dice_5
 delete: At_9_25 dice_5
 Name: Move_from_9_25_to_4_25
-Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25
+Pre: dice_5 At_9_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_25 not_owe_100 not_owe_200 not_owe_300
 Add: At_4_25 dice_1 dice_3 dice_5
 delete: At_9_25 dice_5
 Name: Move_from_9_21_to_10_21
@@ -7153,63 +7153,63 @@ Pre: dice_5 At_9_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_8_3 dice_1 dice_3 dice_5
 delete: At_9_6 dice_5
 Name: Move_from_9_4_to_8_4
-Pre: dice_1 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_1 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_4 dice_1 dice_3 dice_5
 delete: At_9_4 dice_1
 Name: Move_from_9_4_to_10_4
-Pre: dice_1 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_1 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_4 dice_1 dice_3 dice_5
 delete: At_9_4 dice_1
 Name: Move_from_9_4_to_6_4
-Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_4 dice_1 dice_3 dice_5
 delete: At_9_4 dice_3
 Name: Move_from_9_4_to_7_5
-Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_5 dice_1 dice_3 dice_5
 delete: At_9_4 dice_3
 Name: Move_from_9_4_to_7_3
-Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_3 dice_1 dice_3 dice_5
 delete: At_9_4 dice_3
 Name: Move_from_9_4_to_10_2
-Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_2 dice_1 dice_3 dice_5
 delete: At_9_4 dice_3
 Name: Move_from_9_4_to_12_4
-Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_3 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_4 dice_1 dice_3 dice_5
 delete: At_9_4 dice_3
 Name: Move_from_9_4_to_9_3
-Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_3 dice_1 dice_3 dice_5
 delete: At_9_4 dice_5
 Name: Move_from_9_4_to_14_4
-Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_4 dice_1 dice_3 dice_5
 delete: At_9_4 dice_5
 Name: Move_from_9_4_to_7_7
-Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_7 dice_1 dice_3 dice_5
 delete: At_9_4 dice_5
 Name: Move_from_9_4_to_7_1
-Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_1 dice_1 dice_3 dice_5
 delete: At_9_4 dice_5
 Name: Move_from_9_4_to_4_4
-Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_4_4 dice_1 dice_3 dice_5
 delete: At_9_4 dice_5
 Name: Move_from_9_4_to_10_0
-Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_0 dice_1 dice_3 dice_5
 delete: At_9_4 dice_5
 Name: Move_from_9_4_to_12_6
-Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_6 dice_1 dice_3 dice_5
 delete: At_9_4 dice_5 not_need_pay_12_6
 Name: Move_from_9_4_to_12_2
-Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4
+Pre: dice_5 At_9_4 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_9_4 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_2 dice_1 dice_3 dice_5
 delete: At_9_4 dice_5
 Name: Move_from_9_3_to_10_3
@@ -7553,51 +7553,51 @@ Pre: dice_5 At_10_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_13_18 dice_1 dice_3 dice_5
 delete: At_10_16 dice_5
 Name: Move_from_10_15_to_11_15
-Pre: dice_1 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_1 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_15 dice_1 dice_3 dice_5
 delete: At_10_15 dice_1
 Name: Move_from_10_15_to_10_16
-Pre: dice_1 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_1 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_16 dice_1 dice_3 dice_5
 delete: At_10_15 dice_1
 Name: Move_from_10_15_to_12_14
-Pre: dice_3 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_3 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_14 dice_1 dice_3 dice_5
 delete: At_10_15 dice_3
 Name: Move_from_10_15_to_11_17
-Pre: dice_3 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_3 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_17 dice_1 dice_3 dice_5
 delete: At_10_15 dice_3
 Name: Move_from_10_15_to_8_16
-Pre: dice_3 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_3 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_16 dice_1 dice_3 dice_5
 delete: At_10_15 dice_3
 Name: Move_from_10_15_to_9_17
-Pre: dice_3 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_3 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_17 dice_1 dice_3 dice_5
 delete: At_10_15 dice_3
 Name: Move_from_10_15_to_13_13
-Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_13 dice_1 dice_3 dice_5
 delete: At_10_15 dice_5
 Name: Move_from_10_15_to_12_12
-Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_12 dice_1 dice_3 dice_5
 delete: At_10_15 dice_5
 Name: Move_from_10_15_to_12_18
-Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_18 dice_1 dice_3 dice_5
 delete: At_10_15 dice_5
 Name: Move_from_10_15_to_7_17
-Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_17 dice_1 dice_3 dice_5
 delete: At_10_15 dice_5 not_need_pay_7_17
 Name: Move_from_10_15_to_6_16
-Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_16 dice_1 dice_3 dice_5
 delete: At_10_15 dice_5
 Name: Move_from_10_15_to_7_15
-Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15
+Pre: dice_5 At_10_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_10_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_15 dice_1 dice_3 dice_5
 delete: At_10_15 dice_5
 Name: Move_from_10_12_to_9_12
@@ -8397,35 +8397,35 @@ Pre: dice_5 At_11_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_8_17 dice_1 dice_3 dice_5
 delete: At_11_15 dice_5
 Name: Move_from_11_12_to_12_12
-Pre: dice_1 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12
+Pre: dice_1 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_12 dice_1 dice_3 dice_5
 delete: At_11_12 dice_1
 Name: Move_from_11_12_to_10_12
-Pre: dice_1 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12
+Pre: dice_1 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_12 dice_1 dice_3 dice_5
 delete: At_11_12 dice_1
 Name: Move_from_11_12_to_12_14
-Pre: dice_3 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12
+Pre: dice_3 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_14 dice_1 dice_3 dice_5
 delete: At_11_12 dice_3
 Name: Move_from_11_12_to_12_10
-Pre: dice_3 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12
+Pre: dice_3 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_10 dice_1 dice_3 dice_5
 delete: At_11_12 dice_3
 Name: Move_from_11_12_to_11_15
-Pre: dice_5 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12
+Pre: dice_5 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_15 dice_1 dice_3 dice_5
 delete: At_11_12 dice_5
 Name: Move_from_11_12_to_15_13
-Pre: dice_5 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12
+Pre: dice_5 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_13 dice_1 dice_3 dice_5
 delete: At_11_12 dice_5
 Name: Move_from_11_12_to_11_9
-Pre: dice_5 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12
+Pre: dice_5 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_9 dice_1 dice_3 dice_5
 delete: At_11_12 dice_5
 Name: Move_from_11_12_to_12_8
-Pre: dice_5 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12
+Pre: dice_5 At_11_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_12 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_8 dice_1 dice_3 dice_5
 delete: At_11_12 dice_5
 Name: Move_from_11_9_to_12_9
@@ -8489,71 +8489,71 @@ Pre: dice_5 At_11_9 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_12_5 dice_1 dice_3 dice_5
 delete: At_11_9 dice_5
 Name: Move_from_11_8_to_11_9
-Pre: dice_1 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_1 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_9 dice_1 dice_3 dice_5
 delete: At_11_8 dice_1
 Name: Move_from_11_8_to_12_8
-Pre: dice_1 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_1 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_8 dice_1 dice_3 dice_5
 delete: At_11_8 dice_1
 Name: Move_from_11_8_to_10_8
-Pre: dice_1 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_1 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_8 dice_1 dice_3 dice_5
 delete: At_11_8 dice_1
 Name: Move_from_11_8_to_8_8
-Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_8 dice_1 dice_3 dice_5
 delete: At_11_8 dice_3
 Name: Move_from_11_8_to_14_8
-Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_8 dice_1 dice_3 dice_5
 delete: At_11_8 dice_3
 Name: Move_from_11_8_to_12_10
-Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_10 dice_1 dice_3 dice_5
 delete: At_11_8 dice_3
 Name: Move_from_11_8_to_12_6
-Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_6 dice_1 dice_3 dice_5
 delete: At_11_8 dice_3 not_need_pay_12_6
 Name: Move_from_11_8_to_9_9
-Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_3 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_9 dice_1 dice_3 dice_5
 delete: At_11_8 dice_3
 Name: Move_from_11_8_to_13_9
-Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_9 dice_1 dice_3 dice_5
 delete: At_11_8 dice_5 Not_Stop_1
 Name: Move_from_11_8_to_6_8
-Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_6_8 dice_1 dice_3 dice_5
 delete: At_11_8 dice_5 not_needs_Certificate.GLASSES
 Name: Move_from_11_8_to_7_9
-Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_9 dice_1 dice_3 dice_5
 delete: At_11_8 dice_5
 Name: Move_from_11_8_to_7_7
-Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_7_7 dice_1 dice_3 dice_5
 delete: At_11_8 dice_5
 Name: Move_from_11_8_to_8_10
-Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_10 dice_1 dice_3 dice_5
 delete: At_11_8 dice_5
 Name: Move_from_11_8_to_16_8
-Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_8 dice_1 dice_3 dice_5
 delete: At_11_8 dice_5
 Name: Move_from_11_8_to_14_6
-Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_6 dice_1 dice_3 dice_5
 delete: At_11_8 dice_5
 Name: Move_from_11_8_to_12_12
-Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_12 dice_1 dice_3 dice_5
 delete: At_11_8 dice_5
 Name: Move_from_11_8_to_12_4
-Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8
+Pre: dice_5 At_11_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_11_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_4 dice_1 dice_3 dice_5
 delete: At_11_8 dice_5
 Name: Move_from_11_4_to_12_4
@@ -9245,71 +9245,71 @@ Pre: dice_5 At_12_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_8_20 dice_1 dice_3 dice_5
 delete: At_12_21 dice_5
 Name: Move_from_12_20_to_12_21
-Pre: dice_1 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_1 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_21 dice_1 dice_3 dice_5
 delete: At_12_20 dice_1
 Name: Move_from_12_20_to_13_20
-Pre: dice_1 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_1 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_20 dice_1 dice_3 dice_5
 delete: At_12_20 dice_1
 Name: Move_from_12_20_to_12_19
-Pre: dice_1 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_1 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_19 dice_1 dice_3 dice_5
 delete: At_12_20 dice_1
 Name: Move_from_12_20_to_12_23
-Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_23 dice_1 dice_3 dice_5
 delete: At_12_20 dice_3
 Name: Move_from_12_20_to_15_20
-Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_20 dice_1 dice_3 dice_5
 delete: At_12_20 dice_3
 Name: Move_from_12_20_to_14_21
-Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_21 dice_1 dice_3 dice_5
 delete: At_12_20 dice_3 not_need_pay_14_21
 Name: Move_from_12_20_to_13_18
-Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_18 dice_1 dice_3 dice_5
 delete: At_12_20 dice_3
 Name: Move_from_12_20_to_12_17
-Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_17 dice_1 dice_3 dice_5
 delete: At_12_20 dice_3
 Name: Move_from_12_20_to_10_21
-Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_3 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_21 dice_1 dice_3 dice_5
 delete: At_12_20 dice_3
 Name: Move_from_12_20_to_12_25
-Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_25 dice_1 dice_3 dice_5
 delete: At_12_20 dice_5
 Name: Move_from_12_20_to_13_24
-Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_24 dice_1 dice_3 dice_5
 delete: At_12_20 dice_5
 Name: Move_from_12_20_to_14_23
-Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_23 dice_1 dice_3 dice_5
 delete: At_12_20 dice_5
 Name: Move_from_12_20_to_17_20
-Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_20 dice_1 dice_3 dice_5
 delete: At_12_20 dice_5
 Name: Move_from_12_20_to_15_18
-Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_18 dice_1 dice_3 dice_5
 delete: At_12_20 dice_5
 Name: Move_from_12_20_to_11_16
-Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_16 dice_1 dice_3 dice_5
 delete: At_12_20 dice_5
 Name: Move_from_12_20_to_10_17
-Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_17 dice_1 dice_3 dice_5
 delete: At_12_20 dice_5
 Name: Move_from_12_20_to_8_21
-Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20
+Pre: dice_5 At_12_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_20 not_owe_100 not_owe_200 not_owe_300
 Add: At_8_21 dice_1 dice_3 dice_5
 delete: At_12_20 dice_5
 Name: Move_from_12_19_to_12_20
@@ -10061,71 +10061,71 @@ Pre: dice_5 At_12_7 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_14_6 dice_1 dice_3 dice_5
 delete: At_12_7 dice_5
 Name: Move_from_12_6_to_12_7
-Pre: dice_1 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_1 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_7 dice_1 dice_3 dice_5
 delete: At_12_6 dice_1
 Name: Move_from_12_6_to_12_5
-Pre: dice_1 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_1 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_5 dice_1 dice_3 dice_5
 delete: At_12_6 dice_1
 Name: Move_from_12_6_to_13_8
-Pre: dice_3 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_3 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_8 dice_1 dice_3 dice_5
 delete: At_12_6 dice_3
 Name: Move_from_12_6_to_11_8
-Pre: dice_3 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_3 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_8 dice_1 dice_3 dice_5
 delete: At_12_6 dice_3 not_need_pay_11_8
 Name: Move_from_12_6_to_13_4
-Pre: dice_3 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_3 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_4 dice_1 dice_3 dice_5
 delete: At_12_6 dice_3
 Name: Move_from_12_6_to_11_4
-Pre: dice_3 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_3 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_4 dice_1 dice_3 dice_5
 delete: At_12_6 dice_3
 Name: Move_from_12_6_to_14_9
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_9 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5 Not_Stop_1
 Name: Move_from_12_6_to_14_7
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_7 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5
 Name: Move_from_12_6_to_12_11
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_11 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5
 Name: Move_from_12_6_to_15_8
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_8 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5 not_need_pay_15_8
 Name: Move_from_12_6_to_14_5
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_5 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5
 Name: Move_from_12_6_to_15_4
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_4 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5
 Name: Move_from_12_6_to_12_1
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_1 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5
 Name: Move_from_12_6_to_10_3
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_3 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5
 Name: Move_from_12_6_to_9_4
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_4 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5 not_need_pay_9_4
 Name: Move_from_12_6_to_9_8
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_8 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5
 Name: Move_from_12_6_to_10_9
-Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6
+Pre: dice_5 At_12_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_12_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_9 dice_1 dice_3 dice_5
 delete: At_12_6 dice_5
 Name: Move_from_12_5_to_12_6
@@ -10493,67 +10493,67 @@ Pre: dice_5 At_13_28 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_15_29 dice_1 dice_3 dice_5
 delete: At_13_28 dice_5 not_need_pay_15_29
 Name: Move_from_13_27_to_13_27
-Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_27 dice_1 dice_3 dice_5
 delete: At_13_27 dice_5 not_need_pay_13_27
 Name: Move_from_13_27_to_14_27
-Pre: dice_1 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_1 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_27 dice_1 dice_3 dice_5
 delete: At_13_27 dice_1
 Name: Move_from_13_27_to_12_27
-Pre: dice_1 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_1 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_27 dice_1 dice_3 dice_5
 delete: At_13_27 dice_1
 Name: Move_from_13_27_to_15_28
-Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_28 dice_1 dice_3 dice_5
 delete: At_13_27 dice_3
 Name: Move_from_13_27_to_16_27
-Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_27 dice_1 dice_3 dice_5
 delete: At_13_27 dice_3
 Name: Move_from_13_27_to_11_28
-Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_28 dice_1 dice_3 dice_5
 delete: At_13_27 dice_3
 Name: Move_from_13_27_to_12_29
-Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_29 dice_1 dice_3 dice_5
 delete: At_13_27 dice_3
 Name: Move_from_13_27_to_12_25
-Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_3 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_25 dice_1 dice_3 dice_5
 delete: At_13_27 dice_3
 Name: Move_from_13_27_to_11_30
-Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_30 dice_1 dice_3 dice_5
 delete: At_13_27 dice_5
 Name: Move_from_13_27_to_9_28
-Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_9_28 dice_1 dice_3 dice_5
 delete: At_13_27 dice_5 not_need_pay_9_28
 Name: Move_from_13_27_to_13_28
-Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_28 dice_1 dice_3 dice_5
 delete: At_13_27 dice_5 Not_Stop_1
 Name: Move_from_13_27_to_18_27
-Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_27 dice_1 dice_3 dice_5
 delete: At_13_27 dice_5
 Name: Move_from_13_27_to_17_26
-Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_26 dice_1 dice_3 dice_5
 delete: At_13_27 dice_5
 Name: Move_from_13_27_to_13_24
-Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_24 dice_1 dice_3 dice_5
 delete: At_13_27 dice_5
 Name: Move_from_13_27_to_12_23
-Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_23 dice_1 dice_3 dice_5
 delete: At_13_27 dice_5
 Name: Move_from_13_27_to_10_25
-Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27
+Pre: dice_5 At_13_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_13_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_25 dice_1 dice_3 dice_5
 delete: At_13_27 dice_5
 Name: Move_from_13_24_to_14_24
@@ -11233,51 +11233,51 @@ Pre: dice_5 At_14_22 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_12_19 dice_1 dice_3 dice_5
 delete: At_14_22 dice_5
 Name: Move_from_14_21_to_14_20
-Pre: dice_1 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_1 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_20 dice_1 dice_3 dice_5
 delete: At_14_21 dice_1
 Name: Move_from_14_21_to_14_22
-Pre: dice_1 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_1 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_22 dice_1 dice_3 dice_5
 delete: At_14_21 dice_1
 Name: Move_from_14_21_to_14_24
-Pre: dice_3 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_3 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_24 dice_1 dice_3 dice_5
 delete: At_14_21 dice_3
 Name: Move_from_14_21_to_16_20
-Pre: dice_3 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_3 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_20 dice_1 dice_3 dice_5
 delete: At_14_21 dice_3
 Name: Move_from_14_21_to_12_20
-Pre: dice_3 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_3 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_20 dice_1 dice_3 dice_5
 delete: At_14_21 dice_3 not_need_pay_12_20
 Name: Move_from_14_21_to_16_24
-Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_24 dice_1 dice_3 dice_5
 delete: At_14_21 dice_5
 Name: Move_from_14_21_to_12_24
-Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_24 dice_1 dice_3 dice_5
 delete: At_14_21 dice_5
 Name: Move_from_14_21_to_17_21
-Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_21 dice_1 dice_3 dice_5
 delete: At_14_21 dice_5
 Name: Move_from_14_21_to_17_19
-Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_19 dice_1 dice_3 dice_5
 delete: At_14_21 dice_5
 Name: Move_from_14_21_to_12_22
-Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_22 dice_1 dice_3 dice_5
 delete: At_14_21 dice_5
 Name: Move_from_14_21_to_11_21
-Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_21 dice_1 dice_3 dice_5
 delete: At_14_21 dice_5
 Name: Move_from_14_21_to_12_18
-Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21
+Pre: dice_5 At_14_21 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_14_21 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_18 dice_1 dice_3 dice_5
 delete: At_14_21 dice_5
 Name: Move_from_14_20_to_14_21
@@ -12329,59 +12329,59 @@ Pre: dice_5 At_15_12 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_17_9 dice_1 dice_3 dice_5
 delete: At_15_12 dice_5
 Name: Move_from_15_8_to_16_8
-Pre: dice_1 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_1 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_8 dice_1 dice_3 dice_5
 delete: At_15_8 dice_1
 Name: Move_from_15_8_to_14_8
-Pre: dice_1 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_1 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_8 dice_1 dice_3 dice_5
 delete: At_15_8 dice_1
 Name: Move_from_15_8_to_17_9
-Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_9 dice_1 dice_3 dice_5
 delete: At_15_8 dice_3
 Name: Move_from_15_8_to_17_7
-Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_7 dice_1 dice_3 dice_5
 delete: At_15_8 dice_3
 Name: Move_from_15_8_to_14_6
-Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_6 dice_1 dice_3 dice_5
 delete: At_15_8 dice_3
 Name: Move_from_15_8_to_12_8
-Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_8 dice_1 dice_3 dice_5
 delete: At_15_8 dice_3
 Name: Move_from_15_8_to_13_9
-Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_3 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_13_9 dice_1 dice_3 dice_5
 delete: At_15_8 dice_3 Not_Stop_1
 Name: Move_from_15_8_to_17_11
-Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_11 dice_1 dice_3 dice_5
 delete: At_15_8 dice_5
 Name: Move_from_15_8_to_17_5
-Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_5 dice_1 dice_3 dice_5
 delete: At_15_8 dice_5
 Name: Move_from_15_8_to_14_4
-Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_4 dice_1 dice_3 dice_5
 delete: At_15_8 dice_5
 Name: Move_from_15_8_to_12_6
-Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_6 dice_1 dice_3 dice_5
 delete: At_15_8 dice_5 not_need_pay_12_6
 Name: Move_from_15_8_to_10_8
-Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_10_8 dice_1 dice_3 dice_5
 delete: At_15_8 dice_5
 Name: Move_from_15_8_to_11_9
-Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_11_9 dice_1 dice_3 dice_5
 delete: At_15_8 dice_5
 Name: Move_from_15_8_to_12_10
-Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8
+Pre: dice_5 At_15_8 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_15_8 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_10 dice_1 dice_3 dice_5
 delete: At_15_8 dice_5
 Name: Move_from_15_4_to_16_4
@@ -12757,59 +12757,59 @@ Pre: dice_5 At_16_20 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_12_19 dice_1 dice_3 dice_5
 delete: At_16_20 dice_5
 Name: Move_from_16_17_to_17_17
-Pre: dice_1 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_1 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_17 dice_1 dice_3 dice_5
 delete: At_16_17 dice_1
 Name: Move_from_16_17_to_15_17
-Pre: dice_1 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_1 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_17 dice_1 dice_3 dice_5
 delete: At_16_17 dice_1
 Name: Move_from_16_17_to_17_19
-Pre: dice_3 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_3 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_19 dice_1 dice_3 dice_5
 delete: At_16_17 dice_3
 Name: Move_from_16_17_to_17_15
-Pre: dice_3 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_3 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_15 dice_1 dice_3 dice_5
 delete: At_16_17 dice_3 not_need_pay_17_15
 Name: Move_from_16_17_to_18_16
-Pre: dice_3 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_3 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_16 dice_1 dice_3 dice_5
 delete: At_16_17 dice_3
 Name: Move_from_16_17_to_14_18
-Pre: dice_3 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_3 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_18 dice_1 dice_3 dice_5
 delete: At_16_17 dice_3
 Name: Move_from_16_17_to_19_19
-Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_19 dice_1 dice_3 dice_5
 delete: At_16_17 dice_5
 Name: Move_from_16_17_to_17_21
-Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_21 dice_1 dice_3 dice_5
 delete: At_16_17 dice_5
 Name: Move_from_16_17_to_16_20
-Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_20 dice_1 dice_3 dice_5
 delete: At_16_17 dice_5
 Name: Move_from_16_17_to_18_18
-Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_18 dice_1 dice_3 dice_5
 delete: At_16_17 dice_5 Not_Stop_1
 Name: Move_from_16_17_to_19_15
-Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_15 dice_1 dice_3 dice_5
 delete: At_16_17 dice_5
 Name: Move_from_16_17_to_17_13
-Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_13 dice_1 dice_3 dice_5
 delete: At_16_17 dice_5
 Name: Move_from_16_17_to_15_15
-Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_15 dice_1 dice_3 dice_5
 delete: At_16_17 dice_5
 Name: Move_from_16_17_to_12_18
-Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17
+Pre: dice_5 At_16_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_16_17 not_owe_100 not_owe_200 not_owe_300
 Add: At_12_18 dice_1 dice_3 dice_5
 delete: At_16_17 dice_5
 Name: Move_from_16_15_to_17_15
@@ -14045,95 +14045,95 @@ Pre: dice_5 At_17_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_14_18 dice_1 dice_3 dice_5
 delete: At_17_16 dice_5
 Name: Move_from_17_15_to_17_15
-Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_15 dice_1 dice_3 dice_5
 delete: At_17_15 dice_3 not_need_pay_17_15
 Name: Move_from_17_15_to_18_15
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_15 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_15_to_16_15
-Pre: dice_1 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_1 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_15 dice_1 dice_3 dice_5
 delete: At_17_15 dice_1
 Name: Move_from_17_15_to_17_16
-Pre: dice_1 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_1 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_16 dice_1 dice_3 dice_5
 delete: At_17_15 dice_1
 Name: Move_from_17_15_to_17_14
-Pre: dice_1 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_1 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_14 dice_1 dice_3 dice_5
 delete: At_17_15 dice_1
 Name: Move_from_17_15_to_20_15
-Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_20_15 dice_1 dice_3 dice_5
 delete: At_17_15 dice_3
 Name: Move_from_17_15_to_15_14
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_14 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_15_to_18_13
-Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_13 dice_1 dice_3 dice_5
 delete: At_17_15 dice_3
 Name: Move_from_17_15_to_17_12
-Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_12 dice_1 dice_3 dice_5
 delete: At_17_15 dice_3
 Name: Move_from_17_15_to_16_13
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_13 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_15_to_17_18
-Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_18 dice_1 dice_3 dice_5
 delete: At_17_15 dice_3
 Name: Move_from_17_15_to_16_17
-Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_17 dice_1 dice_3 dice_5
 delete: At_17_15 dice_3 not_need_pay_16_17
 Name: Move_from_17_15_to_18_17
-Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_3 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_17 dice_1 dice_3 dice_5
 delete: At_17_15 dice_3
 Name: Move_from_17_15_to_21_14
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_14 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_15_to_21_16
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_16 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5 not_need_pay_21_16
 Name: Move_from_17_15_to_20_13
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_20_13 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5 not_need_pay_20_13
 Name: Move_from_17_15_to_17_10
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_10 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_15_to_15_12
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_12 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5 Not_Stop_1
 Name: Move_from_17_15_to_14_13
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_13 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_15_to_17_20
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_20 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_15_to_18_19
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_19 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_15_to_15_18
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_18 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_15_to_19_18
-Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15
+Pre: dice_5 At_17_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_15 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_18 dice_1 dice_3 dice_5
 delete: At_17_15 dice_5
 Name: Move_from_17_14_to_17_15
@@ -14597,47 +14597,47 @@ Pre: dice_5 At_17_7 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_16_3 dice_1 dice_3 dice_5
 delete: At_17_7 dice_5
 Name: Move_from_17_6_to_17_7
-Pre: dice_1 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_1 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_7 dice_1 dice_3 dice_5
 delete: At_17_6 dice_1
 Name: Move_from_17_6_to_17_5
-Pre: dice_1 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_1 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_5 dice_1 dice_3 dice_5
 delete: At_17_6 dice_1
 Name: Move_from_17_6_to_17_9
-Pre: dice_3 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_3 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_9 dice_1 dice_3 dice_5
 delete: At_17_6 dice_3
 Name: Move_from_17_6_to_16_8
-Pre: dice_3 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_3 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_8 dice_1 dice_3 dice_5
 delete: At_17_6 dice_3
 Name: Move_from_17_6_to_17_3
-Pre: dice_3 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_3 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_3 dice_1 dice_3 dice_5
 delete: At_17_6 dice_3
 Name: Move_from_17_6_to_16_4
-Pre: dice_3 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_3 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_4 dice_1 dice_3 dice_5
 delete: At_17_6 dice_3
 Name: Move_from_17_6_to_17_11
-Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_11 dice_1 dice_3 dice_5
 delete: At_17_6 dice_5
 Name: Move_from_17_6_to_14_8
-Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_8 dice_1 dice_3 dice_5
 delete: At_17_6 dice_5
 Name: Move_from_17_6_to_17_1
-Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_1 dice_1 dice_3 dice_5
 delete: At_17_6 dice_5
 Name: Move_from_17_6_to_14_4
-Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_14_4 dice_1 dice_3 dice_5
 delete: At_17_6 dice_5
 Name: Move_from_17_6_to_16_3
-Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6
+Pre: dice_5 At_17_6 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_17_6 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_3 dice_1 dice_3 dice_5
 delete: At_17_6 dice_5
 Name: Move_from_17_5_to_17_5
@@ -15845,51 +15845,51 @@ Pre: dice_5 At_20_29 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate
 Add: At_20_29 dice_1 dice_3 dice_5
 delete: At_20_29 dice_5
 Name: Move_from_20_27_to_21_27
-Pre: dice_1 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_1 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_27 dice_1 dice_3 dice_5
 delete: At_20_27 dice_1
 Name: Move_from_20_27_to_19_27
-Pre: dice_1 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_1 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_27 dice_1 dice_3 dice_5
 delete: At_20_27 dice_1
 Name: Move_from_20_27_to_18_26
-Pre: dice_3 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_3 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_26 dice_1 dice_3 dice_5
 delete: At_20_27 dice_3
 Name: Move_from_20_27_to_17_27
-Pre: dice_3 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_3 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_27 dice_1 dice_3 dice_5
 delete: At_20_27 dice_3
 Name: Move_from_20_27_to_22_26
-Pre: dice_3 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_3 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_22_26 dice_1 dice_3 dice_5
 delete: At_20_27 dice_3
 Name: Move_from_20_27_to_21_25
-Pre: dice_3 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_3 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_25 dice_1 dice_3 dice_5
 delete: At_20_27 dice_3
 Name: Move_from_20_27_to_19_24
-Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_24 dice_1 dice_3 dice_5
 delete: At_20_27 dice_5
 Name: Move_from_20_27_to_18_24
-Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_24 dice_1 dice_3 dice_5
 delete: At_20_27 dice_5
 Name: Move_from_20_27_to_15_27
-Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_27 dice_1 dice_3 dice_5
 delete: At_20_27 dice_5
 Name: Move_from_20_27_to_17_25
-Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_25 dice_1 dice_3 dice_5
 delete: At_20_27 dice_5
 Name: Move_from_20_27_to_21_23
-Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_23 dice_1 dice_3 dice_5
 delete: At_20_27 dice_5
 Name: Move_from_20_27_to_20_24
-Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27
+Pre: dice_5 At_20_27 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_27 not_owe_100 not_owe_200 not_owe_300
 Add: At_20_24 dice_1 dice_3 dice_5
 delete: At_20_27 dice_5
 Name: Move_from_20_24_to_19_24
@@ -16145,43 +16145,43 @@ Pre: dice_5 At_20_15 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_17_13 dice_1 dice_3 dice_5
 delete: At_20_15 dice_5
 Name: Move_from_20_13_to_21_23
-Pre: dice_1 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_1 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_23 dice_1 dice_3 dice_5
 delete: At_20_13 dice_1
 Name: Move_from_20_13_to_19_13
-Pre: dice_1 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_1 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_13 dice_1 dice_3 dice_5
 delete: At_20_13 dice_1
 Name: Move_from_20_13_to_21_15
-Pre: dice_3 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_3 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_15 dice_1 dice_3 dice_5
 delete: At_20_13 dice_3
 Name: Move_from_20_13_to_18_14
-Pre: dice_3 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_3 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_14 dice_1 dice_3 dice_5
 delete: At_20_13 dice_3
 Name: Move_from_20_13_to_17_13
-Pre: dice_3 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_3 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_13 dice_1 dice_3 dice_5
 delete: At_20_13 dice_3
 Name: Move_from_20_13_to_21_17
-Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_17 dice_1 dice_3 dice_5
 delete: At_20_13 dice_5
 Name: Move_from_20_13_to_19_15
-Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_15 dice_1 dice_3 dice_5
 delete: At_20_13 dice_5
 Name: Move_from_20_13_to_17_15
-Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_15 dice_1 dice_3 dice_5
 delete: At_20_13 dice_5 not_need_pay_17_15
 Name: Move_from_20_13_to_17_11
-Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_11 dice_1 dice_3 dice_5
 delete: At_20_13 dice_5
 Name: Move_from_20_13_to_15_13
-Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13
+Pre: dice_5 At_20_13 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_20_13 not_owe_100 not_owe_200 not_owe_300
 Add: At_15_13 dice_1 dice_3 dice_5
 delete: At_20_13 dice_5
 Name: Move_from_21_30_to_22_29
@@ -16325,63 +16325,63 @@ Pre: dice_5 At_21_25 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_22_21 dice_1 dice_3 dice_5
 delete: At_21_25 dice_5
 Name: Move_from_21_24_to_21_24
-Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_24 dice_1 dice_3 dice_5
 delete: At_21_24 dice_5 not_need_pay_21_24
 Name: Move_from_21_24_to_21_25
-Pre: dice_1 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_1 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_25 dice_1 dice_3 dice_5
 delete: At_21_24 dice_1
 Name: Move_from_21_24_to_21_23
-Pre: dice_1 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_1 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_23 dice_1 dice_3 dice_5
 delete: At_21_24 dice_1
 Name: Move_from_21_24_to_20_24
-Pre: dice_1 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_1 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_20_24 dice_1 dice_3 dice_5
 delete: At_21_24 dice_1
 Name: Move_from_21_24_to_22_26
-Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_22_26 dice_1 dice_3 dice_5
 delete: At_21_24 dice_3
 Name: Move_from_21_24_to_18_24
-Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_18_24 dice_1 dice_3 dice_5
 delete: At_21_24 dice_3
 Name: Move_from_21_24_to_21_21
-Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_21 dice_1 dice_3 dice_5
 delete: At_21_24 dice_3
 Name: Move_from_21_24_to_21_27
-Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_27 dice_1 dice_3 dice_5
 delete: At_21_24 dice_3
 Name: Move_from_21_24_to_22_24
-Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_3 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_22_24 dice_1 dice_3 dice_5
 delete: At_21_24 dice_3 Not_Stop_1
 Name: Move_from_21_24_to_21_19
-Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_19 dice_1 dice_3 dice_5
 delete: At_21_24 dice_5
 Name: Move_from_21_24_to_16_24
-Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_16_24 dice_1 dice_3 dice_5
 delete: At_21_24 dice_5
 Name: Move_from_21_24_to_19_27
-Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_27 dice_1 dice_3 dice_5
 delete: At_21_24 dice_5
 Name: Move_from_21_24_to_17_23
-Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_23 dice_1 dice_3 dice_5
 delete: At_21_24 dice_5
 Name: Move_from_21_24_to_17_25
-Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_25 dice_1 dice_3 dice_5
 delete: At_21_24 dice_5
 Name: Move_from_21_24_to_20_20
-Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24
+Pre: dice_5 At_21_24 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_24 not_owe_100 not_owe_200 not_owe_300
 Add: At_20_20 dice_1 dice_3 dice_5
 delete: At_21_24 dice_5
 Name: Move_from_21_23_to_22_23
@@ -16797,55 +16797,55 @@ Pre: dice_5 At_21_17 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 Add: At_20_21 dice_1 dice_3 dice_5
 delete: At_21_17 dice_5 Not_Stop_1 Not_Stop_2
 Name: Move_from_21_16_to_21_17
-Pre: dice_1 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_1 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_17 dice_1 dice_3 dice_5
 delete: At_21_16 dice_1
 Name: Move_from_21_16_to_21_15
-Pre: dice_1 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_1 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_15 dice_1 dice_3 dice_5
 delete: At_21_16 dice_1
 Name: Move_from_21_16_to_21_13
-Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_13 dice_1 dice_3 dice_5
 delete: At_21_16 dice_3
 Name: Move_from_21_16_to_19_15
-Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_15 dice_1 dice_3 dice_5
 delete: At_21_16 dice_3
 Name: Move_from_21_16_to_22_16
-Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_22_16 dice_1 dice_3 dice_5 has_Certificate.GLASSES
 delete: At_21_16 dice_3 not_need_pay_22_16
 Name: Move_from_21_16_to_22_18
-Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_22_18 dice_1 dice_3 dice_5
 delete: At_21_16 dice_3
 Name: Move_from_21_16_to_21_19
-Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_3 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_19 dice_1 dice_3 dice_5
 delete: At_21_16 dice_3
 Name: Move_from_21_16_to_19_13
-Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_13 dice_1 dice_3 dice_5
 delete: At_21_16 dice_5
 Name: Move_from_21_16_to_22_14
-Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_22_14 dice_1 dice_3 dice_5
 delete: At_21_16 dice_5
 Name: Move_from_21_16_to_17_15
-Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_17_15 dice_1 dice_3 dice_5
 delete: At_21_16 dice_5 not_need_pay_17_15
 Name: Move_from_21_16_to_21_21
-Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_21_21 dice_1 dice_3 dice_5
 delete: At_21_16 dice_5
 Name: Move_from_21_16_to_20_20
-Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_20_20 dice_1 dice_3 dice_5
 delete: At_21_16 dice_5
 Name: Move_from_21_16_to_19_19
-Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16
+Pre: dice_5 At_21_16 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_need_pay_21_16 not_owe_100 not_owe_200 not_owe_300
 Add: At_19_19 dice_1 dice_3 dice_5
 delete: At_21_16 dice_5
 Name: Move_from_21_15_to_21_16
@@ -129168,9 +129168,9 @@ Name: Show_[<Certificate.INTEGRITY: 'integrity_certificate'>]
 Pre: has_[<Certificate.INTEGRITY: 'integrity_certificate'>]
 Add: not_needs_[<Certificate.INTEGRITY: 'integrity_certificate'>]
 delete:
-Name: Show_[<Certificate.HAIRCUT: 'haitcut'>]
-Pre: has_[<Certificate.HAIRCUT: 'haitcut'>]
-Add: not_needs_[<Certificate.HAIRCUT: 'haitcut'>]
+Name: Show_[<Certificate.HAIRCUT: 'haircut'>]
+Pre: has_[<Certificate.HAIRCUT: 'haircut'>]
+Add: not_needs_[<Certificate.HAIRCUT: 'haircut'>]
 delete:
 Name: Show_[<Certificate.ID: 'id'>]
 Pre: has_[<Certificate.ID: 'id'>]

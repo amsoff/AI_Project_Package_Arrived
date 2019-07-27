@@ -33,6 +33,7 @@ certificates = [Certificate.GRANDMA,
 board_game = board.Board(1).transition_dict
 come_back_spots = [tile for tile in board_game if (board.NEED in board_game[tile] and (Certificate.HAT not in board_game[tile][board.NEED] or Certificate.GLASSES not in board_game[tile][board.NEED])) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]]
 payment_spots = [tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]]
+
 surprise_amounts = [-300, -200, -100, 100, 200, 300]
 class Player:
     money = 1500

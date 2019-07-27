@@ -261,7 +261,6 @@ def create_not_owe():
         owes.append(NOT_OWE % i)
 
 
-
 def create_not_need_pay():
     pays = []
     for tile in board_game:
@@ -310,35 +309,35 @@ def create_come_back():
 
 
 def create_not_needs_items():
-    certificates = [NOT_NEEDS_FORMAT % (Certificate.GRANDMA),
-                    NOT_NEEDS_FORMAT % (Certificate.INTEGRITY),
-                    NOT_NEEDS_FORMAT % (Certificate.ID),
-                    NOT_NEEDS_FORMAT % (Certificate.RABIES),
-                    NOT_NEEDS_FORMAT % (Certificate.PASSPORT),
-                    NOT_NEEDS_FORMAT % (Certificate.MILITARY),
-                    NOT_NEEDS_FORMAT % (Certificate.TAX),
-                    NOT_NEEDS_FORMAT % (Certificate.PORT),
-                    NOT_NEEDS_FORMAT % (Certificate.PACKAGE),
-                    NOT_NEEDS_FORMAT % (Certificate.HAIRCUT),
-                    NOT_NEEDS_FORMAT % (Certificate.GLASSES),
-                    NOT_NEEDS_FORMAT % (Certificate.HAT)]
+    certificates = [NOT_NEEDS_FORMAT % Certificate.GRANDMA,
+                    NOT_NEEDS_FORMAT % Certificate.INTEGRITY,
+                    NOT_NEEDS_FORMAT % Certificate.ID,
+                    NOT_NEEDS_FORMAT % Certificate.RABIES,
+                    NOT_NEEDS_FORMAT % Certificate.PASSPORT,
+                    NOT_NEEDS_FORMAT % Certificate.MILITARY,
+                    NOT_NEEDS_FORMAT % Certificate.TAX,
+                    NOT_NEEDS_FORMAT % Certificate.PORT,
+                    NOT_NEEDS_FORMAT % Certificate.PACKAGE,
+                    NOT_NEEDS_FORMAT % Certificate.HAIRCUT,
+                    NOT_NEEDS_FORMAT % Certificate.GLASSES,
+                    NOT_NEEDS_FORMAT % Certificate.HAT]
     return certificates
 
 
 def create_certificates():
-    certificates = {CERTIFICATES_FORMAT % (Certificate.GRANDMA),
-                    CERTIFICATES_FORMAT % (Certificate.INTEGRITY),
-                    CERTIFICATES_FORMAT % (Certificate.BIRTH),
-                    CERTIFICATES_FORMAT % (Certificate.ID),
-                    CERTIFICATES_FORMAT % (Certificate.RABIES),
-                    CERTIFICATES_FORMAT % (Certificate.PASSPORT),
-                    CERTIFICATES_FORMAT % (Certificate.MILITARY),
-                    CERTIFICATES_FORMAT % (Certificate.TAX),
-                    CERTIFICATES_FORMAT % (Certificate.PORT),
-                    CERTIFICATES_FORMAT % (Certificate.GLASSES),
-                    CERTIFICATES_FORMAT % (Certificate.HAT),
-                    CERTIFICATES_FORMAT % (Certificate.PACKAGE),
-                    CERTIFICATES_FORMAT % (Certificate.HAIRCUT)}
+    certificates = {CERTIFICATES_FORMAT % Certificate.GRANDMA,
+                    CERTIFICATES_FORMAT % Certificate.INTEGRITY,
+                    CERTIFICATES_FORMAT % Certificate.BIRTH,
+                    CERTIFICATES_FORMAT % Certificate.ID,
+                    CERTIFICATES_FORMAT % Certificate.RABIES,
+                    CERTIFICATES_FORMAT % Certificate.PASSPORT,
+                    CERTIFICATES_FORMAT % Certificate.MILITARY,
+                    CERTIFICATES_FORMAT % Certificate.TAX,
+                    CERTIFICATES_FORMAT % Certificate.PORT,
+                    CERTIFICATES_FORMAT % Certificate.GLASSES,
+                    CERTIFICATES_FORMAT % Certificate.HAT,
+                    CERTIFICATES_FORMAT % Certificate.PACKAGE,
+                    CERTIFICATES_FORMAT % Certificate.HAIRCUT}
     return certificates
 
 #############################################################################
