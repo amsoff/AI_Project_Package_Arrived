@@ -45,7 +45,10 @@ board_game = board.Board(1).transition_dict
 
 # STOP:
 FIRST_STOP_FORMAT = "Name: Stop_1\npre: \nadd: Not_Stop_1\ndelete:"
+# Name: stop1 pre: add: not_stop_1 delete:
 STOP_FORMAT = "Name: Stop_%s\npre: Not_Stop_%s\nadd: Not_Stop_%s\ndelete:"
+# Name: stop(x) pre:stop(x-1) add: not_stop_x delete:
+
 
 # PAYMENTS:
 
@@ -58,9 +61,18 @@ PAY_FIRST_SURPRISE = "Name: pay_%s_surprise_%s_%s_from_%s\npre: At_%s_%s Money_%
 PAY_150_FORMAT = "Name: Pay_150_from_%s_%s_to_%s_%s_with_%s\npre: At_%s_%s Money_%s\nadd: At_%s_%s Money_%s\ndelete: At_%s_%s Money_%s"
 # pay 150 to jump from p1 to p2 with x money, pre at p1, money x, add at p2, money x-150, del at p1 money x.
 
+PAY_CELL = "Name: pay_%s_At_%s_%s_from_%s\npre: At_%s_%s Money_%s \nadd: Money_%s not_need_pay_%s_%s \ndelete: Money_%s"
+# pay x at p1 from m pre at p1 money m add money m-x not need pay p1 del money m
+
+
 # jump to techef ashuv block
 GOTO_FORMAT = "Name: Goto_%s_%s_from_%s_%s\npre: Come_back_to_%s_%s At_%s_%s\nadd: At_%s_%s Not_Come_back_%s_%s\ndelete: Come_back_to_%s_%s At_%s_%s " # FROM_COMEBACK
-# goto p2 from p1, pre comeback to p2, at specific p1, add at p2 not_CB_p2 del At_p1 comeback p2, needs x
+# goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del At_p1 comeback p2, needs x
+
+#todo not needs x
+
+JUMP_TO_ENTRANCE = "Name: jump_to_%s_%s_from_%s_%s\npre: Come_back_to_%s_%s At_%s_%s\nadd: At_%s_%s \ndelete: At_%s_%s"
+# jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
 
 # # no need for take certificate?
@@ -70,17 +82,8 @@ SHOW_CERTIFICATE = "Name: Show_%s\npre: has_%s\nadd: not_needs_%s\ndelete:"
 # show id pre has id add not needs id
 
 # put comeback:
-
 PUT_COMEBACK = "Name: place_comeback_%s_%s\npre: At_%s_%s\nadd: Come_back_to_%s_%s\ndelete: Not_Come_back_%s_%s"
 # place comeback at p1 pre: at p1 add: comeback p1 delete: not_CB_p1
-
-JUMP_TO_ENTRANCE = "Name: jump_to_%s_%s_from_%s_%s\npre: Come_back_to_%s_%s At_%s_%s\nadd: At_%s_%s \ndelete: At_%s_%s"
-# jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
-
-
-PAY_CELL = "Name: pay_%s_At_%s_%s_from_%s\npre: At_%s_%s Money_%s \nadd: Money_%s not_need_pay_%s_%s \ndelete: Money_%s"
-# pay x at p1 from m pre at p1 money m add money m-x not need pay p1 del money m
-
 
 
 ############ actions ###########
@@ -108,10 +111,10 @@ def create_move(player):
 
 
                 # payments:
-                if (board.BALANCE in board_game[tile2] and board_game[tile2][board.BALANCE]<0) or board.SURPRISE in board_game[tile2]:
+                if board.BALANCE in board_game[tile2] or board.SURPRISE in board_game[tile2]:
                     action["delete: "] += " " + NOT_NEED_PAY_CELL % (tile2[0], tile2[1])
 
-                if (board.BALANCE in board_game[tile1] and board_game[tile1][board.BALANCE]<0) or board.SURPRISE in board_game[tile1]:
+                if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
                     action["pre: "] += " " + NOT_NEED_PAY_CELL % (tile1[0], tile1[1])
 
 
