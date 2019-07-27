@@ -122,7 +122,7 @@ class Player:
 
         # write actions to file
         goals = self.get_goals()
-        domain_file.write("Goal State: ")
+        domain_file.write("Goal state: ")
         domain_file.write(" ".join(goals))
         domain_file.close()
 
