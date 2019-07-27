@@ -3,6 +3,7 @@ from Certificates import Certificate
 import board
 
 
+# problems = pay surprise can make agent stuck.
 NAME = 0
 PRE = 1
 ADD = 2
@@ -30,9 +31,10 @@ CERTIFICATES_FORMAT = "has_%s"
 NOT_NEEDS_FORMAT = "not_needs_%s"
 DICE_FORMAT = "dice_%s"
 COME_BACK_FORMAT = "Come_back_to_%s_%s"
+NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
 NOT_STOP_FORMAT = "Not_Stop_%s"
 NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
-NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
+NOT_OWE = "not_owe_%s"
 
 #  make goal be all not_comebacks and  not needs and at END
 
@@ -49,6 +51,8 @@ STOP_FORMAT = "Name: Stop_%s\nPre: Not_Stop_%s\nAdd: Not_Stop_%s\ndelete:"
 
 PAY_SURPRISE_FORMAT = "Name: pay_surprise_%s_%s_from_%s\nPre: at_%s_%s Money_%s\nAdd: Money_%s not_need_pay_%s_%s\ndelete: Money_%s"
 # pay surprise p1 from m pre at p1 money m add money m-x not need pay p1 del money m
+PAY_FIRST_SURPRISE = "Name: pay_%s_surprise_%s_%s_from_%s\nPre: at_%s_%s Money_%s\nAdd: Money_%s not_need_pay_%s_%s not_owe_%s\ndelete: Money_%s"
+# pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
 # from certain locations in the map you can pay 150 shekels to get where you need.
 PAY_150_FORMAT = "Name: Pay_150_from_%s_%s_to_%s_%s_with_%s\nPre: at_%s_%s Money_%s\nAdd: at_%s_%s Money_%s\ndelete: at_%s_%s Money_%s"
@@ -109,6 +113,13 @@ def create_move(player):
 
                 if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
                     action["Pre: "] += " " + NOT_NEED_PAY_CELL % (tile1[0], tile1[1])
+
+
+                # Surprises:
+                if board.SURPRISE in board_game[tile1]:
+                    for i in [100, 200, 300]:
+                        action["Pre: "] += " " + NOT_OWE % i
+
 
 
                 # take certificate:
@@ -185,6 +196,16 @@ def create_pay_surprise(player):
                     pays.append(PAY_SURPRISE_FORMAT % (tile[0], tile[1], m, tile[0], tile[1], m, m-surprise, tile[0], tile[1], m))
         return pays
 
+def create_pay_first_surprise():
+    pays = []
+    for tile in board_game:
+        if board.SURPRISE in board_game[tile]:
+            for s in [100, 200, 300]:
+                for m in range(s, 50*MAXIMUM_POCKET+1, 50):
+                    pays.append(PAY_FIRST_SURPRISE % (s, tile[0], tile[1], m, tile[0], tile[1], m, m-s, tile[0], tile[1], s, m))
+    return pays
+# pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
+
 
 def create_pay_150():
     pays = []
@@ -233,6 +254,13 @@ def create_stop_action():
 
 
 ############ PROPOSITIONS ############
+
+def create_not_owe():
+    owes = []
+    for i in [100, 200, 300]:
+        owes.append(NOT_OWE % i)
+
+
 
 def create_not_need_pay():
     pays = []
