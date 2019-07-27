@@ -93,18 +93,18 @@ def create_move(player):
                 action = dict()
                 action["Name: "] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
 
-                action["Pre: "] = DICE_FORMAT % (d) + " " + AT_FORMAT % (tile1[0], tile1[1])
+                action["Pre: "] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
                 for s in range(1, MAX_STOPS+1):
-                    action["Pre: "] += " " + NOT_STOP_FORMAT % (s)
+                    action["Pre: "] += " " + NOT_STOP_FORMAT % s
 
                 action["Add: "] = AT_FORMAT % (tile2[0], tile2[1])
                 if player == MEAN:
-                    action["Add: "] += " " + DICE_FORMAT % (3)
+                    action["Add: "] += " " + DICE_FORMAT % 3
                 elif player == OPTIMI:
                     for d1 in [1,3,5]:
-                        action["Add: "] += " " + DICE_FORMAT % (d1)
+                        action["Add: "] += " " + DICE_FORMAT % d1
 
-                action["delete: "] = AT_FORMAT % (tile1[0], tile1[1]) + " " + DICE_FORMAT % (d)
+                action["delete: "] = AT_FORMAT % (tile1[0], tile1[1]) + " " + DICE_FORMAT % d
 
 
                 # payments:
@@ -130,18 +130,18 @@ def create_move(player):
                 if board.NEED in board_game[tile1]:  # eem zu mishbetzet shezarich lehazig teuda, zarich sheihihe teuda
                     for cert in board_game[tile1][board.NEED]:
                         if cert not in [Certificate.GLASSES, Certificate.HAT]:
-                            action["Pre: "] += " " + CERTIFICATES_FORMAT % (cert)
+                            action["Pre: "] += " " + CERTIFICATES_FORMAT % cert
 
                 # hat and glasses:
                 if board.NEED in board_game[tile2]:
                     for cert in board_game[tile2][board.NEED]:
                         if cert in [Certificate.GLASSES, Certificate.HAT]:
-                            action["delete: "] += " " + NOT_NEEDS_FORMAT % (cert)
+                            action["delete: "] += " " + NOT_NEEDS_FORMAT % cert
 
 
                 if board.WAIT in board_game[tile2]:  # eem heganu leazor, naazor
                     for i in range(1, board_game[tile2][board.WAIT]+1):
-                        action["delete: "] += " " + NOT_STOP_FORMAT % (i)
+                        action["delete: "] += " " + NOT_STOP_FORMAT % i
 
                 moves[(tile1, tile2)] = action
 
@@ -259,6 +259,7 @@ def create_not_owe():
     owes = []
     for i in [100, 200, 300]:
         owes.append(NOT_OWE % i)
+    return owes
 
 
 def create_not_need_pay():
@@ -308,6 +309,18 @@ def create_come_back():
     return cbs
 
 
+def create_not_come_back():
+    cbs = []
+    for tile in board_game:
+        if board.NEED in board_game[tile] or board.BALANCE in board_game[
+            tile] or board.SURPRISE in board_game[tile]:
+            if board.BALANCE in board_game[tile] and board_game[tile][
+                board.BALANCE] > 0:
+                continue
+            cbs.append(NOT_COME_BACK_FORMAT % (tile[0], tile[1]))
+    return cbs
+
+
 def create_not_needs_items():
     certificates = [NOT_NEEDS_FORMAT % Certificate.GRANDMA,
                     NOT_NEEDS_FORMAT % Certificate.INTEGRITY,
@@ -348,10 +361,12 @@ def get_propositions():
     props.extend(create_certificates())
     props.extend(create_not_needs_items())
     props.extend(create_come_back())
+    props.extend(create_not_come_back())
     props.extend(create_at())
     props.extend(create_dice())
     props.extend(create_has_money())
     props.extend(create_not_stop())
+    props.extend(create_not_owe())
     return props
 
 
@@ -362,6 +377,7 @@ def get_actions(player):
     actions.extend(create_jump_to_entrance())
     actions.extend(create_put_comeback())
     actions.extend(create_pay_surprise(player))
+    actions.extend(create_pay_first_surprise())
     actions.extend(create_pay_150())
     actions.extend(create_show_certificate())
     actions.extend(create_stop_action())
