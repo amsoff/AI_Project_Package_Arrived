@@ -113,18 +113,19 @@ class Player:
         if self.type == dc.MEAN:
             agent = "mean"
         file_name = agent + "_" + "problem.txt"
-        domain_file = open(file_name,'w')  # use domain_file.write(str) to write to domain_file
+        problem_file = open(file_name,'w')  # use problem_file.write(str) to write to problem_file
 
         # write propositions to file
-        domain_file.write("Initial state: ")
+        problem_file.write("Initial state: ")
         inits = self.get_initial()
-        domain_file.write(" ".join(inits))
+        problem_file.write(" ".join(inits))
 
         # write actions to file
         goals = self.get_goals()
-        domain_file.write("\nGoal state: ")
-        domain_file.write(" ".join(goals))
-        domain_file.close()
+        problem_file.write("\nGoal state: ")
+        problem_file.write(" ".join(goals))
+        problem_file.write("\n")
+        problem_file.close()
 
 
 pla = Player()
