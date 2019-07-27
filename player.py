@@ -112,7 +112,7 @@ class Player:
         agent = "optimistic"
         if self.type == dc.MEAN:
             agent = "mean"
-        file_name = agent + "_" + "problem"
+        file_name = agent + "_" + "problem.txt"
         domain_file = open(file_name,'w')  # use domain_file.write(str) to write to domain_file
 
         # write propositions to file
@@ -126,3 +126,6 @@ class Player:
         domain_file.write(" ".join(goals))
         domain_file.close()
 
+
+pla = Player()
+pla.build_problem()
