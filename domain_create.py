@@ -67,9 +67,9 @@ PAY_CELL = "Name: pay_%s_At_%s_%s_from_%s\npre: At_%s_%s Money_%s \nadd: Money_%
 
 # jump to techef ashuv block
 GOTO_FORMAT = "Name: Goto_%s_%s_from_%s_%s\npre: Come_back_to_%s_%s At_%s_%s\nadd: At_%s_%s Not_Come_back_%s_%s\ndelete: Come_back_to_%s_%s At_%s_%s " # FROM_COMEBACK
-# goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del At_p1 comeback p2, needs x
+# goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
-#todo not needs x
+
 
 JUMP_TO_ENTRANCE = "Name: jump_to_%s_%s_from_%s_%s\npre: Come_back_to_%s_%s At_%s_%s\nadd: At_%s_%s \ndelete: At_%s_%s"
 # jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
