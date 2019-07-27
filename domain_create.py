@@ -44,41 +44,41 @@ board_game = board.Board(1).transition_dict
 # ACTIONS:
 
 # STOP:
-FIRST_STOP_FORMAT = "Name: Stop_1\nPre: \nAdd: Not_Stop_1\ndelete:"
-STOP_FORMAT = "Name: Stop_%s\nPre: Not_Stop_%s\nAdd: Not_Stop_%s\ndelete:"
+FIRST_STOP_FORMAT = "Name: Stop_1\npre: \nadd: Not_Stop_1\ndelete:"
+STOP_FORMAT = "Name: Stop_%s\npre: Not_Stop_%s\nadd: Not_Stop_%s\ndelete:"
 
 # PAYMENTS:
 
-PAY_SURPRISE_FORMAT = "Name: pay_surprise_%s_%s_from_%s\nPre: at_%s_%s Money_%s\nAdd: Money_%s not_need_pay_%s_%s\ndelete: Money_%s"
+PAY_SURPRISE_FORMAT = "Name: pay_surprise_%s_%s_from_%s\npre: at_%s_%s Money_%s\nadd: Money_%s not_need_pay_%s_%s\ndelete: Money_%s"
 # pay surprise p1 from m pre at p1 money m add money m-x not need pay p1 del money m
-PAY_FIRST_SURPRISE = "Name: pay_%s_surprise_%s_%s_from_%s\nPre: at_%s_%s Money_%s\nAdd: Money_%s not_need_pay_%s_%s not_owe_%s\ndelete: Money_%s"
+PAY_FIRST_SURPRISE = "Name: pay_%s_surprise_%s_%s_from_%s\npre: at_%s_%s Money_%s\nadd: Money_%s not_need_pay_%s_%s not_owe_%s\ndelete: Money_%s"
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
 # from certain locations in the map you can pay 150 shekels to get where you need.
-PAY_150_FORMAT = "Name: Pay_150_from_%s_%s_to_%s_%s_with_%s\nPre: at_%s_%s Money_%s\nAdd: at_%s_%s Money_%s\ndelete: at_%s_%s Money_%s"
+PAY_150_FORMAT = "Name: Pay_150_from_%s_%s_to_%s_%s_with_%s\npre: at_%s_%s Money_%s\nadd: at_%s_%s Money_%s\ndelete: at_%s_%s Money_%s"
 # pay 150 to jump from p1 to p2 with x money, pre at p1, money x, add at p2, money x-150, del at p1 money x.
 
 # jump to techef ashuv block
-GOTO_FORMAT = "Name: Goto_%s_%s_from_%s_%s\nPre: Come_back_to_%s_%s at_%s_%s\nAdd: at_%s_%s Not_Come_back_%s_%s\ndelete: Come_back_to_%s_%s at_%s_%s " # FROM_COMEBACK
+GOTO_FORMAT = "Name: Goto_%s_%s_from_%s_%s\npre: Come_back_to_%s_%s at_%s_%s\nadd: at_%s_%s Not_Come_back_%s_%s\ndelete: Come_back_to_%s_%s at_%s_%s " # FROM_COMEBACK
 # goto p2 from p1, pre comeback to p2, at specific p1, add at p2 not_CB_p2 del at_p1 comeback p2, needs x
 
 
 # # no need for take certificate?
-# TAKE_CERTIFICATE = "Name: Take_%s\nPre: at_%s_%s\nAdd: has_%s\ndelete:"
+# TAKE_CERTIFICATE = "Name: Take_%s\npre: at_%s_%s\nadd: has_%s\ndelete:"
 # # take id pre at p1 add has id
-SHOW_CERTIFICATE = "Name: Show_%s\nPre: has_%s\nAdd: not_needs_%s\ndelete:"
+SHOW_CERTIFICATE = "Name: Show_%s\npre: has_%s\nadd: not_needs_%s\ndelete:"
 # show id pre has id add not needs id
 
 # put comeback:
 
-PUT_COMEBACK = "Name: place_comeback_%s_%s\nPre: at_%s_%s \nAdd: Come_back_to_%s_%s\ndelete: Not_Come_back_%s_%s"
-# place comeback at p1 Pre: at p1 Add: comeback p1 delete: not_CB_p1
+PUT_COMEBACK = "Name: place_comeback_%s_%s\npre: at_%s_%s \nadd: Come_back_to_%s_%s\ndelete: Not_Come_back_%s_%s"
+# place comeback at p1 pre: at p1 add: comeback p1 delete: not_CB_p1
 
-JUMP_TO_ENTRANCE = "Name: jump_to_%s_%s_from_%s_%s\nPre: Come_back_to_%s_%s at_%s_%s\nAdd: at_%s_%s \ndelete: at_%s_%s"
+JUMP_TO_ENTRANCE = "Name: jump_to_%s_%s_from_%s_%s\npre: Come_back_to_%s_%s at_%s_%s\nadd: at_%s_%s \ndelete: at_%s_%s"
 # jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
 
-PAY_CELL = "Name: pay_%s_at_%s_%s_from_%s\nPre: at_%s_%s Money_%s \nAdd: Money_%s not_need_pay_%s_%s \ndelete: Money_%s"
+PAY_CELL = "Name: pay_%s_at_%s_%s_from_%s\npre: at_%s_%s Money_%s \nadd: Money_%s not_need_pay_%s_%s \ndelete: Money_%s"
 # pay x at p1 from m pre at p1 money m add money m-x not need pay p1 del money m
 
 
@@ -93,16 +93,16 @@ def create_move(player):
                 action = dict()
                 action["Name: "] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
 
-                action["Pre: "] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
+                action["pre: "] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
                 for s in range(1, MAX_STOPS+1):
-                    action["Pre: "] += " " + NOT_STOP_FORMAT % s
+                    action["pre: "] += " " + NOT_STOP_FORMAT % s
 
-                action["Add: "] = AT_FORMAT % (tile2[0], tile2[1])
+                action["add: "] = AT_FORMAT % (tile2[0], tile2[1])
                 if player == MEAN:
-                    action["Add: "] += " " + DICE_FORMAT % 3
+                    action["add: "] += " " + DICE_FORMAT % 3
                 elif player == OPTIMI:
                     for d1 in [1,3,5]:
-                        action["Add: "] += " " + DICE_FORMAT % d1
+                        action["add: "] += " " + DICE_FORMAT % d1
 
                 action["delete: "] = AT_FORMAT % (tile1[0], tile1[1]) + " " + DICE_FORMAT % d
 
@@ -112,25 +112,25 @@ def create_move(player):
                     action["delete: "] += " " + NOT_NEED_PAY_CELL % (tile2[0], tile2[1])
 
                 if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
-                    action["Pre: "] += " " + NOT_NEED_PAY_CELL % (tile1[0], tile1[1])
+                    action["pre: "] += " " + NOT_NEED_PAY_CELL % (tile1[0], tile1[1])
 
 
                 # Surprises:
                 if board.SURPRISE in board_game[tile1]:
                     for i in [100, 200, 300]:
-                        action["Pre: "] += " " + NOT_OWE % i
+                        action["pre: "] += " " + NOT_OWE % i
 
 
 
                 # take certificate:
                 if board.HAS in board_game[tile2]:
-                    action["Add: "] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
+                    action["add: "] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
 
                 # show certificate:
                 if board.NEED in board_game[tile1]:  # eem zu mishbetzet shezarich lehazig teuda, zarich sheihihe teuda
                     for cert in board_game[tile1][board.NEED]:
                         if cert not in [Certificate.GLASSES, Certificate.HAT]:
-                            action["Pre: "] += " " + CERTIFICATES_FORMAT % cert
+                            action["pre: "] += " " + CERTIFICATES_FORMAT % cert
 
                 # hat and glasses:
                 if board.NEED in board_game[tile2]:
@@ -178,7 +178,7 @@ def create_put_comeback():
     comeback = []
     for tile in board_game:
         if board.NEED in board_game[tile] or board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]: # then there can be techef ashuv
-                            # place comeback at p1,           Pre: at p1,        Add: comeback p1 del not CB p1
+                            # place comeback at p1,           pre: at p1,        add: comeback p1 del not CB p1
             comeback.append(PUT_COMEBACK % (tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1]))
     return comeback
 
@@ -398,7 +398,7 @@ def create_domain_file(domain_file_name, player):
 
     # write actions to file
     actions = get_actions(player)
-    domain_file.write("Actions:\n")
+    domain_file.write("\nActions:\n")
     domain_file.write("\n".join(actions))
     domain_file.close()
 
