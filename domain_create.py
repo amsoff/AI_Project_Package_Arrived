@@ -305,7 +305,6 @@ def create_come_back():
             if board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] > 0:
                 continue
             cbs.append(COME_BACK_FORMAT % (tile[0], tile[1]))
-            cbs.append(NOT_COME_BACK_FORMAT % (tile[0], tile[1]))
     return cbs
 
 
