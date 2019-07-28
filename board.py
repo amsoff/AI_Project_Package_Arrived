@@ -16,6 +16,8 @@ THREE = 3
 FIVE = 5
 
 
+
+
 class Nodes_Types(Enum):
     EMPTY = -1
     COURT = 1

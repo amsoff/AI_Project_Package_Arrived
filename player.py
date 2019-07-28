@@ -37,7 +37,7 @@ payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile
 
 surprise_amounts = [-300, -200, -100, 100, 200, 300]
 class Player:
-    type = dc.OPTIMI
+    type = dc.MEAN
     money = 1500
     cell = (1,0)
     has_certificate = [False] * 13

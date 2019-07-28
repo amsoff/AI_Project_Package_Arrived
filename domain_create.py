@@ -193,7 +193,7 @@ def create_pay_surprise(player):
                     surprise = OPTIMI_SURPRISE
                 elif player == MEAN:
                     surprise = MEAN_SURPRISE
-                for m in range(surprise, 50 * MAXIMUM_POCKET+1, 50):
+                for m in range(max(0,-surprise), 50 * MAXIMUM_POCKET+1, 50):
                     pays.append(PAY_SURPRISE_FORMAT % (tile[0], tile[1], m, tile[0], tile[1], m, min(50*MAXIMUM_POCKET, m+surprise), tile[0], tile[1], m))
         return pays
 
