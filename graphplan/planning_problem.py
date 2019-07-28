@@ -186,13 +186,16 @@ if __name__ == '__main__':
         else:
             print("Usage: planning_problem.py domain_name problem_name heuristic_name[max, sum, zero]")
             exit()
-
+    start1 = time.clock()
     prob = PlanningProblem(domain, problem)
     start = time.clock()
     plan = a_star_search(prob, heuristic)
-    elapsed = time.clock() - start
+    end = time.clock()
+    extract_time = end - start
+    total_time = end - start1
     if plan is not None:
-        print("Plan found with %d actions in %.2f seconds" % (len(plan), elapsed))
+        print("Plan found with %d actions in %.2f seconds" % (len(plan), extract_time))
+        print("Total Runtime: %d" % total_time)
         file = open("CHECK.txt", 'w')  # use domain_file.write(str) to write to domain_file
 
         # write propositions to file
@@ -201,7 +204,7 @@ if __name__ == '__main__':
         file.write("\n")
         file.close()
     else:
-        print("Could not find a plan in %.2f seconds" % elapsed)
+        print("Could not find a plan in %.2f seconds" % extract_time)
     print("Search nodes expanded: %d" % prob.expanded)
 
 

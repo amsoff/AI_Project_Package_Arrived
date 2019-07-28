@@ -42,7 +42,7 @@ class Player:
     cell = (1,0)
     has_certificate = [False] * 13
     needs_certificate = [False] * 13
-    dice_value = 0
+    dice_value = 3
     come_back_spots = []
     need_pay_spots = []
     stops_left = 0
@@ -88,6 +88,7 @@ class Player:
         for i in range(1, dc.MAX_STOPS+1-self.stops_left):
             stops.append(dc.NOT_STOP_FORMAT % i)
         return stops
+
 
     def get_pays(self):
         pays = [dc.NOT_OWE % abs(d) for d in surprise_amounts if d < 0]

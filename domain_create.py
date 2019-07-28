@@ -10,10 +10,8 @@ ADD = 2
 DEL = 3
 
 
-MAXIMUM_PAY = 100
-MAXIMUM_POCKET = 200
-BOARD_WIDTH = 22
-BOARD_HEIGHT = 30
+MAXIMUM_PAY = 30
+MAXIMUM_POCKET = 80
 MAX_STOPS = 4
 
 OPTIMI = 1
@@ -21,7 +19,7 @@ MEAN = 2
 players = [OPTIMI, MEAN]
 
 MEAN_SURPRISE = -100
-OPTIMI_SURPRISE = 2000
+OPTIMI_SURPRISE = 100
 
 # PROPOSITIONS
 
@@ -163,7 +161,7 @@ def create_pay_cell():
     actions = []
     for tile in board_game:
         if board.BALANCE in board_game[tile]:
-            for m in range(-board_game[tile][board.BALANCE], 50*MAXIMUM_POCKET+1, 50):
+            for m in range(max(0,-board_game[tile][board.BALANCE]), 50*MAXIMUM_POCKET+1, 50):
                 actions.append(PAY_CELL % (-board_game[tile][board.BALANCE], tile[0], tile[1], m, tile[0], tile[1], m, min(50*MAXIMUM_POCKET,m+board_game[tile][board.BALANCE]), tile[0], tile[1], m))
     return actions
 

@@ -57,7 +57,7 @@ class PgParser:
             a.pre = new_pre
             a.add = new_add
             a.delete = new_delete
-
+        print("finished parsing actions and propositions")
         return [actions, propositions]
 
     @staticmethod
@@ -78,4 +78,5 @@ class PgParser:
         words = [word.rstrip() for word in line.split(" ") if len(word.rstrip()) > 0]
         for i in range(2, len(words)):
             goal.append(Proposition(words[i]))
+        print("finished parsing problem")
         return init, goal

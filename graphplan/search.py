@@ -158,6 +158,7 @@ def a_star_search(problem, heuristic=null_heuristic):
     """
     Search the node that has the lowest combined cost and heuristic first.
     """
+    print("reached aStar")
     fringe = util.PriorityQueueWithFunction(lambda x: x.get_cost() + heuristic(x.get_node(), problem))
     return general_search(problem, fringe)
 
