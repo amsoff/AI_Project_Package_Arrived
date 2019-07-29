@@ -23,9 +23,6 @@ def handle_stop(plan):
     return all
 
 
-# input = python3 game.py #player
-
-
 def handle_payments(action, player):
     cell = (int(action.split('_')[6]), int(action.split('_')[7]))
     if 'pay_surprise' in action:
@@ -54,7 +51,7 @@ def handle_payments(action, player):
 
 
 def handle_goto(action, player):
-    cell = action.split('_')[1],action.split('_')[2]
+    cell = action.split('_')[1], action.split('_')[2]
     player.cell = cell
     player.come_back_spots.remove(cell)
     return "Go back to (%d,%d)" % cell
@@ -106,12 +103,15 @@ def handle_move(plan, player):
         return all, turns
 
 
-
 if __name__ == '__main__':
+    """
+    input = python3 game.py player
+    outout = print all moves
+    """
     import sys
     import time
-    start = time.process_time()
 
+    start = time.process_time()
 
     if len(sys.argv) != 2:
         print("Usage: game.py player(optimistic or mean). Bad input")
