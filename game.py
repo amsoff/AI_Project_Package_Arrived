@@ -4,7 +4,7 @@ from graphplan.planning_problem import PlanningProblem
 import domain_create as dc
 import surprise
 import Certificates
-import dice
+from dice import dice
 import board
 
 
@@ -110,53 +110,49 @@ def handle_move(plan, player):
 if __name__ == '__main__':
     import sys
     import time
+    start = time.process_time()
+
 
     if len(sys.argv) != 2:
         print("Usage: game.py player(optimistic or mean). Bad input")
         exit()
     input_player = sys.argv[2]
-    domain = '{}_domain.txt'
-    problem = '{}_problem.txt'
+    domain_file_name = '{}_domain.txt'
+    problem_file_name = '{}_problem.txt'
+    player = Player()
     if input_player == Types.MEAN.value or input_player == Types.OPTIMISTIC.value:
-        player = Player()
         player.set_type(input_player)
-        player.build_problem()
-        problem = problem.format(input_player)
-        domain = domain.format(input_player)
-        dc.create_domain_file(domain, input_player)
+        problem_file_name = problem_file_name.format(input_player)
+        domain_file_name = domain_file_name.format(input_player)
+        dc.create_domain_file(domain_file_name, input_player)
+        dice = dice()
     else:
         print("Usage: game.py player(optimistic or mean). Bad type player.")
         exit()
-
-    prob = PlanningProblem(domain, problem)
-    start = time.process_time()
+    dice_val = dice.roll_dice()
+    player.dice_value = dice_val
+    player.build_problem()
+    prob = PlanningProblem(domain_file_name, problem_file_name)
     plan = a_star_search(prob)
     turns = 0
     moves = []
-    while len(plan) != 0:
-        action = plan[0]
-        if 'Stop' in action.name:
-            stops = handle_stop(plan)
-            turns += len(stops)
-            moves.append("stop_%d_times" % len(stops))
-            break
-        elif 'pay' in action.name:
-            pay, turn = handle_payments(action.name, player)
-            turns += turn
-            moves.append(pay)
-        elif 'Goto' in action.name:
-            goto = handle_goto(action.name, player)
-            turns += 1
-            moves.extend(goto)
-        elif 'Move' in action.name:
-            move = handle_move(plan, player)
 
+    while len(plan) != 0:
+        if 'Move' in plan[0].name:
+            move, turn = handle_move(plan, player)
+            turns += turn
+            dice = dice.roll_dice()
+            player.dice_value = dice
+            moves.extend(move)
+        else:
+            print("plan doesn't start with move!!!")
+            print(plan[0].name)
+            exit(1)
     elapsed = time.process_time() - start
     if moves is not None:
-        print("Plan found with %d actions in %.2f seconds" % (len(moves), elapsed))
+        print("game finished after %d turns in %.2f seconds" % (len(moves), elapsed))
         print()
         print_plan(moves)
         print()
     else:
         print("Could not find a plan in %.2f seconds" % elapsed)
-    print("Search nodes expanded: %d" % prob.expanded)

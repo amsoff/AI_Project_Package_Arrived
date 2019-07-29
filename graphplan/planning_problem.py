@@ -12,7 +12,7 @@ from graphplan.search import a_star_search
 
 
 class PlanningProblem:
-    def __init__(self, domain_file, problem_file):
+    def __init__(self, domain_file, problem_file, domain = False):
         """
         Constructor
         """
