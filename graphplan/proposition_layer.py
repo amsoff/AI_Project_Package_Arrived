@@ -1,4 +1,4 @@
-from util import Pair
+from graphplan.util import Pair
 
 
 class PropositionLayer(object):

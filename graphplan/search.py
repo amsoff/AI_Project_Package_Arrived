@@ -2,7 +2,7 @@
 In search.py, you will implement generic search algorithms
 """
 
-import util
+import graphplan.util as util
 from tkinter import *
 
 COUNTER = 0

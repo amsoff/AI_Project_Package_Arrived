@@ -1,6 +1,7 @@
 import sys
 from Certificates import Certificate
 import board
+from player import Types
 
 
 # problems = pay surprise can make agent stuck.
@@ -14,8 +15,8 @@ MAXIMUM_PAY = 30
 MAXIMUM_POCKET = 80
 MAX_STOPS = 4
 
-OPTIMI = 1
-MEAN = 2
+OPTIMI = Types.OPTIMISTIC.value
+MEAN = Types.MEAN.value
 players = [OPTIMI, MEAN]
 
 MEAN_SURPRISE = -100
@@ -384,9 +385,9 @@ def get_actions(player):
 
 
 def create_domain_file(domain_file_name, player):
-    agent = "optimistic"
+    agent = Types.OPTIMISTIC.value
     if player == MEAN:
-        agent = "mean"
+        agent = Types.MEAN.value
     file_name = agent + "_" + domain_file_name
     domain_file = open(file_name, 'w')  # use domain_file.write(str) to write to domain_file
 
@@ -427,10 +428,13 @@ if __name__ == '__main__':
         print('Usage: domain_create.py agent_code')
         sys.exit(2)
 
-    code = int(float(sys.argv[1]))  # agent_Code
+    input_player = sys.argv[1] # agent_Code
+    if input_player != Types.MEAN.value or input_player != Types.OPTIMISTIC.value:
+        print("Usage: game.py player(optimistic or mean). Bad type player.")
+        exit()
 
     domain_file_name = 'domain.txt'
     problem_file_name = 'problem.txt'
 
-    create_domain_file(domain_file_name, code)
+    create_domain_file(domain_file_name, input_player)
     # create_problem_file(problem_file_name, code)
