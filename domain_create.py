@@ -1,7 +1,9 @@
 import sys
 from Certificates import Certificate
 import board
-from player import Types
+import enum
+
+# from player import Types
 
 
 # problems = pay surprise can make agent stuck.
@@ -9,6 +11,11 @@ from player import Types
 # PRE = 1
 # ADD = 2
 # DEL = 3
+
+
+class Types(enum.Enum):
+    OPTIMISTIC = "optimistic"
+    MEAN = "mean"
 
 
 MAXIMUM_PAY = 30
@@ -431,7 +438,7 @@ if __name__ == '__main__':
         sys.exit(2)
 
     input_player = sys.argv[1] # agent_Code
-    if input_player != Types.MEAN.value or input_player != Types.OPTIMISTIC.value:
+    if input_player != Types.MEAN.value and input_player != Types.OPTIMISTIC.value:
         print("Usage: game.py player(optimistic or mean). Bad type player.")
         exit()
 

@@ -2,12 +2,6 @@ from dice import dice
 import board
 from Certificates import Certificate
 import domain_create as dc
-import enum
-
-
-class Types(enum.Enum):
-    OPTIMISTIC = "optimistic"
-    MEAN = "mean"
 
 
 GRANDMA = 0
