@@ -15,3 +15,18 @@ class Certificate(Enum):
     HAT = "hat"
     HAIRCUT = 'haircut'
     PACKAGE = "package"
+
+
+certificates = [Certificate.GRANDMA,
+                Certificate.INTEGRITY,
+                Certificate.BIRTH,
+                Certificate.ID,
+                Certificate.RABIES,
+                Certificate.PASSPORT,
+                Certificate.MILITARY,
+                Certificate.TAX,
+                Certificate.PORT,
+                Certificate.GLASSES,
+                Certificate.HAT,
+                Certificate.HAIRCUT,
+                Certificate.PACKAGE]

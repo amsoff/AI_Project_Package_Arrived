@@ -1,7 +1,7 @@
-from action_layer import ActionLayer
-from util import Pair
-from proposition import Proposition
-from proposition_layer import PropositionLayer
+from graphplan.action_layer import ActionLayer
+from graphplan.util import Pair
+from graphplan.proposition import Proposition
+from graphplan.proposition_layer import PropositionLayer
 
 
 class PlanGraphLevel(object):

@@ -1,6 +1,6 @@
-from util import Pair
-from proposition_layer import PropositionLayer
-from plan_graph_level import PlanGraphLevel
+from graphplan.util import Pair
+from graphplan.proposition_layer import PropositionLayer
+from graphplan.plan_graph_level import PlanGraphLevel
 from action import Action
 from pgparser import PgParser
 

@@ -1,21 +1,18 @@
-from util import Pair
+from graphplan.util import Pair
 import copy
-from proposition_layer import PropositionLayer
-from plan_graph_level import PlanGraphLevel
-from pgparser import PgParser
-from action import Action
+from graphplan.proposition_layer import PropositionLayer
+from graphplan.plan_graph_level import PlanGraphLevel
+from graphplan.pgparser import PgParser
+from graphplan.action import Action
 
-try:
-    from search import SearchProblem
-    from search import a_star_search
 
-except:
-    from CPF.search import SearchProblem
-    from CPF.search import a_star_search
+from graphplan.search import SearchProblem
+from graphplan.search import a_star_search
+
 
 
 class PlanningProblem:
-    def __init__(self, domain_file, problem_file):
+    def __init__(self, domain_file, problem_file, domain = False):
         """
         Constructor
         """
