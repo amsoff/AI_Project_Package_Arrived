@@ -7,7 +7,6 @@ import Certificates
 from dice import dice
 import board
 
-
 def print_plan(plan):
     for a in plan:
         print(a)
@@ -112,6 +111,7 @@ if __name__ == '__main__':
     import time
 
     start = time.process_time()
+
 
     if len(sys.argv) != 2:
         print("Usage: game.py player(optimistic or mean). Bad input")
