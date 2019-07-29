@@ -40,8 +40,7 @@ class Player:
     type = dc.MEAN
     money = 1500
     cell = (1,0)
-    has_certificate = [False] * 13
-    needs_certificate = [False] * 13
+    has_certificates = []
     dice_value = 3
     come_back_spots = []
     need_pay_spots = []
@@ -62,18 +61,15 @@ class Player:
         goals = ["at_21_28", "has_%s" % Certificate.PACKAGE]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
-        goals.extend(dc.create_not_needs_items())
+        # goals.extend(dc.create_not_needs_items())
         goals.extend(dc.create_not_owe())
         return goals
 
     def get_certificates_props(self):
         certs = []
-        for i in range(len(certificates)):
-            if not self.needs_certificate[i]:
-                certs.append(dc.NOT_NEEDS_FORMAT % certificates[i])
-            elif self.has_certificate[i]:
-                certs.append(dc.CERTIFICATES_FORMAT % certificates[i])
-                certs.append(dc.NOT_NEEDS_FORMAT % certificates[i])
+        for cert in self.has_certificates:
+            certs.append(dc.CERTIFICATES_FORMAT % cert)
+            # certs.append(dc.NOT_NEEDS_FORMAT % certificates[i])
         return certs
 
     def get_comeback_props(self):

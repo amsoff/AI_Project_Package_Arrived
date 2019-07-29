@@ -4,10 +4,10 @@ import board
 
 
 # problems = pay surprise can make agent stuck.
-NAME = 0
-PRE = 1
-ADD = 2
-DEL = 3
+# NAME = 0
+# PRE = 1
+# ADD = 2
+# DEL = 3
 
 
 MAXIMUM_PAY = 30
@@ -20,13 +20,15 @@ players = [OPTIMI, MEAN]
 
 MEAN_SURPRISE = -100
 OPTIMI_SURPRISE = 100
-
+NAME = "Name: "
+PRE = "\npre: "
+ADD = "\nadd: "
+DEL = "\ndelete: "
 # PROPOSITIONS
-
 MONEY_FORMAT = "Money_%s"
 AT_FORMAT = "At_%s_%s"
 CERTIFICATES_FORMAT = "has_%s"
-NOT_NEEDS_FORMAT = "not_needs_%s"
+# NOT_NEEDS_FORMAT = "not_needs_%s"
 DICE_FORMAT = "dice_%s"
 COME_BACK_FORMAT = "Come_back_to_%s_%s"
 NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
@@ -42,45 +44,43 @@ board_game = board.Board(1).transition_dict
 # ACTIONS:
 
 # STOP:
-FIRST_STOP_FORMAT = "Name: Stop_1\npre: \nadd: Not_Stop_1\ndelete:"
+FIRST_STOP_FORMAT = NAME + "Stop_1" + PRE + ADD + NOT_STOP_FORMAT % 1 + DEL
 # Name: stop1 pre: add: not_stop_1 delete:
-STOP_FORMAT = "Name: Stop_%s\npre: Not_Stop_%s\nadd: Not_Stop_%s\ndelete:"
+STOP_FORMAT = NAME + "Stop_%s" + PRE + NOT_STOP_FORMAT + ADD + NOT_STOP_FORMAT + DEL
 # Name: stop(x) pre:stop(x-1) add: not_stop_x delete:
 
 
 # PAYMENTS:
 
-PAY_SURPRISE_FORMAT = "Name: pay_surprise_%s_%s_from_%s\npre: At_%s_%s Money_%s\nadd: Money_%s not_need_pay_%s_%s\ndelete: Money_%s"
+PAY_SURPRISE_FORMAT = NAME + "pay_surprise_%s_%s_from_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT  + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL  + DEL + MONEY_FORMAT
 # pay surprise p1 from m pre at p1 money m add money m-x not need pay p1 del money m
-PAY_FIRST_SURPRISE = "Name: pay_%s_surprise_%s_%s_from_%s\npre: At_%s_%s Money_%s\nadd: Money_%s not_need_pay_%s_%s not_owe_%s\ndelete: Money_%s"
+PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + " " + MONEY_FORMAT  +ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + " " + NOT_OWE  + DEL + MONEY_FORMAT
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
 # from certain locations in the map you can pay 150 shekels to get where you need.
-PAY_150_FORMAT = "Name: Pay_150_from_%s_%s_to_%s_%s_with_%s\npre: At_%s_%s Money_%s\nadd: At_%s_%s Money_%s\ndelete: At_%s_%s Money_%s"
+PAY_150_FORMAT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE +AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
 # pay 150 to jump from p1 to p2 with x money, pre at p1, money x, add at p2, money x-150, del at p1 money x.
 
-PAY_CELL = "Name: pay_%s_At_%s_%s_from_%s\npre: At_%s_%s Money_%s \nadd: Money_%s not_need_pay_%s_%s \ndelete: Money_%s"
+PAY_CELL = NAME + "pay_%s_At_%s_%s_from_%s" + PRE + AT_FORMAT +" " + MONEY_FORMAT + ADD +MONEY_FORMAT +" " + NOT_NEED_PAY_CELL  + DEL + MONEY_FORMAT
 # pay x at p1 from m pre at p1 money m add money m-x not need pay p1 del money m
 
 
 # jump to techef ashuv block
-GOTO_FORMAT = "Name: Goto_%s_%s_from_%s_%s\npre: Come_back_to_%s_%s At_%s_%s\nadd: At_%s_%s Not_Come_back_%s_%s\ndelete: Come_back_to_%s_%s At_%s_%s " # FROM_COMEBACK
+GOTO_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT # FROM_COMEBACK
 # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
-
-
-JUMP_TO_ENTRANCE = "Name: jump_to_%s_%s_from_%s_%s\npre: Come_back_to_%s_%s At_%s_%s\nadd: At_%s_%s \ndelete: At_%s_%s"
+JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT +DEL + AT_FORMAT
 # jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
 
 # # no need for take certificate?
 # TAKE_CERTIFICATE = "Name: Take_%s\npre: At_%s_%s\nadd: has_%s\ndelete:"
 # # take id pre at p1 add has id
-SHOW_CERTIFICATE = "Name: Show_%s\npre: has_%s\nadd: not_needs_%s\ndelete:"
+# SHOW_CERTIFICATE = "Name: Show_%s\npre: has_%s\nadd: not_needs_%s\ndelete:"
 # show id pre has id add not needs id
 
 # put comeback:
-PUT_COMEBACK = "Name: place_comeback_%s_%s\npre: At_%s_%s\nadd: Come_back_to_%s_%s\ndelete: Not_Come_back_%s_%s"
+PUT_COMEBACK = "Name: place_comeback_%s_%s" + PRE + AT_FORMAT + ADD +COME_BACK_FORMAT + DEL + NOT_COME_BACK_FORMAT
 # place comeback at p1 pre: at p1 add: comeback p1 delete: not_CB_p1
 
 
@@ -92,62 +92,64 @@ def create_move(player):
         for d in [1,3,5]:  # lekol gilgul_kubia
             for tile2 in board_game[tile1][d]: # lekol mishbetzet she'efshar lehagia elia
                 action = dict()
-                action["Name: "] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
+                action[NAME] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
 
-                action["pre: "] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
+                action[PRE] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
                 for s in range(1, MAX_STOPS+1):
-                    action["pre: "] += " " + NOT_STOP_FORMAT % s
+                    action[PRE] += " " + NOT_STOP_FORMAT % s
 
-                action["add: "] = AT_FORMAT % (tile2[0], tile2[1])
+                action[ADD] = AT_FORMAT % (tile2[0], tile2[1])
                 if player == MEAN:
-                    action["add: "] += " " + DICE_FORMAT % 3
+                    action[ADD] += " " + DICE_FORMAT % 3
+                    if True: # Todo add here certain cells
+                        action[ADD] += " " + DICE_FORMAT % 1
                 elif player == OPTIMI:
                     for d1 in [1,3,5]:
-                        action["add: "] += " " + DICE_FORMAT % d1
+                        action[ADD] += " " + DICE_FORMAT % d1
 
-                action["delete: "] = AT_FORMAT % (tile1[0], tile1[1]) + " " + DICE_FORMAT % d
+                action[DEL] = AT_FORMAT % (tile1[0], tile1[1]) + " " + DICE_FORMAT % d
 
 
                 # payments:
                 if board.BALANCE in board_game[tile2] or board.SURPRISE in board_game[tile2]:
-                    action["delete: "] += " " + NOT_NEED_PAY_CELL % (tile2[0], tile2[1])
+                    action[DEL] += " " + NOT_NEED_PAY_CELL % (tile2[0], tile2[1])
 
                 if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
-                    action["pre: "] += " " + NOT_NEED_PAY_CELL % (tile1[0], tile1[1])
+                    action[PRE] += " " + NOT_NEED_PAY_CELL % (tile1[0], tile1[1])
 
 
                 # Surprises:
                 if board.SURPRISE in board_game[tile1]:
                     for i in [100, 200, 300]:
-                        action["pre: "] += " " + NOT_OWE % i
+                        action[PRE] += " " + NOT_OWE % i
 
 
 
                 # take certificate:
                 if board.HAS in board_game[tile2]:
-                    action["add: "] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
+                    action[ADD] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
 
                 # show certificate:
                 if board.NEED in board_game[tile1]:  # eem zu mishbetzet shezarich lehazig teuda, zarich sheihihe teuda
                     for cert in board_game[tile1][board.NEED]:
                         if cert not in [Certificate.GLASSES, Certificate.HAT]:
-                            action["pre: "] += " " + CERTIFICATES_FORMAT % cert
+                            action[PRE] += " " + CERTIFICATES_FORMAT % cert
 
-                # hat and glasses:
-                if board.NEED in board_game[tile2]:
-                    for cert in board_game[tile2][board.NEED]:
-                        if cert in [Certificate.GLASSES, Certificate.HAT]:
-                            action["delete: "] += " " + NOT_NEEDS_FORMAT % cert
+                # # hat and glasses:
+                # if board.NEED in board_game[tile2]:
+                #     for cert in board_game[tile2][board.NEED]:
+                #         if cert in [Certificate.GLASSES, Certificate.HAT]:
+                #             action["delete: "] += " " + NOT_NEEDS_FORMAT % cert
 
 
                 if board.WAIT in board_game[tile2]:  # eem heganu leazor, naazor
                     for i in range(1, board_game[tile2][board.WAIT]+1):
-                        action["delete: "] += " " + NOT_STOP_FORMAT % i
+                        action[DEL] += " " + NOT_STOP_FORMAT % i
 
                 moves[(tile1, tile2)] = action
 
     for move in moves:
-        strng = '\n'.join(['%s%s' % (k,v) for k,v in moves[move].items()])
+        strng = ''.join(['%s%s' % (k,v) for k,v in moves[move].items()])
         ret.append(strng)
     return ret
 
@@ -238,12 +240,12 @@ def create_goto_from_comeback():
 #     return takes
 
 
-def create_show_certificate():
-    show = []
-    for tile in board_game:
-        if board.NEED in board_game[tile]:
-            show.extend([SHOW_CERTIFICATE % (d,d,d) for d in board_game[tile][board.NEED]])
-    return show
+# def create_show_certificate():
+#     show = []
+#     for tile in board_game:
+#         if board.NEED in board_game[tile]:
+#             show.extend([SHOW_CERTIFICATE % (d,d,d) for d in board_game[tile][board.NEED]])
+#     return show
 
 
 def create_stop_action():
@@ -319,21 +321,21 @@ def create_not_come_back():
     return cbs
 
 
-def create_not_needs_items():
-    certificates = [NOT_NEEDS_FORMAT % Certificate.GRANDMA,
-                    NOT_NEEDS_FORMAT % Certificate.INTEGRITY,
-                    NOT_NEEDS_FORMAT % Certificate.BIRTH,
-                    NOT_NEEDS_FORMAT % Certificate.ID,
-                    NOT_NEEDS_FORMAT % Certificate.RABIES,
-                    NOT_NEEDS_FORMAT % Certificate.PASSPORT,
-                    NOT_NEEDS_FORMAT % Certificate.MILITARY,
-                    NOT_NEEDS_FORMAT % Certificate.TAX,
-                    NOT_NEEDS_FORMAT % Certificate.PORT,
-                    NOT_NEEDS_FORMAT % Certificate.PACKAGE,
-                    NOT_NEEDS_FORMAT % Certificate.HAIRCUT,
-                    NOT_NEEDS_FORMAT % Certificate.GLASSES,
-                    NOT_NEEDS_FORMAT % Certificate.HAT]
-    return certificates
+# def create_not_needs_items():
+#     certificates = [NOT_NEEDS_FORMAT % Certificate.GRANDMA,
+#                     NOT_NEEDS_FORMAT % Certificate.INTEGRITY,
+#                     NOT_NEEDS_FORMAT % Certificate.BIRTH,
+#                     NOT_NEEDS_FORMAT % Certificate.ID,
+#                     NOT_NEEDS_FORMAT % Certificate.RABIES,
+#                     NOT_NEEDS_FORMAT % Certificate.PASSPORT,
+#                     NOT_NEEDS_FORMAT % Certificate.MILITARY,
+#                     NOT_NEEDS_FORMAT % Certificate.TAX,
+#                     NOT_NEEDS_FORMAT % Certificate.PORT,
+#                     NOT_NEEDS_FORMAT % Certificate.PACKAGE,
+#                     NOT_NEEDS_FORMAT % Certificate.HAIRCUT,
+#                     NOT_NEEDS_FORMAT % Certificate.GLASSES,
+#                     NOT_NEEDS_FORMAT % Certificate.HAT]
+#     return certificates
 
 
 def create_certificates():
@@ -358,7 +360,7 @@ def get_propositions():
     props = []
     props.extend(create_not_need_pay())
     props.extend(create_certificates())
-    props.extend(create_not_needs_items())
+    # props.extend(create_not_needs_items())
     props.extend(create_come_back())
     props.extend(create_not_come_back())
     props.extend(create_at())
@@ -378,7 +380,7 @@ def get_actions(player):
     actions.extend(create_pay_surprise(player))
     actions.extend(create_pay_first_surprise())
     actions.extend(create_pay_150())
-    actions.extend(create_show_certificate())
+    # actions.extend(create_show_certificate())
     actions.extend(create_stop_action())
     return actions
 
