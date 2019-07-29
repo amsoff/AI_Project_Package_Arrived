@@ -37,10 +37,9 @@ certificates = [Certificate.GRANDMA,
                 Certificate.HAIRCUT,
                 Certificate.PACKAGE]
 
+
 board_game = board.Board(1).transition_dict
-all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile] and (
-        Certificate.HAT not in board_game[tile][board.NEED] or Certificate.GLASSES not in board_game[tile][
-    board.NEED])) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
+all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile] and (Certificate.HAT not in board_game[tile][board.NEED] or Certificate.GLASSES not in board_game[tile][board.NEED])) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
 surprise_amounts = [-300, -200, -100, 100, 200, 300]
@@ -49,9 +48,8 @@ surprise_amounts = [-300, -200, -100, 100, 200, 300]
 class Player:
     type = dc.MEAN
     money = 1500
-    cell = (1, 0)
-    has_certificate = [False] * 13
-    needs_certificate = [False] * 13
+    cell = (1,0)
+    has_certificates = []
     dice_value = 3
     come_back_spots = []
     need_pay_spots = []
@@ -68,22 +66,20 @@ class Player:
         else:
             self.owe.append(amount)
 
+
     def get_goals(self):
         goals = ["at_21_28", "has_%s" % Certificate.PACKAGE]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
-        goals.extend(dc.create_not_needs_items())
+        # goals.extend(dc.create_not_needs_items())
         goals.extend(dc.create_not_owe())
         return goals
 
     def get_certificates_props(self):
         certs = []
-        for i in range(len(certificates)):
-            if not self.needs_certificate[i]:
-                certs.append(dc.NOT_NEEDS_FORMAT % certificates[i])
-            elif self.has_certificate[i]:
-                certs.append(dc.CERTIFICATES_FORMAT % certificates[i])
-                certs.append(dc.NOT_NEEDS_FORMAT % certificates[i])
+        for cert in self.has_certificates:
+            certs.append(dc.CERTIFICATES_FORMAT % cert)
+            # certs.append(dc.NOT_NEEDS_FORMAT % certificates[i])
         return certs
 
     def get_comeback_props(self):
@@ -99,6 +95,7 @@ class Player:
             stops.append(dc.NOT_STOP_FORMAT % i)
         return stops
 
+
     def get_pays(self):
         pays = [dc.NOT_OWE % abs(d) for d in surprise_amounts if d < 0]
         pays.extend([dc.NOT_NEED_PAY_CELL % cell for cell in payment_spots.difference(self.need_pay_spots)])
@@ -113,6 +110,9 @@ class Player:
         initial.extend(self.get_stops())
         initial.extend(self.get_pays())
         return initial
+
+
+
 
     def build_problem(self):
         agent = Types.OPTIMISTIC
