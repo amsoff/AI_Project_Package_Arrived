@@ -43,6 +43,7 @@ NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
 NOT_STOP_FORMAT = "Not_Stop_%s"
 NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
 NOT_OWE = "not_owe_%s"
+OWE = "owe_%s"
 
 #  make goal be all not_comebacks and  not needs and at END
 
@@ -62,7 +63,7 @@ STOP_FORMAT = NAME + "Stop_%s_at_%s_%s" + PRE + AT_FORMAT + " " + NOT_STOP_FORMA
 
 PAY_SURPRISE_FORMAT = NAME + "pay_surprise_%s_%s_from_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT  + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL  + DEL + MONEY_FORMAT
 # pay surprise p1 from m pre at p1 money m add money m-x not need pay p1 del money m
-PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + " " + MONEY_FORMAT  +ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + " " + NOT_OWE  + DEL + MONEY_FORMAT
+PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + " " + MONEY_FORMAT + " " + OWE + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + " " + NOT_OWE  + DEL + MONEY_FORMAT
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
 # from certain locations in the map you can pay 150 shekels to get where you need.
@@ -213,7 +214,7 @@ def create_pay_first_surprise():
         if board.SURPRISE in board_game[tile]:
             for s in [100, 200, 300]:
                 for m in range(s, 50*MAXIMUM_POCKET+1, 50):
-                    pays.append(PAY_FIRST_SURPRISE % (s, tile[0], tile[1], m, tile[0], tile[1], m, m-s, tile[0], tile[1], s, m))
+                    pays.append(PAY_FIRST_SURPRISE % (s, tile[0], tile[1], m, tile[0], tile[1], m, s, m-s, tile[0], tile[1], s, m))
     return pays
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
@@ -271,10 +272,11 @@ def create_stop_action():
 
 ############ PROPOSITIONS ############
 
-def create_not_owe():
+def create_owe_not_owe():
     owes = []
     for i in [100, 200, 300]:
         owes.append(NOT_OWE % i)
+        owes.append(OWE % i)
     return owes
 
 
@@ -380,7 +382,7 @@ def get_propositions():
     props.extend(create_dice())
     props.extend(create_has_money())
     props.extend(create_not_stop())
-    props.extend(create_not_owe())
+    props.extend(create_owe_not_owe())
     return props
 
 

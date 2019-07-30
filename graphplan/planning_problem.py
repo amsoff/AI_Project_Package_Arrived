@@ -171,3 +171,49 @@ def is_fixed(graph, level):
 def null_heuristic(*args, **kwargs):
     return 0
 
+
+if __name__ == '__main__':
+    import sys
+    import time
+
+    if len(sys.argv) != 1 and len(sys.argv) != 4:
+        print("Usage: PlanningProblem.py domainName problemName heuristicName(max, sum or zero)")
+        exit()
+    domain = 'dwrDomain.txt'
+    problem = 'dwrProblem.txt'
+    heuristic = null_heuristic
+    if len(sys.argv) == 4:
+        domain = str(sys.argv[1])
+        problem = str(sys.argv[2])
+        if str(sys.argv[3]) == 'max':
+            heuristic = max_level
+        elif str(sys.argv[3]) == 'sum':
+            heuristic = level_sum
+        elif str(sys.argv[3]) == 'zero':
+            heuristic = null_heuristic
+        else:
+            print("Usage: planning_problem.py domain_name problem_name heuristic_name[max, sum, zero]")
+            exit()
+    player = domain.split("_")[0]
+    start1 = time.clock()
+    prob = PlanningProblem(domain, problem)
+    start = time.clock()
+    plan = a_star_search(prob, heuristic)
+    end = time.clock()
+    extract_time = end - start
+    total_time = end - start1
+    if plan is not None:
+        print("Plan found with %d actions in %.2f seconds" % (len(plan), extract_time))
+        print("Total Runtime: %d" % total_time)
+        file = open(player + "_CHECK.txt", 'w')  # use domain_file.write(str) to write to domain_file
+
+        # write propositions to file
+        file.write("Plan:\n")
+        file.write("\n".join([action.name for action in plan]))
+        file.write("\n")
+        file.close()
+    else:
+        print("Could not find a plan in %.2f seconds" % extract_time)
+    print("Search nodes expanded: %d" % prob.expanded)
+
+
