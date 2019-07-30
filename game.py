@@ -122,14 +122,12 @@ if __name__ == '__main__':
         print("Usage: game.py player(optimistic or mean). Bad input")
         exit()
     input_player = sys.argv[1]
-    domain_file_name = '{}_domain.txt'
-    problem_file_name = '{}_problem.txt'
+    domain_file_name = 'domain.txt'
+    problem_file_name = 'problem.txt'
     player = Player()
     if input_player == Types.MEAN.value or input_player == Types.OPTIMISTIC.value:
         player.set_type(input_player)
-        problem_file_name = problem_file_name.format(input_player)
-        domain_file_name = domain_file_name.format(input_player)
-        dc.create_domain_file(domain_file_name, input_player)
+        dc.create_domain_file(domain_file_name, input_player.lower())
         dice = dice()
     else:
         print("Usage: game.py player(optimistic or mean). Bad type player.")
