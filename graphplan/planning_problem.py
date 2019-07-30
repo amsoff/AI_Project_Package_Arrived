@@ -1,26 +1,25 @@
-from util import Pair
+from graphplan.util import Pair
 import copy
-from proposition_layer import PropositionLayer
-from plan_graph_level import PlanGraphLevel
-from pgparser import PgParser
-from action import Action
-
-try:
-    from search import SearchProblem
-    from search import a_star_search
-
-except:
-    from CPF.search import SearchProblem
-    from CPF.search import a_star_search
+from graphplan.proposition_layer import PropositionLayer
+from graphplan.plan_graph_level import PlanGraphLevel
+from graphplan.pgparser import PgParser
+from graphplan.action import Action
+from graphplan.search import a_star_search
 
 
 class PlanningProblem:
-    def __init__(self, domain_file, problem_file):
+
+    def __init__(self, domain_file, problem_file, actions, propositions):
         """
         Constructor
         """
         p = PgParser(domain_file, problem_file)
-        self.actions, self.propositions = p.parse_actions_and_propositions()
+        if actions is None and propositions is None:
+            self.actions, self.propositions = p.parse_actions_and_propositions()
+
+        else:
+            self.actions = actions
+            self.propositions = propositions
         # list of all the actions and list of all the propositions
 
         initial_state, goal = p.parse_problem()
@@ -38,6 +37,12 @@ class PlanningProblem:
 
     def get_start_state(self):
         return self.initialState
+
+    def get_actions(self):
+        return self.actions
+
+    def get_propositions(self):
+        return self.propositions
 
     def is_goal_state(self, state):
         """
@@ -93,6 +98,9 @@ class PlanningProblem:
             delete = []
             act = Action(name, precon, add, delete, True)
             self.actions.append(act)
+
+    def init_new_problem(self):
+        pass
 
 
 def max_level(state, planning_problem):
