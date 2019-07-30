@@ -3,15 +3,14 @@ from Certificates import Certificate
 import board
 from dice import Dice
 from surprise import Surprise
-from player import Types
 
 
 MAXIMUM_PAY = 30
 MAXIMUM_POCKET = 80
 MAX_STOPS = 4
 
-OPTIMI = Types.OPTIMISTIC.value
-MEAN = Types.MEAN.value
+OPTIMI = "optimistic"
+MEAN = "mean"
 MEAN_SURPRISE = -100
 OPTIMI_SURPRISE = 100
 NAME = "Name: "
@@ -34,6 +33,7 @@ OWE = "owe_%s"
 
 #  make goal be all not_comebacks and  not needs and at END
 
+from Player_types import Types
 
 board_game = board.Board(1).transition_dict
 
@@ -167,7 +167,7 @@ def create_pay_cell():
 def create_jump_to_entrance():
     jumps = []
     for tile in board_game:
-        if (board.NEED in board_game[tile] or board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]) and board.ENTRANCE in board_game[tile]:
+        if (board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0) or board.SURPRISE in board_game[tile]) and board.ENTRANCE in board_game[tile]:
             tile2 = board_game[tile][board.ENTRANCE]
             jumps.append(JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
     return jumps
@@ -436,6 +436,7 @@ if __name__ == '__main__':
 
     domain_file_name = 'domain.txt'
     problem_file_name = 'problem.txt'
+
 
     create_domain_file(domain_file_name, input_player)
     # create_problem_file(problem_file_name, code)
