@@ -416,6 +416,7 @@ def create_domain_file(domain_file_name, player):
     domain_file.write("\n".join(actions))
     domain_file.write("\n")
     domain_file.close()
+    return file_name
 
 
 
