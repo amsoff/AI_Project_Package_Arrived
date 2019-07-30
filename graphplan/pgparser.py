@@ -6,6 +6,7 @@ class PgParser:
     """
     A utility class for parsing the domain and problem.
     """
+    rounds = 1
 
     def __init__(self, domain_file, problem_file):
         """
@@ -57,7 +58,7 @@ class PgParser:
             a.pre = new_pre
             a.add = new_add
             a.delete = new_delete
-        print("finished parsing actions and propositions")
+        print("finished parsing actions and propositions, round " + str(PgParser.rounds))
         return [actions, propositions]
 
     @staticmethod
@@ -78,5 +79,6 @@ class PgParser:
         words = [word.rstrip() for word in line.split(" ") if len(word.rstrip()) > 0]
         for i in range(2, len(words)):
             goal.append(Proposition(words[i]))
-        print("finished parsing problem")
+        print("finished parsing problem, round " + str(PgParser.rounds))
+        PgParser.rounds += 1
         return init, goal

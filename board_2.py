@@ -57,8 +57,7 @@ class Board:
         self.transition_dict[(11,0)] = {1: [(11,0), (11,1),(10,0)],
                                         2: [(11,0), (11,2), (9,0)],
                                         3:[(8,0),(9,1),(11,3)],
-                                        ORANGE:[(11,3)],
-                                        MESSAGE: "You entered the Hospital!"}
+                                        ORANGE:[(11,3)]}
 
         self.transition_dict[(11,1)] = {1: [(11,1), (11,2)],
                                         2: [(11,3)],
@@ -116,8 +115,7 @@ class Board:
 
         self.transition_dict[(10, 7)] = {1: [(10, 6)],
                                          2: [(10, 5)],
-                                         3: [(11, 7)],
-                                         MESSAGE: "Lottery! you have a chance to earn some money!"}
+                                         3: [(11, 7)]}
 
         self.transition_dict[(11, 7)] = {1: [(10, 6)],
                                          2: [(10, 5)],
@@ -173,8 +171,7 @@ class Board:
         self.transition_dict[(9, 8)] = {1: [(9, 7), (10,8), (8,8)],
                                         2: [(10,7), (9,6), (7,8)],
                                         3: [(6,8), (9,5)],
-                                        WAIT: 4,
-                                        MESSAGE: "That was stupid. You are in Prison"} #Prison
+                                        WAIT: 4} #Prison
 
         self.transition_dict[(9, 9)] = {1: [(9, 10)],
                                         2: [(9,11)],
@@ -208,8 +205,7 @@ class Board:
         self.transition_dict[(8,2)] = {1: [(8,3), (8,2)],
                                        2: [(8,4)],
                                        3: [(8,2)],
-                                       ORANGE: [(8,4)],
-                                       MESSAGE: "You entered the Photography studio."}
+                                       ORANGE: [(8,4)]}
 
         self.transition_dict[(8,3)] = {1: [(8, 4)],
                                        2: [(8,3)],

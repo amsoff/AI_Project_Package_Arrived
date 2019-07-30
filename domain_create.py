@@ -312,10 +312,8 @@ def create_come_back():
 def create_not_come_back():
     cbs = []
     for tile in board_game:
-        if board.NEED in board_game[tile] or board.BALANCE in board_game[
-            tile] or board.SURPRISE in board_game[tile]:
-            if board.BALANCE in board_game[tile] and board_game[tile][
-                board.BALANCE] > 0:
+        if board.NEED in board_game[tile] or board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]:
+            if board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] > 0:
                 continue
             cbs.append(NOT_COME_BACK_FORMAT % (tile[0], tile[1]))
     return cbs
@@ -343,14 +341,9 @@ def create_certificates():
                     CERTIFICATES_FORMAT % Certificate.INTEGRITY,
                     CERTIFICATES_FORMAT % Certificate.BIRTH,
                     CERTIFICATES_FORMAT % Certificate.ID,
-                    CERTIFICATES_FORMAT % Certificate.RABIES,
                     CERTIFICATES_FORMAT % Certificate.PASSPORT,
-                    CERTIFICATES_FORMAT % Certificate.MILITARY,
                     CERTIFICATES_FORMAT % Certificate.TAX,
                     CERTIFICATES_FORMAT % Certificate.PORT,
-                    CERTIFICATES_FORMAT % Certificate.GLASSES,
-                    CERTIFICATES_FORMAT % Certificate.HAT,
-                    CERTIFICATES_FORMAT % Certificate.PACKAGE,
                     CERTIFICATES_FORMAT % Certificate.HAIRCUT}
     return certificates
 
@@ -403,6 +396,7 @@ def create_domain_file(domain_file_name, player):
     domain_file.write("\n".join(actions))
     domain_file.write("\n")
     domain_file.close()
+    return file_name
 
 
 
