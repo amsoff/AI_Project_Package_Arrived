@@ -24,8 +24,9 @@ PACKAGE_COST = -50
 
 
 class Board:
+    loto_cells = {(10,7), (2,1), (4,7)}
 
-    def __init__(self, num_players, starting_point=(1, 0)):
+    def __init__(self, num_players=1, starting_point=(1, 0)):
         self.board_w = 23
         self.board_h = 31
         self.starting_point = starting_point
@@ -162,7 +163,8 @@ class Board:
         self.transition_dict[(9, 5)] = {1: [(9, 4), (8, 5), (9, 6)],
                                         2: [(7, 5), (9, 3), (9, 7)],
                                         3: [(7, 6), (9, 8), (9, 2), (6, 5)],
-                                        SURPRISE: True, JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
+                                        SURPRISE: True, JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
+                                        ENTRANCE: (8, 5)}
 
         self.transition_dict[(9, 6)] = {1: [(9, 7), (9, 5)],
                                         2: [(8, 5), (9, 4), (9, 8)],
@@ -252,7 +254,9 @@ class Board:
         self.transition_dict[(7, 5)] = {1: [(8, 5), (6, 5), (7, 6)], 2: [(6, 6), (9, 5), (6, 4), (5, 5)],
                                         3: [(10, 5), (9, 6), (9, 4), (5, 6), (6, 7)], ORANGE: [(6, 7), (6, 4)]}
         self.transition_dict[(7, 1)] = {1: [(8, 1), (6, 1)], 2: [(9, 1), (5, 1)],
-                                        3: [(9, 2), (9, 0), (4, 1)], SURPRISE: True, JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
+                                        3: [(9, 2), (9, 0), (4, 1)],
+                                        SURPRISE: True, JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
+                                        ENTRANCE: (6, 1)}
 
     def init_row6(self):
         self.transition_dict[(6, 11)] = {1: [(7, 11)], 2: [(7, 10)], 3: [(7, 9)]}
