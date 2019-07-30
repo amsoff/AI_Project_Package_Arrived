@@ -1,21 +1,9 @@
 import sys
 from Certificates import Certificate
 import board
-import enum
-
-# from player import Types
-
-
-# problems = pay surprise can make agent stuck.
-# NAME = 0
-# PRE = 1
-# ADD = 2
-# DEL = 3
-
-
-class Types(enum.Enum):
-    OPTIMISTIC = "optimistic"
-    MEAN = "mean"
+from dice import Dice
+from surprise import Surprise
+from player import Types
 
 
 MAXIMUM_PAY = 30
@@ -24,19 +12,17 @@ MAX_STOPS = 4
 
 OPTIMI = Types.OPTIMISTIC.value
 MEAN = Types.MEAN.value
-players = [OPTIMI, MEAN]
-
 MEAN_SURPRISE = -100
 OPTIMI_SURPRISE = 100
 NAME = "Name: "
 PRE = "\npre: "
 ADD = "\nadd: "
 DEL = "\ndelete: "
+
 # PROPOSITIONS
 MONEY_FORMAT = "Money_%s"
 AT_FORMAT = "At_%s_%s"
 CERTIFICATES_FORMAT = "has_%s"
-# NOT_NEEDS_FORMAT = "not_needs_%s"
 DICE_FORMAT = "dice_%s"
 COME_BACK_FORMAT = "Come_back_to_%s_%s"
 NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
@@ -44,6 +30,7 @@ NOT_STOP_FORMAT = "Not_Stop_%s"
 NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
 NOT_OWE = "not_owe_%s"
 OWE = "owe_%s"
+# NOT_NEEDS_FORMAT = "not_needs_%s"
 
 #  make goal be all not_comebacks and  not needs and at END
 
@@ -98,7 +85,7 @@ def create_move(player):
     moves = dict()
     ret = []
     for tile1 in board_game:  # lekol mishbetzet
-        for d in [1,3,5]:  # lekol gilgul_kubia
+        for d in Dice.vals:  # lekol gilgul_kubia
             for tile2 in board_game[tile1][d]: # lekol mishbetzet she'efshar lehagia elia
                 action = dict()
                 action[NAME] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
@@ -113,7 +100,7 @@ def create_move(player):
                     if True: # Todo add here certain cells
                         action[ADD] += " " + DICE_FORMAT % 1
                 elif player == OPTIMI:
-                    for d1 in [1,3,5]:
+                    for d1 in Dice.vals:
                         action[ADD] += " " + DICE_FORMAT % d1
 
                 action[DEL] = AT_FORMAT % (tile1[0], tile1[1]) + " " + DICE_FORMAT % d
@@ -129,8 +116,8 @@ def create_move(player):
 
                 # Surprises:
                 if board.SURPRISE in board_game[tile1]:
-                    for i in [100, 200, 300]:
-                        action[PRE] += " " + NOT_OWE % i
+                    for i in [sur for sur in Surprise.surprises if sur < 0]:
+                        action[PRE] += " " + NOT_OWE % abs(i)
 
 
 
@@ -199,11 +186,11 @@ def create_pay_surprise(player):
         pays = []
         for tile in board_game:
             if board.SURPRISE in board_game[tile]:  # check if not bug -> meaning of if: if there is a key surprise
-                surprise = -1
+                surprise = 0
                 if player == OPTIMI:
-                    surprise = OPTIMI_SURPRISE
+                    surprise = Surprise.optimistic_expected_surprise
                 elif player == MEAN:
-                    surprise = MEAN_SURPRISE
+                    surprise = Surprise.mean_expected_surprise
                 for m in range(max(0,-surprise), 50 * MAXIMUM_POCKET+1, 50):
                     pays.append(PAY_SURPRISE_FORMAT % (tile[0], tile[1], m, tile[0], tile[1], m, min(50*MAXIMUM_POCKET, m+surprise), tile[0], tile[1], m))
         return pays
@@ -212,9 +199,9 @@ def create_pay_first_surprise():
     pays = []
     for tile in board_game:
         if board.SURPRISE in board_game[tile]:
-            for s in [100, 200, 300]:
-                for m in range(s, 50*MAXIMUM_POCKET+1, 50):
-                    pays.append(PAY_FIRST_SURPRISE % (s, tile[0], tile[1], m, tile[0], tile[1], m, s, m-s, tile[0], tile[1], s, m))
+            for s in [sur for sur in Surprise.surprises if sur < 0]:
+                for m in range(abs(s), 50*MAXIMUM_POCKET+1, 50):
+                    pays.append(PAY_FIRST_SURPRISE % (abs(s), tile[0], tile[1], m, tile[0], tile[1], m, s, m-s, tile[0], tile[1], s, m))
     return pays
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
@@ -258,15 +245,13 @@ def create_goto_from_comeback():
 
 
 def create_stop_action():
-    STOP_FORMAT = NAME + "Stop_%s_at_%s_%s" + PRE + AT_FORMAT + " " + NOT_STOP_FORMAT + ADD + NOT_STOP_FORMAT + DEL
-    FIRST_STOP_FORMAT = NAME + "Stop_1_at_%s_%s" + PRE + AT_FORMAT + " " + ADD + NOT_STOP_FORMAT % 1 + DEL
-    for tile in board_game:
-        if board.WAIT in board_game[tile]:
-            num_stops = board_game[tile][board.WAIT]
-            stops = [FIRST_STOP_FORMAT % (tile[0], tile[1],tile[0], tile[1])]
-            for x in range(2, num_stops+1):
-                stops.append(STOP_FORMAT % (str(x), tile[0], tile[1], tile[0],tile[1], str(x-1), str(x)))
-            return stops
+        for tile in board_game:
+            if board.WAIT in board_game[tile]:
+                num_stops = board_game[tile][board.WAIT]
+                stops = [FIRST_STOP_FORMAT % (tile[0], tile[1],tile[0], tile[1])]
+                for x in range(2, num_stops+1):
+                    stops.append(STOP_FORMAT % (str(x), tile[0], tile[1], tile[0],tile[1], str(x-1), str(x)))
+                return stops
 
 
 
@@ -274,9 +259,9 @@ def create_stop_action():
 
 def create_owe_not_owe():
     owes = []
-    for i in [100, 200, 300]:
-        owes.append(NOT_OWE % i)
-        owes.append(OWE % i)
+    for i in [sur for sur in Surprise.surprises if sur < 0]:
+        owes.append(NOT_OWE % abs(i))
+        owes.append(OWE % abs(i))
     return owes
 
 
@@ -304,7 +289,7 @@ def create_has_money():
 
 def create_dice():
     dice = []
-    for d in [1,3,5]:
+    for d in Dice.vals:
         dice.append(DICE_FORMAT % (str(d)))
     return dice
 
