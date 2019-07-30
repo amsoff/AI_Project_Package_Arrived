@@ -1,5 +1,6 @@
 from graphplan.search import a_star_search
-from player import Types, Player
+from player import Player
+from domain_create import Types
 from graphplan.planning_problem import PlanningProblem
 import domain_create as dc
 import surprise
@@ -120,7 +121,7 @@ if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("Usage: game.py player(optimistic or mean). Bad input")
         exit()
-    input_player = sys.argv[2]
+    input_player = sys.argv[1]
     domain_file_name = '{}_domain.txt'
     problem_file_name = '{}_problem.txt'
     player = Player()
@@ -136,7 +137,7 @@ if __name__ == '__main__':
     dice_val = dice.roll_dice()
     player.dice_value = dice_val
     player.build_problem()
-    prob = PlanningProblem(domain_file_name, problem_file_name)
+    prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob)
     turns = 0
     moves = []
@@ -151,6 +152,13 @@ if __name__ == '__main__':
             moves.extend(move)
             if "message" in board.get_cell(cell):
                 moves.append(board.get_cell(cell)["message"])
+
+            # Starting new round- creating new problem file
+            player.build_problem()
+            actions = prob.get_actions()
+            propositions = prob.get_propositions()
+            prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
+            plan = a_star_search(prob)
         else:
             print("plan doesn't start with move!!!")
             print(plan[0].name)
