@@ -96,9 +96,9 @@ def create_move(player):
 
                 action[ADD] = AT_FORMAT % (tile2[0], tile2[1])
                 if player == MEAN:
-                    action[ADD] += " " + DICE_FORMAT % 3
-                    if True: # Todo add here certain cells
-                        action[ADD] += " " + DICE_FORMAT % 1
+                    # action[ADD] += " " + DICE_FORMAT % 3
+                    # if True: # Todo add here certain cells
+                    action[ADD] += " " + DICE_FORMAT % 1
                 elif player == OPTIMI:
                     for d1 in Dice.vals:
                         action[ADD] += " " + DICE_FORMAT % d1
@@ -191,7 +191,7 @@ def create_pay_surprise(player):
                     surprise = Surprise.optimistic_expected_surprise
                 elif player == MEAN:
                     surprise = Surprise.mean_expected_surprise
-                for m in range(max(0,-surprise), 50 * MAXIMUM_POCKET+1, 50):
+                for m in range(max(0,-int(surprise)), 50 * MAXIMUM_POCKET+1, 50):
                     pays.append(PAY_SURPRISE_FORMAT % (tile[0], tile[1], m, tile[0], tile[1], m, min(50*MAXIMUM_POCKET, m+surprise), tile[0], tile[1], m))
         return pays
 
@@ -201,7 +201,7 @@ def create_pay_first_surprise():
         if board.SURPRISE in board_game[tile]:
             for s in [sur for sur in Surprise.surprises if sur < 0]:
                 for m in range(abs(s), 50*MAXIMUM_POCKET+1, 50):
-                    pays.append(PAY_FIRST_SURPRISE % (abs(s), tile[0], tile[1], m, tile[0], tile[1], m, s, m-s, tile[0], tile[1], s, m))
+                    pays.append(PAY_FIRST_SURPRISE % (abs(s), tile[0], tile[1], m, tile[0], tile[1], m, abs(s), min(50*MAXIMUM_POCKET, m+s), tile[0], tile[1], abs(s), m))
     return pays
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
