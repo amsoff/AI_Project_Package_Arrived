@@ -327,10 +327,8 @@ def create_come_back():
 def create_not_come_back():
     cbs = []
     for tile in board_game:
-        if board.NEED in board_game[tile] or board.BALANCE in board_game[
-            tile] or board.SURPRISE in board_game[tile]:
-            if board.BALANCE in board_game[tile] and board_game[tile][
-                board.BALANCE] > 0:
+        if board.NEED in board_game[tile] or board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]:
+            if board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] > 0:
                 continue
             cbs.append(NOT_COME_BACK_FORMAT % (tile[0], tile[1]))
     return cbs
