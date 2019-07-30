@@ -68,7 +68,7 @@ class Board:
                                          3: [(11, 1)],
                                          ORANGE: [(11, 3)],
                                          NEED: [Certificate.GRANDMA],
-                                         ENTRANCE: [(11, 5)]}
+                                         ENTRANCE: (11, 5)}
 
         self.transition_dict[(11, 2)] = {1: [(11, 3)],
                                          2: [(11, 2)],
@@ -92,6 +92,10 @@ class Board:
         self.transition_dict[(11, 8)] = {1: [(10, 8)],
                                          2: [(10, 7), (9, 8)],
                                          3: [(8, 8), (9, 7)]}
+
+        self.transition_dict[(11, 9)] = {1: [(11,9)],
+                                         2: [(11,9)],
+                                         3: [(11,9)]}
 
         self.transition_dict[(11, 10)] = {1: [(11, 9)],
                                           2: [(11, 10)],
