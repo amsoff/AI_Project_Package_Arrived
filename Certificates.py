@@ -11,8 +11,9 @@ class Certificate(Enum):
     PORT = "port"
     HAIRCUT = 'haircut'
 
-
-certificates = [Certificate.GRANDMA,
+    @staticmethod
+    def list():
+        return [Certificate.GRANDMA,
                 Certificate.INTEGRITY,
                 Certificate.BIRTH,
                 Certificate.ID,
@@ -21,5 +22,3 @@ certificates = [Certificate.GRANDMA,
                 Certificate.PORT,
                 Certificate.HAIRCUT]
 
-for cert in certificates:
-    print(cert)

@@ -6,36 +6,11 @@ from Player_types import Types
 
 
 import domain_create as dc
-GRANDMA = 0
-INTEGRITY = 1
-BIRTH = 2
-ID = 3
-RABIES = 4
-PASSPORT = 5
-MILITARY = 6
-TAX = 7
-PORT = 8
-GLASSES = 9
-HAT = 10
-HAIRCUT = 11
-PACKAGE = 12
-certificates = [Certificate.GRANDMA,
-                Certificate.INTEGRITY,
-                Certificate.BIRTH,
-                Certificate.ID,
-                Certificate.RABIES,
-                Certificate.PASSPORT,
-                Certificate.MILITARY,
-                Certificate.TAX,
-                Certificate.PORT,
-                Certificate.GLASSES,
-                Certificate.HAT,
-                Certificate.HAIRCUT,
-                Certificate.PACKAGE]
+certificates = Certificate.list()
 
 
 board_game = board.Board(1).transition_dict
-all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile] and (Certificate.HAT not in board_game[tile][board.NEED] or Certificate.GLASSES not in board_game[tile][board.NEED])) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
+all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
 surprise_amounts = [-300, -200, -100, 100, 200, 300]

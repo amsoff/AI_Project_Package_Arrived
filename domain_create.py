@@ -129,7 +129,6 @@ def create_move(player):
                 # show certificate:
                 if board.NEED in board_game[tile1]:  # eem zu mishbetzet shezarich lehazig teuda, zarich sheihihe teuda
                     for cert in board_game[tile1][board.NEED]:
-                        if cert not in [Certificate.GLASSES, Certificate.HAT]:
                             action[PRE] += " " + CERTIFICATES_FORMAT % cert
 
                 # # hat and glasses:
