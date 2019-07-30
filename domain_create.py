@@ -98,7 +98,6 @@ def create_move(player):
                 if player == MEAN:
                     # action[ADD] += " " + DICE_FORMAT % 3
                     # if True: # Todo add here certain cells
-                    #
                     action[ADD] += " " + DICE_FORMAT % 1
                 elif player == OPTIMI:
                     for d1 in Dice.vals:
@@ -192,7 +191,7 @@ def create_pay_surprise(player):
                     surprise = Surprise.optimistic_expected_surprise
                 elif player == MEAN:
                     surprise = Surprise.mean_expected_surprise
-                for m in range(max(0,-surprise), 50 * MAXIMUM_POCKET+1, 50):
+                for m in range(max(0,-int(surprise)), 50 * MAXIMUM_POCKET+1, 50):
                     pays.append(PAY_SURPRISE_FORMAT % (tile[0], tile[1], m, tile[0], tile[1], m, min(50*MAXIMUM_POCKET, m+surprise), tile[0], tile[1], m))
         return pays
 

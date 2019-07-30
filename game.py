@@ -5,7 +5,7 @@ import domain_create as dc
 import surprise
 from player import Player
 import Certificates
-from dice import dice
+from dice import Dice
 import board
 
 
@@ -133,7 +133,7 @@ if __name__ == '__main__':
         player.set_type(input_player)
         problem_file_name = problem_file_name.format(input_player.lower())
         domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
-        dice = dice()
+        dice = Dice()
     else:
         print("Usage: game.py player(optimistic or mean). Bad type player.")
         exit()

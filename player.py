@@ -45,7 +45,7 @@ surprise_amounts = [-300, -200, -100, 100, 200, 300]
 
 
 class Player:
-    type = dc.MEAN
+    type = Types.MEAN.value
     money = 1500
     cell = (1,0)
     has_certificates = []
@@ -120,7 +120,7 @@ class Player:
 
     def build_problem(self):
         agent = Types.OPTIMISTIC.name.lower()
-        if self.type == dc.MEAN:
+        if self.type == Types.MEAN.value:
             agent = Types.MEAN.name.lower()
         file_name = agent + "_" + "problem.txt"
         problem_file = open(file_name, 'w')  # use problem_file.write(str) to write to problem_file
