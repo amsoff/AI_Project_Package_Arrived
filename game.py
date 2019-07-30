@@ -5,7 +5,7 @@ import domain_create as dc
 import surprise
 import Certificates
 from dice import dice
-import board
+from board import Board as board
 
 
 def print_plan(plan):
@@ -66,10 +66,14 @@ def handle_move(plan, player):
         all.append("Move to (%d,%d)" % player.cell)
         for prop in action.add:
             if 'has' in prop:
-                certificate = action.add.split('has_')[1].split()
+                certificate = action.add.split('has_')[1]
                 for cert in Certificates.certificates:
                     if str(cert) == certificate:
                         player.has_certificates.append(cert)
+        for prop in action.pre:
+            if 'has' in prop:
+                certificate = action.add.split('has_')[1].split(".")[1]
+                all.append("presented the certificate: " + certificate)
     if player.cell in board.loto_cells:
         dice_val = dice.roll_dice()
         player.money += board.loto_cells[player.cell][dice_val]
@@ -139,11 +143,14 @@ if __name__ == '__main__':
 
     while len(plan) != 0:
         if 'Move' in plan[0].name:
+            cell = (plan[0].name.split('_')[5], plan[0].name.split('_')[6])
             move, turn = handle_move(plan, player)
             turns += turn
             dice = dice.roll_dice()
             player.dice_value = dice
             moves.extend(move)
+            if "message" in board.get_cell(cell):
+                moves.append(board.get_cell(cell)["message"])
         else:
             print("plan doesn't start with move!!!")
             print(plan[0].name)
