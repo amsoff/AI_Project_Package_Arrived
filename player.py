@@ -1,8 +1,13 @@
-from dice import dice
+from dice import Dice
 import board
 from Certificates import Certificate
 import domain_create as dc
+from enum import Enum
 
+
+class Types(Enum):
+    OPTIMISTIC = "optimistic"
+    MEAN = "mean"
 
 GRANDMA = 0
 INTEGRITY = 1
@@ -48,7 +53,7 @@ class Player:
     come_back_spots = []
     need_pay_spots = []
     package_cost = 0
-    dice = dice()
+    dice = Dice()
     owe = []
 
     def set_type(self, player_type):
@@ -114,9 +119,9 @@ class Player:
 
 
     def build_problem(self):
-        agent = dc.Types.OPTIMISTIC.name.lower()
+        agent = Types.OPTIMISTIC.name.lower()
         if self.type == dc.MEAN:
-            agent = dc.Types.MEAN.name.lower()
+            agent = Types.MEAN.name.lower()
         file_name = agent + "_" + "problem.txt"
         problem_file = open(file_name, 'w')  # use problem_file.write(str) to write to problem_file
 
@@ -131,3 +136,5 @@ class Player:
         problem_file.write(" ".join(goals))
         problem_file.write("\n")
         problem_file.close()
+
+

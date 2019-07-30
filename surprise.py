@@ -1,8 +1,11 @@
 import random
+from statistics import mean
 
 
 class Surprise:
-    surprises = [-1000, 200, 500, 350, 0, -350, -210, -240, -280, -90, -10, 300, 20, 55, -120, 350, -50, 2510, -350, 110]
+    surprises = [-300, -200, -100, 0, 200, 300]
+    optimistic_expected_surprise = max(surprises)
+    mean_expected_surprise = mean(surprises)
 
     def get_surprise(self):
         surprise = random.choice(self.surprises)
