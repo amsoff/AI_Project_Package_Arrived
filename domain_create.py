@@ -201,7 +201,7 @@ def create_pay_first_surprise():
         if board.SURPRISE in board_game[tile]:
             for s in [sur for sur in Surprise.surprises if sur < 0]:
                 for m in range(abs(s), 50*MAXIMUM_POCKET+1, 50):
-                    pays.append(PAY_FIRST_SURPRISE % (abs(s), tile[0], tile[1], m, tile[0], tile[1], m, s, m-s, tile[0], tile[1], s, m))
+                    pays.append(PAY_FIRST_SURPRISE % (abs(s), tile[0], tile[1], m, tile[0], tile[1], m, abs(s), min(50*MAXIMUM_POCKET, m+s), tile[0], tile[1], abs(s), m))
     return pays
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 

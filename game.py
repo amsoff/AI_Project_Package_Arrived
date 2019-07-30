@@ -141,7 +141,6 @@ if __name__ == '__main__':
     player.dice_value = dice_val
     player.build_problem()
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
-    # prob = None
     plan = a_star_search(prob, heuristic=max_level)
     turns = 0
     moves = []
