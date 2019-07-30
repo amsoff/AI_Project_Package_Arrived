@@ -22,6 +22,8 @@ PACKAGE_COST = -50
 
 
 class Board:
+    loto_cells = {(10,7), (2,1), (4,7)}
+
     def __init__(self, num_players=1, starting_point=(1, 0)):
         self.board_w = 23
         self.board_h = 31
