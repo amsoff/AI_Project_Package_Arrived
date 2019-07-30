@@ -6,7 +6,10 @@ import surprise
 from player import Player
 import Certificates
 from dice import dice
-from board import Board as board
+import board
+
+
+board_game = board.Board().transition_dict
 
 def print_plan(plan):
     for a in plan:
@@ -74,9 +77,10 @@ def handle_move(plan, player):
             if 'has' in prop:
                 certificate = action.add.split('has_')[1].split(".")[1]
                 all.append("presented the certificate: " + certificate)
-    if player.cell in board.loto_cells:
-        dice_val = dice.roll_dice()
-        player.money += board.loto_cells[player.cell][dice_val]
+    if player.cell in board.Board.loto_cells:
+        dice_val = Dice.roll_dice()
+        if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
+            player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
         turns += 1
     for action in plan:
         if 'pay' in action.name:
@@ -150,8 +154,8 @@ if __name__ == '__main__':
             dice = dice.roll_dice()
             player.dice_value = dice
             moves.extend(move)
-            if "message" in board.get_cell(cell):
-                moves.append(board.get_cell(cell)["message"])
+            if "message" in board.Board.get_cell(cell):
+                moves.append(board.Board.get_cell(cell)["message"])
 
             # Starting new round- creating new problem file
             player.build_problem()
