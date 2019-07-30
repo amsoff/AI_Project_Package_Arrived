@@ -1,12 +1,9 @@
 from dice import Dice
 import board
 from Certificates import Certificate
-from enum import Enum
+from Player_types import Types
 
 
-class Types(Enum):
-    OPTIMISTIC = "optimistic"
-    MEAN = "mean"
 
 import domain_create as dc
 GRANDMA = 0
@@ -67,11 +64,11 @@ class Player:
 
 
     def get_goals(self):
-        goals = ["at_21_28", "has_%s" % Certificate.PACKAGE]
+        goals = [dc.AT_FORMAT % (11,9)]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
         # goals.extend(dc.create_not_needs_items())
-        goals.extend(dc.create_owe_not_owe())
+        goals.extend(dc.create_not_owe())
         return goals
 
     def get_certificates_props(self):
@@ -101,8 +98,13 @@ class Player:
 
     def get_owes(self):
         owes = [dc.OWE % amount for amount in self.owe]
-        owes.extend([dc.NOT_OWE % abs(d) for d in surprise_amounts if d < 0 and abs(d) not in self.owe])
         return owes
+    
+    def get_not_owes(self):
+        owes = [dc.NOT_OWE % abs(d) for d in surprise_amounts if d < 0 and abs(d) not in self.owe]
+        return owes
+
+        
 
     def get_initial(self):
         initial = [dc.AT_FORMAT % self.cell,
@@ -113,6 +115,7 @@ class Player:
         initial.extend(self.get_stops())
         initial.extend(self.get_pays())
         initial.extend(self.get_owes())
+        initial.extend(self.get_not_owes())
         return initial
 
 
@@ -138,3 +141,5 @@ class Player:
         problem_file.close()
 
 
+pla = Player()
+pla.build_problem()
