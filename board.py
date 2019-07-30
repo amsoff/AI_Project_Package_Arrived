@@ -22,8 +22,7 @@ PACKAGE_COST = -50
 
 
 class Board:
-
-    def __init__(self, num_players, starting_point=(1, 0)):
+    def __init__(self, num_players=1, starting_point=(1, 0)):
         self.board_w = 23
         self.board_h = 31
         self.starting_point = starting_point
@@ -59,6 +58,7 @@ class Board:
                                         3:[(8,0),(9,1),(11,3)],
                                         ORANGE:[(11,3)],
                                         MESSAGE: "You entered the Hospital!"}
+
         self.transition_dict[(11, 0)] = {1: [(11, 0), (11, 1), (10, 0)],
                                          2: [(11, 0), (11, 2), (9, 0)],
                                          3: [(8, 0), (9, 1), (11, 3)],
