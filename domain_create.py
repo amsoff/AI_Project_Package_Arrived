@@ -257,10 +257,15 @@ def create_stop_action():
 
 ############ PROPOSITIONS ############
 
-def create_owe_not_owe():
+def create_not_owe():
     owes = []
     for i in [sur for sur in Surprise.surprises if sur < 0]:
         owes.append(NOT_OWE % abs(i))
+    return owes
+
+def create_owe():
+    owes = []
+    for i in [sur for sur in Surprise.surprises if sur < 0]:
         owes.append(OWE % abs(i))
     return owes
 
@@ -360,7 +365,8 @@ def get_propositions():
     props.extend(create_dice())
     props.extend(create_has_money())
     props.extend(create_not_stop())
-    props.extend(create_owe_not_owe())
+    props.extend(create_not_owe())
+    props.extend(create_owe())
     return props
 
 
