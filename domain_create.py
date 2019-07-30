@@ -52,9 +52,9 @@ board_game = board.Board(1).transition_dict
 # ACTIONS:
 
 # STOP:
-FIRST_STOP_FORMAT = NAME + "Stop_1" + PRE + ADD + NOT_STOP_FORMAT % 1 + DEL
+FIRST_STOP_FORMAT = NAME + "Stop_1_at_%s_%s" + PRE + AT_FORMAT + " " + ADD + NOT_STOP_FORMAT % 1 + DEL
 # Name: stop1 pre: add: not_stop_1 delete:
-STOP_FORMAT = NAME + "Stop_%s" + PRE + NOT_STOP_FORMAT + ADD + NOT_STOP_FORMAT + DEL
+STOP_FORMAT = NAME + "Stop_%s_at_%s_%s" + PRE + AT_FORMAT + " " + NOT_STOP_FORMAT + ADD + NOT_STOP_FORMAT + DEL
 # Name: stop(x) pre:stop(x-1) add: not_stop_x delete:
 
 
@@ -257,10 +257,15 @@ def create_goto_from_comeback():
 
 
 def create_stop_action():
-    stop = [FIRST_STOP_FORMAT]
-    for x in range(2, MAX_STOPS+1):
-        stop.append(STOP_FORMAT % (str(x), str(x-1), str(x)))
-    return stop
+    STOP_FORMAT = NAME + "Stop_%s_at_%s_%s" + PRE + AT_FORMAT + " " + NOT_STOP_FORMAT + ADD + NOT_STOP_FORMAT + DEL
+    FIRST_STOP_FORMAT = NAME + "Stop_1_at_%s_%s" + PRE + AT_FORMAT + " " + ADD + NOT_STOP_FORMAT % 1 + DEL
+    for tile in board_game:
+        if board.WAIT in board_game[tile]:
+            num_stops = board_game[tile][board.WAIT]
+            stops = [FIRST_STOP_FORMAT % (tile[0], tile[1],tile[0], tile[1])]
+            for x in range(2, num_stops+1):
+                stops.append(STOP_FORMAT % (str(x), tile[0], tile[1], tile[0],tile[1], str(x-1), str(x)))
+            return stops
 
 
 

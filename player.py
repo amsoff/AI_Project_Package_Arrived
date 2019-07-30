@@ -109,9 +109,9 @@ class Player:
 
 
     def build_problem(self):
-        agent = Types.OPTIMISTIC
+        agent = dc.Types.OPTIMISTIC.name
         if self.type == dc.MEAN:
-            agent = Types.MEAN
+            agent = dc.Types.MEAN.name
         file_name = agent + "_" + "problem.txt"
         problem_file = open(file_name, 'w')  # use problem_file.write(str) to write to problem_file
 
