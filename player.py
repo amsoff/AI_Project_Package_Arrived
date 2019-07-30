@@ -1,12 +1,9 @@
 from dice import Dice
 import board
 from Certificates import Certificate
-from enum import Enum
+from Player_types import Types
 
 
-class Types(Enum):
-    OPTIMISTIC = "optimistic"
-    MEAN = "mean"
 
 import domain_create as dc
 GRANDMA = 0
@@ -144,3 +141,5 @@ class Player:
         problem_file.close()
 
 
+pla = Player()
+pla.build_problem()

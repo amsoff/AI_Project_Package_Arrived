@@ -1,6 +1,6 @@
 from graphplan.search import a_star_search
 from domain_create import Types
-from graphplan.planning_problem import PlanningProblem, max_level
+from graphplan.planning_problem import PlanningProblem, max_level, level_sum
 import domain_create as dc
 import surprise
 from player import Player
@@ -69,20 +69,29 @@ def handle_move(plan, player):
         all.append("Move to (%d,%d)" % player.cell)
         for prop in action.add:
             if 'has' in prop:
+                # need to match the exact name of the certificate
                 certificate = action.add.split('has_')[1]
                 for cert in Certificates.certificates:
                     if str(cert) == certificate:
                         player.has_certificates.append(cert)
         for prop in action.pre:
             if 'has' in prop:
-                certificate = action.add.split('has_')[1].split(".")[1]
+                certificate = action.add.split('has_')[1].split(".")[1].lower()
                 all.append("presented the certificate: " + certificate)
     if player.cell in board.Board.loto_cells:
         dice_val = Dice.roll_dice()
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
             player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
         turns += 1
-    for action in plan:
+    for i, action in enumerate(plan):
+        # handle it already
+        if i == 0:
+            continue
+
+        # if we encounter another move- we finished the current round
+        if 'move' in action.name:
+            break
+
         if 'pay' in action.name:
             pay, turn = handle_payments(action.name, player)
             turns += 1
@@ -141,7 +150,7 @@ if __name__ == '__main__':
     player.dice_value = dice_val
     player.build_problem()
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
-    plan = a_star_search(prob, heuristic=max_level)
+    plan = a_star_search(prob, heuristic=level_sum)
     turns = 0
     moves = []
 
@@ -157,9 +166,9 @@ if __name__ == '__main__':
                 moves.append(board.Board.get_cell(cell)["message"])
 
             # Starting new round- creating new problem file
-            player.build_problem()
             actions = prob.get_actions()
             propositions = prob.get_propositions()
+            player.build_problem()
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             plan = a_star_search(prob)
         else:
