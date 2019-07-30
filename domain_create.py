@@ -96,9 +96,10 @@ def create_move(player):
 
                 action[ADD] = AT_FORMAT % (tile2[0], tile2[1])
                 if player == MEAN:
-                    action[ADD] += " " + DICE_FORMAT % 3
-                    if True: # Todo add here certain cells
-                        action[ADD] += " " + DICE_FORMAT % 1
+                    # action[ADD] += " " + DICE_FORMAT % 3
+                    # if True: # Todo add here certain cells
+                    #
+                    action[ADD] += " " + DICE_FORMAT % 1
                 elif player == OPTIMI:
                     for d1 in Dice.vals:
                         action[ADD] += " " + DICE_FORMAT % d1
