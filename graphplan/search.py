@@ -99,20 +99,28 @@ def general_search(problem, fringe):
     :param fringe:
     :return:
     """
+
     fringe.push(PQItem((problem.get_start_state(), None, 0, None)))  # curr_node, action, cost, parent
     closed = set()
 
     while not fringe.isEmpty():
+        i = 1
         curr = fringe.pop()
+        if i % 1 == 0:
+            print("round %d" % i)
 
         if problem.is_goal_state(curr.get_node()):
             return get_path(curr)
 
         elif curr.get_node() not in closed:
             successors = problem.get_successors(curr.get_node())
+            if i % 1 == 0:
+                print("Num_successors = %d" % len(successors))
             for i in range(len(successors)):
                 fringe.push(PQItem((successors[i][0], successors[i][1], successors[i][2] + curr.get_cost(), curr)))
+                print(successors[i][1].name)
             closed.add(curr.get_node())
+        i += 1
     return []
 
 

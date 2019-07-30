@@ -358,14 +358,9 @@ def create_certificates():
                     CERTIFICATES_FORMAT % Certificate.INTEGRITY,
                     CERTIFICATES_FORMAT % Certificate.BIRTH,
                     CERTIFICATES_FORMAT % Certificate.ID,
-                    CERTIFICATES_FORMAT % Certificate.RABIES,
                     CERTIFICATES_FORMAT % Certificate.PASSPORT,
-                    CERTIFICATES_FORMAT % Certificate.MILITARY,
                     CERTIFICATES_FORMAT % Certificate.TAX,
                     CERTIFICATES_FORMAT % Certificate.PORT,
-                    CERTIFICATES_FORMAT % Certificate.GLASSES,
-                    CERTIFICATES_FORMAT % Certificate.HAT,
-                    CERTIFICATES_FORMAT % Certificate.PACKAGE,
                     CERTIFICATES_FORMAT % Certificate.HAIRCUT}
     return certificates
 

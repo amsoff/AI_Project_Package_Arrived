@@ -1,9 +1,9 @@
 from graphplan.search import a_star_search
-from player import Player
 from domain_create import Types
-from graphplan.planning_problem import PlanningProblem
+from graphplan.planning_problem import PlanningProblem, max_level
 import domain_create as dc
 import surprise
+from player import Player
 import Certificates
 from dice import dice
 from board import Board as board
@@ -137,7 +137,8 @@ if __name__ == '__main__':
     player.dice_value = dice_val
     player.build_problem()
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
-    plan = a_star_search(prob)
+    # prob = None
+    plan = a_star_search(prob, heuristic=max_level)
     turns = 0
     moves = []
 
