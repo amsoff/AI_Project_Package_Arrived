@@ -2,6 +2,7 @@ from dice import Dice
 import board
 from Certificates import Certificate
 from Player_types import Types
+from surprise import Surprise
 
 
 
@@ -13,7 +14,9 @@ board_game = board.Board(1).transition_dict
 all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
-surprise_amounts = [-300, -200, -100, 100, 200, 300]
+surprise_amounts = Surprise.surprises
+# Before was- (not corrolated wuth Surprise class!!!!)
+# surprise_amounts = [-300, -200, -100, 100, 200, 300], Surprise.surprises
 
 
 class Player:
@@ -39,7 +42,7 @@ class Player:
 
 
     def get_goals(self):
-        goals = [dc.AT_FORMAT % (11,9)]
+        goals = [dc.AT_FORMAT % (0 ,1)]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
         # goals.extend(dc.create_not_needs_items())

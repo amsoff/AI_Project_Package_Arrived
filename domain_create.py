@@ -54,7 +54,8 @@ PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + "
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
 # from certain locations in the map you can pay 150 shekels to get where you need.
-PAY_150_FORMAT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE +AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
+PAY_150_FORMAT_CERT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + CERTIFICATES_FORMAT +" "+ MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
+PAY_150_FORMAT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
 # pay 150 to jump from p1 to p2 with x money, pre at p1, money x, add at p2, money x-150, del at p1 money x.
 
 PAY_CELL = NAME + "pay_%s_At_%s_%s_from_%s" + PRE +NEED_PAY_CELL+ " " + AT_FORMAT +" " + MONEY_FORMAT + ADD +MONEY_FORMAT +" " + NOT_NEED_PAY_CELL  + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
@@ -212,7 +213,14 @@ def create_pay_150():
             for value in board_game[tile][board.ORANGE]:
                 for m in range(150,50*MAXIMUM_POCKET+1, 50):  # can only pay 150 if you have at least 150
                                                         # from p1              to p2    with m money  pre at p1 m money add at p2 money m-150 del at p1 money m
-                    pays.append(PAY_150_FORMAT % (tile[0], tile[1], value[0], value[1], m,  tile[0], tile[1], m, value[0], value[1], m-150, tile[0], tile[1], m))
+                    if board.HAS in board_game[board_game[tile][board.ORANGE][0]]:
+                        pays.append(PAY_150_FORMAT_CERT % (
+                        tile[0], tile[1], value[0], value[1], m, tile[0], tile[1], m, value[0], value[1],
+                            "Certificate." + board_game[board_game[tile][board.ORANGE][0]][board.HAS].name, m - 150,
+                        tile[0], tile[1], m))
+
+                    else:
+                         pays.append(PAY_150_FORMAT % (tile[0], tile[1], value[0], value[1], m,  tile[0], tile[1], m, value[0], value[1], m-150, tile[0], tile[1], m))
     return pays
 
 
