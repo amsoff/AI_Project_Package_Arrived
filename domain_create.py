@@ -54,7 +54,9 @@ PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + "
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
 # from certain locations in the map you can pay 150 shekels to get where you need.
+
 PAY_150_FORMAT_CERT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + CERTIFICATES_FORMAT +" "+ MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
+PAY_150_FORMAT_CERT_NEED = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " "  + CERTIFICATES_FORMAT + " " +MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
 PAY_150_FORMAT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
 # pay 150 to jump from p1 to p2 with x money, pre at p1, money x, add at p2, money x-150, del at p1 money x.
 
@@ -208,19 +210,26 @@ def create_pay_first_surprise():
 
 def create_pay_150():
     pays = []
+    pay_format = NAME + " pay_150_from_%s_%s_to_%s_%s_with_%s"
     for tile in board_game:
         if board.ORANGE in board_game[tile]: # check if not bug -> if there is a key orange
             for value in board_game[tile][board.ORANGE]:
-                for m in range(150,50*MAXIMUM_POCKET+1, 50):  # can only pay 150 if you have at least 150
-                                                        # from p1              to p2    with m money  pre at p1 m money add at p2 money m-150 del at p1 money m
+                for m in range(150,50*MAXIMUM_POCKET+1, 50):
+                    # can only pay 150 if you have at least 150
+                    # from p1 to p2 with m money  pre at p1 m money add at p2 money m-150 del at p1 money m
+                    name = pay_format % (tile[0], tile[1], value[0], value[1], m)
+                    pre = [PRE, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
+                    add = [ADD, AT_FORMAT % (value[0], value[1]), MONEY_FORMAT % (m-150)]
+                    delete = [DEL, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
                     if board.HAS in board_game[board_game[tile][board.ORANGE][0]]:
-                        pays.append(PAY_150_FORMAT_CERT % (
-                        tile[0], tile[1], value[0], value[1], m, tile[0], tile[1], m, value[0], value[1],
-                            "Certificate." + board_game[board_game[tile][board.ORANGE][0]][board.HAS].name, m - 150,
-                        tile[0], tile[1], m))
+                        add.append(CERTIFICATES_FORMAT % (board_game[board_game[tile][board.ORANGE][0]][board.HAS]))
+                    if board.NEED in board_game[tile]:
+                        pre.append(CERTIFICATES_FORMAT % board_game[tile][board.NEED][0])
 
-                    else:
-                         pays.append(PAY_150_FORMAT % (tile[0], tile[1], value[0], value[1], m,  tile[0], tile[1], m, value[0], value[1], m-150, tile[0], tile[1], m))
+                    pre = " ".join(pre)
+                    add = " ".join(add)
+                    delete = " ".join(delete)
+                    pays.append("%s%s%s%s" % (name, pre, add, delete))
     return pays
 
 
@@ -441,18 +450,18 @@ def create_domain_file(domain_file_name, player):
 #
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print('Usage: domain_create.py agent_code')
-        sys.exit(2)
-
-    input_player = sys.argv[1] # agent_Code
-    if input_player != Types.MEAN.value and input_player != Types.OPTIMISTIC.value:
-        print("Usage: game.py player(optimistic or mean). Bad type player.")
-        exit()
+    # if len(sys.argv) != 2:
+    #     print('Usage: domain_create.py agent_code')
+    #     sys.exit(2)
+    #
+    # input_player = sys.argv[1] # agent_Code
+    # if input_player != Types.MEAN.value and input_player != Types.OPTIMISTIC.value:
+    #     print("Usage: game.py player(optimistic or mean). Bad type player.")
+    #     exit()
 
     domain_file_name = 'domain.txt'
     problem_file_name = 'problem.txt'
 
 
-    create_domain_file(domain_file_name, input_player)
+    create_domain_file(domain_file_name, "mean")
     # create_problem_file(problem_file_name, code)

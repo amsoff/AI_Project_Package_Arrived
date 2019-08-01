@@ -47,15 +47,15 @@ def handle_payments(action, player):
             player.need_pay_spots.remove(cell)
         # need to match the exact name of the certificate
         certificate = action.add[0].name.split('has_')[1].split('.')[1]
+        all.append("pay 150 to go to (%d,%d)" % cell)
         for cert in Certificates.Certificate.list():
             if cert.name == certificate:
                 player.has_certificates.append(cert)
                 all.append("Congrats! you hold the %s Certificate!" % cert.name)
-        all.append("pay 150 to go to (%d,%d)" % cell)
         return all, 1
-    if 'pay' in action:
-        cell = (int(action.split('_')[3]), int(action.split('_')[4]))
-        amount = int(action.split('_')[1])
+    if 'pay' in action.name:
+        cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
+        amount = int(action.name.split('_')[1])
         player.money -= amount
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
@@ -77,14 +77,16 @@ def handle_move(plan, player):
     action_name = plan[0].name
     if 'Move' in plan[0].name:
         player.cell = (action_name.split('_')[5], action_name.split('_')[6])
-        all.append("Move to (%s,%s)" % player.cell)
+        if cell not in board.Board.loto_cells:
+            all.append("Move to (%s,%s)" % player.cell)
         for prop in action.add:
             if 'has' in prop.name:
                 # need to match the exact name of the certificate
                 certificate = prop.name.split('has_')[1]
-                for cert in Certificates.certificates:
-                    if str(cert) == certificate:
+                for cert in Certificates.Certificate.list():
+                    if cert.name == certificate:
                         player.has_certificates.append(cert)
+                        all.append("Congrats! you hold the %s Certificate!" % cert.name)
         for prop in action.pre:
             if 'has' in prop.name:
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
@@ -93,6 +95,7 @@ def handle_move(plan, player):
         dice_val = Dice.roll_dice()
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
             player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
+            all.append("You win the lottery. YAY! You earned %s")
         turns += 1
     for i, action in enumerate(plan):
         # handle it already
@@ -100,7 +103,7 @@ def handle_move(plan, player):
             continue
 
         # if we encounter another move- we finished the current round
-        if 'Move' in action.name:
+        if 'Move' in action.name or 'pay_150' in action.name :
             break
 
         if 'pay' in action.name:
@@ -124,7 +127,7 @@ def handle_move(plan, player):
             all.append("placed comeback at (%s,%s)" % cb_to)
 
         elif 'jump' in action.name:
-            jump_to = (action.name.split("-")[2], action.name.split("-")[3])
+            jump_to = (action.name.split("_")[2], action.name.split("_")[3])
             player.cell = jump_to
             all.append("jumped to (%s,%s) to search" % jump_to)
 
@@ -185,7 +188,7 @@ if __name__ == '__main__':
             print(plan[0].name)
             exit(1)
 
-        if "message" in board_game[int(cell[0]), int(cell[1])]:
+        if board.MESSAGE in board_game[int(cell[0]), int(cell[1])]:
             moves.append(board_game[int(cell[0]),int(cell[1])]["message"])
 
         # Starting new round- creating new problem.txt file
@@ -194,7 +197,7 @@ if __name__ == '__main__':
         player.dice_value = dice.roll_dice()
         player.build_problem()
         prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
-        plan = a_star_search(prob)
+        plan = a_star_search(prob, heuristic=level_sum)
     elapsed = time.process_time() - start
     if moves is not None:
         print()
