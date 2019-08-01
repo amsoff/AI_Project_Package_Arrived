@@ -91,62 +91,56 @@ def create_move(player):
     for tile1 in board_game:  # lekol mishbetzet
         for d in Dice.vals:  # lekol gilgul_kubia
             for tile2 in board_game[tile1][d]: # lekol mishbetzet she'efshar lehagia elia
-                action = dict()
-                action[NAME] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
+                if (player == MEAN and d == 1) or player == OPTIMI:
 
-                action[PRE] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
-                for s in range(1, MAX_STOPS+1):
-                    action[PRE] += " " + NOT_STOP_FORMAT % s
+                    action = dict()
+                    action[NAME] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
 
-                action[ADD] = AT_FORMAT % (tile2[0], tile2[1])
-                action[DEL] = AT_FORMAT % (tile1[0], tile1[1])
+                    action[PRE] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
+                    for s in range(1, MAX_STOPS+1):
+                        action[PRE] += " " + NOT_STOP_FORMAT % s
 
-                if player == MEAN:
-                    # action[ADD] += " " + DICE_FORMAT % 3
-                    # if True: # Todo add here certain cells
-                    action[ADD] += " " + DICE_FORMAT % 1
-                    for i in Dice.vals:
-                        if i not in [1]:
-                            action[DEL] += " " + DICE_FORMAT % i
-                elif player == OPTIMI:
-                    for d1 in Dice.vals:
-                        action[ADD] += " " + DICE_FORMAT % d1
+                    action[ADD] = AT_FORMAT % (tile2[0], tile2[1])
+                    action[DEL] = AT_FORMAT % (tile1[0], tile1[1])
 
-                # payments:
-                if board.BALANCE in board_game[tile2] or board.SURPRISE in board_game[tile2]:
-                    action[DEL] += " " + NOT_NEED_PAY_CELL % tile2
-                    action[ADD] += " " + NEED_PAY_CELL % tile2
+                    if player == MEAN:
+                        # action[ADD] += " " + DICE_FORMAT % 3
+                        # if True: # Todo add here certain cells
+                        action[ADD] += " " + DICE_FORMAT % 1
+                        for i in Dice.vals:
+                            if i not in [1]:
+                                action[DEL] += " " + DICE_FORMAT % i
+                    if player == OPTIMI:
+                        for d1 in Dice.vals:
+                            action[ADD] += " " + DICE_FORMAT % d1
 
-                if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
-                    action[PRE] += " " + NOT_NEED_PAY_CELL % tile1
+                    # payments:
+                    if board.BALANCE in board_game[tile2] or board.SURPRISE in board_game[tile2]:
+                        action[DEL] += " " + NOT_NEED_PAY_CELL % tile2
+                        action[ADD] += " " + NEED_PAY_CELL % tile2
 
-                # Surprises:
-                if board.SURPRISE in board_game[tile1]:
-                    for i in [sur for sur in Surprise.surprises if sur < 0]:
-                        action[PRE] += " " + NOT_OWE % abs(i)
+                    if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
+                        action[PRE] += " " + NOT_NEED_PAY_CELL % tile1
 
-                # take certificate:
-                if board.HAS in board_game[tile2]:
-                    action[ADD] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
+                    # Surprises:
+                    if board.SURPRISE in board_game[tile1]:
+                        for i in [sur for sur in Surprise.surprises if sur < 0]:
+                            action[PRE] += " " + NOT_OWE % abs(i)
 
-                # show certificate:
-                if board.NEED in board_game[tile1]:  # eem zu mishbetzet shezarich lehazig teuda, zarich sheihihe teuda
-                    for cert in board_game[tile1][board.NEED]:
-                            action[PRE] += " " + CERTIFICATES_FORMAT % cert
+                    # take certificate:
+                    if board.HAS in board_game[tile2]:
+                        action[ADD] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
 
-                # # hat and glasses:
-                # if board.NEED in board_game[tile2]:
-                #     for cert in board_game[tile2][board.NEED]:
-                #         if cert in [Certificate.GLASSES, Certificate.HAT]:
-                #             action["delete: "] += " " + NOT_NEEDS_FORMAT % cert
+                    # show certificate:
+                    if board.NEED in board_game[tile1]:  # eem zu mishbetzet shezarich lehazig teuda, zarich sheihihe teuda
+                        for cert in board_game[tile1][board.NEED]:
+                                action[PRE] += " " + CERTIFICATES_FORMAT % cert
 
+                    if board.WAIT in board_game[tile2]:  # eem heganu leazor, naazor
+                        for i in range(1, board_game[tile2][board.WAIT]+1):
+                            action[DEL] += " " + NOT_STOP_FORMAT % i
 
-                if board.WAIT in board_game[tile2]:  # eem heganu leazor, naazor
-                    for i in range(1, board_game[tile2][board.WAIT]+1):
-                        action[DEL] += " " + NOT_STOP_FORMAT % i
-
-                moves[(tile1, tile2)] = action
-
+                    moves[(tile1, tile2)] = action
     for move in moves:
         strng = ''.join(['%s%s' % (k,v) for k,v in moves[move].items()])
         ret.append(strng)

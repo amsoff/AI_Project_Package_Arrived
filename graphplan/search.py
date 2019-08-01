@@ -106,8 +106,7 @@ def general_search(problem, fringe):
     while not fringe.isEmpty():
         i = 1
         curr = fringe.pop()
-        # if i % 1 == 0:
-            # print("round %d" % i)
+
         if problem.is_goal_state(curr.get_node()):
             return get_path(curr)
 
@@ -131,7 +130,7 @@ def depth_first_search(problem):
     the goal. Make sure to implement a graph search algorithm.
 
     To get started, you might want to try some of these simple commands to
-    understand the search problem that is being passed in:
+    understand the search problem.txt that is being passed in:
     """
     fringe = util.Stack()
     return general_search(problem, fringe)
