@@ -21,7 +21,7 @@ def handle_stop(plan):
     all = []
     for move in plan:
         if 'Stop' in move.name:
-            all.append(move)
+            all.append("Wait 1 turn")
         else:
             break
     return all
@@ -112,9 +112,10 @@ def handle_move(plan, player):
             all.extend(pay)
 
         elif 'Stop' in action.name:
-            stops = handle_stop(plan)
+            stops = handle_stop(plan[i:])
             turns += len(stops)
-            all.append("stop %d times" % len(stops))
+            all.extend(stops)
+            break
 
         elif 'Goto' in action.name:
             goto = handle_goto(action.name, player)

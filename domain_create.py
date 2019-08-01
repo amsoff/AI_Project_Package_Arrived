@@ -213,12 +213,16 @@ def create_pay_150():
                     # from p1 to p2 with m money  pre at p1 m money add at p2 money m-150 del at p1 money m
                     name = pay_format % (tile[0], tile[1], value[0], value[1], m)
                     pre = [PRE, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
+                    for s in range(1, MAX_STOPS+1):
+                        pre.append(NOT_STOP_FORMAT % s)
                     add = [ADD, AT_FORMAT % (value[0], value[1]), MONEY_FORMAT % (m-150)]
                     delete = [DEL, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
                     if board.HAS in board_game[board_game[tile][board.ORANGE][0]]:
                         add.append(CERTIFICATES_FORMAT % (board_game[board_game[tile][board.ORANGE][0]][board.HAS]))
                     if board.NEED in board_game[tile]:
                         pre.append(CERTIFICATES_FORMAT % board_game[tile][board.NEED][0])
+                    # if board.WAIT in board_game[tile]:
+                    #     delete.append()
 
                     pre = " ".join(pre)
                     add = " ".join(add)
@@ -266,9 +270,7 @@ def create_stop_action():
     return all
 
 
-
 ############ PROPOSITIONS ############
-
 def create_not_owe():
     owes = []
     for i in [sur for sur in Surprise.surprises if sur < 0]:
