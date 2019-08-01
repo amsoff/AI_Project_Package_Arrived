@@ -255,13 +255,15 @@ def create_goto_from_comeback():
 
 
 def create_stop_action():
-        for tile in board_game:
-            if board.WAIT in board_game[tile]:
-                num_stops = board_game[tile][board.WAIT]
-                stops = [FIRST_STOP_FORMAT % (tile[0], tile[1],tile[0], tile[1])]
-                for x in range(2, num_stops+1):
-                    stops.append(STOP_FORMAT % (str(x), tile[0], tile[1], tile[0],tile[1], str(x-1), str(x)))
-                return stops
+    all = []
+    for tile in board_game:
+        if board.WAIT in board_game[tile]:
+            num_stops = board_game[tile][board.WAIT]
+            stops = [FIRST_STOP_FORMAT % (tile[0], tile[1],tile[0], tile[1])]
+            for x in range(2, num_stops+1):
+                stops.append(STOP_FORMAT % (str(x), tile[0], tile[1], tile[0],tile[1], str(x-1), str(x)))
+            all.extend(stops)
+    return all
 
 
 
@@ -340,23 +342,6 @@ def create_not_come_back():
                 continue
             cbs.append(NOT_COME_BACK_FORMAT % (tile[0], tile[1]))
     return cbs
-
-
-# def create_not_needs_items():
-#     certificates = [NOT_NEEDS_FORMAT % Certificate.GRANDMA,
-#                     NOT_NEEDS_FORMAT % Certificate.INTEGRITY,
-#                     NOT_NEEDS_FORMAT % Certificate.BIRTH,
-#                     NOT_NEEDS_FORMAT % Certificate.ID,
-#                     NOT_NEEDS_FORMAT % Certificate.RABIES,
-#                     NOT_NEEDS_FORMAT % Certificate.PASSPORT,
-#                     NOT_NEEDS_FORMAT % Certificate.MILITARY,
-#                     NOT_NEEDS_FORMAT % Certificate.TAX,
-#                     NOT_NEEDS_FORMAT % Certificate.PORT,
-#                     NOT_NEEDS_FORMAT % Certificate.PACKAGE,
-#                     NOT_NEEDS_FORMAT % Certificate.HAIRCUT,
-#                     NOT_NEEDS_FORMAT % Certificate.GLASSES,
-#                     NOT_NEEDS_FORMAT % Certificate.HAT]
-#     return certificates
 
 
 def create_certificates():
