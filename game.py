@@ -12,6 +12,7 @@ import board
 board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 
+
 def print_plan(plan):
     for a in plan:
         print(a)
@@ -104,12 +105,12 @@ def handle_move(plan, player):
             continue
 
         # if we encounter another move- we finished the current round
-        if 'Move' in action.name or 'pay_150' in action.name :
+        if 'Move' in action.name:
             break
 
         if 'pay' in action.name:
             pay, turn = handle_payments(action, player)
-            turns += 1
+            turns += turn
             all.extend(pay)
 
         elif 'Stop' in action.name:
@@ -173,18 +174,13 @@ if __name__ == '__main__':
         if 'Move' in plan[0].name:
             cell = (plan[0].name.split('_')[5], plan[0].name.split('_')[6])
             move, turn = handle_move(plan, player)
+            print(move, turn)
             turns += turn
             moves.extend(move)
-        elif 'pay_150' in plan[0].name:
-            cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
-            move, turn = handle_payments(plan[0], player)
-            turns += turn
-            moves.extend(move)
-
-            if len(plan[1:]) != 0:
-                move, turn = handle_move(plan[1:], player)
-                turns += turn
-                moves.extend(move)
+            # if len(plan[1:]) != 0:
+            #     move, turn = handle_move(plan[1:], player)
+            #     turns += turn
+            #     moves.extend(move)
         else:
             print("plan doesn't start with move!!! The current action was:")
             print(plan[0].name)
@@ -200,12 +196,14 @@ if __name__ == '__main__':
         player.build_problem()
         prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
         plan = a_star_search(prob, heuristic=level_sum)
+        print(turns)
+
     elapsed = time.process_time() - start
     if moves is not None:
         print()
         print_plan(moves)
         print("Money: %d" % player.money)
         print()
-        print("game finished after %d turns in %.2f seconds" % (len(moves)-1, elapsed))
+        print("game finished after %d turns in %.2f seconds" % (turns, elapsed))
     else:
         print("Could not find a plan in %.2f seconds" % elapsed)
