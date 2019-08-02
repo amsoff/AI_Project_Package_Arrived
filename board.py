@@ -28,6 +28,7 @@ PRISE_1 = 1000
 PRISE_2 = 1500
 PRISE_3 = 500
 HAIRCUT_COST = -50
+PACKAGE_COST = -500
 
 
 class Board:
@@ -120,7 +121,7 @@ class Board:
         self.transition_dict[(11, 11)] = {1: [(11, 10)],
                                           2: [(11, 11)],
                                           3: [(11, 11)],
-                                          BALANCE: HAIRCUT_COST,
+                                          BALANCE: PACKAGE_COST,
                                           ENTRANCE: (11, 8)}
 
     def init_row10(self):
