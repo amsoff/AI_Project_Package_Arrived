@@ -46,10 +46,10 @@ def handle_payments(action, player):
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
         # need to match the exact name of the certificate
-
-        certificate = "".join(add for add in action.add if "has_" in add)
+        certificate = "".join([str(ad) for ad in action.add if "has_" in str(ad)])
         all.append("pay 150 to go to (%d,%d)" % cell)
         if certificate != "":
+            certificate = certificate.split(".")[1]
             player.has_certificates.append(Certificates.Certificate[certificate])
             all.append("Congrats! you hold the %s Certificate!" % certificate)
 
