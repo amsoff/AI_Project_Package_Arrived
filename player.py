@@ -16,7 +16,7 @@ payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile
 
 surprise_amounts = Surprise.surprises
 # Before was- (not corrolated wuth Surprise class!!!!)
-# surprise_amounts = [-300, -200, -100, 100, 200, 300], Surprise.surprises
+surprise_amounts = [-300, -200, -100, 100, 200, 300], Surprise.surprises
 
 
 class Player:
@@ -42,7 +42,7 @@ class Player:
 
 
     def get_goals(self):
-        goals = [dc.AT_FORMAT % (11,4)]
+        goals = [dc.AT_FORMAT % (4,2)]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
         # goals.extend(dc.create_not_needs_items())
