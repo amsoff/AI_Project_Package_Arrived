@@ -2,7 +2,11 @@ import numpy as np
 from Certificates import Certificate
 from colorama import init, Fore, Back, Style
 
+# All the types of actions and objects a node in the board can hold
+# A message to print to the board
 MESSAGE = "message"
+
+# Represent a jump
 JUMP = 'jump'
 ENTRANCE = 'entrance'
 BALANCE = 'balance'

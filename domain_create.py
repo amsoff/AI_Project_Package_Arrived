@@ -55,11 +55,6 @@ PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + "
 
 # from certain locations in the map you can pay 150 shekels to get where you need.
 
-PAY_150_FORMAT_CERT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + CERTIFICATES_FORMAT +" "+ MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
-PAY_150_FORMAT_CERT_NEED = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " "  + CERTIFICATES_FORMAT + " " +MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
-PAY_150_FORMAT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
-# pay 150 to jump from p1 to p2 with x money, pre at p1, money x, add at p2, money x-150, del at p1 money x.
-
 PAY_CELL = NAME + "pay_%s_At_%s_%s_from_%s" + PRE +NEED_PAY_CELL+ " " + AT_FORMAT +" " + MONEY_FORMAT + ADD +MONEY_FORMAT +" " + NOT_NEED_PAY_CELL  + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
 # pay x at p1 from m pre need_pay_p1 at p1 money m add money m-x not need pay p1 del money m need pay p1
 
@@ -234,7 +229,7 @@ def create_goto_from_comeback():
     goto = []
     for tile in board_game:
         if board.JUMP in board_game[tile]:  
-            for value in tile[board.JUMP]:
+            for value in board_game[tile][board.JUMP]:
                                             # goto      p2      from      p1  pre comeback to p2              at p1   add        at p2                not CB p2     delete: pre
                 goto.append(GOTO_FORMAT % (value[0], value[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
     return goto
@@ -386,6 +381,7 @@ def get_actions(player):
     actions.extend(create_pay_150())
     # actions.extend(create_show_certificate())
     actions.extend(create_stop_action())
+    actions.extend(create_goto_from_comeback())
     return actions
 
 

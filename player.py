@@ -16,7 +16,7 @@ payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile
 
 surprise_amounts = Surprise.surprises
 # Before was- (not corrolated wuth Surprise class!!!!)
-surprise_amounts = [-300, -200, -100, 100, 200, 300], Surprise.surprises
+# surprise_amounts = [-300, -200, -100, 100, 200, 300], Surprise.surprises
 
 
 class Player:
@@ -82,8 +82,6 @@ class Player:
         owes = [dc.NOT_OWE % abs(d) for d in surprise_amounts if d < 0 and abs(d) not in self.owe]
         return owes
 
-        
-
     def get_initial(self):
         initial = [dc.AT_FORMAT % self.cell,
                    dc.DICE_FORMAT % self.dice_value,
@@ -95,8 +93,6 @@ class Player:
         initial.extend(self.get_owes())
         initial.extend(self.get_not_owes())
         return initial
-
-
 
 
     def build_problem(self):

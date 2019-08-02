@@ -80,8 +80,6 @@ def handle_payments(action, player):
         else:
             player.owe.append(amount)
 
-
-
     if 'pay_150_from' in action.name: # TODO - if user pays 150 it doesn't mean he has some certificate
         all  = []
         cell = (int(action.name.split('_')[6]), int(action.name.split('_')[7]))
