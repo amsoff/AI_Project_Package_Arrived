@@ -30,6 +30,7 @@ class Player:
     package_cost = 0
     dice = Dice()
     owe = []
+    owe_surprise = False
 
     def set_type(self, player_type):
         self.type = player_type
@@ -94,6 +95,8 @@ class Player:
         initial.extend(self.get_pays())
         initial.extend(self.get_owes())
         initial.extend(self.get_not_owes())
+        if self.owe_surprise:
+            initial.append(dc.OWE_SURPRISE)
         return initial
 
 

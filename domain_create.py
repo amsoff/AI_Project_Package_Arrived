@@ -30,6 +30,7 @@ NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
 NEED_PAY_CELL = "need_pay_%s_%s"  #  reut
 NOT_OWE = "not_owe_%s"
 OWE = "owe_%s"
+OWE_SURPRISE = "owe_surprise"
 # NOT_NEEDS_FORMAT = "not_needs_%s"
 
 #  make goal be all not_comebacks and  not needs and at END
@@ -74,6 +75,9 @@ JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + 
 PUT_COMEBACK = "Name: place_comeback_%s_%s" + PRE + AT_FORMAT + ADD + COME_BACK_FORMAT + DEL + NOT_COME_BACK_FORMAT
 # place comeback at p1 pre: at p1 add: comeback p1 delete: not_CB_p1
 NEW_JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE +  AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT
+# jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
+
+NEW_JUMP_TO_ENTRANCE_SURPRISE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + OWE_SURPRISE + " " + AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT
 # jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
 
 # # no need for take certificate?
@@ -161,10 +165,15 @@ def create_pay_cell():
 def create_jump_to_entrance():
     jumps = []
     for tile in board_game:
-        if (board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0) or board.SURPRISE in board_game[tile]) and board.ENTRANCE in board_game[tile]:
+        if (board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in board_game[tile]:
             tile2 = board_game[tile][board.ENTRANCE]
             # jumps.append(JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
             jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
+        elif board.SURPRISE in board_game[tile] and board.ENTRANCE in board_game[tile]:
+            jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
+
+
+
     return jumps
 
 
@@ -372,6 +381,7 @@ def get_propositions():
     props.extend(create_not_owe())
     props.extend(create_owe())
     props.extend(create_need_pay())
+    props.append(OWE_SURPRISE)
     return props
 
 
