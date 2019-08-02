@@ -43,11 +43,12 @@ class Player:
 
 
     def get_goals(self):
-        goals = [dc.AT_FORMAT % (11,4)]
+        self.goal = (9,10)
+        goals = [dc.AT_FORMAT % self.goal]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
         # goals.extend(dc.create_not_needs_items())
-        goals.extend(dc.create_not_owe())
+        # goals.extend(dc.create_not_owe())
         return goals
 
     def get_certificates_props(self):
