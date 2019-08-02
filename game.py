@@ -11,10 +11,12 @@ import board
 
 board_game = board.Board().transition_dict
 surprise_generator = Surprise()
+DEBUG = True
 
-def print_plan(plan):
+def print_plan(plan,logs):
     for a in plan:
         print(a)
+        write_to_log(a,logs)
 
 
 def handle_stop(plan):
@@ -38,7 +40,7 @@ def handle_payments(action, player):
         else:
             player.owe.append(amount)
         return ["pay suprise %d" % -amount], 0
-    if 'pay_150_from' in action.name:
+    if 'pay_150_from' in action.name: # TODO - if user pays 150 it doesn't mean he has some certificate
         all  = []
         cell = (int(action.name.split('_')[6]), int(action.name.split('_')[7]))
         player.money -= 150
@@ -46,12 +48,13 @@ def handle_payments(action, player):
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
         # need to match the exact name of the certificate
-        certificate = action.add[0].name.split('has_')[1].split('.')[1]
+        certificate = "".join([str(ad) for ad in action.add if "has_" in str(ad)])
         all.append("pay 150 to go to (%d,%d)" % cell)
-        for cert in Certificates.Certificate.list():
-            if cert.name == certificate:
-                player.has_certificates.append(cert)
-                all.append("Congrats! you hold the %s Certificate!" % cert.name)
+        if certificate != "":
+            certificate = certificate.split(".")[1]
+            player.has_certificates.append(Certificates.Certificate[certificate])
+            all.append("Congrats! you hold the %s Certificate!" % certificate)
+
         return all, 1
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
@@ -103,7 +106,7 @@ def handle_move(plan, player):
             continue
 
         # if we encounter another move- we finished the current round
-        if 'Move' in action.name or 'pay_150' in action.name :
+        if 'Move' in action.name:
             break
 
         if 'pay' in action.name:
@@ -134,6 +137,8 @@ def handle_move(plan, player):
 
     return all, turns
 
+def write_to_log(string,logs):
+    logs.write(string+"\n") if DEBUG else None
 
 if __name__ == '__main__':
     """
@@ -142,7 +147,7 @@ if __name__ == '__main__':
     """
     import sys
     import time
-
+    import datetime
     start = time.process_time()
 
     if len(sys.argv) != 2:
@@ -168,43 +173,53 @@ if __name__ == '__main__':
     turns = 0
     moves = ["Welcome to the package Arrive Game. You are positioned at (1,0)"]
 
-    while len(plan) != 0:
-        if 'Move' in plan[0].name:
-            cell = (plan[0].name.split('_')[5], plan[0].name.split('_')[6])
-            move, turn = handle_move(plan, player)
-            turns += turn
-            moves.extend(move)
-        elif 'pay_150' in plan[0].name:
-            cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
-            move, turn = handle_payments(plan[0], player)
-            turns += turn
-            moves.extend(move)
-
-            if len(plan[1:]) != 0:
-                move, turn = handle_move(plan[1:], player)
+    with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":","")),"w") as logs:
+        while len(plan) != 0:
+            if 'Move' in plan[0].name:
+                cell = (plan[0].name.split('_')[5], plan[0].name.split('_')[6])
+                move, turn = handle_move(plan, player)
                 turns += turn
+                write_to_log("round {}".format(turns),logs)
+                write_to_log("current moves done:",logs)
+                print_plan(move,logs)
                 moves.extend(move)
+            else:
+                print("plan doesn't start with move!!! The current action was:")
+                write_to_log("plan doesn't start with move!!! The current action was:",logs)
+                print(plan[0].name)
+                write_to_log(plan[0].name,logs)
+                print("moves are:")
+                write_to_log("moves are:",logs)
+                print_plan(moves,logs)
+                exit(1)
+
+            if board.MESSAGE in board_game[int(cell[0]), int(cell[1])]:
+                moves.append(board_game[int(cell[0]),int(cell[1])]["message"])
+
+            # Starting new round- creating new problem.txt file
+            print_current_board(moves,player.cell)
+            actions = prob.get_actions()
+            propositions = prob.get_propositions()
+            player.dice_value = dice.roll_dice()
+            player.build_problem()
+            prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
+            plan = a_star_search(prob, heuristic=level_sum)
+            if len(plan) == 0:
+                write_to_log("## LAST ##",logs)
+            write_to_log("###########ACTIONS##########",logs)
+            for action in actions:
+                write_to_log(action.name,logs)
+            write_to_log("@@@@@@@@@@@PROPOSITIONS@@@@@@@@@@@",logs)
+            for prop in propositions:
+                write_to_log(prop.name,logs)
+        elapsed = time.process_time() - start
+        if moves is not None:
+            print_plan(moves,logs)
+            print("Money: %d" % player.money)
+            write_to_log("Money: %d" % player.money,logs)
+            # print()
+            print("game finished after %d turns in %.2f seconds" % (len(moves)-1, elapsed))
+            write_to_log("game finished after %d turns in %.2f seconds" % (len(moves)-1, elapsed),logs)
         else:
-            print("plan doesn't start with move!!! The current action was:")
-            print(plan[0].name)
-            exit(1)
-
-        if board.MESSAGE in board_game[int(cell[0]), int(cell[1])]:
-            moves.append(board_game[int(cell[0]),int(cell[1])]["message"])
-
-        # Starting new round- creating new problem.txt file
-        actions = prob.get_actions()
-        propositions = prob.get_propositions()
-        player.dice_value = dice.roll_dice()
-        player.build_problem()
-        prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
-        plan = a_star_search(prob, heuristic=level_sum)
-    elapsed = time.process_time() - start
-    if moves is not None:
-        print()
-        print_plan(moves)
-        print("Money: %d" % player.money)
-        print()
-        print("game finished after %d turns in %.2f seconds" % (len(moves)-1, elapsed))
-    else:
-        print("Could not find a plan in %.2f seconds" % elapsed)
+            print("Could not find a plan in %.2f seconds" % elapsed)
+            write_to_log("Could not find a plan in %.2f seconds" % elapsed,logs)

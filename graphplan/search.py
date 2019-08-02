@@ -3,6 +3,7 @@ In search.py, you will implement generic search algorithms
 """
 
 import graphplan.util as util
+import time
 from tkinter import *
 
 COUNTER = 0
@@ -102,7 +103,6 @@ def general_search(problem, fringe):
 
     fringe.push(PQItem((problem.get_start_state(), None, 0, None)))  # curr_node, action, cost, parent
     closed = set()
-
     while not fringe.isEmpty():
         i = 1
         curr = fringe.pop()
