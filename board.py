@@ -1,6 +1,7 @@
 import numpy as np
 from Certificates import Certificate
-
+import termcolor
+from colorama import init, Fore, Back, Style
 MESSAGE = "message"
 JUMP = 'jump'
 ENTRANCE = 'entrance'
@@ -26,8 +27,8 @@ class Board:
     loto_cells = {(10,7), (2,1), (4,7)}
 
     def __init__(self, num_players=1, starting_point=(1, 0)):
-        self.board_w = 23
-        self.board_h = 31
+        self.board_w = 12
+        self.board_h = 12
         self.starting_point = starting_point
         self.num_players = num_players
 
@@ -37,9 +38,20 @@ class Board:
 
         self.transition_dict = {}
         self.init_dict()
+        self.board_to_print = self.build_board_for_print()
 
     def get_cell(self, cell):
         return self.transition_dict[cell]
+
+    def build_board_for_print(self):
+        cur_board = np.asarray(["X"] * self.board_h* self.board_w).reshape((self.board_h, self.board_w))
+
+        for (x, y), values in self.transition_dict.items():
+            # background = Back.YELLOW if values[ORANGE] else \
+            #              + Back.MAGENTA if values[SURPRISE] else \
+            #              + Back.BLUE if values[WAIT] else Back.GREEN
+            cur_board[x][y] = " "
+        return cur_board
 
     def init_dict(self):
         self.init_row0()
