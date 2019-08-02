@@ -7,8 +7,9 @@ from player import Player
 import Certificates
 from dice import Dice
 import board
-
-
+import numpy as np
+from colorama import init, Fore, Back, Style
+dice_obj = Dice()
 board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 DEBUG = True
@@ -18,6 +19,39 @@ def print_plan(plan,logs):
         print(a)
         write_to_log(a,logs)
 
+def print_current_board(moves,player_loc):
+    board_obj = board.Board()
+    tmp_board = np.copy(board_obj.board_to_print)
+    for (x,y) in moves:
+        tmp_board[x][y] = "O"
+    tmp_board[player_loc[0]][player_loc[1]] = "P"
+
+    matprint(tmp_board,board_obj,"f")
+
+def matprint(mat,board_obj, fmt="g"):
+    # col_maxes = [max([len(("{}").format(x)) for x in col]) for col in mat.T]
+    for i, x in enumerate(mat):
+        for j, y in enumerate(x):
+            if (i,j) == board_obj.starting_point:
+                print(Back.LIGHTRED_EX+"S",end='')
+            elif mat[i][j] =="X":
+                print(Back.GREEN+Fore.BLACK+"X",end='')
+                continue
+            elif mat[i][j] == "P":
+                print(Back.RED + Fore.BLACK + "P", end='')
+            elif "orange" in board_obj.transition_dict[(i,j)]:
+                print(Back.YELLOW+ Fore.BLACK + " ", end='')
+            elif "surprise" in board_obj.transition_dict[(i,j)]:
+                print(Back.MAGENTA+ Fore.BLACK + " ", end='')
+            elif "wait" in board_obj.transition_dict[(i,j)]:
+                print(Back.BLUE+ Fore.BLACK + " ", end='')
+            elif mat[i][j] == "O":
+                print(Back.WHITE+ Fore.BLACK + "O", end='')
+            else:
+                print(Back.WHITE+ " ", end='')
+# background = Back.YELLOW if ("orange" in board_obj.transition_dict[(i,j)]) else  Back.MAGENTA if ("surprise" in board_obj.transition_dict[(i,j)]) else Back.BLUE if ("wait" in board_obj.transition_dict[(i,j)]) else Back.WHITE
+            # print((background+"{}").format(y), end="  ")
+        print(Back.RESET+"")
 
 def handle_stop(plan):
     all = []
@@ -90,7 +124,7 @@ def handle_move(plan, player):
     action = plan[0]
     action_name = plan[0].name
     if 'Move' in plan[0].name:
-        player.cell = (action_name.split('_')[5], action_name.split('_')[6])
+        player.cell = (int(action_name.split('_')[5]), int(action_name.split('_')[6]))
         if cell not in board.Board.loto_cells:
             all.append("Move to (%s,%s)" % player.cell)
         for prop in action.add:
@@ -106,7 +140,7 @@ def handle_move(plan, player):
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
                 all.append("presented the certificate: " + certificate)
     if player.cell in board.Board.loto_cells:
-        dice_val = Dice.roll_dice()
+        dice_val = dice_obj.roll_dice()
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
             player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
             all.append("You win the lottery. YAY! You earned %s")
@@ -168,7 +202,7 @@ if __name__ == '__main__':
     domain_file_name = 'domain.txt'
     problem_file_name = '{}_problem.txt'
     player = Player()
-    dice = Dice()
+
     if input_player == Types.MEAN.value or input_player == Types.OPTIMISTIC.value:
         player.set_type(input_player)
         problem_file_name = problem_file_name.format(input_player.lower())
@@ -176,14 +210,14 @@ if __name__ == '__main__':
     else:
         print("Usage: game.py player(optimistic or mean). Bad type player.")
         exit()
-    dice_val = dice.roll_dice()
+    dice_val = dice_obj.roll_dice()
     player.dice_value = dice_val
     player.build_problem()
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns = 0
     moves = ["--- Welcome to the package Arrive Game.--- \nYou are positioned at (1,0)"]
-
+    past_moves = [player.cell]
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":","")),"w") as logs:
         while len(plan) != 0:
             if 'Move' in plan[0].name:
@@ -220,10 +254,12 @@ if __name__ == '__main__':
                 moves.append(board_game[int(cell[0]),int(cell[1])]["message"])
 
             # Starting new round- creating new problem.txt file
-            # print_current_board(moves,player.cell)
+            past_moves.append((player.cell[0],player.cell[1]))
+            print_current_board(past_moves,player.cell)
+
             actions = prob.get_actions()
             propositions = prob.get_propositions()
-            player.dice_value = dice.roll_dice()
+            player.dice_value = dice_obj.roll_dice()
             player.build_problem()
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             plan = a_star_search(prob, heuristic=level_sum)
