@@ -42,7 +42,7 @@ class Player:
 
 
     def get_goals(self):
-        goals = [dc.AT_FORMAT % (5,7)]
+        goals = [dc.AT_FORMAT % (1,3)]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
         # goals.extend(dc.create_not_needs_items())
@@ -85,9 +85,8 @@ class Player:
         
 
     def get_initial(self):
-        d = 1 if self.type == Types.MEAN.value else self.dice_value
         initial = [dc.AT_FORMAT % self.cell,
-                   dc.DICE_FORMAT % d,
+                   dc.DICE_FORMAT % self.dice_value,
                    dc.MONEY_FORMAT % self.money]
         initial.extend(self.get_certificates_props())
         initial.extend(self.get_comeback_props())
@@ -96,9 +95,6 @@ class Player:
         initial.extend(self.get_owes())
         initial.extend(self.get_not_owes())
         return initial
-
-
-
 
     def build_problem(self):
         agent = Types.OPTIMISTIC.name.lower()
