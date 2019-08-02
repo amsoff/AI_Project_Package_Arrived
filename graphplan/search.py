@@ -151,7 +151,7 @@ def general_search(problem, fringe):
                 # print(successors[i][1].name)
             closed.add(curr.get_node())
         i += 1
-    return []
+    return "failed"
 
 
 def depth_first_search(problem):

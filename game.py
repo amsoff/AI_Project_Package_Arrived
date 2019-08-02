@@ -123,10 +123,10 @@ def handle_payments(action, player):
 
 
 def handle_goto(action, player):
-    cell = action.split('_')[1], action.split('_')[2]
+    cell = int(action.split('_')[1]), int(action.split('_')[2])
     player.cell = cell
     player.come_back_spots.remove(cell)
-    return "Go back to (%d,%d)" % cell
+    return ["Go back to (%d,%d)" % cell]
 
 
 def handle_move(plan, player):
@@ -143,7 +143,7 @@ def handle_move(plan, player):
                 # need to match the exact name of the certificate
                 certificate = prop.name.split('has_')[1]
                 for cert in Certificates.Certificate.list():
-                    if cert.name == certificate:
+                    if str(cert) == certificate:
                         player.has_certificates.append(cert)
                         all.append("Congrats! you hold the %s Certificate!" % cert.name)
         for prop in action.pre:
@@ -190,7 +190,7 @@ def handle_move(plan, player):
             jump_to = (int(action.name.split("_")[3]), int(action.name.split("_")[4]))
             player.cell = jump_to
             all.append("jumped to (%s,%s) to search" % jump_to)
-            player.come_back_spots.append((int(plan[0].name.split('_')[6]), int(plan[0].name.split('_')[7])))
+            player.come_back_spots.append((int(action.name.split('_')[6]), int(action.name.split('_')[7])))
 
     return all, turns
 
@@ -233,40 +233,39 @@ if __name__ == '__main__':
     turns, expanded = 0,0
     moves = ["--- Welcome to the package Arrive Game.--- \nYou are positioned at (1,0)"]
     past_moves = [player.cell]
-    i = 0
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
-        while len(plan) != 0:
-            if 'jump' in plan[i].name:
-                jump_to = (int(action.name.split("_")[3]), int(action.name.split("_")[4]))
-                player.cell = jump_to
-                moves.append("jumped to (%s,%s) to search" % jump_to)
-                player.come_back_spots.append((int(plan[i].name.split('_')[6]), int(plan[i].name.split('_')[7])))
-
-            if 'Move' in plan[i].name:
-                cell = (plan[i].name.split('_')[5], plan[i].name.split('_')[6])
+        while len(plan) != 0 and plan != 'failed':
+            if 'Move' in plan[0].name:
+                cell = (plan[0].name.split('_')[5], plan[0].name.split('_')[6])
                 move, turn = handle_move(plan, player)
                 turns += turn
                 write_to_log("current moves done:", logs)
                 print_plan(move,logs)
                 moves.extend(move)
 
-            elif 'pay_150' in plan[i].name:
-                cell = (plan[i].name.split('_')[6], plan[i].name.split('_')[7])
-                move, turn = handle_payments(plan[i], player)
+            elif 'pay_150' in plan[0].name:
+                cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
+                move, turn = handle_payments(plan[0], player)
                 turns += turn
                 moves.extend(move)
-
                 if len(plan[1:]) != 0:
-                    move, turn = handle_move(plan[1:], player)
-                    turns += turn
-                    moves.extend(move)
+                    plan = plan[1:]
+                    continue
 
+            elif 'jump' in plan[0].name:
+                jump_to = (int(action.name.split("_")[3]), int(action.name.split("_")[4]))
+                player.cell = jump_to
+                moves.append("jumped to (%s,%s) to search" % jump_to)
+                player.come_back_spots.append((int(plan[0].name.split('_')[6]), int(plan[0].name.split('_')[7])))
+                if len(plan[1:]) != 0:
+                    plan = plan[1:]
+                    continue
 
             else:
                 print("plan doesn't start with move!!! The current action was:")
                 write_to_log("plan doesn't start with move!!! The current action was:", logs)
-                print(plan[i].name)
-                write_to_log(plan[i].name, logs)
+                print(plan[0].name)
+                write_to_log(plan[0].name, logs)
                 write_to_log("PLAN:", logs)
                 print_plan(plan, logs)
                 print("moves are:")
@@ -281,7 +280,7 @@ if __name__ == '__main__':
 
             # Starting new round- creating new problem.txt file
             past_moves.append((player.cell[0], player.cell[1]))
-            print_current_board(past_moves, player)
+            # print_current_board(past_moves, player)
 
             actions = prob.get_actions()
             propositions = prob.get_propositions()
@@ -297,10 +296,9 @@ if __name__ == '__main__':
             write_to_log("@@@@@@@@@@@PROPOSITIONS@@@@@@@@@@@", logs)
             for state in prob.initialState:
                 write_to_log(state.name, logs)
-            i += 1
 
         elapsed = time.process_time() - start
-        if moves is not None:
+        if moves is not None and plan != "failed":
             print_plan(moves, logs)
             print("Money: %d" % player.money)
             write_to_log("Money: %d" % player.money, logs)
