@@ -24,7 +24,7 @@ TAX_PAYMENT = -50
 PRISE_1 = 1000
 PRISE_2 = 1500
 PRISE_3 = 500
-PACKAGE_COST = -50
+HAIRCUT_COST = -50
 
 
 class Board:
@@ -120,7 +120,7 @@ class Board:
         self.transition_dict[(11, 11)] = {1: [(11, 10)],
                                           2: [(11, 11)],
                                           3: [(11, 11)],
-                                          BALANCE: PACKAGE_COST,
+                                          BALANCE: HAIRCUT_COST,
                                           ENTRANCE: (11, 8)}
 
     def init_row10(self):
@@ -244,7 +244,7 @@ class Board:
         self.transition_dict[(8, 4)] = {1: [(8, 5)],
                                         2: [(9, 5), (7, 5)],
                                         3: [(7, 6), (6, 5), (9, 6), (9, 4)],
-                                        BALANCE: PACKAGE_COST,  # negative
+                                        BALANCE: HAIRCUT_COST,  # negative
                                         JUMP: [(8, 5), (11, 11)],
                                         HAS: Certificate.PASSPORT}
 
