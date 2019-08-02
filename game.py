@@ -187,7 +187,7 @@ def handle_move(plan, player):
             all.append("placed comeback at (%s,%s)" % cb_to)
 
         elif 'jump' in action.name:
-            jump_to = (action.name.split("_")[2], action.name.split("_")[3])
+            jump_to = (action.name.split("_")[3], action.name.split("_")[4])
             player.cell = jump_to
             all.append("jumped to (%s,%s) to search" % jump_to)
 
