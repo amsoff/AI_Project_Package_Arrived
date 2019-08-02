@@ -69,20 +69,20 @@ def handle_payments(action, player):
     if 'pay_surprise' in action.name:
         cell = (int(action.name.split('_')[2]), int(action.name.split('_')[3]))
         amount = surprise_generator.get_surprise()
-        if player.money + amount >= 0:
-            player.money = min(player.money + amount, dc.MAXIMUM_POCKET*50)
-            player.owe_surprise = False
-            if cell in player.need_pay_spots:
-                player.need_pay_spots.remove(cell)
-            sign = "+"
-            if amount < 0: # it is a payment and not get money
-                sign = "-"
+        # if player.money + amount >= 0:
+        player.money = min(player.money + amount, dc.MAXIMUM_POCKET*50)
+        player.money = max(0, player.money)
+        # player.owe_surprise = False
+        # if cell in player.need_pay_spots:
+        #     player.need_pay_spots.remove(cell)
+        sign = "+"
+        if amount < 0: # it is a payment and not get money
+            sign = "-"
+        return ["got a surprise! money " + sign + "= " + str(abs(amount))], 0
 
-            return ["got a surprise! money " + sign + "= " + str(abs(amount))], 0
-
-        else:
-            player.owe.append(amount)
-            player.owe_surprise = True
+        # else:
+            # player.owe.append(amount)
+            # player.owe_surprise = True
 
 
 
@@ -103,7 +103,7 @@ def handle_payments(action, player):
         return all, 1
 
     if 'pay' in action.name:
-        cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
+        cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))  
         amount = int(action.name.split('_')[1])
         player.money -= amount
         if cell in player.need_pay_spots:

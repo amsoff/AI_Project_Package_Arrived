@@ -28,8 +28,8 @@ NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
 NOT_STOP_FORMAT = "Not_Stop_%s"
 NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
 NEED_PAY_CELL = "need_pay_%s_%s"  #  reut
-NOT_OWE = "not_owe_%s"
-OWE = "owe_%s"
+# NOT_OWE = "not_owe_%s"
+# OWE = "owe_%s"
 OWE_SURPRISE = "owe_surprise"
 # NOT_NEEDS_FORMAT = "not_needs_%s"
 
@@ -51,7 +51,7 @@ STOP_FORMAT = NAME + "Stop_%s_at_%s_%s" + PRE + AT_FORMAT + " " + NOT_STOP_FORMA
 # PAYMENTS:
 PAY_SURPRISE_FORMAT = NAME + "pay_surprise_%s_%s_from_%s" + PRE + AT_FORMAT + " " + NEED_PAY_CELL + " " + MONEY_FORMAT  + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL  + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
 # pay surprise p1 from m pre need pay p1 at p1 money m add money m-x not need pay p1 del money m
-PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + " " + MONEY_FORMAT + " " + OWE + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + " " + NOT_OWE  + DEL + MONEY_FORMAT
+# PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + " " + MONEY_FORMAT + " " + OWE + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + " " + NOT_OWE  + DEL + MONEY_FORMAT
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
 # from certain locations in the map you can pay 150 shekels to get where you need.
@@ -127,7 +127,8 @@ def create_move(player):
                 # Surprises:
                 if board.SURPRISE in board_game[tile1]:
                     for i in [sur for sur in Surprise.surprises if sur < 0]:
-                        action[PRE] += " " + NOT_OWE % abs(i)
+                        reut=3
+                        # action[PRE] += " " + NOT_OWE % abs(i)
 
                 # take certificate:
                 if board.HAS in board_game[tile2]:
@@ -169,8 +170,8 @@ def create_jump_to_entrance():
             tile2 = board_game[tile][board.ENTRANCE]
             # jumps.append(JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
             jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
-        elif board.SURPRISE in board_game[tile] and board.ENTRANCE in board_game[tile]:
-            jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
+        # elif board.SURPRISE in board_game[tile] and board.ENTRANCE in board_game[tile]:
+        #     jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
 
 
 
@@ -180,7 +181,7 @@ def create_jump_to_entrance():
 def create_put_comeback():
     comeback = []
     for tile in board_game:
-        if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE]<0) or board.SURPRISE in board_game[tile]: # then there can be techef ashuv
+        if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE]<0): # or board.SURPRISE in board_game[tile]: # then there can be techef ashuv
                             # place comeback at p1,           pre: at p1,        add: comeback p1 del not CB p1
             comeback.append(PUT_COMEBACK % (tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1]))
     return comeback
@@ -199,14 +200,15 @@ def create_pay_surprise(player):
                     pays.append(PAY_SURPRISE_FORMAT % (tile[0], tile[1], m, tile[0], tile[1], tile[0], tile[1], m, min(50*MAXIMUM_POCKET, m+surprise), tile[0], tile[1], m, tile[0], tile[1]))
         return pays
 
-def create_pay_first_surprise():
-    pays = []
-    for tile in board_game:
-        if board.SURPRISE in board_game[tile]:
-            for s in [sur for sur in Surprise.surprises if sur < 0]:
-                for m in range(abs(s), 50*MAXIMUM_POCKET+1, 50):
-                    pays.append(PAY_FIRST_SURPRISE % (abs(s), tile[0], tile[1], m, tile[0], tile[1], m, abs(s), min(50*MAXIMUM_POCKET, m+s), tile[0], tile[1], abs(s), m))
-    return pays
+# def create_pay_first_surprise():
+#     pays = []
+#     for tile in board_game:
+#         if board.SURPRISE in board_game[tile]:
+#             for s in [sur for sur in Surprise.surprises if sur < 0]:
+#                 for m in range(abs(s), 50*MAXIMUM_POCKET+1, 50):
+#                     a=2
+#                     # pays.append(PAY_FIRST_SURPRISE % (abs(s), tile[0], tile[1], m, tile[0], tile[1], m, abs(s), min(50*MAXIMUM_POCKET, m+s), tile[0], tile[1], abs(s), m))
+#     return pays
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
 
@@ -243,7 +245,7 @@ def create_goto_from_comeback():
     goto = []
     for tile in board_game:
         if board.JUMP in board_game[tile]:  
-            for value in tile[board.JUMP]:
+            for value in board_game[tile][board.JUMP]:
                                             # goto      p2      from      p1  pre comeback to p2              at p1   add        at p2                not CB p2     delete: pre
                 goto.append(GOTO_FORMAT % (value[0], value[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
     return goto
@@ -282,13 +284,15 @@ def create_stop_action():
 def create_not_owe():
     owes = []
     for i in [sur for sur in Surprise.surprises if sur < 0]:
-        owes.append(NOT_OWE % abs(i))
+        # owes.append(NOT_OWE % abs
+        reut =2
     return owes
 
 def create_owe():
     owes = []
     for i in [sur for sur in Surprise.surprises if sur < 0]:
-        owes.append(OWE % abs(i))
+        reut=2
+        # owes.append(OWE % abs(i))
     return owes
 
 
@@ -339,7 +343,7 @@ def create_at():
 def create_come_back():
     cbs = []
     for tile in board_game:
-        if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] <0) or board.SURPRISE in board_game[tile]:
+        if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] <0): # or board.SURPRISE in board_game[tile]:
             cbs.append(COME_BACK_FORMAT % (tile[0], tile[1]))
     return cbs
 
@@ -347,7 +351,7 @@ def create_come_back():
 def create_not_come_back():
     cbs = []
     for tile in board_game:
-        if board.NEED in board_game[tile] or board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]:
+        if board.NEED in board_game[tile] or board.BALANCE in board_game[tile]:# or board.SURPRISE in board_game[tile]:
             if board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] > 0:
                 continue
             cbs.append(NOT_COME_BACK_FORMAT % (tile[0], tile[1]))
@@ -392,10 +396,12 @@ def get_actions(player):
     actions.extend(create_jump_to_entrance())
     # actions.extend(create_put_comeback())
     actions.extend(create_pay_surprise(player))
-    actions.extend(create_pay_first_surprise())
+    # actions.extend(create_pay_first_surprise())
     actions.extend(create_pay_150())
     # actions.extend(create_show_certificate())
     actions.extend(create_stop_action())
+    actions.extend(create_goto_from_comeback())
+    
     return actions
 
 
