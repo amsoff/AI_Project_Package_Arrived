@@ -237,7 +237,9 @@ class Board:
         self.transition_dict[(8, 3)] = {1: [(8, 4)],
                                         2: [(8, 3)],
                                         3: [(8, 3)],
-                                        ORANGE: [(8, 4)]}
+                                        ORANGE: [(8, 4)],
+                                        NEED: [Certificate.HAIRCUT],
+                                        ENTRANCE: (8, 5)}
 
         self.transition_dict[(8, 4)] = {1: [(8, 5)],
                                         2: [(9, 5), (7, 5)],
