@@ -54,9 +54,6 @@ class Board:
         cur_board = np.asarray(["X"] * self.board_h* self.board_w).reshape((self.board_h, self.board_w))
 
         for (x, y), values in self.transition_dict.items():
-            # background = Back.YELLOW if values[ORANGE] else \
-            #              + Back.MAGENTA if values[SURPRISE] else \
-            #              + Back.BLUE if values[WAIT] else Back.GREEN
             cur_board[x][y] = " "
         return cur_board
 

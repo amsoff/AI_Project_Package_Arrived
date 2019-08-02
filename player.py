@@ -94,7 +94,8 @@ class Player:
         initial.extend(self.get_owes())
         initial.extend(self.get_not_owes())
         return initial
-
+    def set_goal(self,cell):
+        self.goal = cell
 
     def build_problem(self):
         agent = Types.OPTIMISTIC.name.lower()
