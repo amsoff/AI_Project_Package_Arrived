@@ -3,8 +3,9 @@ from Certificates import Certificate
 import board
 from dice import Dice
 from surprise import Surprise
+from Player_types import Types
 
-
+### CONSTANTS ###
 MAXIMUM_PAY = 30
 MAXIMUM_POCKET = 80
 MAX_STOPS = 4
@@ -34,7 +35,7 @@ NEED_PAY_CELL = "need_pay_%s_%s"  #  reut
 
 #  make goal be all not_comebacks and  not needs and at END
 
-from Player_types import Types
+
 
 board_game = board.Board(1).transition_dict
 

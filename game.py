@@ -31,7 +31,10 @@ def print_current_board(moves, player_obj: Player):
     board_obj = board.Board()
     tmp_board = np.copy(board_obj.board_to_print)
     for (x, y) in moves:
-        tmp_board[x][y] = "O"
+        try:
+            tmp_board[x][y] = "O"
+        except:
+            print(type(tmp_board[x][y]))
     tmp_board[player_obj.cell[0]][player_obj.cell[1]] = "P"
     tmp_board[player_obj.goal[0]][player_obj.goal[1]] = "G"
 
@@ -59,7 +62,7 @@ def matprint(mat, board_obj):
             elif mat[i][j] == "G":
                 print(Back.LIGHTCYAN_EX + Fore.BLACK + "\u0332|\u0332G", end='')
             elif mat[i][j] == "O":
-                print(Back.LIGHTWHITE_EX + Fore.BLACK + "\u0332|\u0332O", end='')
+                print(Back.WHITE + Fore.BLACK + "\u0332|\u0332O", end='')
             else:
                 print(Back.WHITE + "\u0332|\u0332 ", end='')
         # background = Back.YELLOW if ("orange" in board_obj.transition_dict[(i,j)]) else  Back.MAGENTA if ("surprise" in board_obj.transition_dict[(i,j)]) else Back.BLUE if ("wait" in board_obj.transition_dict[(i,j)]) else Back.WHITE
