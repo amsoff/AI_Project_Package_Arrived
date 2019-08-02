@@ -30,15 +30,16 @@ def print_current_board(moves, player_obj: Player):
     tmp_board[player_obj.cell[0]][player_obj.cell[1]] = "P"
     tmp_board[player_obj.goal[0]][player_obj.goal[1]] = "G"
 
-    matprint(tmp_board, board_obj, "f")
+    matprint(tmp_board, board_obj)
 
 
-def matprint(mat, board_obj, fmt="g"):
+def matprint(mat, board_obj):
     # col_maxes = [max([len(("{}").format(x)) for x in col]) for col in mat.T]
     for i, x in enumerate(mat):
         for j, y in enumerate(x):
             if (i, j) == board_obj.starting_point:
-                print(Back.LIGHTRED_EX +Fore.BLACK+ "\u0332|\u0332S", end='')
+                print(Back.RED +Fore.BLACK+ "\u0332|\u0332S", end='')
+
             elif mat[i][j] == "X":
                 print(Back.GREEN + Fore.BLACK + "\u0332|\u0332X", end='')
                 continue
@@ -51,8 +52,9 @@ def matprint(mat, board_obj, fmt="g"):
             elif "wait" in board_obj.transition_dict[(i, j)]:
                 print(Back.BLUE + Fore.BLACK + "\u0332|\u0332 ", end='')
             elif mat[i][j] == "G":
-                print(Back.LIGHTCYAN_EX + Fore.BLACK + "\u0332|\u0332O", end='')
-
+                print(Back.LIGHTCYAN_EX + Fore.BLACK + "\u0332|\u0332G", end='')
+            elif mat[i][j] == "O":
+                print(Back.LIGHTWHITE_EX + Fore.BLACK + "\u0332|\u0332O", end='')
             else:
                 print(Back.WHITE + "\u0332|\u0332 ", end='')
         # background = Back.YELLOW if ("orange" in board_obj.transition_dict[(i,j)]) else  Back.MAGENTA if ("surprise" in board_obj.transition_dict[(i,j)]) else Back.BLUE if ("wait" in board_obj.transition_dict[(i,j)]) else Back.WHITE
@@ -148,7 +150,7 @@ def handle_move(plan, player):
         dice_val = dice_obj.roll_dice()
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
             player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
-            all.append("You win the lottery. YAY! You earned %s")
+            all.append("You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][board.BALANCE])
         turns += 1
     for i, action in enumerate(plan):
         # handle it already
@@ -223,7 +225,7 @@ if __name__ == '__main__':
     player.build_problem()
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
-    turns = 0
+    turns, expanded = 0,0
     moves = ["--- Welcome to the package Arrive Game.--- \nYou are positioned at (1,0)"]
     past_moves = [player.cell]
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
@@ -232,6 +234,7 @@ if __name__ == '__main__':
                 cell = (plan[0].name.split('_')[5], plan[0].name.split('_')[6])
                 move, turn = handle_move(plan, player)
                 turns += turn
+                write_to_log("current moves done:", logs)
                 print_plan(move,logs)
                 moves.extend(move)
 
@@ -256,7 +259,6 @@ if __name__ == '__main__':
                 exit(1)
 
             write_to_log("round {}".format(turns),logs)
-            write_to_log("current moves done:",logs)
 
             if board.MESSAGE in board_game[int(cell[0]), int(cell[1])]:
                 moves.append(board_game[int(cell[0]), int(cell[1])]["message"])
@@ -277,8 +279,8 @@ if __name__ == '__main__':
             for action in actions:
                 write_to_log(action.name, logs)
             write_to_log("@@@@@@@@@@@PROPOSITIONS@@@@@@@@@@@", logs)
-            for prop in propositions:
-                write_to_log(prop.name, logs)
+            for state in prob.initialState:
+                write_to_log(state.name, logs)
         elapsed = time.process_time() - start
         if moves is not None:
             print_plan(moves, logs)
