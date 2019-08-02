@@ -6,8 +6,11 @@ from colorama import init, Fore, Back, Style
 # A message to print to the board
 MESSAGE = "message"
 
-# Represent a jump
+# Represent a jump to a node when we need to represent certificate or to pay amount of
+# money we don't have, so we are exiting the game
 JUMP = 'jump'
+
+# The
 ENTRANCE = 'entrance'
 BALANCE = 'balance'
 WAIT = 'wait'
@@ -245,8 +248,9 @@ class Board:
                                         2: [(9, 5), (7, 5)],
                                         3: [(7, 6), (6, 5), (9, 6), (9, 4)],
                                         BALANCE: HAIRCUT_COST,  # negative
-                                        JUMP: [(8, 5), (11, 11)],
-                                        HAS: Certificate.PASSPORT}
+                                        JUMP: [(11, 11)],
+                                        HAS: Certificate.PASSPORT,
+                                        ENTRANCE: (8,5)}
 
         self.transition_dict[(8, 5)] = {1: [(7, 5), (9, 5), (8, 5)],
                                         2: [(7, 6), (6, 5), (9, 6), (9, 4), (8, 5)],
@@ -287,7 +291,9 @@ class Board:
                                         3: [(5, 6), (9, 8)], ORANGE: [(5, 9)]}
         self.transition_dict[(6, 7)] = {1: [(6, 7), (5, 7)], 2: [(6, 7), (5, 8), (5, 6)],
                                         3: [(5, 9), (6, 8), (4, 6), (5, 5)],
-                                        HAS: Certificate.PORT, JUMP: [(5, 9)], ORANGE: [(5, 9)]}
+                                        HAS: Certificate.PORT
+                                        ,JUMP: [(5, 9)],
+                                        ORANGE: [(5, 9)]}
         self.transition_dict[(6, 6)] = {1: [(6, 7)], 2: [(6, 6)], 3: [(6, 6)], ORANGE: [(6, 7)], WAIT: 1}
         self.transition_dict[(6, 5)] = {1: [(7, 5), (5, 5), (6, 4)], 2: [(6, 5), (8, 5), (7, 6), (5, 6)],
                                         3: [(6, 5), (9, 5), (6, 6), (5, 7), (4, 6)], ORANGE: [(6, 4)]}
