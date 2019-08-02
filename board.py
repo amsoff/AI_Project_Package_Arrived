@@ -38,11 +38,6 @@ class Board:
         self.board_h = 12
         self.starting_point = starting_point
         self.num_players = num_players
-
-        self.state = np.full((self.board_h, self.board_w), -1, np.int8)
-
-        self.transition_matrix = np.full((self.board_h, self.board_w), -1, np.int8)
-
         self.transition_dict = {}
         self.init_dict()
         self.board_to_print = self.build_board_for_print()
@@ -288,8 +283,7 @@ class Board:
                                         3: [(5, 6), (9, 8)], ORANGE: [(5, 9)]}
         self.transition_dict[(6, 7)] = {1: [(6, 7), (5, 7)], 2: [(6, 7), (5, 8), (5, 6)],
                                         3: [(5, 9), (6, 8), (4, 6), (5, 5)],
-                                        HAS: Certificate.PORT
-                                        ,JUMP: [(5, 9)],
+                                        HAS: Certificate.PORT, JUMP: [(5, 9)],
                                         ORANGE: [(5, 9)]}
         self.transition_dict[(6, 6)] = {1: [(6, 7)], 2: [(6, 6)], 3: [(6, 6)], ORANGE: [(6, 7)], WAIT: 1}
         self.transition_dict[(6, 5)] = {1: [(7, 5), (5, 5), (6, 4)], 2: [(6, 5), (8, 5), (7, 6), (5, 6)],
@@ -398,3 +392,11 @@ class Board:
                                         JUMP: [(9, 9)]}
         self.transition_dict[(0, 0)] = {1: [(0, 1)], 2: [(0, 0)], 3: [(0, 0)], ORANGE: [(0, 1)],
                                         NEED: [Certificate.INTEGRITY], ENTRANCE: (1, 0)}
+
+
+    def init_test(self):
+        self.transition_dict[(0, 0)] = {1:[(0,1)], 2:[(0,1)], 3:[(0,1)]}
+        self.transition_dict[(0, 1)] = {1:[(0,2)], 2:[(0,2)], 3:[(0,2)], NEED: [Certificate.TAX], ENTRANCE:(1,2)}
+        self.transition_dict[(0, 2)] = {1:[(0,2)], 2:[(0,2)], 3:[(0,2)]}
+        self.transition_dict[(1, 2)] = {1:[(2,2)], 2:[(2,2)], 3:[(2,2)]}
+        self.transition_dict[(2, 2)] = {1:[(0,0)], 2:[(0,0)], 3:[(0,0)], HAS: Certificate.TAX, JUMP:[(0,1)]}

@@ -101,12 +101,14 @@ def handle_payments(action, player):
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
         # need to match the exact name of the certificate
-        certificate = "".join([str(ad) for ad in action.add if "has_" in str(ad)])
-        all.append("pay 150 to go to (%d,%d)" % cell)
-        if certificate != "":
-            certificate = certificate.split(".")[1]
-            player.has_certificates.append(Certificates.Certificate[certificate])
-            all.append("Congrats! you hold the %s Certificate!" % certificate)
+        for prop in action.add:
+            if 'has' in prop.name:
+                # need to match the exact name of the certificate
+                certificate = prop.name.split('has_')[1]
+                for cert in Certificates.Certificate.list():
+                    if str(cert) == certificate and cert not in player.has_certificates:
+                        player.has_certificates.append(cert)
+                        all.append("Congrats! you hold the %s Certificate!" % cert.name)
         return all, 1
 
     if 'pay' in action.name:
@@ -125,7 +127,8 @@ def handle_payments(action, player):
 def handle_goto(action, player):
     cell = int(action.split('_')[1]), int(action.split('_')[2])
     player.cell = cell
-    player.come_back_spots.remove(cell)
+    if cell in player.come_back_spots:
+        player.come_back_spots.remove(cell)
     return ["Go back to (%d,%d)" % cell]
 
 
@@ -143,7 +146,7 @@ def handle_move(plan, player):
                 # need to match the exact name of the certificate
                 certificate = prop.name.split('has_')[1]
                 for cert in Certificates.Certificate.list():
-                    if str(cert) == certificate:
+                    if str(cert) == certificate and cert not in player.has_certificates:
                         player.has_certificates.append(cert)
                         all.append("Congrats! you hold the %s Certificate!" % cert.name)
         for prop in action.pre:
@@ -253,7 +256,7 @@ if __name__ == '__main__':
                     continue
 
             elif 'jump' in plan[0].name:
-                jump_to = (int(action.name.split("_")[3]), int(action.name.split("_")[4]))
+                jump_to = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
                 player.cell = jump_to
                 moves.append("jumped to (%s,%s) to search" % jump_to)
                 player.come_back_spots.append((int(plan[0].name.split('_')[6]), int(plan[0].name.split('_')[7])))
