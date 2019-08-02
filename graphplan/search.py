@@ -106,19 +106,17 @@ def general_search(problem, fringe):
     while not fringe.isEmpty():
         i = 1
         curr = fringe.pop()
-        if i % 1 == 0:
-            print("round %d" % i)
 
         if problem.is_goal_state(curr.get_node()):
             return get_path(curr)
 
         elif curr.get_node() not in closed:
             successors = problem.get_successors(curr.get_node())
-            if i % 1 == 0:
-                print("Num_successors = %d" % len(successors))
+            # if i % 1 == 0:
+                # print("Num_successors = %d" % len(successors))
             for i in range(len(successors)):
                 fringe.push(PQItem((successors[i][0], successors[i][1], successors[i][2] + curr.get_cost(), curr)))
-                print(successors[i][1].name)
+                # print(successors[i][1].name)
             closed.add(curr.get_node())
         i += 1
     return []
@@ -132,7 +130,7 @@ def depth_first_search(problem):
     the goal. Make sure to implement a graph search algorithm.
 
     To get started, you might want to try some of these simple commands to
-    understand the search problem that is being passed in:
+    understand the search problem.txt that is being passed in:
     """
     fringe = util.Stack()
     return general_search(problem, fringe)

@@ -2,43 +2,21 @@ from dice import Dice
 import board
 from Certificates import Certificate
 from Player_types import Types
+from surprise import Surprise
 
 
 
 import domain_create as dc
-GRANDMA = 0
-INTEGRITY = 1
-BIRTH = 2
-ID = 3
-RABIES = 4
-PASSPORT = 5
-MILITARY = 6
-TAX = 7
-PORT = 8
-GLASSES = 9
-HAT = 10
-HAIRCUT = 11
-PACKAGE = 12
-certificates = [Certificate.GRANDMA,
-                Certificate.INTEGRITY,
-                Certificate.BIRTH,
-                Certificate.ID,
-                Certificate.RABIES,
-                Certificate.PASSPORT,
-                Certificate.MILITARY,
-                Certificate.TAX,
-                Certificate.PORT,
-                Certificate.GLASSES,
-                Certificate.HAT,
-                Certificate.HAIRCUT,
-                Certificate.PACKAGE]
+certificates = Certificate.list()
 
 
 board_game = board.Board(1).transition_dict
-all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile] and (Certificate.HAT not in board_game[tile][board.NEED] or Certificate.GLASSES not in board_game[tile][board.NEED])) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
+all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
-surprise_amounts = [-300, -200, -100, 100, 200, 300]
+surprise_amounts = Surprise.surprises
+# Before was- (not corrolated wuth Surprise class!!!!)
+# surprise_amounts = [-300, -200, -100, 100, 200, 300], Surprise.surprises
 
 
 class Player:
@@ -64,7 +42,7 @@ class Player:
 
 
     def get_goals(self):
-        goals = [dc.AT_FORMAT % (11,9)]
+        goals = [dc.AT_FORMAT % (5,7)]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
         # goals.extend(dc.create_not_needs_items())
@@ -107,8 +85,9 @@ class Player:
         
 
     def get_initial(self):
+        d = 1 if self.type == Types.MEAN.value else self.dice_value
         initial = [dc.AT_FORMAT % self.cell,
-                   dc.DICE_FORMAT % self.dice_value,
+                   dc.DICE_FORMAT % d,
                    dc.MONEY_FORMAT % self.money]
         initial.extend(self.get_certificates_props())
         initial.extend(self.get_comeback_props())

@@ -11,3 +11,4 @@ class Surprise:
         surprise = random.choice(self.surprises)
         return surprise
 
+
