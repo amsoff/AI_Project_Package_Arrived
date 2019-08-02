@@ -93,6 +93,37 @@ def get_path(curr_node):
     return path[::-1]
 
 
+def sort_successors(successors):
+    ret = []
+    jump = []
+    goto = []
+    move = []
+    pay = []
+    stop = []
+    for successor in successors:
+        if "jump" in successor[1].name:
+            jump.append(successor)
+        elif "Goto" in successor[1].name:
+            goto.append(successor)
+        elif "pay" in successor[1].name:
+            pay.append(successor)
+        elif "Move" in successor[1].name:
+            move.append(successor)
+        elif "Stop" in successor[1].name:
+            stop.append(successor)
+        else:
+            print("##### in search forgot " + successor[1].name + " ###########")
+    ret.extend(pay)
+    ret.extend(goto)
+    ret.extend(move)
+    ret.extend(jump)
+    ret.extend(stop)
+
+    return ret
+
+
+
+
 def general_search(problem, fringe):
     """
     general graph search algorithm from tirgul
@@ -114,6 +145,7 @@ def general_search(problem, fringe):
             successors = problem.get_successors(curr.get_node())
             # if i % 1 == 0:
                 # print("Num_successors = %d" % len(successors))
+            successors = sort_successors(successors)
             for i in range(len(successors)):
                 fringe.push(PQItem((successors[i][0], successors[i][1], successors[i][2] + curr.get_cost(), curr)))
                 # print(successors[i][1].name)

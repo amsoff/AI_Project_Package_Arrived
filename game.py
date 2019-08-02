@@ -31,13 +31,21 @@ def handle_payments(action, player):
     if 'pay_surprise' in action.name:
         cell = (int(action.name.split('_')[2]), int(action.name.split('_')[3]))
         amount = surprise_generator.get_surprise()
-        if player.money - amount >= 0:
-            player.money -= amount
+        if player.money + amount >= 0:
+            player.money = min(player.money + amount, dc.MAXIMUM_POCKET*50)
             if cell in player.need_pay_spots:
                 player.need_pay_spots.remove(cell)
+            sign = "+"
+            if amount < 0: # it is a payment and not get money
+                sign = "-"
+
+            return ["got a surprise! money " + sign + "= " + str(abs(amount))], 0
+
         else:
             player.owe.append(amount)
-        return ["pay suprise %d" % -amount], 0
+
+
+
     if 'pay_150_from' in action.name: # TODO - if user pays 150 it doesn't mean he has some certificate
         all  = []
         cell = (int(action.name.split('_')[6]), int(action.name.split('_')[7]))
@@ -52,15 +60,18 @@ def handle_payments(action, player):
             certificate = certificate.split(".")[1]
             player.has_certificates.append(Certificates.Certificate[certificate])
             all.append("Congrats! you hold the %s Certificate!" % certificate)
-
         return all, 1
+
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
         amount = int(action.name.split('_')[1])
         player.money -= amount
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
-        return ["pay %d" % -amount], 0
+        sign = "+"
+        if amount > 0: # then it is a payment and not to get money
+            sign = "-"
+        return ["money " + sign + "= " + str(abs(amount))], 0
     return None
 
 
@@ -104,12 +115,12 @@ def handle_move(plan, player):
             continue
 
         # if we encounter another move- we finished the current round
-        if 'Move' in action.name or 'pay_150' in action.name :
+        if 'Move' in action.name:  # or 'pay_150' in action.name :
             break
 
         if 'pay' in action.name:
             pay, turn = handle_payments(action, player)
-            turns += 1
+            turns += turn
             all.extend(pay)
 
         elif 'Stop' in action.name:
@@ -175,19 +186,22 @@ if __name__ == '__main__':
             move, turn = handle_move(plan, player)
             turns += turn
             moves.extend(move)
-        elif 'pay_150' in plan[0].name:
-            cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
-            move, turn = handle_payments(plan[0], player)
-            turns += turn
-            moves.extend(move)
+        # elif 'pay_150' in plan[0].name:
+        #     print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! started with pay 150 !!!!!!!!!!!")
+        #     cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
+        #     move, turn = handle_payments(plan[0], player)
+        #     turns += turn
+        #     moves.extend(move)
 
-            if len(plan[1:]) != 0:
-                move, turn = handle_move(plan[1:], player)
-                turns += turn
-                moves.extend(move)
+            # if len(plan[1:]) != 0:
+            #     move, turn = handle_move(plan[1:], player)
+            #     turns += turn
+            #     moves.extend(move)
         else:
             print("plan doesn't start with move!!! The current action was:")
             print(plan[0].name)
+            print("PLAN:")
+            print_plan(plan)
             exit(1)
 
         if board.MESSAGE in board_game[int(cell[0]), int(cell[1])]:
