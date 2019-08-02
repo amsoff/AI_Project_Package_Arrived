@@ -96,6 +96,9 @@ class Player:
         initial.extend(self.get_not_owes())
         return initial
 
+
+
+
     def build_problem(self):
         agent = Types.OPTIMISTIC.name.lower()
         if self.type == Types.MEAN.value:
