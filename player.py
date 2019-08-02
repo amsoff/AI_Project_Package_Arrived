@@ -21,7 +21,7 @@ surprise_amounts = Surprise.surprises
 
 class Player:
     type = Types.MEAN.value
-    money = 100
+    money = 1500
     cell = (1,0)
     has_certificates = []
     dice_value = 3
@@ -43,7 +43,7 @@ class Player:
 
 
     def get_goals(self):
-        goals = [dc.AT_FORMAT % (4, 2)]
+        goals = [dc.AT_FORMAT % (11,4)]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
         # goals.extend(dc.create_not_needs_items())
@@ -83,8 +83,6 @@ class Player:
     #     owes = [dc.NOT_OWE % abs(d) for d in surprise_amounts if d < 0 and abs(d) not in self.owe]
     #     return owes
 
-        
-
     def get_initial(self):
         initial = [dc.AT_FORMAT % self.cell,
                    dc.DICE_FORMAT % self.dice_value,
@@ -98,9 +96,9 @@ class Player:
         if self.owe_surprise:
             initial.append(dc.OWE_SURPRISE)
         return initial
-
-
-
+    
+    def set_goal(self,cell):
+        self.goal = cell
 
     def build_problem(self):
         agent = Types.OPTIMISTIC.name.lower()

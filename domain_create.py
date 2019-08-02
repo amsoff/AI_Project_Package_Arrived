@@ -56,11 +56,6 @@ PAY_SURPRISE_FORMAT = NAME + "pay_surprise_%s_%s_from_%s" + PRE + AT_FORMAT + " 
 
 # from certain locations in the map you can pay 150 shekels to get where you need.
 
-PAY_150_FORMAT_CERT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + CERTIFICATES_FORMAT +" "+ MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
-PAY_150_FORMAT_CERT_NEED = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " "  + CERTIFICATES_FORMAT + " " +MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
-PAY_150_FORMAT = NAME + "pay_150_from_%s_%s_to_%s_%s_with_%s" + PRE + AT_FORMAT + " " + MONEY_FORMAT + ADD + AT_FORMAT + " " + MONEY_FORMAT + DEL + AT_FORMAT + " " + MONEY_FORMAT
-# pay 150 to jump from p1 to p2 with x money, pre at p1, money x, add at p2, money x-150, del at p1 money x.
-
 PAY_CELL = NAME + "pay_%s_At_%s_%s_from_%s" + PRE +NEED_PAY_CELL+ " " + AT_FORMAT +" " + MONEY_FORMAT + ADD +MONEY_FORMAT +" " + NOT_NEED_PAY_CELL  + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
 # pay x at p1 from m pre need_pay_p1 at p1 money m add money m-x not need pay p1 del money m need pay p1
 
@@ -75,9 +70,6 @@ JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + 
 PUT_COMEBACK = "Name: place_comeback_%s_%s" + PRE + AT_FORMAT + ADD + COME_BACK_FORMAT + DEL + NOT_COME_BACK_FORMAT
 # place comeback at p1 pre: at p1 add: comeback p1 delete: not_CB_p1
 NEW_JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE +  AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT
-# jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
-
-NEW_JUMP_TO_ENTRANCE_SURPRISE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + OWE_SURPRISE + " " + AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT
 # jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
 
 # # no need for take certificate?
@@ -124,11 +116,10 @@ def create_move(player):
                 if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
                     action[PRE] += " " + NOT_NEED_PAY_CELL % tile1
 
-                # Surprises:
-                if board.SURPRISE in board_game[tile1]:
-                    for i in [sur for sur in Surprise.surprises if sur < 0]:
-                        reut=3
-                        # action[PRE] += " " + NOT_OWE % abs(i)
+                # # Surprises:
+                # if board.SURPRISE in board_game[tile1]:
+                #     for i in [sur for sur in Surprise.surprises if sur < 0]:
+                #         action[PRE] += " " + NOT_OWE % abs(i)
 
                 # take certificate:
                 if board.HAS in board_game[tile2]:
@@ -178,13 +169,13 @@ def create_jump_to_entrance():
     return jumps
 
 
-def create_put_comeback():
-    comeback = []
-    for tile in board_game:
-        if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE]<0): # or board.SURPRISE in board_game[tile]: # then there can be techef ashuv
-                            # place comeback at p1,           pre: at p1,        add: comeback p1 del not CB p1
-            comeback.append(PUT_COMEBACK % (tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1]))
-    return comeback
+# def create_put_comeback():
+#     comeback = []
+#     for tile in board_game:
+#         if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE]<0): # or board.SURPRISE in board_game[tile]: # then there can be techef ashuv
+#                             # place comeback at p1,           pre: at p1,        add: comeback p1 del not CB p1
+#             comeback.append(PUT_COMEBACK % (tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1]))
+#     return comeback
 
 
 def create_pay_surprise(player):
@@ -281,19 +272,19 @@ def create_stop_action():
 
 
 ############ PROPOSITIONS ############
-def create_not_owe():
-    owes = []
-    for i in [sur for sur in Surprise.surprises if sur < 0]:
-        # owes.append(NOT_OWE % abs
-        reut =2
-    return owes
-
-def create_owe():
-    owes = []
-    for i in [sur for sur in Surprise.surprises if sur < 0]:
-        reut=2
-        # owes.append(OWE % abs(i))
-    return owes
+# def create_not_owe():
+#     owes = []
+#     for i in [sur for sur in Surprise.surprises if sur < 0]:
+#         # owes.append(NOT_OWE % abs
+#         reut =2
+#     return owes
+#
+# def create_owe():
+#     owes = []
+#     for i in [sur for sur in Surprise.surprises if sur < 0]:
+#         reut=2
+#         # owes.append(OWE % abs(i))
+#     return owes
 
 
 def create_not_need_pay():
@@ -382,10 +373,10 @@ def get_propositions():
     props.extend(create_dice())
     props.extend(create_has_money())
     props.extend(create_not_stop())
-    props.extend(create_not_owe())
-    props.extend(create_owe())
+    # props.extend(create_not_owe())
+    # props.extend(create_owe())
     props.extend(create_need_pay())
-    props.append(OWE_SURPRISE)
+    # props.append(OWE_SURPRISE)
     return props
 
 
@@ -401,7 +392,7 @@ def get_actions(player):
     # actions.extend(create_show_certificate())
     actions.extend(create_stop_action())
     actions.extend(create_goto_from_comeback())
-    
+
     return actions
 
 

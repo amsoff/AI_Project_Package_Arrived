@@ -1,8 +1,16 @@
 import numpy as np
 from Certificates import Certificate
 from colorama import init, Fore, Back, Style
+
+# All the types of actions and objects a node in the board can hold
+# A message to print to the board
 MESSAGE = "message"
+
+# Represent a jump to a node when we need to represent certificate or to pay amount of
+# money we don't have, so we are exiting the game
 JUMP = 'jump'
+
+# The
 ENTRANCE = 'entrance'
 BALANCE = 'balance'
 WAIT = 'wait'
@@ -19,7 +27,7 @@ TAX_PAYMENT = -50
 PRISE_1 = 1000
 PRISE_2 = 1500
 PRISE_3 = 500
-PACKAGE_COST = -50
+HAIRCUT_COST = -50
 
 
 class Board:
@@ -46,9 +54,6 @@ class Board:
         cur_board = np.asarray(["X"] * self.board_h* self.board_w).reshape((self.board_h, self.board_w))
 
         for (x, y), values in self.transition_dict.items():
-            # background = Back.YELLOW if values[ORANGE] else \
-            #              + Back.MAGENTA if values[SURPRISE] else \
-            #              + Back.BLUE if values[WAIT] else Back.GREEN
             cur_board[x][y] = " "
         return cur_board
 
@@ -115,7 +120,7 @@ class Board:
         self.transition_dict[(11, 11)] = {1: [(11, 10)],
                                           2: [(11, 11)],
                                           3: [(11, 11)],
-                                          BALANCE: PACKAGE_COST,
+                                          BALANCE: HAIRCUT_COST,
                                           ENTRANCE: (11, 8)}
 
     def init_row10(self):
@@ -233,17 +238,16 @@ class Board:
                                         2: [(8, 3)],
                                         3: [(8, 3)],
                                         ORANGE: [(8, 4)],
-                                        ENTRANCE: (8, 5),
-                                        NEED: [Certificate.HAIRCUT]}
+                                        NEED: [Certificate.HAIRCUT],
+                                        ENTRANCE: (8, 5)}
 
         self.transition_dict[(8, 4)] = {1: [(8, 5)],
                                         2: [(9, 5), (7, 5)],
                                         3: [(7, 6), (6, 5), (9, 6), (9, 4)],
-                                        BALANCE: PACKAGE_COST,  # negative
+                                        BALANCE: HAIRCUT_COST,  # negative
                                         JUMP: [(11, 11)],
                                         HAS: Certificate.PASSPORT,
-                                        ENTRANCE: (8,5)
-                                        }
+                                        ENTRANCE: (8,5)}
 
         self.transition_dict[(8, 5)] = {1: [(7, 5), (9, 5), (8, 5)],
                                         2: [(7, 6), (6, 5), (9, 6), (9, 4), (8, 5)],
@@ -284,7 +288,9 @@ class Board:
                                         3: [(5, 6), (9, 8)], ORANGE: [(5, 9)]}
         self.transition_dict[(6, 7)] = {1: [(6, 7), (5, 7)], 2: [(6, 7), (5, 8), (5, 6)],
                                         3: [(5, 9), (6, 8), (4, 6), (5, 5)],
-                                        HAS: Certificate.PORT, JUMP: [(5, 9)], ORANGE: [(5, 9)]}
+                                        HAS: Certificate.PORT
+                                        ,JUMP: [(5, 9)],
+                                        ORANGE: [(5, 9)]}
         self.transition_dict[(6, 6)] = {1: [(6, 7)], 2: [(6, 6)], 3: [(6, 6)], ORANGE: [(6, 7)], WAIT: 1}
         self.transition_dict[(6, 5)] = {1: [(7, 5), (5, 5), (6, 4)], 2: [(6, 5), (8, 5), (7, 6), (5, 6)],
                                         3: [(6, 5), (9, 5), (6, 6), (5, 7), (4, 6)], ORANGE: [(6, 4)]}
