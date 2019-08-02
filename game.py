@@ -151,7 +151,7 @@ def handle_move(plan, player):
             continue
 
         # if we encounter another move- we finished the current round
-        if 'Move' in action.name:  # or 'pay_150' in action.name :
+        if 'Move' in action.name or 'pay_150' in action.name:
             break
 
         if 'pay' in action.name:
@@ -224,10 +224,19 @@ if __name__ == '__main__':
                 cell = (plan[0].name.split('_')[5], plan[0].name.split('_')[6])
                 move, turn = handle_move(plan, player)
                 turns += turn
-                write_to_log("round {}".format(turns),logs)
-                write_to_log("current moves done:",logs)
                 print_plan(move,logs)
                 moves.extend(move)
+
+            elif 'pay_150' in plan[0].name:
+                cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
+                move, turn = handle_payments(plan[0], player)
+                turns += turn
+                moves.extend(move)
+
+                if len(plan[1:]) != 0:
+                    move, turn = handle_move(plan[1:], player)
+                    turns += turn
+                    moves.extend(move)
             else:
                 print("plan doesn't start with move!!! The current action was:")
                 write_to_log("plan doesn't start with move!!! The current action was:",logs)
@@ -237,6 +246,9 @@ if __name__ == '__main__':
                 write_to_log("moves are:",logs)
                 print_plan(moves,logs)
                 exit(1)
+
+            write_to_log("round {}".format(turns),logs)
+            write_to_log("current moves done:",logs)
 
             if board.MESSAGE in board_game[int(cell[0]), int(cell[1])]:
                 moves.append(board_game[int(cell[0]),int(cell[1])]["message"])
