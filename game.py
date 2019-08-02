@@ -38,7 +38,7 @@ def handle_payments(action, player):
         else:
             player.owe.append(amount)
         return ["pay suprise %d" % -amount], 0
-    if 'pay_150_from' in action.name:
+    if 'pay_150_from' in action.name: # TODO - if user pays 150 it doesn't mean he has some certificate
         all  = []
         cell = (int(action.name.split('_')[6]), int(action.name.split('_')[7]))
         player.money -= 150
@@ -46,12 +46,13 @@ def handle_payments(action, player):
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
         # need to match the exact name of the certificate
-        certificate = action.add[0].name.split('has_')[1].split('.')[1]
+        certificate = "".join([str(ad) for ad in action.add if "has_" in str(ad)])
         all.append("pay 150 to go to (%d,%d)" % cell)
-        for cert in Certificates.Certificate.list():
-            if cert.name == certificate:
-                player.has_certificates.append(cert)
-                all.append("Congrats! you hold the %s Certificate!" % cert.name)
+        if certificate != "":
+            certificate = certificate.split(".")[1]
+            player.has_certificates.append(Certificates.Certificate[certificate])
+            all.append("Congrats! you hold the %s Certificate!" % certificate)
+
         return all, 1
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
