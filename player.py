@@ -42,7 +42,7 @@ class Player:
 
 
     def get_goals(self):
-        self.goal = (9,10)
+        self.goal = (1,2)
         goals = [dc.AT_FORMAT % self.goal]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
