@@ -1,6 +1,5 @@
 import numpy as np
 from Certificates import Certificate
-import termcolor
 from colorama import init, Fore, Back, Style
 MESSAGE = "message"
 JUMP = 'jump'
