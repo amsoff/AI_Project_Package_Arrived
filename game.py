@@ -208,7 +208,7 @@ if __name__ == '__main__':
                 moves.append(board_game[int(cell[0]),int(cell[1])]["message"])
 
             # Starting new round- creating new problem.txt file
-            print_current_board(moves,player.cell)
+            # print_current_board(moves,player.cell)
             actions = prob.get_actions()
             propositions = prob.get_propositions()
             player.dice_value = dice.roll_dice()
