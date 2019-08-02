@@ -10,7 +10,7 @@ MESSAGE = "message"
 # money we don't have, so we are exiting the game
 JUMP = 'jump'
 
-# The
+# The entrance to exit when
 ENTRANCE = 'entrance'
 BALANCE = 'balance'
 WAIT = 'wait'
