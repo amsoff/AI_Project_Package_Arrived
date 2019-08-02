@@ -182,7 +182,7 @@ if __name__ == '__main__':
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns = 0
-    moves = ["Welcome to the package Arrive Game. You are positioned at (1,0)"]
+    moves = ["--- Welcome to the package Arrive Game.--- \nYou are positioned at (1,0)"]
 
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":","")),"w") as logs:
         while len(plan) != 0:
@@ -229,7 +229,7 @@ if __name__ == '__main__':
             print("Money: %d" % player.money)
             write_to_log("Money: %d" % player.money,logs)
             # print()
-            print("game finished after %d turns in %.2f seconds" % (len(moves)-1, elapsed))
+            print("--- Game finished after %d turns in %.2f seconds ---" % (len(moves)-1, elapsed))
             write_to_log("game finished after %d turns in %.2f seconds" % (len(moves)-1, elapsed),logs)
         else:
             print("Could not find a plan in %.2f seconds" % elapsed)
