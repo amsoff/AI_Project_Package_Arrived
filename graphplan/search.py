@@ -147,8 +147,6 @@ def general_search(problem, fringe):
                 # print("Num_successors = %d" % len(successors))
             successors = sort_successors(successors)
             for i in range(len(successors)):
-                if 'jump_to_3_3_from_3_2' in successors[i][1].name:
-                    a=0
                 fringe.push(PQItem((successors[i][0], successors[i][1], successors[i][2] + curr.get_cost(), curr)))
                 # print(successors[i][1].name)
             closed.add(curr.get_node())
