@@ -1,5 +1,5 @@
 Propositions:
-not_need_pay_2_5 not_need_pay_3_1 not_need_pay_3_2 not_need_pay_3_7 not_need_pay_5_10 not_need_pay_5_8 not_need_pay_7_10 not_need_pay_7_1 not_need_pay_8_4 not_need_pay_9_5 not_need_pay_11_7 not_need_pay_11_11 has_Certificate.TAX has_Certificate.HAIRCUT has_Certificate.INTEGRITY has_Certificate.PASSPORT has_Certificate.ID has_Certificate.PORT has_Certificate.BIRTH has_Certificate.GRANDMA Come_back_to_0_0 Come_back_to_1_6 Come_back_to_1_5 Come_back_to_2_5 Come_back_to_3_2 Come_back_to_5_11 Come_back_to_5_10 Come_back_to_5_9 Come_back_to_5_8 Come_back_to_7_10 Come_back_to_7_1 Come_back_to_8_3 Come_back_to_8_4 Come_back_to_8_9 Come_back_to_9_5 Come_back_to_9_9 Come_back_to_9_11 Come_back_to_10_11 Come_back_to_11_1 Come_back_to_11_11 Not_Come_back_0_0 Not_Come_back_1_6 Not_Come_back_1_5 Not_Come_back_2_5 Not_Come_back_3_2 Not_Come_back_5_11 Not_Come_back_5_10 Not_Come_back_5_9 Not_Come_back_5_8 Not_Come_back_7_10 Not_Come_back_7_1 Not_Come_back_8_3 Not_Come_back_8_4 Not_Come_back_8_9 Not_Come_back_9_5 Not_Come_back_9_9 Not_Come_back_9_11 Not_Come_back_10_11 Not_Come_back_11_1 Not_Come_back_11_11 At_0_2 At_0_1 At_0_0 At_1_6 At_1_5 At_1_4 At_1_3 At_1_2 At_1_1 At_1_0 At_2_5 At_2_4 At_2_3 At_2_2 At_2_1 At_3_1 At_3_6 At_3_5 At_3_4 At_3_3 At_3_2 At_4_7 At_3_7 At_4_6 At_4_5 At_4_4 At_4_3 At_4_2 At_4_1 At_5_11 At_5_10 At_5_9 At_5_8 At_5_7 At_5_6 At_5_5 At_5_2 At_5_1 At_6_11 At_6_8 At_6_7 At_6_6 At_6_5 At_6_4 At_6_3 At_6_2 At_6_1 At_7_11 At_7_10 At_7_9 At_7_8 At_7_6 At_7_5 At_7_1 At_8_0 At_8_1 At_8_2 At_8_3 At_8_4 At_8_5 At_8_8 At_8_9 At_9_0 At_9_1 At_9_2 At_9_3 At_9_4 At_9_5 At_9_6 At_9_7 At_9_8 At_9_9 At_9_10 At_9_11 At_10_0 At_10_5 At_10_6 At_10_7 At_11_7 At_10_8 At_10_11 At_11_0 At_11_1 At_11_2 At_11_3 At_11_4 At_11_5 At_11_8 At_11_9 At_11_10 At_11_11 dice_1 dice_2 dice_3 Money_0 Money_50 Money_100 Money_150 Money_200 Money_250 Money_300 Money_350 Money_400 Money_450 Money_500 Money_550 Money_600 Money_650 Money_700 Money_750 Money_800 Money_850 Money_900 Money_950 Money_1000 Money_1050 Money_1100 Money_1150 Money_1200 Money_1250 Money_1300 Money_1350 Money_1400 Money_1450 Money_1500 Money_1550 Money_1600 Money_1650 Money_1700 Money_1750 Money_1800 Money_1850 Money_1900 Money_1950 Money_2000 Money_2050 Money_2100 Money_2150 Money_2200 Money_2250 Money_2300 Money_2350 Money_2400 Money_2450 Money_2500 Money_2550 Money_2600 Money_2650 Money_2700 Money_2750 Money_2800 Money_2850 Money_2900 Money_2950 Money_3000 Money_3050 Money_3100 Money_3150 Money_3200 Money_3250 Money_3300 Money_3350 Money_3400 Money_3450 Money_3500 Money_3550 Money_3600 Money_3650 Money_3700 Money_3750 Money_3800 Money_3850 Money_3900 Money_3950 Money_4000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_owe_300 not_owe_200 not_owe_100 owe_300 owe_200 owe_100 need_pay_2_5 need_pay_3_1 need_pay_3_2 need_pay_3_7 need_pay_5_10 need_pay_5_8 need_pay_7_10 need_pay_7_1 need_pay_8_4 need_pay_9_5 need_pay_11_7 need_pay_11_11
+not_need_pay_2_5 not_need_pay_3_1 not_need_pay_3_2 not_need_pay_3_7 not_need_pay_5_10 not_need_pay_5_8 not_need_pay_7_10 not_need_pay_7_1 not_need_pay_8_4 not_need_pay_9_5 not_need_pay_11_7 not_need_pay_11_11 has_Certificate.BIRTH has_Certificate.TAX has_Certificate.INTEGRITY has_Certificate.GRANDMA has_Certificate.PORT has_Certificate.HAIRCUT has_Certificate.ID has_Certificate.PASSPORT Come_back_to_0_0 Come_back_to_1_6 Come_back_to_1_5 Come_back_to_2_5 Come_back_to_3_2 Come_back_to_5_11 Come_back_to_5_10 Come_back_to_5_9 Come_back_to_5_8 Come_back_to_7_10 Come_back_to_7_1 Come_back_to_8_4 Come_back_to_8_9 Come_back_to_9_5 Come_back_to_9_9 Come_back_to_9_11 Come_back_to_10_11 Come_back_to_11_1 Come_back_to_11_11 Not_Come_back_0_0 Not_Come_back_1_6 Not_Come_back_1_5 Not_Come_back_2_5 Not_Come_back_3_2 Not_Come_back_5_11 Not_Come_back_5_10 Not_Come_back_5_9 Not_Come_back_5_8 Not_Come_back_7_10 Not_Come_back_7_1 Not_Come_back_8_4 Not_Come_back_8_9 Not_Come_back_9_5 Not_Come_back_9_9 Not_Come_back_9_11 Not_Come_back_10_11 Not_Come_back_11_1 Not_Come_back_11_11 At_0_2 At_0_1 At_0_0 At_1_6 At_1_5 At_1_4 At_1_3 At_1_2 At_1_1 At_1_0 At_2_5 At_2_4 At_2_3 At_2_2 At_2_1 At_3_1 At_3_6 At_3_5 At_3_4 At_3_3 At_3_2 At_4_7 At_3_7 At_4_6 At_4_5 At_4_4 At_4_3 At_4_2 At_4_1 At_5_11 At_5_10 At_5_9 At_5_8 At_5_7 At_5_6 At_5_5 At_5_2 At_5_1 At_6_11 At_6_8 At_6_7 At_6_6 At_6_5 At_6_4 At_6_3 At_6_2 At_6_1 At_7_11 At_7_10 At_7_9 At_7_8 At_7_6 At_7_5 At_7_1 At_8_0 At_8_1 At_8_2 At_8_3 At_8_4 At_8_5 At_8_8 At_8_9 At_9_0 At_9_1 At_9_2 At_9_3 At_9_4 At_9_5 At_9_6 At_9_7 At_9_8 At_9_9 At_9_10 At_9_11 At_10_0 At_10_5 At_10_6 At_10_7 At_11_7 At_10_8 At_10_11 At_11_0 At_11_1 At_11_2 At_11_3 At_11_4 At_11_5 At_11_8 At_11_9 At_11_10 At_11_11 dice_1 dice_2 dice_3 Money_0 Money_50 Money_100 Money_150 Money_200 Money_250 Money_300 Money_350 Money_400 Money_450 Money_500 Money_550 Money_600 Money_650 Money_700 Money_750 Money_800 Money_850 Money_900 Money_950 Money_1000 Money_1050 Money_1100 Money_1150 Money_1200 Money_1250 Money_1300 Money_1350 Money_1400 Money_1450 Money_1500 Money_1550 Money_1600 Money_1650 Money_1700 Money_1750 Money_1800 Money_1850 Money_1900 Money_1950 Money_2000 Money_2050 Money_2100 Money_2150 Money_2200 Money_2250 Money_2300 Money_2350 Money_2400 Money_2450 Money_2500 Money_2550 Money_2600 Money_2650 Money_2700 Money_2750 Money_2800 Money_2850 Money_2900 Money_2950 Money_3000 Money_3050 Money_3100 Money_3150 Money_3200 Money_3250 Money_3300 Money_3350 Money_3400 Money_3450 Money_3500 Money_3550 Money_3600 Money_3650 Money_3700 Money_3750 Money_3800 Money_3850 Money_3900 Money_3950 Money_4000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 not_owe_300 not_owe_200 not_owe_100 owe_300 owe_200 owe_100 need_pay_2_5 need_pay_3_1 need_pay_3_2 need_pay_3_7 need_pay_5_10 need_pay_5_8 need_pay_7_10 need_pay_7_1 need_pay_8_4 need_pay_9_5 need_pay_11_7 need_pay_11_11 owe_surprise
 Actions:
 Name: Move_from_0_2_to_1_2
 pre: dice_1 At_0_2 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
@@ -1478,11 +1478,11 @@ pre: dice_2 At_8_2 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add: At_8_4 dice_1 need_pay_8_4 has_Certificate.PASSPORT
 delete: At_8_2 dice_2 dice_3 not_need_pay_8_4
 Name: Move_from_8_3_to_8_4
-pre: dice_1 At_8_3 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre: dice_1 At_8_3 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add: At_8_4 dice_1 need_pay_8_4 has_Certificate.PASSPORT
 delete: At_8_3 dice_2 dice_3 not_need_pay_8_4
 Name: Move_from_8_3_to_8_3
-pre: dice_3 At_8_3 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre: dice_3 At_8_3 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add: At_8_3 dice_1
 delete: At_8_3 dice_2 dice_3
 Name: Move_from_8_4_to_8_5
@@ -4857,9 +4857,9 @@ Name: jump_to_1_2_from_2_5
 pre: At_2_5
 add: Come_back_to_2_5 At_1_2
 delete: At_2_5
-Name: jump_to_3_3_from_3_2
+Name: jump_to_1_2_from_3_2
 pre: At_3_2
-add: Come_back_to_3_2 At_3_3
+add: Come_back_to_3_2 At_1_2
 delete: At_3_2
 Name: jump_to_11_8_from_5_11
 pre: At_5_11
@@ -4881,25 +4881,17 @@ Name: jump_to_11_8_from_7_10
 pre: At_7_10
 add: Come_back_to_7_10 At_11_8
 delete: At_7_10
-Name: jump_to_6_1_from_7_1
+Name: jump_to_11_8_from_7_1
 pre: At_7_1
-add: Come_back_to_7_1 At_6_1
+add: Come_back_to_7_1 At_11_8
 delete: At_7_1
-Name: jump_to_8_5_from_8_3
-pre: At_8_3
-add: Come_back_to_8_3 At_8_5
-delete: At_8_3
-Name: jump_to_8_5_from_8_4
-pre: At_8_4
-add: Come_back_to_8_4 At_8_5
-delete: At_8_4
 Name: jump_to_11_8_from_8_9
 pre: At_8_9
 add: Come_back_to_8_9 At_11_8
 delete: At_8_9
-Name: jump_to_8_5_from_9_5
+Name: jump_to_11_8_from_9_5
 pre: At_9_5
-add: Come_back_to_9_5 At_8_5
+add: Come_back_to_9_5 At_11_8
 delete: At_9_5
 Name: jump_to_11_8_from_9_9
 pre: At_9_9
@@ -18306,315 +18298,315 @@ pre:  At_8_2 Money_4000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3850 has_Certificate.PASSPORT
 delete:  At_8_2 Money_4000
 Name:  pay_150_from_8_3_to_8_4_with_150
-pre:  At_8_3 Money_150 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_150 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_0 has_Certificate.PASSPORT
 delete:  At_8_3 Money_150
 Name:  pay_150_from_8_3_to_8_4_with_200
-pre:  At_8_3 Money_200 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_200 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_50 has_Certificate.PASSPORT
 delete:  At_8_3 Money_200
 Name:  pay_150_from_8_3_to_8_4_with_250
-pre:  At_8_3 Money_250 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_250 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_100 has_Certificate.PASSPORT
 delete:  At_8_3 Money_250
 Name:  pay_150_from_8_3_to_8_4_with_300
-pre:  At_8_3 Money_300 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_300 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_150 has_Certificate.PASSPORT
 delete:  At_8_3 Money_300
 Name:  pay_150_from_8_3_to_8_4_with_350
-pre:  At_8_3 Money_350 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_350 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_200 has_Certificate.PASSPORT
 delete:  At_8_3 Money_350
 Name:  pay_150_from_8_3_to_8_4_with_400
-pre:  At_8_3 Money_400 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_400 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_250 has_Certificate.PASSPORT
 delete:  At_8_3 Money_400
 Name:  pay_150_from_8_3_to_8_4_with_450
-pre:  At_8_3 Money_450 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_450 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_300 has_Certificate.PASSPORT
 delete:  At_8_3 Money_450
 Name:  pay_150_from_8_3_to_8_4_with_500
-pre:  At_8_3 Money_500 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_500 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_350 has_Certificate.PASSPORT
 delete:  At_8_3 Money_500
 Name:  pay_150_from_8_3_to_8_4_with_550
-pre:  At_8_3 Money_550 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_550 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_400 has_Certificate.PASSPORT
 delete:  At_8_3 Money_550
 Name:  pay_150_from_8_3_to_8_4_with_600
-pre:  At_8_3 Money_600 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_600 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_450 has_Certificate.PASSPORT
 delete:  At_8_3 Money_600
 Name:  pay_150_from_8_3_to_8_4_with_650
-pre:  At_8_3 Money_650 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_650 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_500 has_Certificate.PASSPORT
 delete:  At_8_3 Money_650
 Name:  pay_150_from_8_3_to_8_4_with_700
-pre:  At_8_3 Money_700 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_700 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_550 has_Certificate.PASSPORT
 delete:  At_8_3 Money_700
 Name:  pay_150_from_8_3_to_8_4_with_750
-pre:  At_8_3 Money_750 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_750 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_600 has_Certificate.PASSPORT
 delete:  At_8_3 Money_750
 Name:  pay_150_from_8_3_to_8_4_with_800
-pre:  At_8_3 Money_800 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_800 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_650 has_Certificate.PASSPORT
 delete:  At_8_3 Money_800
 Name:  pay_150_from_8_3_to_8_4_with_850
-pre:  At_8_3 Money_850 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_850 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_700 has_Certificate.PASSPORT
 delete:  At_8_3 Money_850
 Name:  pay_150_from_8_3_to_8_4_with_900
-pre:  At_8_3 Money_900 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_900 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_750 has_Certificate.PASSPORT
 delete:  At_8_3 Money_900
 Name:  pay_150_from_8_3_to_8_4_with_950
-pre:  At_8_3 Money_950 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_950 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_800 has_Certificate.PASSPORT
 delete:  At_8_3 Money_950
 Name:  pay_150_from_8_3_to_8_4_with_1000
-pre:  At_8_3 Money_1000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_850 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1000
 Name:  pay_150_from_8_3_to_8_4_with_1050
-pre:  At_8_3 Money_1050 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1050 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_900 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1050
 Name:  pay_150_from_8_3_to_8_4_with_1100
-pre:  At_8_3 Money_1100 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1100 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_950 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1100
 Name:  pay_150_from_8_3_to_8_4_with_1150
-pre:  At_8_3 Money_1150 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1150 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1000 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1150
 Name:  pay_150_from_8_3_to_8_4_with_1200
-pre:  At_8_3 Money_1200 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1200 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1050 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1200
 Name:  pay_150_from_8_3_to_8_4_with_1250
-pre:  At_8_3 Money_1250 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1250 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1100 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1250
 Name:  pay_150_from_8_3_to_8_4_with_1300
-pre:  At_8_3 Money_1300 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1300 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1150 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1300
 Name:  pay_150_from_8_3_to_8_4_with_1350
-pre:  At_8_3 Money_1350 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1350 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1200 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1350
 Name:  pay_150_from_8_3_to_8_4_with_1400
-pre:  At_8_3 Money_1400 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1400 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1250 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1400
 Name:  pay_150_from_8_3_to_8_4_with_1450
-pre:  At_8_3 Money_1450 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1450 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1300 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1450
 Name:  pay_150_from_8_3_to_8_4_with_1500
-pre:  At_8_3 Money_1500 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1500 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1350 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1500
 Name:  pay_150_from_8_3_to_8_4_with_1550
-pre:  At_8_3 Money_1550 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1550 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1400 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1550
 Name:  pay_150_from_8_3_to_8_4_with_1600
-pre:  At_8_3 Money_1600 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1600 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1450 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1600
 Name:  pay_150_from_8_3_to_8_4_with_1650
-pre:  At_8_3 Money_1650 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1650 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1500 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1650
 Name:  pay_150_from_8_3_to_8_4_with_1700
-pre:  At_8_3 Money_1700 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1700 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1550 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1700
 Name:  pay_150_from_8_3_to_8_4_with_1750
-pre:  At_8_3 Money_1750 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1750 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1600 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1750
 Name:  pay_150_from_8_3_to_8_4_with_1800
-pre:  At_8_3 Money_1800 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1800 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1650 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1800
 Name:  pay_150_from_8_3_to_8_4_with_1850
-pre:  At_8_3 Money_1850 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1850 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1700 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1850
 Name:  pay_150_from_8_3_to_8_4_with_1900
-pre:  At_8_3 Money_1900 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1900 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1750 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1900
 Name:  pay_150_from_8_3_to_8_4_with_1950
-pre:  At_8_3 Money_1950 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_1950 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1800 has_Certificate.PASSPORT
 delete:  At_8_3 Money_1950
 Name:  pay_150_from_8_3_to_8_4_with_2000
-pre:  At_8_3 Money_2000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1850 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2000
 Name:  pay_150_from_8_3_to_8_4_with_2050
-pre:  At_8_3 Money_2050 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2050 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1900 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2050
 Name:  pay_150_from_8_3_to_8_4_with_2100
-pre:  At_8_3 Money_2100 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2100 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_1950 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2100
 Name:  pay_150_from_8_3_to_8_4_with_2150
-pre:  At_8_3 Money_2150 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2150 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2000 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2150
 Name:  pay_150_from_8_3_to_8_4_with_2200
-pre:  At_8_3 Money_2200 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2200 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2050 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2200
 Name:  pay_150_from_8_3_to_8_4_with_2250
-pre:  At_8_3 Money_2250 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2250 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2100 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2250
 Name:  pay_150_from_8_3_to_8_4_with_2300
-pre:  At_8_3 Money_2300 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2300 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2150 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2300
 Name:  pay_150_from_8_3_to_8_4_with_2350
-pre:  At_8_3 Money_2350 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2350 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2200 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2350
 Name:  pay_150_from_8_3_to_8_4_with_2400
-pre:  At_8_3 Money_2400 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2400 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2250 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2400
 Name:  pay_150_from_8_3_to_8_4_with_2450
-pre:  At_8_3 Money_2450 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2450 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2300 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2450
 Name:  pay_150_from_8_3_to_8_4_with_2500
-pre:  At_8_3 Money_2500 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2500 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2350 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2500
 Name:  pay_150_from_8_3_to_8_4_with_2550
-pre:  At_8_3 Money_2550 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2550 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2400 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2550
 Name:  pay_150_from_8_3_to_8_4_with_2600
-pre:  At_8_3 Money_2600 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2600 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2450 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2600
 Name:  pay_150_from_8_3_to_8_4_with_2650
-pre:  At_8_3 Money_2650 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2650 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2500 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2650
 Name:  pay_150_from_8_3_to_8_4_with_2700
-pre:  At_8_3 Money_2700 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2700 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2550 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2700
 Name:  pay_150_from_8_3_to_8_4_with_2750
-pre:  At_8_3 Money_2750 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2750 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2600 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2750
 Name:  pay_150_from_8_3_to_8_4_with_2800
-pre:  At_8_3 Money_2800 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2800 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2650 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2800
 Name:  pay_150_from_8_3_to_8_4_with_2850
-pre:  At_8_3 Money_2850 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2850 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2700 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2850
 Name:  pay_150_from_8_3_to_8_4_with_2900
-pre:  At_8_3 Money_2900 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2900 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2750 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2900
 Name:  pay_150_from_8_3_to_8_4_with_2950
-pre:  At_8_3 Money_2950 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_2950 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2800 has_Certificate.PASSPORT
 delete:  At_8_3 Money_2950
 Name:  pay_150_from_8_3_to_8_4_with_3000
-pre:  At_8_3 Money_3000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2850 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3000
 Name:  pay_150_from_8_3_to_8_4_with_3050
-pre:  At_8_3 Money_3050 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3050 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2900 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3050
 Name:  pay_150_from_8_3_to_8_4_with_3100
-pre:  At_8_3 Money_3100 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3100 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_2950 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3100
 Name:  pay_150_from_8_3_to_8_4_with_3150
-pre:  At_8_3 Money_3150 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3150 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3000 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3150
 Name:  pay_150_from_8_3_to_8_4_with_3200
-pre:  At_8_3 Money_3200 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3200 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3050 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3200
 Name:  pay_150_from_8_3_to_8_4_with_3250
-pre:  At_8_3 Money_3250 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3250 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3100 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3250
 Name:  pay_150_from_8_3_to_8_4_with_3300
-pre:  At_8_3 Money_3300 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3300 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3150 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3300
 Name:  pay_150_from_8_3_to_8_4_with_3350
-pre:  At_8_3 Money_3350 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3350 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3200 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3350
 Name:  pay_150_from_8_3_to_8_4_with_3400
-pre:  At_8_3 Money_3400 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3400 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3250 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3400
 Name:  pay_150_from_8_3_to_8_4_with_3450
-pre:  At_8_3 Money_3450 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3450 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3300 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3450
 Name:  pay_150_from_8_3_to_8_4_with_3500
-pre:  At_8_3 Money_3500 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3500 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3350 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3500
 Name:  pay_150_from_8_3_to_8_4_with_3550
-pre:  At_8_3 Money_3550 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3550 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3400 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3550
 Name:  pay_150_from_8_3_to_8_4_with_3600
-pre:  At_8_3 Money_3600 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3600 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3450 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3600
 Name:  pay_150_from_8_3_to_8_4_with_3650
-pre:  At_8_3 Money_3650 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3650 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3500 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3650
 Name:  pay_150_from_8_3_to_8_4_with_3700
-pre:  At_8_3 Money_3700 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3700 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3550 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3700
 Name:  pay_150_from_8_3_to_8_4_with_3750
-pre:  At_8_3 Money_3750 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3750 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3600 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3750
 Name:  pay_150_from_8_3_to_8_4_with_3800
-pre:  At_8_3 Money_3800 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3800 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3650 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3800
 Name:  pay_150_from_8_3_to_8_4_with_3850
-pre:  At_8_3 Money_3850 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3850 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3700 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3850
 Name:  pay_150_from_8_3_to_8_4_with_3900
-pre:  At_8_3 Money_3900 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3900 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3750 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3900
 Name:  pay_150_from_8_3_to_8_4_with_3950
-pre:  At_8_3 Money_3950 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_3950 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3800 has_Certificate.PASSPORT
 delete:  At_8_3 Money_3950
 Name:  pay_150_from_8_3_to_8_4_with_4000
-pre:  At_8_3 Money_4000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4 has_Certificate.HAIRCUT
+pre:  At_8_3 Money_4000 Not_Stop_1 Not_Stop_2 Not_Stop_3 Not_Stop_4
 add:  At_8_4 Money_3850 has_Certificate.PASSPORT
 delete:  At_8_3 Money_4000
 Name:  pay_150_from_8_5_to_6_4_with_150
@@ -21153,183 +21145,3 @@ Name: Stop_2_at_11_2
 pre: At_11_2 Not_Stop_1
 add: Not_Stop_2
 delete: 
-Name: Goto_9_9_from_0_1
-pre: Come_back_to_9_9 At_0_1
-add: At_9_9 Not_Come_back_9_9
-delete: Come_back_to_9_9 At_0_1
-Name: Goto_8_9_from_1_4
-pre: Come_back_to_8_9 At_1_4
-add: At_8_9 Not_Come_back_8_9
-delete: Come_back_to_8_9 At_1_4
-Name: Goto_2_5_from_3_1
-pre: Come_back_to_2_5 At_3_1
-add: At_2_5 Not_Come_back_2_5
-delete: Come_back_to_2_5 At_3_1
-Name: Goto_5_10_from_3_1
-pre: Come_back_to_5_10 At_3_1
-add: At_5_10 Not_Come_back_5_10
-delete: Come_back_to_5_10 At_3_1
-Name: Goto_7_10_from_3_1
-pre: Come_back_to_7_10 At_3_1
-add: At_7_10 Not_Come_back_7_10
-delete: Come_back_to_7_10 At_3_1
-Name: Goto_8_4_from_3_1
-pre: Come_back_to_8_4 At_3_1
-add: At_8_4 Not_Come_back_8_4
-delete: Come_back_to_8_4 At_3_1
-Name: Goto_11_11_from_3_1
-pre: Come_back_to_11_11 At_3_1
-add: At_11_11 Not_Come_back_11_11
-delete: Come_back_to_11_11 At_3_1
-Name: Goto_2_5_from_3_2
-pre: Come_back_to_2_5 At_3_2
-add: At_2_5 Not_Come_back_2_5
-delete: Come_back_to_2_5 At_3_2
-Name: Goto_5_10_from_3_2
-pre: Come_back_to_5_10 At_3_2
-add: At_5_10 Not_Come_back_5_10
-delete: Come_back_to_5_10 At_3_2
-Name: Goto_7_10_from_3_2
-pre: Come_back_to_7_10 At_3_2
-add: At_7_10 Not_Come_back_7_10
-delete: Come_back_to_7_10 At_3_2
-Name: Goto_8_4_from_3_2
-pre: Come_back_to_8_4 At_3_2
-add: At_8_4 Not_Come_back_8_4
-delete: Come_back_to_8_4 At_3_2
-Name: Goto_11_11_from_3_2
-pre: Come_back_to_11_11 At_3_2
-add: At_11_11 Not_Come_back_11_11
-delete: Come_back_to_11_11 At_3_2
-Name: Goto_2_5_from_3_7
-pre: Come_back_to_2_5 At_3_7
-add: At_2_5 Not_Come_back_2_5
-delete: Come_back_to_2_5 At_3_7
-Name: Goto_5_10_from_3_7
-pre: Come_back_to_5_10 At_3_7
-add: At_5_10 Not_Come_back_5_10
-delete: Come_back_to_5_10 At_3_7
-Name: Goto_7_10_from_3_7
-pre: Come_back_to_7_10 At_3_7
-add: At_7_10 Not_Come_back_7_10
-delete: Come_back_to_7_10 At_3_7
-Name: Goto_8_4_from_3_7
-pre: Come_back_to_8_4 At_3_7
-add: At_8_4 Not_Come_back_8_4
-delete: Come_back_to_8_4 At_3_7
-Name: Goto_11_11_from_3_7
-pre: Come_back_to_11_11 At_3_7
-add: At_11_11 Not_Come_back_11_11
-delete: Come_back_to_11_11 At_3_7
-Name: Goto_8_3_from_4_3
-pre: Come_back_to_8_3 At_4_3
-add: At_8_3 Not_Come_back_8_3
-delete: Come_back_to_8_3 At_4_3
-Name: Goto_2_5_from_5_8
-pre: Come_back_to_2_5 At_5_8
-add: At_2_5 Not_Come_back_2_5
-delete: Come_back_to_2_5 At_5_8
-Name: Goto_5_10_from_5_8
-pre: Come_back_to_5_10 At_5_8
-add: At_5_10 Not_Come_back_5_10
-delete: Come_back_to_5_10 At_5_8
-Name: Goto_7_10_from_5_8
-pre: Come_back_to_7_10 At_5_8
-add: At_7_10 Not_Come_back_7_10
-delete: Come_back_to_7_10 At_5_8
-Name: Goto_8_4_from_5_8
-pre: Come_back_to_8_4 At_5_8
-add: At_8_4 Not_Come_back_8_4
-delete: Come_back_to_8_4 At_5_8
-Name: Goto_11_11_from_5_8
-pre: Come_back_to_11_11 At_5_8
-add: At_11_11 Not_Come_back_11_11
-delete: Come_back_to_11_11 At_5_8
-Name: Goto_5_11_from_5_2
-pre: Come_back_to_5_11 At_5_2
-add: At_5_11 Not_Come_back_5_11
-delete: Come_back_to_5_11 At_5_2
-Name: Goto_5_9_from_6_7
-pre: Come_back_to_5_9 At_6_7
-add: At_5_9 Not_Come_back_5_9
-delete: Come_back_to_5_9 At_6_7
-Name: Goto_2_5_from_7_1
-pre: Come_back_to_2_5 At_7_1
-add: At_2_5 Not_Come_back_2_5
-delete: Come_back_to_2_5 At_7_1
-Name: Goto_5_10_from_7_1
-pre: Come_back_to_5_10 At_7_1
-add: At_5_10 Not_Come_back_5_10
-delete: Come_back_to_5_10 At_7_1
-Name: Goto_7_10_from_7_1
-pre: Come_back_to_7_10 At_7_1
-add: At_7_10 Not_Come_back_7_10
-delete: Come_back_to_7_10 At_7_1
-Name: Goto_8_4_from_7_1
-pre: Come_back_to_8_4 At_7_1
-add: At_8_4 Not_Come_back_8_4
-delete: Come_back_to_8_4 At_7_1
-Name: Goto_11_11_from_7_1
-pre: Come_back_to_11_11 At_7_1
-add: At_11_11 Not_Come_back_11_11
-delete: Come_back_to_11_11 At_7_1
-Name: Goto_11_1_from_8_0
-pre: Come_back_to_11_1 At_8_0
-add: At_11_1 Not_Come_back_11_1
-delete: Come_back_to_11_1 At_8_0
-Name: Goto_10_11_from_8_0
-pre: Come_back_to_10_11 At_8_0
-add: At_10_11 Not_Come_back_10_11
-delete: Come_back_to_10_11 At_8_0
-Name: Goto_11_11_from_8_4
-pre: Come_back_to_11_11 At_8_4
-add: At_11_11 Not_Come_back_11_11
-delete: Come_back_to_11_11 At_8_4
-Name: Goto_2_5_from_9_5
-pre: Come_back_to_2_5 At_9_5
-add: At_2_5 Not_Come_back_2_5
-delete: Come_back_to_2_5 At_9_5
-Name: Goto_5_10_from_9_5
-pre: Come_back_to_5_10 At_9_5
-add: At_5_10 Not_Come_back_5_10
-delete: Come_back_to_5_10 At_9_5
-Name: Goto_7_10_from_9_5
-pre: Come_back_to_7_10 At_9_5
-add: At_7_10 Not_Come_back_7_10
-delete: Come_back_to_7_10 At_9_5
-Name: Goto_8_4_from_9_5
-pre: Come_back_to_8_4 At_9_5
-add: At_8_4 Not_Come_back_8_4
-delete: Come_back_to_8_4 At_9_5
-Name: Goto_11_11_from_9_5
-pre: Come_back_to_11_11 At_9_5
-add: At_11_11 Not_Come_back_11_11
-delete: Come_back_to_11_11 At_9_5
-Name: Goto_2_5_from_11_7
-pre: Come_back_to_2_5 At_11_7
-add: At_2_5 Not_Come_back_2_5
-delete: Come_back_to_2_5 At_11_7
-Name: Goto_5_10_from_11_7
-pre: Come_back_to_5_10 At_11_7
-add: At_5_10 Not_Come_back_5_10
-delete: Come_back_to_5_10 At_11_7
-Name: Goto_7_10_from_11_7
-pre: Come_back_to_7_10 At_11_7
-add: At_7_10 Not_Come_back_7_10
-delete: Come_back_to_7_10 At_11_7
-Name: Goto_8_4_from_11_7
-pre: Come_back_to_8_4 At_11_7
-add: At_8_4 Not_Come_back_8_4
-delete: Come_back_to_8_4 At_11_7
-Name: Goto_11_11_from_11_7
-pre: Come_back_to_11_11 At_11_7
-add: At_11_11 Not_Come_back_11_11
-delete: Come_back_to_11_11 At_11_7
-Name: Goto_9_11_from_11_3
-pre: Come_back_to_9_11 At_11_3
-add: At_9_11 Not_Come_back_9_11
-delete: Come_back_to_9_11 At_11_3
-Name: Goto_1_5_from_11_3
-pre: Come_back_to_1_5 At_11_3
-add: At_1_5 Not_Come_back_1_5
-delete: Come_back_to_1_5 At_11_3

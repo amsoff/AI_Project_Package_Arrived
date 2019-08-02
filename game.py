@@ -18,6 +18,8 @@ DEBUG = True
 
 def print_plan(plan, logs):
     for a in plan:
+        if type(a) != str:
+            a = a.name
         print(a)
         write_to_log(a, logs)
 
@@ -76,18 +78,20 @@ def handle_payments(action, player):
     if 'pay_surprise' in action.name:
         cell = (int(action.name.split('_')[2]), int(action.name.split('_')[3]))
         amount = surprise_generator.get_surprise()
-        if player.money + amount >= 0:
-            player.money = min(player.money + amount, dc.MAXIMUM_POCKET * 50)
-            if cell in player.need_pay_spots:
-                player.need_pay_spots.remove(cell)
-            sign = "+"
-            if amount < 0:  # it is a payment and not get money
-                sign = "-"
+        # if player.money + amount >= 0:
+        player.money = min(player.money + amount, dc.MAXIMUM_POCKET * 50)
+        player.money = max(0, player.money)
+        # player.owe_surprise = False
+        # if cell in player.need_pay_spots:
+        #     player.need_pay_spots.remove(cell)
+        sign = "+"
+        if amount < 0:  # it is a payment and not get money
+            sign = "-"
+        return ["got a surprise! money " + sign + "= " + str(abs(amount))], 0
 
-            return ["got a surprise! money " + sign + "= " + str(abs(amount))], 0
-
-        else:
-            player.owe.append(amount)
+        # else:
+            # player.owe.append(amount)
+            # player.owe_surprise = True
 
     if 'pay_150_from' in action.name:
         all = []
@@ -263,6 +267,8 @@ if __name__ == '__main__':
                 write_to_log("plan doesn't start with move!!! The current action was:", logs)
                 print(plan[i].name)
                 write_to_log(plan[i].name, logs)
+                write_to_log("PLAN:", logs)
+                print_plan(plan, logs)
                 print("moves are:")
                 write_to_log("moves are:", logs)
                 print_plan(moves, logs)
