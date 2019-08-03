@@ -304,6 +304,7 @@ class Board:
                                         2: [(6, 7)],
                                         3: [(7, 6)],
                                         ORANGE: [(6, 7)],
+                                        WAIT: 1,
                                         MESSAGE: "You entered the Package Store!"}
         
         self.transition_dict[(7, 5)] = {1: [(8, 5), (6, 5), (7, 6)],
