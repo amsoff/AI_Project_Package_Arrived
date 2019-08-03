@@ -259,7 +259,7 @@ class Board:
                                         2: [(9, 5), (7, 5)],
                                         3: [(7, 6), (6, 5), (9, 6), (9, 4)],
                                         BALANCE: HAIRCUT_COST,  # negative
-                                        JUMP: [(11, 11)],
+                                        JUMP: [(1, 6)],
                                         HAS: Certificate.PASSPORT,
                                         ENTRANCE: (8, 5)}
 
