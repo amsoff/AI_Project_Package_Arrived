@@ -9,6 +9,8 @@ from surprise import Surprise
 import domain_create as dc
 certificates = Certificate.list()
 
+GOAL = (0,1)
+START = (1,0)
 
 board_game = board.Board(1).transition_dict
 all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
@@ -20,7 +22,7 @@ surprise_amounts = Surprise.surprises
 class Player:
     type = Types.AVERAGE.value
     money = 1500
-    cell = (1,0)
+    cell = START
     has_certificates = []
     dice_value = 3
     come_back_spots = []
@@ -28,7 +30,7 @@ class Player:
     package_cost = 0
     dice = Dice()
 
-    def __init__(self,goal=(11,9)):
+    def __init__(self,goal=GOAL):
         self.goal = goal
 
 
@@ -118,5 +120,5 @@ class Player:
         problem_file.close()
 
 
-pla = Player((1,0))
+pla = Player(GOAL)
 pla.build_problem()

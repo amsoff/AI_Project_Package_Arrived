@@ -4,6 +4,7 @@ from graphplan.planning_problem import PlanningProblem, max_level, level_sum
 import domain_create as dc
 from surprise import Surprise
 from player import Player
+import player
 import Certificates
 from dice import Dice
 import board
@@ -17,7 +18,7 @@ dice_obj = Dice()
 board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 DEBUG = True
-GOAL = (11, 9)
+GOAL = player.GOAL
 # goal_stack = []
 
 
