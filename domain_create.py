@@ -132,7 +132,7 @@ def create_move(player):
                     action[ADD] += " " + NOT_COME_BACK_FORMAT % tile2
 
                 # show certificate:
-                if board.NEED in board_game[tile1]:  # eem zu mishbetzet shezarich lehazig teuda, zarich sheihihe teuda
+                if board.NEED in board_game[tile1]:  # if we need to show a certificate in this cell, than we will go and get that certificate
                     for cert in board_game[tile1][board.NEED]:
                             action[PRE] += " " + CERTIFICATES_FORMAT % cert
 
