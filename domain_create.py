@@ -87,8 +87,10 @@ def create_move(player):
     for tile1 in board_game:  # lekol mishbetzet
         for d in Dice.vals:  # lekol gilgul_kubia
             for tile2 in board_game[tile1][d]: # lekol mishbetzet she'efshar lehagia elia
+                if tile1 == (1,0) and tile2 == (1,0):
+                    a=3
                 action = dict()
-                action[NAME] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
+                action[NAME] = "Move_from_%s_%s_to_%s_%s_with_dice_%s" % (tile1[0], tile1[1], tile2[0], tile2[1], d)
 
                 action[PRE] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
                 for s in range(1, MAX_STOPS+1):
@@ -134,7 +136,7 @@ def create_move(player):
                     for i in range(1, board_game[tile2][board.WAIT]+1):
                         action[DEL] += " " + NOT_STOP_FORMAT % i
 
-                moves[(tile1, tile2)] = action
+                moves[(tile1, tile2, d)] = action
 
     for move in moves:
         strng = ''.join(['%s%s' % (k,v) for k,v in moves[move].items()])
