@@ -24,9 +24,9 @@ THREE = 3
 FIVE = 5
 
 TAX_PAYMENT = -50
-PRISE_1 = 1000
-PRISE_2 = 1500
-PRISE_3 = 500
+PRIZE_1 = 1000
+PRIZE_2 = 1500
+PRIZE_3 = 500
 HAIRCUT_COST = -50
 PACKAGE_COST = -500
 
@@ -141,7 +141,7 @@ class Board:
         self.transition_dict[(11, 7)] = {1: [(10, 6)],
                                          2: [(10, 5)],
                                          3: [(9, 5)],
-                                         BALANCE: PRISE_3,  # POSITIVE
+                                         BALANCE: PRIZE_3,  # POSITIVE
                                          JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                          MESSAGE: "Lottery! you won!"}
 
@@ -414,7 +414,7 @@ class Board:
         
         self.transition_dict[(3, 7)] = {1: [(5, 7)], 
                                         2: [(5, 8), (5, 6), (3, 6), (4, 5)],
-                                        3: [(6, 8), (5, 5), (4, 6), (4, 4), (5, 9)], BALANCE: PRISE_1,
+                                        3: [(6, 8), (5, 5), (4, 6), (4, 4), (5, 9)], BALANCE: PRIZE_1,
                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
         
@@ -501,7 +501,7 @@ class Board:
         self.transition_dict[(3, 1)] = {1: [(2, 2)], 
                                         2: [(2, 3), (3, 2)], 
                                         3: [(2, 4), (3, 3), (4, 2), (1, 1)],
-                                        BALANCE: PRISE_2, 
+                                        BALANCE: PRIZE_2,
                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
 
