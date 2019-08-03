@@ -1,7 +1,7 @@
 d_file = "_domain.txt"
 p_file = "_problem.txt"
 p1 = "optimistic"
-p2 = "mean"
+p2 = "average"
 
 player = p2
 
