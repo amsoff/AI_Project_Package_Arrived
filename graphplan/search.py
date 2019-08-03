@@ -3,8 +3,6 @@ In search.py, you will implement generic search algorithms
 """
 
 import graphplan.util as util
-import time
-from tkinter import *
 
 COUNTER = 0
 CURR_NODE = 0
