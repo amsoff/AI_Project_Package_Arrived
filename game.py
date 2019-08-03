@@ -9,6 +9,9 @@ from dice import Dice
 import board
 import numpy as np
 from colorama import init, Fore, Back, Style
+import sys
+import time
+import datetime
 
 dice_obj = Dice()
 board_game = board.Board().transition_dict
@@ -132,6 +135,13 @@ def handle_goto(action, player):
     return ["Go back to (%d,%d)" % cell]
 
 
+def handle_jump_to_entrance(action, player):
+    jump_to = (int(action.name.split("_")[3]), int(action.name.split("_")[4]))
+    player.cell = jump_to
+    player.come_back_spots.append((int(action.name.split('_')[6]), int(action.name.split('_')[7])))
+    return ["jumped to (%s,%s) to search" % jump_to]
+
+
 def handle_move(plan, player):
     all = []
     turns = 1
@@ -190,10 +200,8 @@ def handle_move(plan, player):
         #     all.append("placed comeback at (%s,%s)" % cb_to)
 
         elif 'jump' in action.name:
-            jump_to = (int(action.name.split("_")[3]), int(action.name.split("_")[4]))
-            player.cell = jump_to
-            all.append("jumped to (%s,%s) to search" % jump_to)
-            player.come_back_spots.append((int(action.name.split('_')[6]), int(action.name.split('_')[7])))
+            jump = handle_jump_to_entrance(action, player)
+            all.extend(jump)
 
     return all, turns
 
@@ -202,15 +210,34 @@ def write_to_log(string, logs):
     logs.write(string + "\n") if DEBUG else None
 
 
+def prints_game_over(moves, logs, player,elapsed):
+    print_plan(moves, logs)
+    print("Money: %d" % player.money)
+    write_to_log("Money: %d" % player.money, logs)
+    # print()
+    print("--- Game finished after %d turns in %.2f seconds ---" % (len(moves) - 1, elapsed))
+    print("The number of expanding nodes in each turn:\n%s" % "\n".join(expanded))
+    write_to_log("game finished after %d turns in %.2f seconds" % (len(moves) - 1, elapsed), logs)
+
+
+def print_exit(logs, plan, moves):
+    print("plan doesn't start with move!!! The current action was:")
+    write_to_log("plan doesn't start with move!!! The current action was:", logs)
+    print(plan[0].name)
+    write_to_log(plan[0].name, logs)
+    write_to_log("PLAN:", logs)
+    print_plan(plan, logs)
+    print("moves are:")
+    write_to_log("moves are:", logs)
+    print_plan(moves, logs)
+    exit(1)
+
+
 if __name__ == '__main__':
     """
     input = python3 game.py player
     outout = print all moves
     """
-    import sys
-    import time
-    import datetime
-
     start = time.process_time()
 
     if len(sys.argv) != 2:
@@ -233,7 +260,7 @@ if __name__ == '__main__':
     player.build_problem()
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
-    turns, expanded = 0,0
+    turns, expanded = 0, []
     moves = ["--- Welcome to the package Arrive Game.--- \nYou are positioned at (1,0)"]
     past_moves = [player.cell]
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
@@ -256,25 +283,23 @@ if __name__ == '__main__':
                     continue
 
             elif 'jump' in plan[0].name:
-                jump_to = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
-                player.cell = jump_to
-                moves.append("jumped to (%s,%s) to search" % jump_to)
-                player.come_back_spots.append((int(plan[0].name.split('_')[6]), int(plan[0].name.split('_')[7])))
+                cell = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
+                move = handle_jump_to_entrance(plan[0], player)
+                moves.extend(move)
+                if len(plan[1:]) != 0:
+                    plan = plan[1:]
+                    continue
+
+            elif 'Goto' in plan[0].name:
+                cell = int(plan[0].name.split('_')[1]), int(plan[0].name.split('_')[2])
+                move = handle_goto(plan[0].name, player)
+                moves.extend(move)
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue
 
             else:
-                print("plan doesn't start with move!!! The current action was:")
-                write_to_log("plan doesn't start with move!!! The current action was:", logs)
-                print(plan[0].name)
-                write_to_log(plan[0].name, logs)
-                write_to_log("PLAN:", logs)
-                print_plan(plan, logs)
-                print("moves are:")
-                write_to_log("moves are:", logs)
-                print_plan(moves, logs)
-                exit(1)
+                print_exit(logs, plan, moves)
 
             write_to_log("round {}".format(turns),logs)
 
@@ -283,14 +308,17 @@ if __name__ == '__main__':
 
             # Starting new round- creating new problem.txt file
             past_moves.append((player.cell[0], player.cell[1]))
-            # print_current_board(past_moves, player)
+            print_current_board(past_moves, player)
 
+            # New round- roll the dice
             actions = prob.get_actions()
             propositions = prob.get_propositions()
             player.dice_value = dice_obj.roll_dice()
             player.build_problem()
+            expanded.append(str(prob.expanded))
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             plan = a_star_search(prob, heuristic=level_sum)
+
             if len(plan) == 0:
                 write_to_log("## LAST ##", logs)
             write_to_log("###########ACTIONS##########", logs)
@@ -302,12 +330,7 @@ if __name__ == '__main__':
 
         elapsed = time.process_time() - start
         if moves is not None and plan != "failed":
-            print_plan(moves, logs)
-            print("Money: %d" % player.money)
-            write_to_log("Money: %d" % player.money, logs)
-            # print()
-            print("--- Game finished after %d turns in %.2f seconds ---" % (len(moves) - 1, elapsed))
-            write_to_log("game finished after %d turns in %.2f seconds" % (len(moves) - 1, elapsed), logs)
+            prints_game_over(moves, logs, player, elapsed)
         else:
             print("Could not find a plan in %.2f seconds" % elapsed)
             write_to_log("Could not find a plan in %.2f seconds" % elapsed, logs)
