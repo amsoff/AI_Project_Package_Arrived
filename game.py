@@ -188,7 +188,7 @@ def handle_move(plan, player):
     action_name = plan[0].name
     if 'Move' in plan[0].name:
         player.cell = (int(action_name.split('_')[5]), int(action_name.split('_')[6]))
-        if cell not in board.Board.loto_cells:
+        if cell not in board.Board.lotto_cells:
             all.append("Move to (%s,%s)" % player.cell)
 
         if cell in player.come_back_spots:
@@ -206,7 +206,7 @@ def handle_move(plan, player):
             if 'has' in prop.name:
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
                 all.append("presented the certificate: " + certificate)
-    if player.cell in board.Board.loto_cells:
+    if player.cell in board.Board.lotto_cells:
         dice_val = dice_obj.roll_dice()
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
             player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
