@@ -214,8 +214,8 @@ def handle_move(plan, player):
 
     if player.cell in board.Board.lotto_cells:
         dice_val = dice_obj.roll_dice()
+        all.append("you rolled a %s" % player.dice_value)
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
-            player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
             all.append("You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
                 board.BALANCE])
         turns += 1
@@ -323,6 +323,7 @@ if __name__ == '__main__':
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
             if 'Move' in plan[0].name:
+                moves.append("you rolled a %s" % player.dice_value)
                 cell = (int(plan[0].name.split('_')[5]), int(plan[0].name.split('_')[6]))
                 move, turn = handle_move(plan, player)
                 turns += turn
@@ -332,6 +333,7 @@ if __name__ == '__main__':
                 write_current_move_logs(past_moves, player, turns, logs)
 
             elif 'pay_150' in plan[0].name:
+                moves.append("you rolled a %s" % player.dice_value)
                 cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
                 move, turn = handle_payments(plan[0], player)
                 turns += turn
@@ -344,6 +346,7 @@ if __name__ == '__main__':
                     continue
 
             elif 'jump' in plan[0].name:
+                moves.append("you rolled a %s" % player.dice_value)
                 cell = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
                 move = handle_jump_to_entrance(plan[0], player)
                 moves.extend(move)
@@ -355,6 +358,7 @@ if __name__ == '__main__':
                     continue
 
             elif 'Goto' in plan[0].name:
+                moves.append("you rolled a %s" % player.dice_value)
                 cell = int(plan[0].name.split('_')[1]), int(plan[0].name.split('_')[2])
                 move = handle_goto(plan[0].name, player)
                 player.cell = cell
