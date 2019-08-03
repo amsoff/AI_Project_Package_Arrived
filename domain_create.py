@@ -63,6 +63,10 @@ PAY_CELL = NAME + "pay_%s_At_%s_%s_from_%s" + PRE +NEED_PAY_CELL+ " " + AT_FORMA
 GOTO_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT # FROM_COMEBACK
 # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
+# jump to techef ashuv block
+GOTO_MONEY_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + NOT_NEED_PAY_CELL + " " + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT # FROM_COMEBACK
+# goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
+
 JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT +DEL + AT_FORMAT
 # jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
@@ -87,8 +91,6 @@ def create_move(player):
     for tile1 in board_game:  # lekol mishbetzet
         for d in Dice.vals:  # lekol gilgul_kubia
             for tile2 in board_game[tile1][d]: # lekol mishbetzet she'efshar lehagia elia
-                if tile1 == (1,0) and tile2 == (1,0):
-                    a=3
                 action = dict()
                 action[NAME] = "Move_from_%s_%s_to_%s_%s_with_dice_%s" % (tile1[0], tile1[1], tile2[0], tile2[1], d)
 
@@ -241,7 +243,12 @@ def create_pay_150():
 def create_goto_from_comeback():
     goto = []
     for tile in board_game:
-        if board.JUMP in board_game[tile]:  
+
+        if board.JUMP in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
+            for value in board_game[tile][board.JUMP]:
+                                            # goto      p2      from      p1  pre  not need pay p1 comeback to p2              at p1   add        at p2                not CB p2     delete: pre
+                goto.append(GOTO_MONEY_FORMAT % (value[0], value[1], tile[0], tile[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
+        elif board.JUMP in board_game[tile]:
             for value in board_game[tile][board.JUMP]:
                                             # goto      p2      from      p1  pre comeback to p2              at p1   add        at p2                not CB p2     delete: pre
                 goto.append(GOTO_FORMAT % (value[0], value[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
