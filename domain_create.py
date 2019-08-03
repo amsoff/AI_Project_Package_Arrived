@@ -30,7 +30,6 @@ NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
 NEED_PAY_CELL = "need_pay_%s_%s"  #  reut
 # NOT_OWE = "not_owe_%s"
 # OWE = "owe_%s"
-OWE_SURPRISE = "owe_surprise"
 # NOT_NEEDS_FORMAT = "not_needs_%s"
 
 #  make goal be all not_comebacks and  not needs and at END
@@ -69,7 +68,7 @@ JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + 
 # put comeback:
 PUT_COMEBACK = "Name: place_comeback_%s_%s" + PRE + AT_FORMAT + ADD + COME_BACK_FORMAT + DEL + NOT_COME_BACK_FORMAT
 # place comeback at p1 pre: at p1 add: comeback p1 delete: not_CB_p1
-NEW_JUMP_TO_ENTRANCE = NAME + "jump_to_entrance_%s_%s_from_%s_%s" + PRE +  AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT
+NEW_JUMP_TO_ENTRANCE = NAME + "jump_to_entrance_%s_%s_from_%s_%s" + PRE +  AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT + " " + NOT_COME_BACK_FORMAT
 # jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
 
 # # no need for take certificate?
@@ -87,8 +86,10 @@ def create_move(player):
     for tile1 in board_game:  # lekol mishbetzet
         for d in Dice.vals:  # lekol gilgul_kubia
             for tile2 in board_game[tile1][d]: # lekol mishbetzet she'efshar lehagia elia
+                if tile1 == (1,0) and tile2 == (1,0):
+                    a=3
                 action = dict()
-                action[NAME] = "Move_from_%s_%s_to_%s_%s" % (tile1[0], tile1[1], tile2[0], tile2[1])
+                action[NAME] = "Move_from_%s_%s_to_%s_%s_with_dice_%s" % (tile1[0], tile1[1], tile2[0], tile2[1], d)
 
                 action[PRE] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
                 for s in range(1, MAX_STOPS+1):
@@ -134,7 +135,7 @@ def create_move(player):
                     for i in range(1, board_game[tile2][board.WAIT]+1):
                         action[DEL] += " " + NOT_STOP_FORMAT % i
 
-                moves[(tile1, tile2)] = action
+                moves[(tile1, tile2, d)] = action
 
     for move in moves:
         strng = ''.join(['%s%s' % (k,v) for k,v in moves[move].items()])
@@ -160,7 +161,7 @@ def create_jump_to_entrance():
         if (board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in board_game[tile]:
             tile2 = board_game[tile][board.ENTRANCE]
             # jumps.append(JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
-            jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
+            jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] , tile[0], tile[1], tile[0], tile[1]))
         # elif board.SURPRISE in board_game[tile] and board.ENTRANCE in board_game[tile]:
         #     jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
 
@@ -376,7 +377,6 @@ def get_propositions():
     # props.extend(create_not_owe())
     # props.extend(create_owe())
     props.extend(create_need_pay())
-    # props.append(OWE_SURPRISE)
     return props
 
 
