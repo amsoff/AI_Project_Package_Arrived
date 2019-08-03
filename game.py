@@ -332,6 +332,7 @@ if __name__ == '__main__':
                 cell = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
                 move = handle_jump_to_entrance(plan[0], player)
                 moves.extend(move)
+                write_current_move_logs(past_moves,player,turns,logs)
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue
@@ -339,7 +340,9 @@ if __name__ == '__main__':
             elif 'Goto' in plan[0].name:
                 cell = int(plan[0].name.split('_')[1]), int(plan[0].name.split('_')[2])
                 move = handle_goto(plan[0].name, player)
+                player.cell = cell
                 moves.extend(move)
+                write_current_move_logs(past_moves,player,turns,logs)
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue
