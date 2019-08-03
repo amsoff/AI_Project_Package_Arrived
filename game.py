@@ -140,6 +140,7 @@ def handle_payments(action, player):
         cell = (int(action.name.split('_')[6]), int(action.name.split('_')[7]))
         player.money -= 150
         player.cell = cell
+        all.append("Payed 150 to jump to (%s,%s)" % cell)
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
         # need to match the exact name of the certificate
@@ -187,7 +188,13 @@ def handle_move(plan, player):
     action = plan[0]
     action_name = plan[0].name
     if 'Move' in plan[0].name:
-        player.cell = (int(action_name.split('_')[5]), int(action_name.split('_')[6]))
+        cell = (int(action_name.split('_')[5]), int(action_name.split('_')[6]))
+        player.cell = cell
+
+        if cell not in board.Board.lotto_cells:
+            all.append("Move to (%s,%s)" % player.cell)
+            if board.MESSAGE in board_game[cell]:
+                all.append(board_game[cell][board.MESSAGE])
 
         if cell in player.come_back_spots:
             player.come_back_spots.remove(cell)
@@ -205,8 +212,7 @@ def handle_move(plan, player):
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
                 all.append("presented the certificate: " + certificate)
 
-        if cell not in board.Board.lotto_cells:
-            all.append("Move to (%s,%s)" % player.cell)
+
 
     if player.cell in board.Board.lotto_cells:
         dice_val = dice_obj.roll_dice()
@@ -319,7 +325,7 @@ if __name__ == '__main__':
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
             if 'Move' in plan[0].name:
-                cell = (plan[0].name.split('_')[5], plan[0].name.split('_')[6])
+                cell = (int(plan[0].name.split('_')[5]), int(plan[0].name.split('_')[6]))
                 move, turn = handle_move(plan, player)
                 turns += turn
                 write_to_log("current moves done:", logs)
@@ -361,8 +367,8 @@ if __name__ == '__main__':
 
             # write_current_move_logs()
 
-            if board.MESSAGE in board_game[int(cell[0]), int(cell[1])]:
-                moves.append(board_game[int(cell[0]), int(cell[1])]["message"])
+            # if board.MESSAGE in board_game[int(cell[0]), int(cell[1])]:
+            #     moves.append(board_game[int(cell[0]), int(cell[1])]["message"])
 
             # Starting new round- creating new problem.txt file
 
