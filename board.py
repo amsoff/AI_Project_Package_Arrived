@@ -1,6 +1,5 @@
 import numpy as np
 from Certificates import Certificate
-from colorama import init, Fore, Back, Style
 
 # All the types of actions and objects a node in the board can hold
 # A message to print to the board
@@ -53,6 +52,8 @@ class Board:
     can go according to the dice. In each location we also hold extra information- if is a surprise,
     if it is the hospital, the lottery, or if it
     """
+
+    # All the lottery cells in the game!
     loto_cells = {(10,7), (2,1), (4,7)}
 
     def __init__(self, num_players=1, starting_point=(1, 0)):
