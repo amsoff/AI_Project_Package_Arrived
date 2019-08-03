@@ -52,7 +52,7 @@ class Player:
     def get_stops(self):
         stops = []
         for i in range(1, Constants.MAX_STOPS + 1):
-            stops.append(dc.NOT_STOP_FORMAT % i)
+            stops.append(Constants.NOT_STOP_FORMAT % i)
         return stops
 
 
