@@ -191,7 +191,7 @@ def handle_move(plan, player):
         cell = (int(action_name.split('_')[5]), int(action_name.split('_')[6]))
         player.cell = cell
 
-        if cell not in board.Board.lotto_cells:
+        if cell not in board.Board.fake_cells:
             all.append("Move to (%s,%s)" % player.cell)
             if board.MESSAGE in board_game[cell]:
                 all.append(board_game[cell][board.MESSAGE])

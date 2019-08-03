@@ -49,6 +49,7 @@ class Board:
 
     # All the lottery cells in the game!
     lotto_cells = {(10, 7), (2, 1), (4, 7)}
+    fake_cells = {(11, 7), (3, 7), (3, 1)}
 
     def __init__(self, num_players=1, starting_point=Player_types.START):
         self.board_w = 12
