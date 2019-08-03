@@ -17,7 +17,7 @@ dice_obj = Dice()
 board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 DEBUG = True
-GOAL = (11,9)
+GOAL = (5,10)
 # goal_stack = []
 
 
