@@ -1,5 +1,6 @@
 import numpy as np
 from Certificates import Certificate
+import Player_types
 
 # All the types of actions and objects a node in the board can hold
 # A message to print to the board
@@ -49,7 +50,7 @@ class Board:
     # All the lottery cells in the game!
     lotto_cells = {(10, 7), (2, 1), (4, 7)}
 
-    def __init__(self, num_players=1, starting_point=(1, 0)):
+    def __init__(self, num_players=1, starting_point=Player_types.START):
         self.board_w = 12
         self.board_h = 12
         self.starting_point = starting_point

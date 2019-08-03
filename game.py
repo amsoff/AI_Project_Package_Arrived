@@ -2,6 +2,7 @@ from graphplan.search import a_star_search
 from domain_create import Types
 from graphplan.planning_problem import PlanningProblem, max_level, level_sum
 import domain_create as dc
+import Player_types
 from surprise import Surprise
 from player import Player
 import player
@@ -18,7 +19,7 @@ dice_obj = Dice()
 board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 DEBUG = True
-GOAL = player.GOAL
+GOAL = Player_types.GOAL
 # goal_stack = []
 
 
@@ -313,7 +314,7 @@ if __name__ == '__main__':
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
-    moves = ["--- Welcome to the package Arrive Game.--- \nYou are positioned at (1,0)"]
+    moves = ["--- Welcome to the package Arrive Game.--- \nYou are positioned at (%s,%s)" % player.cell]
     past_moves = [player.cell]
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':

@@ -2,6 +2,7 @@ from dice import Dice
 import board
 from Certificates import Certificate
 from Player_types import Types
+import Player_types
 from surprise import Surprise
 
 
@@ -9,8 +10,8 @@ from surprise import Surprise
 import domain_create as dc
 certificates = Certificate.list()
 
-GOAL = (0,1)
-START = (1,0)
+GOAL = Player_types.GOAL
+START = Player_types.START
 
 board_game = board.Board(1).transition_dict
 all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
