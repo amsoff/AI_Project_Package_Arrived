@@ -92,6 +92,7 @@ class Board:
                                          3: [(10, 5)],
                                          HAS: Certificate.BIRTH,
                                          JUMP: [(9, 11), (1, 5)]}
+
         self.transition_dict[(11, 4)] = {1: [(11, 5)],
                                          2: [(10, 5)],
                                          3: [(9, 5)]}
@@ -179,7 +180,8 @@ class Board:
         self.transition_dict[(9, 5)] = {1: [(9, 4), (8, 5), (9, 6)],
                                         2: [(7, 5), (9, 3), (9, 7)],
                                         3: [(7, 6), (9, 8), (9, 2), (6, 5)],
-                                        SURPRISE: True, JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}#,
+                                        SURPRISE: True,
+                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}#,
                                         #ENTRANCE: (8, 5)}
 
         self.transition_dict[(9, 6)] = {1: [(9, 7), (9, 5)],
@@ -204,7 +206,8 @@ class Board:
 
         self.transition_dict[(9, 10)] = {1: [(9, 10), (9, 11)],
                                          2: [(9, 10), (10, 11)],
-                                         3: [(11, 11)], ORANGE: [(11, 11)]}
+                                         3: [(11, 11)],
+                                         ORANGE: [(11, 11)]}
 
         self.transition_dict[(9, 11)] = {1: [(10, 11), (9, 11)],
                                          2: [(11, 11)],
@@ -261,143 +264,322 @@ class Board:
                                         ENTRANCE: (11, 8)}
 
     def init_row7(self):
-        self.transition_dict[(7, 11)] = {1: [(7, 10)], 2: [(7, 9)], 3: [(8, 9)], WAIT: 2}
-        self.transition_dict[(7, 10)] = {1: [(7, 9)], 2: [(8, 9)], 3: [(9, 9)],
-                                         BALANCE: -100, ENTRANCE: (11, 8)}
-        self.transition_dict[(7, 9)] = {1: [(8, 9)], 2: [(9, 9)], 3: [(9, 10)]}
-        self.transition_dict[(7, 8)] = {1: [(7, 8), (8, 8), (6, 8)], 2: [(7, 8), (5, 8), (9, 8)],
+        self.transition_dict[(7, 11)] = {1: [(7, 10)],
+                                         2: [(7, 9)],
+                                         3: [(8, 9)],
+                                         WAIT: 2}
+
+        self.transition_dict[(7, 10)] = {1: [(7, 9)],
+                                         2: [(8, 9)],
+                                         3: [(9, 9)],
+                                         BALANCE: -100,
+                                         ENTRANCE: (11, 8)}
+
+        self.transition_dict[(7, 9)] = {1: [(8, 9)],
+                                        2: [(9, 9)],
+                                        3: [(9, 10)]}
+
+        self.transition_dict[(7, 8)] = {1: [(7, 8), (8, 8), (6, 8)],
+                                        2: [(7, 8), (5, 8), (9, 8)],
                                         3: [(10, 8), (9, 7), (5, 9), (5, 7)],
                                         ORANGE: [(5, 9)]}
-        self.transition_dict[(7, 6)] = {1: [(7, 6), (6, 6)], 2: [(6, 7)], 3: [(7, 6)],
+        
+        self.transition_dict[(7, 6)] = {1: [(7, 6), (6, 6)],
+                                        2: [(6, 7)],
+                                        3: [(7, 6)],
                                         ORANGE: [(6, 7)],
                                         MESSAGE: "You entered the Package Store!"}
-        self.transition_dict[(7, 5)] = {1: [(8, 5), (6, 5), (7, 6)], 2: [(6, 6), (9, 5), (6, 4), (5, 5)],
-                                        3: [(10, 5), (9, 6), (9, 4), (5, 6), (6, 7)], ORANGE: [(6, 7), (6, 4)]}
-        self.transition_dict[(7, 1)] = {1: [(8, 1), (6, 1)], 2: [(9, 1), (5, 1)],
+        
+        self.transition_dict[(7, 5)] = {1: [(8, 5), (6, 5), (7, 6)],
+                                        2: [(6, 6), (9, 5), (6, 4), (5, 5)],
+                                        3: [(10, 5), (9, 6), (9, 4), (5, 6), (6, 7)],
+                                        ORANGE: [(6, 7), (6, 4)]}
+
+        self.transition_dict[(7, 1)] = {1: [(8, 1), (6, 1)],
+                                        2: [(9, 1), (5, 1)],
                                         3: [(9, 2), (9, 0), (4, 1)],
-                                        SURPRISE: True, JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}#,
+                                        SURPRISE: True,
+                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}#,
                                         #ENTRANCE: (6, 1)}
 
     def init_row6(self):
-        self.transition_dict[(6, 11)] = {1: [(7, 11)], 2: [(7, 10)], 3: [(7, 9)]}
-        self.transition_dict[(6, 8)] = {1: [(5, 8), (7, 8)], 2: [(5, 9), (5, 7), (8, 8)],
-                                        3: [(5, 6), (9, 8)], ORANGE: [(5, 9)]}
-        self.transition_dict[(6, 7)] = {1: [(6, 7), (5, 7)], 2: [(6, 7), (5, 8), (5, 6)],
-                                        3: [(5, 9), (6, 8), (4, 6), (5, 5)],
-                                        HAS: Certificate.PORT, JUMP: [(5, 9)],
+
+        self.transition_dict[(6, 11)] = {1: [(7, 11)],
+                                         2: [(7, 10)],
+                                         3: [(7, 9)]}
+
+        self.transition_dict[(6, 8)] = {1: [(5, 8), (7, 8)],
+                                        2: [(5, 9), (5, 7), (8, 8)],
+                                        3: [(5, 6), (9, 8)],
                                         ORANGE: [(5, 9)]}
-        self.transition_dict[(6, 6)] = {1: [(6, 7)], 2: [(6, 6)], 3: [(6, 6)], ORANGE: [(6, 7)], WAIT: 1}
-        self.transition_dict[(6, 5)] = {1: [(7, 5), (5, 5), (6, 4)], 2: [(6, 5), (8, 5), (7, 6), (5, 6)],
-                                        3: [(6, 5), (9, 5), (6, 6), (5, 7), (4, 6)], ORANGE: [(6, 4)]}
-        self.transition_dict[(6, 4)] = {1: [(6, 4), (6, 3)], 2: [(6, 4), (6, 2)], 3: [(5, 2)], ORANGE: [(5, 2)],
-                                        MESSAGE: "!!! POLICE !!!You are at the police stations"}
-        self.transition_dict[(6, 3)] = {1: [(6, 3), (6, 2)], 2: [(5, 2)], 3: [(6, 3)], ORANGE: [(5, 2)]}
-        self.transition_dict[(6, 2)] = {1: [(5, 2)], 2: [(6, 2)], 3: [(6, 2)], ORANGE: [(5, 2)], WAIT: 1}
-        self.transition_dict[(6, 1)] = {1: [(7, 1), (5, 1)], 2: [(8, 1), (4, 1)], 3: [(9, 1), (4, 2)]}
+
+        self.transition_dict[(6, 7)] = {1: [(6, 7), (5, 7)],
+                                        2: [(6, 7), (5, 8), (5, 6)],
+                                        3: [(5, 9), (6, 8), (4, 6), (5, 5)],
+                                        HAS: Certificate.PORT,
+                                        JUMP: [(5, 9)],
+                                        ORANGE: [(5, 9)]}
+
+        self.transition_dict[(6, 6)] = {1: [(6, 7)],
+                                        2: [(6, 6)],
+                                        3: [(6, 6)],
+                                        ORANGE: [(6, 7)],
+                                        WAIT: 1}
+
+        self.transition_dict[(6, 5)] = {1: [(7, 5), (5, 5), (6, 4)],
+                                        2: [(6, 5), (8, 5), (7, 6), (5, 6)],
+                                        3: [(6, 5), (9, 5), (6, 6), (5, 7), (4, 6)],
+                                        ORANGE: [(6, 4)]}
+
+        self.transition_dict[(6, 4)] = {1: [(6, 4), (6, 3)],
+                                        2: [(6, 4), (6, 2)],
+                                        3: [(5, 2)],
+                                        ORANGE: [(5, 2)],
+                                        MESSAGE: "!!! POLICE !!!You are at the police station"}
+
+        self.transition_dict[(6, 3)] = {1: [(6, 3), (6, 2)],
+                                        2: [(5, 2)],
+                                        3: [(6, 3)],
+                                        ORANGE: [(5, 2)]}
+
+        self.transition_dict[(6, 2)] = {1: [(5, 2)],
+                                        2: [(6, 2)],
+                                        3: [(6, 2)],
+                                        ORANGE: [(5, 2)],
+                                        WAIT: 1}
+
+        self.transition_dict[(6, 1)] = {1: [(7, 1), (5, 1)],
+                                        2: [(8, 1), (4, 1)],
+                                        3: [(9, 1), (4, 2)]}
 
     def init_row5(self):
-        self.transition_dict[(5, 11)] = {1: [(6, 11)], 2: [(7, 11)], 3: [(7, 10)],
-                                         NEED: [Certificate.INTEGRITY], ENTRANCE: (11, 8)}
-        self.transition_dict[(5, 10)] = {1: [(5, 11)], 2: [(6, 11)], 3: [(7, 11)], BALANCE: -100, ENTRANCE: (11, 8)}
-        self.transition_dict[(5, 9)] = {1: [(5, 10)], 2: [(5, 11)], 3: [(6, 11)],
-                                        NEED: [Certificate.PORT], ENTRANCE: (11, 8),
+        self.transition_dict[(5, 11)] = {1: [(6, 11)],
+                                         2: [(7, 11)],
+                                         3: [(7, 10)],
+                                         NEED: [Certificate.INTEGRITY],
+                                         ENTRANCE: (11, 8)}
+
+        self.transition_dict[(5, 10)] = {1: [(5, 11)],
+                                         2: [(6, 11)],
+                                         3: [(7, 11)],
+                                         BALANCE: -100,
+                                         ENTRANCE: (11, 8)}
+
+        self.transition_dict[(5, 9)] = {1: [(5, 10)],
+                                        2: [(5, 11)],
+                                        3: [(6, 11)],
+                                        NEED: [Certificate.PORT],
+                                        ENTRANCE: (11, 8),
                                         MESSAGE: "WOW! You are now entering the port. Good Luck"}
-        self.transition_dict[(5, 8)] = {1: [(5, 9)], 2: [(5, 8)], 3: [(5, 8)], ORANGE: [(5, 9)],
-                                        SURPRISE: True, JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
+
+        self.transition_dict[(5, 8)] = {1: [(5, 9)],
+                                        2: [(5, 8)],
+                                        3: [(5, 8)],
+                                        ORANGE: [(5, 9)],
+                                        SURPRISE: True,
+                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
                                         #, ENTRANCE: (11, 8)}
 
-        self.transition_dict[(5, 7)] = {1: [(5, 7), (5, 8), (5, 6)], 2: [(6, 8), (5, 5), (4, 6), (5, 9)],
-                                        3: [(5, 7), (6, 5), (4, 5), (4, 7), (7, 8)], ORANGE: [(5, 9)]}
+        self.transition_dict[(5, 7)] = {1: [(5, 7), (5, 8), (5, 6)], 
+                                        2: [(6, 8), (5, 5), (4, 6), (5, 9)],
+                                        3: [(5, 7), (6, 5), (4, 5), (4, 7), (7, 8)], 
+                                        ORANGE: [(5, 9)]}
+        
         self.transition_dict[(5, 6)] = {1: [(5, 6), (5, 7), (5, 5), (4, 6)],
                                         2: [(5, 6), (5, 8), (6, 5), (4, 7), (4, 5), (3, 6)],
                                         3: [(5, 9), (6, 8), (4, 4), (3, 5), (6, 4), (7, 5)],
                                         ORANGE: [(5, 9), (6, 4)]}
-        self.transition_dict[(5, 5)] = {1: [(5, 5), (6, 5), (5, 6)], 2: [(6, 4), (5, 7), (4, 6), (7, 5)],
+        
+        self.transition_dict[(5, 5)] = {1: [(5, 5), (6, 5), (5, 6)], 
+                                        2: [(6, 4), (5, 7), (4, 6), (7, 5)],
                                         3: [(5, 5), (5, 8), (4, 7), (4, 5), (3, 6), (7, 6), (8, 5)],
                                         ORANGE: [(6, 4)]}
-        self.transition_dict[(5, 2)] = {1: [(4, 2)], 2: [(3, 2), (4, 1)], 3: [(5, 1), (2, 2), (3, 3)],
-                                        HAS: Certificate.INTEGRITY, JUMP: [(5, 11)]}
-        self.transition_dict[(5, 1)] = {1: [(6, 1), (4, 1)], 2: [(7, 1), (4, 2)], 3: [(8, 1), (3, 2)]}
+        
+        self.transition_dict[(5, 2)] = {1: [(4, 2)], 
+                                        2: [(3, 2), (4, 1)], 
+                                        3: [(5, 1), (2, 2), (3, 3)],
+                                        HAS: Certificate.INTEGRITY, 
+                                        JUMP: [(5, 11)]}
+        
+        self.transition_dict[(5, 1)] = {1: [(6, 1), (4, 1)], 
+                                        2: [(7, 1), (4, 2)], 
+                                        3: [(8, 1), (3, 2)]}
 
     def init_row4(self):
-        self.transition_dict[(4, 7)] = {1: [(3, 7)], 2: [(4, 7), (5, 8), (5, 6), (3, 6), (4, 5)],
+        self.transition_dict[(4, 7)] = {1: [(3, 7)], 
+                                        2: [(4, 7), (5, 8), (5, 6), (3, 6), (4, 5)],
                                         3: [(6, 8), (5, 5), (4, 6), (4, 4), (5, 9)],
                                         ORANGE: [(5, 9)],
                                         MESSAGE: "Lottery! you have a chance to earn some money!"}
-        self.transition_dict[(3, 7)] = {1: [(5, 7)], 2: [(5, 8), (5, 6), (3, 6), (4, 5)],
+        
+        self.transition_dict[(3, 7)] = {1: [(5, 7)], 
+                                        2: [(5, 8), (5, 6), (3, 6), (4, 5)],
                                         3: [(6, 8), (5, 5), (4, 6), (4, 4), (5, 9)], BALANCE: PRISE_1,
                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
+        
         self.transition_dict[(4, 6)] = {1: [(4, 6), (4, 7), (3, 6), (5, 6), (4, 5)],
                                         2: [(4, 6), (5, 7), (5, 5), (4, 4), (3, 5)],
-                                        3: [(5, 8), (5, 5), (4, 3), (3, 4)], ORANGE: [(4, 3)]}
-        self.transition_dict[(4, 5)] = {1: [(4, 5), (4, 4)], 2: [(4, 3)], 3: [(4, 5)], ORANGE: [(4, 3)],
+                                        3: [(5, 8), (5, 5), (4, 3), (3, 4)], 
+                                        ORANGE: [(4, 3)]}
+        
+        self.transition_dict[(4, 5)] = {1: [(4, 5), (4, 4)], 
+                                        2: [(4, 3)], 
+                                        3: [(4, 5)], 
+                                        ORANGE: [(4, 3)],
                                         MESSAGE: "You entered the barber shop"}
-        self.transition_dict[(4, 4)] = {1: [(4, 3)], 2: [(4, 4)], 3: [(4, 4)], ORANGE: [(4, 3)]}
-        self.transition_dict[(4, 3)] = {1: [(4, 2)], 2: [(3, 2), (4, 1)], 3: [(5, 1), (2, 2), (3, 3)],
-                                        HAS: Certificate.HAIRCUT, JUMP: [(8, 3)]}
-        self.transition_dict[(4, 2)] = {1: [(3, 2), (4, 1)], 2: [(2, 2), (3, 3), (5, 1)],
+        
+        self.transition_dict[(4, 4)] = {1: [(4, 3)], 
+                                        2: [(4, 4)], 
+                                        3: [(4, 4)], 
+                                        ORANGE: [(4, 3)]}
+        
+        self.transition_dict[(4, 3)] = {1: [(4, 2)], 
+                                        2: [(3, 2), (4, 1)], 
+                                        3: [(5, 1), (2, 2), (3, 3)],
+                                        HAS: Certificate.HAIRCUT, 
+                                        JUMP: [(8, 3)]}
+        
+        self.transition_dict[(4, 2)] = {1: [(3, 2), (4, 1)], 
+                                        2: [(2, 2), (3, 3), (5, 1)],
                                         3: [(6, 1), (1, 2), (3, 4), (2, 3)]}
-        self.transition_dict[(4, 1)] = {1: [(4, 2), (5, 1)], 2: [(6, 1), (3, 2)], 3: [(7, 1), (3, 3), (2, 2)]}
+        
+        self.transition_dict[(4, 1)] = {1: [(4, 2), (5, 1)], 
+                                        2: [(6, 1), (3, 2)], 
+                                        3: [(7, 1), (3, 3), (2, 2)]}
 
     def init_row3(self):
-        self.transition_dict[(3, 6)] = {1: [(4, 6), (3, 5)], 2: [(4, 7), (5, 6), (4, 5), (3, 4)],
+        self.transition_dict[(3, 6)] = {1: [(4, 6), (3, 5)], 
+                                        2: [(4, 7), (5, 6), (4, 5), (3, 4)],
                                         3: [(5, 7), (5, 5), (4, 4)]}
-        self.transition_dict[(3, 5)] = {1: [(3, 6), (3, 4)], 2: [(4, 6), (3, 3)],
+        
+        self.transition_dict[(3, 5)] = {1: [(3, 6), (3, 4)], 
+                                        2: [(4, 6), (3, 3)],
                                         3: [(4, 7), (4, 5), (3, 2), (2, 3)]}
-        self.transition_dict[(3, 4)] = {1: [(3, 5), (3, 3)], 2: [(3, 6), (3, 2), (2, 3)],
+        
+        self.transition_dict[(3, 4)] = {1: [(3, 5), (3, 3)], 
+                                        2: [(3, 6), (3, 2), (2, 3)],
                                         3: [(4, 6), (4, 2), (2, 4), (2, 1)]}
-        self.transition_dict[(3, 3)] = {1: [(3, 4), (3, 2), (2, 3)], 2: [(3, 5), (4, 2), (2, 2), (2, 4)],
+        
+        self.transition_dict[(3, 3)] = {1: [(3, 4), (3, 2), (2, 3)], 
+                                        2: [(3, 5), (4, 2), (2, 2), (2, 4)],
                                         3: [(3, 6), (4, 1), (1, 2), (2, 5)]}
-        self.transition_dict[(3, 2)] = {1: [(4, 2), (2, 2), (3, 3)], 2: [(4, 1), (3, 4), (2, 3), (1, 2)],
+        
+        self.transition_dict[(3, 2)] = {1: [(4, 2), (2, 2), (3, 3)], 
+                                        2: [(4, 1), (3, 4), (2, 3), (1, 2)],
                                         3: [(5, 1), (3, 5), (2, 4), (1, 1)],
                                         SURPRISE: True,
                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}#,
                                         #ENTRANCE: (3, 3)}
 
     def init_row2(self):
-        self.transition_dict[(2, 5)] = {1: [(2, 5), (1, 6)], 2: [(2, 5), (1, 5)], 3: [(1, 4)], ORANGE: [(1, 4)],
+        self.transition_dict[(2, 5)] = {1: [(2, 5), (1, 6)], 
+                                        2: [(2, 5), (1, 5)], 
+                                        3: [(1, 4)], 
+                                        ORANGE: [(1, 4)],
                                         BALANCE: -50}#,
                                         #ENTRANCE: (1, 2)}
-        self.transition_dict[(2, 4)] = {1: [(2, 5)], 2: [(1, 6)], 3: [(1, 5)],
+        
+        self.transition_dict[(2, 4)] = {1: [(2, 5)], 
+                                        2: [(1, 6)], 
+                                        3: [(1, 5)],
                                         MESSAGE: "Welcome you entered the Ministry of Interior"}
-        self.transition_dict[(2, 3)] = {1: [(2, 4), (3, 3), (2, 2)], 2: [(2, 5), (1, 2), (3, 4), (3, 2)],
+        
+        self.transition_dict[(2, 3)] = {1: [(2, 4), (3, 3), (2, 2)], 
+                                        2: [(2, 5), (1, 2), (3, 4), (3, 2)],
                                         3: [(1, 6), (3, 5), (1, 1), (4, 2)]}
-        self.transition_dict[(2, 2)] = {1: [(2, 3), (3, 2), (1, 2)], 2: [(1, 1), (4, 2), (2, 4), (3, 3)],
+        
+        self.transition_dict[(2, 2)] = {1: [(2, 3), (3, 2), (1, 2)], 
+                                        2: [(1, 1), (4, 2), (2, 4), (3, 3)],
                                         3: [(2, 5), (4, 1), (3, 4), (2, 1), (1, 0)]}
-        self.transition_dict[(2, 1)] = {1: [(2, 2)], 2: [(3, 1)], 3: [(2, 4), (3, 3), (4, 2), (1, 1)],
+        
+        self.transition_dict[(2, 1)] = {1: [(2, 2)], 
+                                        2: [(3, 1)], 
+                                        3: [(2, 4), (3, 3), (4, 2), (1, 1)],
                                         MESSAGE: "Lottery! you have a chance to earn some money!"}
-        self.transition_dict[(3, 1)] = {1: [(2, 2)], 2: [(2, 3), (3, 2)], 3: [(2, 4), (3, 3), (4, 2), (1, 1)],
-                                        BALANCE: PRISE_2, JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
+        
+        self.transition_dict[(3, 1)] = {1: [(2, 2)], 
+                                        2: [(2, 3), (3, 2)], 
+                                        3: [(2, 4), (3, 3), (4, 2), (1, 1)],
+                                        BALANCE: PRISE_2, 
+                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
 
     def init_row1(self):
-        self.transition_dict[(1, 6)] = {1: [(1, 6), (1, 5)], 2: [(1, 4)], 3: [(1, 6)], ORANGE: [(1, 4)],
-                                        NEED: [Certificate.PASSPORT], ENTRANCE: (1, 2)}
-        self.transition_dict[(1, 5)] = {1: [(1, 4)], 2: [(1, 5)], 3: [(1, 5)], ORANGE: [(1, 4)],
-                                        NEED: [Certificate.BIRTH], ENTRANCE: (1, 2)}
-        self.transition_dict[(1, 4)] = {1: [(1, 3)], 2: [(1, 2)], 3: [(1, 1), (2, 2)],
-                                        HAS: Certificate.ID, JUMP: [(8, 9)]}
-        self.transition_dict[(1, 3)] = {1: [(1, 2)], 2: [(1, 1), (2, 2)], 3: [(2, 1), (1, 0), (3, 2)]}
-        self.transition_dict[(1, 2)] = {1: [(2, 2), (1, 1)], 2: [(1, 0), (2, 1), (3, 2), (2, 3)],
+        self.transition_dict[(1, 6)] = {1: [(1, 6), (1, 5)], 
+                                        2: [(1, 4)], 3: [(1, 6)], 
+                                        ORANGE: [(1, 4)],
+                                        NEED: [Certificate.PASSPORT], 
+                                        ENTRANCE: (1, 2)}
+        self.transition_dict[(1, 5)] = {1: [(1, 4)], 2: [(1, 5)], 3: [(1, 5)], 
+                                        ORANGE: [(1, 4)],
+                                        NEED: [Certificate.BIRTH], 
+                                        ENTRANCE: (1, 2)}
+        
+        self.transition_dict[(1, 4)] = {1: [(1, 3)], 
+                                        2: [(1, 2)], 
+                                        3: [(1, 1), (2, 2)],
+                                        HAS: Certificate.ID, 
+                                        JUMP: [(8, 9)]}
+        
+        self.transition_dict[(1, 3)] = {1: [(1, 2)], 
+                                        2: [(1, 1), (2, 2)], 
+                                        3: [(2, 1), (1, 0), (3, 2)]}
+        
+        self.transition_dict[(1, 2)] = {1: [(2, 2), (1, 1)], 
+                                        2: [(1, 0), (2, 1), (3, 2), (2, 3)],
                                         3: [(4, 2), (2, 4), (3, 3), (0, 0)]}
-        self.transition_dict[(1, 1)] = {1: [(1, 1), (1, 0), (1, 2), (2, 1)], 2: [(1, 1), (0, 0), (2, 2)],
-                                        3: [(0, 1), (3, 2), (2, 3)], ORANGE: [(0, 1)]}
-        self.transition_dict[(1, 0)] = {1: [(1, 0), (0, 0), (1, 1)], 2: [(0, 1), (1, 2), (2, 1)],
+        
+        self.transition_dict[(1, 1)] = {1: [(1, 1), (1, 0), (1, 2), (2, 1)], 
+                                        2: [(1, 1), (0, 0), (2, 2)],
+                                        3: [(0, 1), (3, 2), (2, 3)], 
+                                        ORANGE: [(0, 1)]}
+        
+        self.transition_dict[(1, 0)] = {1: [(1, 0), (0, 0), (1, 1)], 
+                                        2: [(0, 1), (1, 2), (2, 1)],
                                         3: [(1, 0), (2, 2)],
                                         ORANGE: [(0, 1)]}
 
     def init_row0(self):
-        self.transition_dict[(0, 2)] = {1: [(1, 2)], 2: [(1, 1), (2, 2)], 3: [(1, 0), (2, 1), (2, 3)]}
-        self.transition_dict[(0, 1)] = {1: [(0, 2)], 2: [(1, 2)], 3: [(2, 2), (1, 1)], HAS: Certificate.TAX,
+        self.transition_dict[(0, 2)] = {1: [(1, 2)], 
+                                        2: [(1, 1), (2, 2)], 
+                                        3: [(1, 0), (2, 1), (2, 3)]}
+        
+        self.transition_dict[(0, 1)] = {1: [(0, 2)], 
+                                        2: [(1, 2)], 
+                                        3: [(2, 2), (1, 1)], 
+                                        HAS: Certificate.TAX,
                                         JUMP: [(9, 9)]}
-        self.transition_dict[(0, 0)] = {1: [(0, 1)], 2: [(0, 0)], 3: [(0, 0)], ORANGE: [(0, 1)],
-                                        NEED: [Certificate.INTEGRITY], ENTRANCE: (1, 0)}
+        
+        self.transition_dict[(0, 0)] = {1: [(0, 1)], 
+                                        2: [(0, 0)], 
+                                        3: [(0, 0)], 
+                                        ORANGE: [(0, 1)],
+                                        NEED: [Certificate.INTEGRITY], 
+                                        ENTRANCE: (1, 0)}
 
 
     def init_test(self):
-        self.transition_dict[(0, 0)] = {1:[(0,1)], 2:[(0,1)], 3:[(0,1)]}
-        self.transition_dict[(0, 1)] = {1:[(0,2)], 2:[(0,2)], 3:[(0,2)], NEED: [Certificate.TAX], ENTRANCE:(1,2)}
-        self.transition_dict[(0, 2)] = {1:[(0,2)], 2:[(0,2)], 3:[(0,2)]}
-        self.transition_dict[(1, 2)] = {1:[(2,2)], 2:[(2,2)], 3:[(2,2)]}
-        self.transition_dict[(2, 2)] = {1:[(0,0)], 2:[(0,0)], 3:[(0,0)], HAS: Certificate.TAX, JUMP:[(0,1)]}
+        self.transition_dict[(0, 0)] = {1:[(0,1)], 
+                                        2:[(0,1)], 
+                                        3:[(0,1)]}
+        
+        self.transition_dict[(0, 1)] = {1:[(0,2)], 
+                                        2:[(0,2)], 
+                                        3:[(0,2)], 
+                                        NEED: [Certificate.TAX], 
+                                        ENTRANCE:(1,2)}
+        
+        self.transition_dict[(0, 2)] = {1:[(0,2)], 
+                                        2:[(0,2)], 
+                                        3:[(0,2)]}
+        
+        self.transition_dict[(1, 2)] = {1:[(2,2)], 
+                                        2:[(2,2)], 
+                                        3:[(2,2)]}
+        
+        self.transition_dict[(2, 2)] = {1:[(0,0)], 
+                                        2:[(0,0)], 
+                                        3:[(0,0)], 
+                                        HAS: Certificate.TAX, 
+                                        JUMP:[(0,1)]}
