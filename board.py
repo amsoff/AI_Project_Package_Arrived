@@ -31,14 +31,14 @@ SURPRISE = 'surprise'
 ORANGE = 150
 
 # Lottery prizes
-PRIZE_1 = 1000
-PRIZE_2 = 1500
-PRIZE_3 = 500
+PRIZE_1 = Constants.PRIZE_1
+PRIZE_2 = Constants.PRIZE_2
+PRIZE_3 = Constants.PRIZE_3
 
 # Costs
-HAIRCUT_COST = -50
-TAX_COST = -50
-PACKAGE_COST = -500
+HAIRCUT_COST = Constants.HAIRCUT_COST
+TAX_COST = Constants.TAX_COST
+PACKAGE_COST = Constants.PACKAGE_COST
 
 
 class Board:

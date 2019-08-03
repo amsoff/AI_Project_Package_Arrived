@@ -5,6 +5,15 @@ START = (1, 0)
 DEBUG = True
 PLAYER_STARTING_MONEY = 1500
 
+# constants from board:
+# Lottery prizes
+PRIZE_1 = 1000
+PRIZE_2 = 1500
+PRIZE_3 = 500
+# Costs
+HAIRCUT_COST = -50
+TAX_COST = -50
+PACKAGE_COST = -500
 
 # Other constants from domain_create
 # Action constants
