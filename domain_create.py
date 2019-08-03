@@ -66,7 +66,7 @@ JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + 
 # jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
 # put comeback:
-PUT_COMEBACK = "Name: place_comeback_%s_%s" + PRE + AT_FORMAT + ADD + COME_BACK_FORMAT + DEL + NOT_COME_BACK_FORMAT
+# PUT_COMEBACK = "Name: place_comeback_%s_%s" + PRE + AT_FORMAT + ADD + COME_BACK_FORMAT + DEL + NOT_COME_BACK_FORMAT
 # place comeback at p1 pre: at p1 add: comeback p1 delete: not_CB_p1
 NEW_JUMP_TO_ENTRANCE = NAME + "jump_to_entrance_%s_%s_from_%s_%s" + PRE +  AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT + " " + NOT_COME_BACK_FORMAT
 # jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
@@ -125,6 +125,10 @@ def create_move(player):
                 # take certificate:
                 if board.HAS in board_game[tile2]:
                     action[ADD] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
+
+                if board.NEED in board_game[tile2] or (board.BALANCE in board_game[tile2] and board_game[tile2][board.BALANCE] < 0):  # if we go to a tile that we can put a come back sign on
+                    action[DEL] += " " + COME_BACK_FORMAT % tile2
+                    action[ADD] += " " + NOT_COME_BACK_FORMAT % tile2
 
                 # show certificate:
                 if board.NEED in board_game[tile1]:  # eem zu mishbetzet shezarich lehazig teuda, zarich sheihihe teuda
