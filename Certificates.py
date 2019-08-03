@@ -3,9 +3,8 @@ from enum import Enum
 
 class Certificate(Enum):
     """
-    A class that holds all the certificate that a player can hold in the gane
+    Different kinds of certificates the player must be asked to present while playing the game
     """
-    # Grandma marriage certificate, get at (8,0)
     GRANDMA = "grandma"
 
     # Integrity certificate, get at (5,2)

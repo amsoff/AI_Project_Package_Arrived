@@ -6,7 +6,7 @@ from Certificates import Certificate
 MESSAGE = "message"
 
 # When we get a certificate/money we can jump to where we were asked to present the certificate/pay the money
-JUMP = 'jump'
+GOTO = 'jump'
 
 # A nearby cell to our current location to jump to once we need to search the board for a certificate/money
 ENTRANCE = 'entrance'
@@ -107,7 +107,7 @@ class Board:
                                          2: [(11, 5)],
                                          3: [(10, 5)],
                                          HAS: Certificate.BIRTH,
-                                         JUMP: [(9, 11), (1, 5)]}
+                                         GOTO: [(9, 11), (1, 5)]}
 
         self.transition_dict[(11, 4)] = {1: [(11, 5)],
                                          2: [(10, 5)],
@@ -158,7 +158,7 @@ class Board:
                                          2: [(10, 5)],
                                          3: [(9, 5)],
                                          BALANCE: PRIZE_3,  # POSITIVE
-                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
+                                         GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                          MESSAGE: "Lottery! you won!"}
 
         self.transition_dict[(10, 8)] = {1: [(9, 8), (10, 7)],
@@ -197,7 +197,7 @@ class Board:
                                         2: [(7, 5), (9, 3), (9, 7)],
                                         3: [(7, 6), (9, 8), (9, 2), (6, 5)],
                                         SURPRISE: True,
-                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
+                                        GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
 
         self.transition_dict[(9, 6)] = {1: [(9, 7), (9, 5)],
                                         2: [(8, 5), (9, 4), (9, 8)],
@@ -236,7 +236,7 @@ class Board:
                                         2: [(9, 1), (7, 1)],
                                         3: [(9, 0), (6, 1), (9, 2)],
                                         HAS: Certificate.GRANDMA,
-                                        JUMP: [(11, 1), (10, 11)]}
+                                        GOTO: [(11, 1), (10, 11)]}
 
         self.transition_dict[(8, 1)] = {1: [(9, 1), (7, 1)],
                                         2: [(9, 2), (6, 1)],
@@ -259,7 +259,7 @@ class Board:
                                         2: [(9, 5), (7, 5)],
                                         3: [(7, 6), (6, 5), (9, 6), (9, 4)],
                                         BALANCE: HAIRCUT_COST,  # negative
-                                        JUMP: [(1, 6)],
+                                        GOTO: [(1, 6)],
                                         HAS: Certificate.PASSPORT,
                                         ENTRANCE: (8, 5)}
 
@@ -314,7 +314,7 @@ class Board:
                                         2: [(9, 1), (5, 1)],
                                         3: [(9, 2), (9, 0), (4, 1)],
                                         SURPRISE: True,
-                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
+                                        GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
 
     def init_row6(self):
 
@@ -331,7 +331,7 @@ class Board:
                                         2: [(6, 7), (5, 8), (5, 6)],
                                         3: [(5, 9), (6, 8), (4, 6), (5, 5)],
                                         HAS: Certificate.PORT,
-                                        JUMP: [(5, 9)],
+                                        GOTO: [(5, 9)],
                                         ORANGE: [(5, 9)]}
 
         self.transition_dict[(6, 6)] = {1: [(6, 7)],
@@ -391,7 +391,7 @@ class Board:
                                         3: [(5, 8)],
                                         ORANGE: [(5, 9)],
                                         SURPRISE: True,
-                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
+                                        GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
 
         self.transition_dict[(5, 7)] = {1: [(5, 7), (5, 8), (5, 6)], 
                                         2: [(6, 8), (5, 5), (4, 6), (5, 9)],
@@ -408,11 +408,11 @@ class Board:
                                         3: [(5, 5), (5, 8), (4, 7), (4, 5), (3, 6), (7, 6), (8, 5)],
                                         ORANGE: [(6, 4)]}
         
-        self.transition_dict[(5, 2)] = {1: [(4, 2)], 
-                                        2: [(3, 2), (4, 1)], 
+        self.transition_dict[(5, 2)] = {1: [(4, 2)],
+                                        2: [(3, 2), (4, 1)],
                                         3: [(5, 1), (2, 2), (3, 3)],
-                                        HAS: Certificate.INTEGRITY, 
-                                        JUMP: [(5, 11)]}
+                                        HAS: Certificate.INTEGRITY,
+                                        GOTO: [(5, 11)]}
         
         self.transition_dict[(5, 1)] = {1: [(6, 1), (4, 1)], 
                                         2: [(7, 1), (4, 2)], 
@@ -425,10 +425,10 @@ class Board:
                                         ORANGE: [(5, 9)],
                                         MESSAGE: "Lottery! you have a chance to earn some money!"}
         
-        self.transition_dict[(3, 7)] = {1: [(5, 7)], 
+        self.transition_dict[(3, 7)] = {1: [(5, 7)],
                                         2: [(5, 8), (5, 6), (3, 6), (4, 5)],
                                         3: [(6, 8), (5, 5), (4, 6), (4, 4), (5, 9)], BALANCE: PRIZE_1,
-                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
+                                        GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
         
         self.transition_dict[(4, 6)] = {1: [(4, 6), (4, 7), (3, 6), (5, 6), (4, 5)],
@@ -447,11 +447,11 @@ class Board:
                                         3: [(4, 4)], 
                                         ORANGE: [(4, 3)]}
         
-        self.transition_dict[(4, 3)] = {1: [(4, 2)], 
-                                        2: [(3, 2), (4, 1)], 
+        self.transition_dict[(4, 3)] = {1: [(4, 2)],
+                                        2: [(3, 2), (4, 1)],
                                         3: [(5, 1), (2, 2), (3, 3)],
-                                        HAS: Certificate.HAIRCUT, 
-                                        JUMP: [(8, 3)]}
+                                        HAS: Certificate.HAIRCUT,
+                                        GOTO: [(8, 3)]}
         
         self.transition_dict[(4, 2)] = {1: [(3, 2), (4, 1)], 
                                         2: [(2, 2), (3, 3), (5, 1)],
@@ -478,11 +478,11 @@ class Board:
                                         2: [(3, 5), (4, 2), (2, 2), (2, 4)],
                                         3: [(3, 6), (4, 1), (1, 2), (2, 5)]}
         
-        self.transition_dict[(3, 2)] = {1: [(4, 2), (2, 2), (3, 3)], 
+        self.transition_dict[(3, 2)] = {1: [(4, 2), (2, 2), (3, 3)],
                                         2: [(4, 1), (3, 4), (2, 3), (1, 2)],
                                         3: [(5, 1), (3, 5), (2, 4), (1, 1)],
                                         SURPRISE: True,
-                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
+                                        GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
 
     def init_row2(self):
         self.transition_dict[(2, 5)] = {1: [(2, 5), (1, 6)], 
@@ -510,11 +510,11 @@ class Board:
                                         3: [(2, 4), (3, 3), (4, 2), (1, 1)],
                                         MESSAGE: "Lottery! you have a chance to earn some money!"}
         
-        self.transition_dict[(3, 1)] = {1: [(2, 2)], 
-                                        2: [(2, 3), (3, 2)], 
+        self.transition_dict[(3, 1)] = {1: [(2, 2)],
+                                        2: [(2, 3), (3, 2)],
                                         3: [(2, 4), (3, 3), (4, 2), (1, 1)],
                                         BALANCE: PRIZE_2,
-                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
+                                        GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
 
     def init_row1(self):
@@ -529,11 +529,11 @@ class Board:
                                         NEED: [Certificate.BIRTH], 
                                         ENTRANCE: (1, 2)}
         
-        self.transition_dict[(1, 4)] = {1: [(1, 3)], 
-                                        2: [(1, 2)], 
+        self.transition_dict[(1, 4)] = {1: [(1, 3)],
+                                        2: [(1, 2)],
                                         3: [(1, 1), (2, 2)],
-                                        HAS: Certificate.ID, 
-                                        JUMP: [(8, 9)]}
+                                        HAS: Certificate.ID,
+                                        GOTO: [(8, 9)]}
         
         self.transition_dict[(1, 3)] = {1: [(1, 2)], 
                                         2: [(1, 1), (2, 2)], 
@@ -558,11 +558,11 @@ class Board:
                                         2: [(1, 1), (2, 2)], 
                                         3: [(1, 0), (2, 1), (2, 3)]}
         
-        self.transition_dict[(0, 1)] = {1: [(0, 2)], 
-                                        2: [(1, 2)], 
-                                        3: [(2, 2), (1, 1)], 
+        self.transition_dict[(0, 1)] = {1: [(0, 2)],
+                                        2: [(1, 2)],
+                                        3: [(2, 2), (1, 1)],
                                         HAS: Certificate.TAX,
-                                        JUMP: [(9, 9)]}
+                                        GOTO: [(9, 9)]}
         
         self.transition_dict[(0, 0)] = {1: [(0, 1)], 
                                         2: [(0, 0)], 
@@ -594,4 +594,4 @@ class Board:
                                         2:[(0,0), (0,1)],
                                         3:[(0,0), (0,1)],
                                         HAS: Certificate.TAX, 
-                                        JUMP:[(0,1)]}
+                                        GOTO:[(0,1)]}

@@ -1,40 +1,38 @@
-import sys
 from Certificates import Certificate
 import board
 from dice import Dice
 from surprise import Surprise
 from Player_types import Types
 
-### CONSTANTS ###
-MAXIMUM_PAY = 30
-MAXIMUM_POCKET = 80
-MAX_STOPS = 4
-
-OPTIMI = "optimistic"
-MEAN = "mean"
-MEAN_SURPRISE = -100
-OPTIMI_SURPRISE = 100
+# Action constants
 NAME = "Name: "
 PRE = "\npre: "
 ADD = "\nadd: "
 DEL = "\ndelete: "
 
+# Player constants
+AVERAGE = "average"
+OPTIMISTIC = "optimistic"
+AVERAGE_SURPRISE = -100
+OPTIMISTIC_SURPRISE = 100
+
+# Other constants
+MAX_STOPS = 4
+NUM_OF_50_BILLS = 80
+
 # PROPOSITIONS
-MONEY_FORMAT = "Money_%s"
 AT_FORMAT = "At_%s_%s"
-CERTIFICATES_FORMAT = "has_%s"
 DICE_FORMAT = "dice_%s"
-COME_BACK_FORMAT = "Come_back_to_%s_%s"
-NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
+MONEY_FORMAT = "Money_%s"
+CERTIFICATES_FORMAT = "has_%s"
 NOT_STOP_FORMAT = "Not_Stop_%s"
+NEED_PAY_CELL = "need_pay_%s_%s"
+COME_BACK_FORMAT = "Come_back_to_%s_%s"
 NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
-NEED_PAY_CELL = "need_pay_%s_%s"  #  reut
+NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
 # NOT_OWE = "not_owe_%s"
 # OWE = "owe_%s"
 # NOT_NEEDS_FORMAT = "not_needs_%s"
-
-#  make goal be all not_comebacks and  not needs and at END
-
 
 
 board_game = board.Board(1).transition_dict
@@ -47,33 +45,29 @@ FIRST_STOP_FORMAT = NAME + "Stop_1_at_%s_%s" + PRE + AT_FORMAT + " " + ADD + NOT
 STOP_FORMAT = NAME + "Stop_%s_at_%s_%s" + PRE + AT_FORMAT + " " + NOT_STOP_FORMAT + ADD + NOT_STOP_FORMAT + DEL
 # Name: stop(x) pre:stop(x-1) add: not_stop_x delete:
 
-
 # PAYMENTS:
-PAY_SURPRISE_FORMAT = NAME + "pay_surprise_%s_%s_from_%s" + PRE + AT_FORMAT + " " + NEED_PAY_CELL + " " + MONEY_FORMAT  + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL  + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
+PAY_SURPRISE_FORMAT = NAME + "pay_surprise_%s_%s_from_%s" + PRE + AT_FORMAT + " " + NEED_PAY_CELL + " " + MONEY_FORMAT + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
 # pay surprise p1 from m pre need pay p1 at p1 money m add money m-x not need pay p1 del money m
 # PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + " " + MONEY_FORMAT + " " + OWE + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + " " + NOT_OWE  + DEL + MONEY_FORMAT
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
-# from certain locations in the map you can pay 150 shekels to get where you need.
-
-PAY_CELL = NAME + "pay_%s_At_%s_%s_from_%s" + PRE +NEED_PAY_CELL+ " " + AT_FORMAT +" " + MONEY_FORMAT + ADD +MONEY_FORMAT +" " + NOT_NEED_PAY_CELL  + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
+PAY_CELL = NAME + "pay_%s_At_%s_%s_from_%s" + PRE + NEED_PAY_CELL + " " + AT_FORMAT + " " + MONEY_FORMAT + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
 # pay x at p1 from m pre need_pay_p1 at p1 money m add money m-x not need pay p1 del money m need pay p1
 
-# jump to techef ashuv block
-GOTO_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT # FROM_COMEBACK
+# jump to come back cell
+GOTO_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT  # FROM_COMEBACK
 # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
-# jump to techef ashuv block
 GOTO_MONEY_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + NOT_NEED_PAY_CELL + " " + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT # FROM_COMEBACK
 # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
-JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT +DEL + AT_FORMAT
+# JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + DEL + AT_FORMAT
 # jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
-# put comeback:
-# PUT_COMEBACK = "Name: place_comeback_%s_%s" + PRE + AT_FORMAT + ADD + COME_BACK_FORMAT + DEL + NOT_COME_BACK_FORMAT
-# place comeback at p1 pre: at p1 add: comeback p1 delete: not_CB_p1
-NEW_JUMP_TO_ENTRANCE = NAME + "jump_to_entrance_%s_%s_from_%s_%s" + PRE +  AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT + " " + NOT_COME_BACK_FORMAT
+# jump to a nearby cell to search for certificate/money
+JUMP_TO_ENTRANCE = NAME + "jump_to_entrance_%s_%s_from_%s_%s" + PRE + AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT + DEL + AT_FORMAT + " " + NOT_COME_BACK_FORMAT
+
+
 # jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
 
 # # no need for take certificate?
@@ -82,34 +76,38 @@ NEW_JUMP_TO_ENTRANCE = NAME + "jump_to_entrance_%s_%s_from_%s_%s" + PRE +  AT_FO
 # SHOW_CERTIFICATE = "Name: Show_%s\npre: has_%s\nadd: not_needs_%s\ndelete:"
 # show id pre has id add not needs id
 
-
-############ actions ###########
+# CREATE ACTIONS
 
 def create_move(player):
+    """
+    Creates the moves according to the rules, including pre/add/delete conditions
+    :param player: Average player or optimistic player
+    :return: moves
+    """
     moves = dict()
     ret = []
-    for tile1 in board_game:  # lekol mishbetzet
-        for d in Dice.vals:  # lekol gilgul_kubia
-            for tile2 in board_game[tile1][d]: # lekol mishbetzet she'efshar lehagia elia
+    for tile1 in board_game:  # for every tile
+        for d in Dice.values:  # for every die roll
+            for tile2 in board_game[tile1][d]:  # for every tile accessible from tile1
                 action = dict()
                 action[NAME] = "Move_from_%s_%s_to_%s_%s_with_dice_%s" % (tile1[0], tile1[1], tile2[0], tile2[1], d)
 
                 action[PRE] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
-                for s in range(1, MAX_STOPS+1):
+                for s in range(1, MAX_STOPS + 1):
                     action[PRE] += " " + NOT_STOP_FORMAT % s
 
                 action[ADD] = AT_FORMAT % (tile2[0], tile2[1])
                 action[DEL] = AT_FORMAT % (tile1[0], tile1[1])
 
-                if player == MEAN:
+                if player == AVERAGE:
                     # action[ADD] += " " + DICE_FORMAT % 3
                     # if True: # Todo add here certain cells
                     action[ADD] += " " + DICE_FORMAT % 1
-                    for i in Dice.vals:
+                    for i in Dice.values:
                         if i not in [1]:
                             action[DEL] += " " + DICE_FORMAT % i
-                elif player == OPTIMI:
-                    for d1 in Dice.vals:
+                elif player == OPTIMISTIC:
+                    for d1 in Dice.values:
                         action[ADD] += " " + DICE_FORMAT % d1
 
                 # payments:
@@ -120,127 +118,118 @@ def create_move(player):
                 if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
                     action[PRE] += " " + NOT_NEED_PAY_CELL % tile1
 
-                # # Surprises:
-                # if board.SURPRISE in board_game[tile1]:
-                #     for i in [sur for sur in Surprise.surprises if sur < 0]:
-                #         action[PRE] += " " + NOT_OWE % abs(i)
-
                 # take certificate:
                 if board.HAS in board_game[tile2]:
                     action[ADD] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
 
-                if board.NEED in board_game[tile2] or (board.BALANCE in board_game[tile2] and board_game[tile2][board.BALANCE] < 0):  # if we go to a tile that we can put a come back sign on
+                if board.NEED in board_game[tile2] or (board.BALANCE in board_game[tile2] and
+                                                       board_game[tile2][board.BALANCE] < 0):
                     action[DEL] += " " + COME_BACK_FORMAT % tile2
                     action[ADD] += " " + NOT_COME_BACK_FORMAT % tile2
 
                 # show certificate:
-                if board.NEED in board_game[tile1]:  # if we need to show a certificate in this cell, than we will go and get that certificate
+                if board.NEED in board_game[tile1]:
                     for cert in board_game[tile1][board.NEED]:
-                            action[PRE] += " " + CERTIFICATES_FORMAT % cert
+                        action[PRE] += " " + CERTIFICATES_FORMAT % cert
 
-                if board.WAIT in board_game[tile2]:  # eem heganu leazor, naazor
-                    for i in range(1, board_game[tile2][board.WAIT]+1):
+                # wait turns
+                if board.WAIT in board_game[tile2]:
+                    for i in range(1, board_game[tile2][board.WAIT] + 1):
                         action[DEL] += " " + NOT_STOP_FORMAT % i
 
                 moves[(tile1, tile2, d)] = action
 
     for move in moves:
-        strng = ''.join(['%s%s' % (k,v) for k,v in moves[move].items()])
-        ret.append(strng)
+        all_moves = ''.join(['%s%s' % (k, v) for k, v in moves[move].items()])
+        ret.append(all_moves)
     return ret
 
-                # pay - tomorrow
-                # orange?
 
-
-def create_pay_cell():
+def create_pay_actions():
+    """
+    :return: actions for cells where we need to pay a certain amount of money
+    """
     actions = []
     for tile in board_game:
         if board.BALANCE in board_game[tile]:
-            for m in range(max(0,-board_game[tile][board.BALANCE]), 50*MAXIMUM_POCKET+1, 50):
-                actions.append(PAY_CELL % (-board_game[tile][board.BALANCE], tile[0], tile[1], m, tile[0], tile[1], tile[0], tile[1], m, min(50*MAXIMUM_POCKET,m+board_game[tile][board.BALANCE]), tile[0], tile[1], m, tile[0], tile[1]))
+            for m in range(max(0, -board_game[tile][board.BALANCE]), 50 * NUM_OF_50_BILLS + 1, 50):
+                actions.append(PAY_CELL %
+                               (-board_game[tile][board.BALANCE], tile[0], tile[1], m, tile[0], tile[1], tile[0],
+                                tile[1], m,
+                                min(50 * NUM_OF_50_BILLS, m + board_game[tile][board.BALANCE]), tile[0], tile[1], m,
+                                tile[0], tile[1]))
     return actions
 
 
-def create_jump_to_entrance():
-    jumps = []
+def create_jump_to_entrance_actions():
+    """
+    :return: jump to nearby cells actions
+    """
+    jump_to_entrance_actions = []
     for tile in board_game:
-        if (board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in board_game[tile]:
+        if (board.NEED in board_game[tile] or (
+                board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in \
+                board_game[tile]:
             tile2 = board_game[tile][board.ENTRANCE]
-            # jumps.append(JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
-            jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] , tile[0], tile[1], tile[0], tile[1]))
-        # elif board.SURPRISE in board_game[tile] and board.ENTRANCE in board_game[tile]:
-        #     jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
+            jump_to_entrance_actions.append(JUMP_TO_ENTRANCE % (
+                tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile2[0], tile2[1], tile[0],
+                tile[1], tile[0], tile[1]))
+
+    return jump_to_entrance_actions
 
 
-
-    return jumps
-
-
-# def create_put_comeback():
-#     comeback = []
-#     for tile in board_game:
-#         if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE]<0): # or board.SURPRISE in board_game[tile]: # then there can be techef ashuv
-#                             # place comeback at p1,           pre: at p1,        add: comeback p1 del not CB p1
-#             comeback.append(PUT_COMEBACK % (tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1]))
-#     return comeback
-
-
-def create_pay_surprise(player):
-        pays = []
-        for tile in board_game:
-            if board.SURPRISE in board_game[tile]:  # check if not bug -> meaning of if: if there is a key surprise
-                surprise = 0
-                if player == OPTIMI:
-                    surprise = Surprise.optimistic_expected_surprise
-                elif player == MEAN:
-                    surprise = Surprise.mean_expected_surprise
-                for m in range(max(0,-int(surprise)), 50 * MAXIMUM_POCKET+1, 50):
-                    pays.append(PAY_SURPRISE_FORMAT % (tile[0], tile[1], m, tile[0], tile[1], tile[0], tile[1], m, min(50*MAXIMUM_POCKET, m+surprise), tile[0], tile[1], m, tile[0], tile[1]))
-        return pays
-
-# def create_pay_first_surprise():
-#     pays = []
-#     for tile in board_game:
-#         if board.SURPRISE in board_game[tile]:
-#             for s in [sur for sur in Surprise.surprises if sur < 0]:
-#                 for m in range(abs(s), 50*MAXIMUM_POCKET+1, 50):
-#                     a=2
-#                     # pays.append(PAY_FIRST_SURPRISE % (abs(s), tile[0], tile[1], m, tile[0], tile[1], m, abs(s), min(50*MAXIMUM_POCKET, m+s), tile[0], tile[1], abs(s), m))
-#     return pays
-# pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
+def create_pay_surprise_actions(player):
+    """
+    :param player: type of player - average or dummy
+    :return: Pay surprise actions
+    """
+    surprise_actions = []
+    for tile in board_game:
+        if board.SURPRISE in board_game[tile]:
+            surprise = 0
+            if player == OPTIMISTIC:
+                surprise = Surprise.optimistic_expected_surprise
+            elif player == AVERAGE:
+                surprise = Surprise.avg_player_expected_surprise
+            for m in range(max(0, -int(surprise)), 50 * NUM_OF_50_BILLS + 1, 50):
+                surprise_actions.append(PAY_SURPRISE_FORMAT % (
+                    tile[0], tile[1], m, tile[0], tile[1], tile[0], tile[1], m, min(50 * NUM_OF_50_BILLS, m + surprise),
+                    tile[0], tile[1], m, tile[0], tile[1]))
+    return surprise_actions
 
 
-def create_pay_150():
-    pays = []
+def create_pay_150_actions():
+    """
+    :return: Pay 150 in order to jump directly to an orange cell actions
+    """
+    direct_jump_actions = []
     pay_format = NAME + " pay_150_from_%s_%s_to_%s_%s_with_%s"
     for tile in board_game:
-        if board.ORANGE in board_game[tile]: # check if not bug -> if there is a key orange
+        if board.ORANGE in board_game[tile]:
             for value in board_game[tile][board.ORANGE]:
-                for m in range(150,50*MAXIMUM_POCKET+1, 50):
-                    # can only pay 150 if you have at least 150
-                    # from p1 to p2 with m money  pre at p1 m money add at p2 money m-150 del at p1 money m
+                for m in range(150, 50 * NUM_OF_50_BILLS + 1, 50):
                     name = pay_format % (tile[0], tile[1], value[0], value[1], m)
                     pre = [PRE, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
-                    for s in range(1, MAX_STOPS+1):
+                    for s in range(1, MAX_STOPS + 1):
                         pre.append(NOT_STOP_FORMAT % s)
-                    add = [ADD, AT_FORMAT % (value[0], value[1]), MONEY_FORMAT % (m-150)]
+                    add = [ADD, AT_FORMAT % (value[0], value[1]), MONEY_FORMAT % (m - 150)]
                     delete = [DEL, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
                     if board.HAS in board_game[board_game[tile][board.ORANGE][0]]:
                         add.append(CERTIFICATES_FORMAT % (board_game[board_game[tile][board.ORANGE][0]][board.HAS]))
                     if board.NEED in board_game[tile]:
                         pre.append(CERTIFICATES_FORMAT % board_game[tile][board.NEED][0])
-                    # if board.WAIT in board_game[tile]:
-                    #     delete.append()
 
                     pre = " ".join(pre)
                     add = " ".join(add)
                     delete = " ".join(delete)
-                    pays.append("%s%s%s%s" % (name, pre, add, delete))
-    return pays
+                    direct_jump_actions.append("%s%s%s%s" % (name, pre, add, delete))
+    return direct_jump_actions
 
 
 def create_goto_from_comeback():
+    """
+    :return: go back to where we left a "come back" sign actions
+    """
     goto = []
     for tile in board_game:
 
@@ -254,115 +243,114 @@ def create_goto_from_comeback():
                 goto.append(GOTO_FORMAT % (value[0], value[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
     return goto
 
-
-# don't use for now
-# def create_take_certificate():
-#     takes = []
-#     for tile in erez_dic:
-#         if board.HAS in board_game[tile]:
-#             takes.append(TAKE_CERTIFICATE % (tile[board.HAS], tile[0], tile[1], tile[board.HAS]))
-#     return takes
-
-
-# def create_show_certificate():
-#     show = []
-#     for tile in board_game:
-#         if board.NEED in board_game[tile]:
-#             show.extend([SHOW_CERTIFICATE % (d,d,d) for d in board_game[tile][board.NEED]])
-#     return show
-
-
 def create_stop_action():
-    all = []
+    """
+    :return: wait turns actions
+    """
+    stop_actions = []
     for tile in board_game:
         if board.WAIT in board_game[tile]:
             num_stops = board_game[tile][board.WAIT]
-            stops = [FIRST_STOP_FORMAT % (tile[0], tile[1],tile[0], tile[1])]
-            for x in range(2, num_stops+1):
-                stops.append(STOP_FORMAT % (str(x), tile[0], tile[1], tile[0],tile[1], str(x-1), str(x)))
-            all.extend(stops)
-    return all
+            stops = [FIRST_STOP_FORMAT % (tile[0], tile[1], tile[0], tile[1])]
+            for x in range(2, num_stops + 1):
+                stops.append(STOP_FORMAT % (str(x), tile[0], tile[1], tile[0], tile[1], str(x - 1), str(x)))
+            stop_actions.extend(stops)
+    return stop_actions
 
 
-############ PROPOSITIONS ############
-# def create_not_owe():
-#     owes = []
-#     for i in [sur for sur in Surprise.surprises if sur < 0]:
-#         # owes.append(NOT_OWE % abs
-#         reut =2
-#     return owes
-#
-# def create_owe():
-#     owes = []
-#     for i in [sur for sur in Surprise.surprises if sur < 0]:
-#         reut=2
-#         # owes.append(OWE % abs(i))
-#     return owes
+# CREATE PROPOSITIONS
 
-
-def create_not_need_pay():
-    pays = []
+def create_not_need_pay_props():
+    """
+    :return: propositions for cells where we don't have to pay
+    """
+    not_need_pay_props = []
     for tile in board_game:
         if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]:
-            pays.append(NOT_NEED_PAY_CELL % (tile[0], tile[1]))
-    return pays
+            not_need_pay_props.append(NOT_NEED_PAY_CELL % (tile[0], tile[1]))
+    return not_need_pay_props
 
 
-def create_need_pay():
-    pays = []
+def create_need_pay_props():
+    """
+    :return: propositions for cells where we need to pay
+    """
+    need_pay_props = []
     for tile in board_game:
         if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]:
-            pays.append(NEED_PAY_CELL % (tile[0], tile[1]))
-    return pays
+            need_pay_props.append(NEED_PAY_CELL % (tile[0], tile[1]))
+    return need_pay_props
 
 
-def create_not_stop():
-    not_stop = []
-    for x in range(1, MAX_STOPS+1):
-        not_stop.append(NOT_STOP_FORMAT % (str(x)))
-    return not_stop
+def create_not_stop_props():
+    """
+    :return: propositions for cells where we don't have to wait turns
+    """
+    not_stop_props = []
+    for x in range(1, MAX_STOPS + 1):
+        not_stop_props.append(NOT_STOP_FORMAT % (str(x)))
+    return not_stop_props
 
 
-def create_has_money():
-    has = []
-    for x in range(0, 50*MAXIMUM_POCKET+1, 50):
-        has.append(MONEY_FORMAT % (str(x)))
-    return has
+def create_has_money_props():
+    """
+    :return: propositions for amount of money a player has
+    """
+    has_money_props = []
+    for x in range(0, 50 * NUM_OF_50_BILLS + 1, 50):
+        has_money_props.append(MONEY_FORMAT % (str(x)))
+    return has_money_props
 
 
-def create_dice():
+def create_dice_props():
+    """
+    :return: dice values
+    """
     dice = []
-    for d in Dice.vals:
+    for d in Dice.values:
         dice.append(DICE_FORMAT % (str(d)))
     return dice
 
 
-def create_at():
+def create_at_props():
+    """
+    :return: propositions for players position
+    """
     at = []
     for tile in board_game:
         at.append(AT_FORMAT % tile)
     return at
 
 
-def create_come_back():
-    cbs = []
+def create_come_back_props():
+    """
+    :return: propositions for come back cells
+    """
+    come_backs = []
     for tile in board_game:
-        if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] <0): # or board.SURPRISE in board_game[tile]:
-            cbs.append(COME_BACK_FORMAT % (tile[0], tile[1]))
-    return cbs
+        if board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and
+                                              board_game[tile][board.BALANCE] < 0):
+            come_backs.append(COME_BACK_FORMAT % (tile[0], tile[1]))
+    return come_backs
 
 
-def create_not_come_back():
-    cbs = []
+def create_not_come_back_props():
+    """
+    :return: propositions for not come back cells
+    """
+    not_come_backs = []
     for tile in board_game:
-        if board.NEED in board_game[tile] or board.BALANCE in board_game[tile]:# or board.SURPRISE in board_game[tile]:
+        if board.NEED in board_game[tile] or board.BALANCE in board_game[tile]:
             if board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] > 0:
                 continue
-            cbs.append(NOT_COME_BACK_FORMAT % (tile[0], tile[1]))
-    return cbs
+            not_come_backs.append(NOT_COME_BACK_FORMAT % (tile[0], tile[1]))
+    return not_come_backs
 
 
-def create_certificates():
+def create_certificates_props():
+    """
+    :return: all the possible certificates in the game
+    """
     certificates = {CERTIFICATES_FORMAT % Certificate.GRANDMA,
                     CERTIFICATES_FORMAT % Certificate.INTEGRITY,
                     CERTIFICATES_FORMAT % Certificate.BIRTH,
@@ -373,35 +361,30 @@ def create_certificates():
                     CERTIFICATES_FORMAT % Certificate.HAIRCUT}
     return certificates
 
+
 #############################################################################
 
 def get_propositions():
     props = []
-    props.extend(create_not_need_pay())
-    props.extend(create_certificates())
-    # props.extend(create_not_needs_items())
-    props.extend(create_come_back())
-    props.extend(create_not_come_back())
-    props.extend(create_at())
-    props.extend(create_dice())
-    props.extend(create_has_money())
-    props.extend(create_not_stop())
-    # props.extend(create_not_owe())
-    # props.extend(create_owe())
-    props.extend(create_need_pay())
+    props.extend(create_not_need_pay_props())
+    props.extend(create_certificates_props())
+    props.extend(create_come_back_props())
+    props.extend(create_not_come_back_props())
+    props.extend(create_at_props())
+    props.extend(create_dice_props())
+    props.extend(create_has_money_props())
+    props.extend(create_not_stop_props())
+    props.extend(create_need_pay_props())
     return props
 
 
 def get_actions(player):
     actions = []
     actions.extend(create_move(player))
-    actions.extend(create_pay_cell())
-    actions.extend(create_jump_to_entrance())
-    # actions.extend(create_put_comeback())
-    actions.extend(create_pay_surprise(player))
-    # actions.extend(create_pay_first_surprise())
-    actions.extend(create_pay_150())
-    # actions.extend(create_show_certificate())
+    actions.extend(create_pay_actions())
+    actions.extend(create_jump_to_entrance_actions())
+    actions.extend(create_pay_surprise_actions(player))
+    actions.extend(create_pay_150_actions())
     actions.extend(create_stop_action())
     actions.extend(create_goto_from_comeback())
 
@@ -410,8 +393,8 @@ def get_actions(player):
 
 def create_domain_file(domain_file_name, player):
     agent = Types.OPTIMISTIC.value
-    if player == MEAN:
-        agent = Types.MEAN.value
+    if player == AVERAGE:
+        agent = Types.AVERAGE.value
     file_name = agent + "_" + domain_file_name
     domain_file = open(file_name, 'w')  # use domain_file.write(str) to write to domain_file
 
@@ -429,38 +412,8 @@ def create_domain_file(domain_file_name, player):
     return file_name
 
 
-
-
-### change ###
-# def create_problem_file(problem_file_name_, n_, m_):
-#     disks = ['d_%s' % i for i in list(range(n_))]  # [d_0,..., d_(n_ - 1)]
-#     pegs = ['p_%s' % i for i in list(range(m_))]  # [p_0,..., p_(m_ - 1)]
-#     problem_file = open(problem_file_name_, 'w')  # use problem_file.write(str) to write to problem_file
-#     initial = "Initial state: "
-#     goal = "Goal state: "
-#     for d in range(n_):
-#         initial += PROP_FORMAT % (d, 0)  # all disks start on peg 0
-#         initial += " "
-#         goal += PROP_FORMAT % (d, m-1) + ' ' # all disks go to last peg
-#
-#     problem_file.write(initial + '\n')
-#     problem_file.write(goal)
-#     problem_file.close()
-#
-
 if __name__ == '__main__':
-    # if len(sys.argv) != 2:
-    #     print('Usage: domain_create.py agent_code')
-    #     sys.exit(2)
-    #
-    # input_player = sys.argv[1] # agent_Code
-    # if input_player != Types.MEAN.value and input_player != Types.OPTIMISTIC.value:
-    #     print("Usage: game.py player(optimistic or mean). Bad type player.")
-    #     exit()
-
     domain_file_name = 'domain.txt'
     problem_file_name = 'problem.txt'
 
-
-    create_domain_file(domain_file_name, "mean")
-    # create_problem_file(problem_file_name, code)
+    create_domain_file(domain_file_name, "average")
