@@ -10,28 +10,49 @@ MESSAGE = "message"
 # money we don't have, so we are exiting the game
 JUMP = 'jump'
 
-# The entrance to exit when
+# The entrance to exit when we need to pay or present a certificate, but we don't have the money/certificate
 ENTRANCE = 'entrance'
-BALANCE = 'balance'
-WAIT = 'wait'
-NEED = 'need'
-HAS = 'has'
-SURPRISE = 'surprise'
-PACKAGE = 'package'
-ORANGE = 150
-ONE = 1
-THREE = 3
-FIVE = 5
 
+# How much money we earn/lose in the current node
+BALANCE = 'balance'
+
+# How much turns we need to wait in the current node
+WAIT = 'wait'
+
+# The certificate we need to represent in current node. The player can't move from this node until
+# the player represent it, or go to some entrance
+NEED = 'need'
+
+# The certificate we get in the current node
+HAS = 'has'
+
+# A node that represent surprise
+SURPRISE = 'surprise'
+
+# Represent a node that we can get to if we pay 150 + a player most step on
+ORANGE = 150
+
+# The amount of tax a player need to pay in the node that requires tax payment
 TAX_PAYMENT = -50
+
+# All the amount 0f Prises
 PRISE_1 = 1000
 PRISE_2 = 1500
 PRISE_3 = 500
+
+# Haircut payment
 HAIRCUT_COST = -50
+
+# Package payment
 PACKAGE_COST = -500
 
 
 class Board:
+    """
+    Represent the board of the game. For each location of the board, hold the locations the player
+    can go according to the dice. In each location we also hold extra information- if is a surprise,
+    if it is the hospital, the lottery, or if it
+    """
     loto_cells = {(10,7), (2,1), (4,7)}
 
     def __init__(self, num_players=1, starting_point=(1, 0)):
@@ -477,8 +498,8 @@ class Board:
                                         2: [(2, 5), (1, 5)], 
                                         3: [(1, 4)], 
                                         ORANGE: [(1, 4)],
-                                        BALANCE: -50}#,
-                                        #ENTRANCE: (1, 2)}
+                                        BALANCE: -50,
+                                        ENTRANCE: (1, 2)}
         
         self.transition_dict[(2, 4)] = {1: [(2, 5)], 
                                         2: [(1, 6)], 
