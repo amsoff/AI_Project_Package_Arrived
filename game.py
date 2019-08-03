@@ -190,6 +190,10 @@ def handle_move(plan, player):
         player.cell = (int(action_name.split('_')[5]), int(action_name.split('_')[6]))
         if cell not in board.Board.loto_cells:
             all.append("Move to (%s,%s)" % player.cell)
+
+        if cell in player.come_back_spots:
+            player.come_back_spots.remove(cell)
+
         for prop in action.add:
             if 'has' in prop.name:
                 # need to match the exact name of the certificate
