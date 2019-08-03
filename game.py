@@ -84,7 +84,6 @@ def handle_payments(action, player):
         # if player.money + amount >= 0:
         player.money = min(player.money + amount, dc.MAXIMUM_POCKET * 50)
         player.money = max(0, player.money)
-        # player.owe_surprise = False
         # if cell in player.need_pay_spots:
         #     player.need_pay_spots.remove(cell)
         sign = "+"
@@ -94,7 +93,6 @@ def handle_payments(action, player):
 
         # else:
             # player.owe.append(amount)
-            # player.owe_surprise = True
 
     if 'pay_150_from' in action.name:
         all = []

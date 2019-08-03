@@ -15,8 +15,6 @@ all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
 surprise_amounts = Surprise.surprises
-# Before was- (not corrolated wuth Surprise class!!!!)
-# surprise_amounts = [-300, -200, -100, 100, 200, 300], Surprise.surprises
 
 
 class Player:
@@ -30,20 +28,19 @@ class Player:
     package_cost = 0
     dice = Dice()
     # owe = []
-    owe_surprise = False
 
     def set_type(self, player_type):
         self.type = player_type
 
-    def pay(self, amount):
-        if self.money >= amount:
-            self.money -= amount
-        else:
-            self.owe.append(amount)
+    # def pay(self, amount):
+    #     if self.money >= amount:
+    #         self.money -= amount
+    #     else:
+    #         self.owe.append(amount)
 
 
     def get_goals(self):
-        self.goal = (1,2)
+        self.goal = (11,9)
         goals = [dc.AT_FORMAT % self.goal]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
@@ -94,8 +91,6 @@ class Player:
         initial.extend(self.get_pays())
         # initial.extend(self.get_owes())
         # initial.extend(self.get_not_owes())
-        if self.owe_surprise:
-            initial.append(dc.OWE_SURPRISE)
         return initial
     
     def set_goal(self,cell):

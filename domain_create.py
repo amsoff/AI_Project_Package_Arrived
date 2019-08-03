@@ -30,7 +30,6 @@ NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
 NEED_PAY_CELL = "need_pay_%s_%s"  #  reut
 # NOT_OWE = "not_owe_%s"
 # OWE = "owe_%s"
-OWE_SURPRISE = "owe_surprise"
 # NOT_NEEDS_FORMAT = "not_needs_%s"
 
 #  make goal be all not_comebacks and  not needs and at END
@@ -378,7 +377,6 @@ def get_propositions():
     # props.extend(create_not_owe())
     # props.extend(create_owe())
     props.extend(create_need_pay())
-    # props.append(OWE_SURPRISE)
     return props
 
 
