@@ -218,7 +218,7 @@ def create_pay_150_actions():
                         add.append(CERTIFICATES_FORMAT % (board_game[board_game[tile][board.ORANGE][0]][board.HAS]))
                     if board.NEED in board_game[tile]:
                         pre.append(CERTIFICATES_FORMAT % board_game[tile][board.NEED][0])
-                    if board.JUMP in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
+                    if board.GOTO in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
                         pre.append(NOT_NEED_PAY_CELL % tile)
 
                     pre = " ".join(pre)
@@ -234,12 +234,12 @@ def create_goto_from_comeback():
     """
     goto = []
     for tile in board_game:
-        if board.JUMP in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
-            for value in board_game[tile][board.JUMP]:
+        if board.GOTO in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
+            for value in board_game[tile][board.GOTO]:
                                             # goto      p2      from      p1  pre  not need pay p1 comeback to p2              at p1   add        at p2                not CB p2     delete: pre
                 goto.append(GOTO_MONEY_FORMAT % (value[0], value[1], tile[0], tile[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
-        elif board.JUMP in board_game[tile]:
-            for value in board_game[tile][board.JUMP]:
+        elif board.GOTO in board_game[tile]:
+            for value in board_game[tile][board.GOTO]:
                                             # goto      p2      from      p1  pre comeback to p2              at p1   add        at p2                not CB p2     delete: pre
                 goto.append(GOTO_FORMAT % (value[0], value[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
     return goto
