@@ -27,9 +27,10 @@ class Player:
     need_pay_spots = []
     package_cost = 0
     dice = Dice()
+    goal = (11,9)
     # owe = []
 
-    def __init__(self,goal):
+    def __init__(self,goal=(11,9)):
         self.goal = goal
 
 
