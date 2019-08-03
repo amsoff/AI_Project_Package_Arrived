@@ -68,7 +68,7 @@ JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + 
 # put comeback:
 PUT_COMEBACK = "Name: place_comeback_%s_%s" + PRE + AT_FORMAT + ADD + COME_BACK_FORMAT + DEL + NOT_COME_BACK_FORMAT
 # place comeback at p1 pre: at p1 add: comeback p1 delete: not_CB_p1
-NEW_JUMP_TO_ENTRANCE = NAME + "jump_to_entrance_%s_%s_from_%s_%s" + PRE +  AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT
+NEW_JUMP_TO_ENTRANCE = NAME + "jump_to_entrance_%s_%s_from_%s_%s" + PRE +  AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT +DEL + AT_FORMAT + " " + NOT_COME_BACK_FORMAT
 # jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
 
 # # no need for take certificate?
@@ -161,7 +161,7 @@ def create_jump_to_entrance():
         if (board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in board_game[tile]:
             tile2 = board_game[tile][board.ENTRANCE]
             # jumps.append(JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
-            jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
+            jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] , tile[0], tile[1], tile[0], tile[1]))
         # elif board.SURPRISE in board_game[tile] and board.ENTRANCE in board_game[tile]:
         #     jumps.append(NEW_JUMP_TO_ENTRANCE % (tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1],tile2[0], tile2[1] ,  tile[0], tile[1]))
 
