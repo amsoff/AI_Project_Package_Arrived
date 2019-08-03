@@ -2,10 +2,9 @@ from graphplan.search import a_star_search
 from domain_create import Types
 from graphplan.planning_problem import PlanningProblem, max_level, level_sum
 import domain_create as dc
-import Player_types
+import Constants
 from surprise import Surprise
 from player import Player
-import player
 import Certificates
 from dice import Dice
 import board
@@ -17,9 +16,7 @@ import datetime
 
 dice_obj = Dice()
 board_game = board.Board().transition_dict
-surprise_generator = Surprise()
-DEBUG = True
-GOAL = Player_types.GOAL
+# surprise_generator = Surprise()
 # goal_stack = []
 
 
@@ -258,7 +255,7 @@ def handle_move(plan, player):
 
 
 def write_to_log(string, logs):
-    logs.write(string + "\n") if DEBUG else None
+    logs.write(string + "\n") if Constants.DEBUG else None
 
 
 def prints_game_over(moves, logs, player, elapsed):
@@ -303,7 +300,7 @@ if __name__ == '__main__':
     input_player = sys.argv[1]
     domain_file_name = 'domain.txt'
     problem_file_name = '{}_problem.txt'
-    player = Player(GOAL)
+    player = Player(Constants.GOAL)
 
     if input_player == Types.AVERAGE.value or input_player == Types.OPTIMISTIC.value:
         player.set_type(input_player)
