@@ -18,7 +18,7 @@ surprise_amounts = Surprise.surprises
 
 
 class Player:
-    type = Types.MEAN.value
+    type = Types.AVERAGE.value
     money = 1500
     cell = (1,0)
     has_certificates = []
@@ -27,7 +27,6 @@ class Player:
     need_pay_spots = []
     package_cost = 0
     dice = Dice()
-    # owe = []
 
     def __init__(self,goal):
         self.goal = goal
@@ -45,8 +44,8 @@ class Player:
 
     def get_goals(self):
         goals = [dc.AT_FORMAT % self.goal]
-        goals.extend(dc.create_not_come_back())
-        goals.extend(dc.create_not_need_pay())
+        goals.extend(dc.create_not_come_back_props())
+        goals.extend(dc.create_not_need_pay_props())
         # goals.extend(dc.create_not_needs_items())
         # goals.extend(dc.create_not_owe())
         return goals
@@ -101,8 +100,8 @@ class Player:
 
     def build_problem(self):
         agent = Types.OPTIMISTIC.name.lower()
-        if self.type == Types.MEAN.value:
-            agent = Types.MEAN.name.lower()
+        if self.type == Types.AVERAGE.value:
+            agent = Types.AVERAGE.name.lower()
         file_name = agent + "_" + "problem.txt"
         problem_file = open(file_name, 'w')  # use problem_file.write(str) to write to problem_file
 

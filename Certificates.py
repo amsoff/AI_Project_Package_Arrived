@@ -2,6 +2,9 @@ from enum import Enum
 
 
 class Certificate(Enum):
+    """
+    Different kinds of certificates the player must be asked to present while playing the game
+    """
     GRANDMA = "grandma"
     INTEGRITY = "integrity"
     BIRTH = "birth"
