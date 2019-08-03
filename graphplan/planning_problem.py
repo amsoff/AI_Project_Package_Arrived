@@ -66,7 +66,7 @@ class PlanningProblem:
         self.expanded += 1
         successors = []
         for action in self.actions:
-            if action.all_preconds_in_list(state) and not action.is_noop():
+            if action.all_preconds_in_list(state): # and not action.is_noop(): todo check if this is right
                 next_state = frozenset(state.union(set(action.get_add())).difference(set(action.get_delete())))
                 successors.append((next_state, action, 1))
         return successors
