@@ -1,6 +1,5 @@
 import numpy as np
 from Certificates import Certificate
-from colorama import init, Fore, Back, Style
 
 # All the types of actions and objects a node in the board can hold
 # A message to print to the board
@@ -10,28 +9,51 @@ MESSAGE = "message"
 # money we don't have, so we are exiting the game
 JUMP = 'jump'
 
-# The entrance to exit when
+# The entrance to exit when we need to pay or present a certificate, but we don't have the money/certificate
 ENTRANCE = 'entrance'
-BALANCE = 'balance'
-WAIT = 'wait'
-NEED = 'need'
-HAS = 'has'
-SURPRISE = 'surprise'
-PACKAGE = 'package'
-ORANGE = 150
-ONE = 1
-THREE = 3
-FIVE = 5
 
+# How much money we earn/lose in the current node
+BALANCE = 'balance'
+
+# How much turns we need to wait in the current node
+WAIT = 'wait'
+
+# The certificate we need to represent in current node. The player can't move from this node until
+# the player represent it, or go to some entrance
+NEED = 'need'
+
+# The certificate we get in the current node
+HAS = 'has'
+
+# A node that represent surprise
+SURPRISE = 'surprise'
+
+# Represent a node that we can get to if we pay 150 + a player most step on
+ORANGE = 150
+
+# The amount of tax a player need to pay in the node that requires tax payment
 TAX_PAYMENT = -50
-PRIZE_1 = 1000
-PRIZE_2 = 1500
-PRIZE_3 = 500
+
+# All the amount 0f Prises
+PRISE_1 = 1000
+PRISE_2 = 1500
+PRISE_3 = 500
+
+# Haircut payment
 HAIRCUT_COST = -50
+
+# Package payment
 PACKAGE_COST = -500
 
 
 class Board:
+    """
+    Represent the board of the game. For each location of the board, hold the locations the player
+    can go according to the dice. In each location we also hold extra information- if is a surprise,
+    if it is the hospital, the lottery, or if it
+    """
+
+    # All the lottery cells in the game!
     loto_cells = {(10,7), (2,1), (4,7)}
 
     def __init__(self, num_players=1, starting_point=(1, 0)):
@@ -141,7 +163,7 @@ class Board:
         self.transition_dict[(11, 7)] = {1: [(10, 6)],
                                          2: [(10, 5)],
                                          3: [(9, 5)],
-                                         BALANCE: PRIZE_3,  # POSITIVE
+                                         BALANCE: PRISE_3,  # POSITIVE
                                          JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                          MESSAGE: "Lottery! you won!"}
 
@@ -414,7 +436,7 @@ class Board:
         
         self.transition_dict[(3, 7)] = {1: [(5, 7)], 
                                         2: [(5, 8), (5, 6), (3, 6), (4, 5)],
-                                        3: [(6, 8), (5, 5), (4, 6), (4, 4), (5, 9)], BALANCE: PRIZE_1,
+                                        3: [(6, 8), (5, 5), (4, 6), (4, 4), (5, 9)], BALANCE: PRISE_1,
                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
         
@@ -477,8 +499,8 @@ class Board:
                                         2: [(2, 5), (1, 5)], 
                                         3: [(1, 4)], 
                                         ORANGE: [(1, 4)],
-                                        BALANCE: -50}#,
-                                        #ENTRANCE: (1, 2)}
+                                        BALANCE: -50,
+                                        ENTRANCE: (1, 2)}
         
         self.transition_dict[(2, 4)] = {1: [(2, 5)], 
                                         2: [(1, 6)], 
@@ -501,7 +523,7 @@ class Board:
         self.transition_dict[(3, 1)] = {1: [(2, 2)], 
                                         2: [(2, 3), (3, 2)], 
                                         3: [(2, 4), (3, 3), (4, 2), (1, 1)],
-                                        BALANCE: PRIZE_2,
+                                        BALANCE: PRISE_2, 
                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
 

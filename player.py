@@ -5,6 +5,7 @@ from Player_types import Types
 from surprise import Surprise
 
 
+
 import domain_create as dc
 certificates = Certificate.list()
 
@@ -28,6 +29,10 @@ class Player:
     dice = Dice()
     # owe = []
 
+    def __init__(self,goal):
+        self.goal = goal
+
+
     def set_type(self, player_type):
         self.type = player_type
 
@@ -39,7 +44,6 @@ class Player:
 
 
     def get_goals(self):
-        self.goal = (5, 10)
         goals = [dc.AT_FORMAT % self.goal]
         goals.extend(dc.create_not_come_back())
         goals.extend(dc.create_not_need_pay())
@@ -115,5 +119,5 @@ class Player:
         problem_file.close()
 
 
-pla = Player()
+pla = Player((1,0))
 pla.build_problem()
