@@ -2,10 +2,9 @@ from graphplan.search import a_star_search
 from domain_create import Types
 from graphplan.planning_problem import PlanningProblem, max_level, level_sum
 import domain_create as dc
-import Player_types
+import Constants
 from surprise import Surprise
 from player import Player
-import player
 import Certificates
 from dice import Dice
 import board
@@ -17,12 +16,11 @@ import datetime
 
 ROLLING = "--You rolled a %s --"
 START = "--- Welcome to The Package Arrived game.--- \nYou are positioned at (%s,%s)"
+
+### Game Objects ###
 dice_obj = Dice()
 board_game = board.Board().transition_dict
 surprise_generator = Surprise()
-DEBUG = True
-GOAL = Player_types.GOAL
-# goal_stack = []
 
 
 class GoalStack:
@@ -37,6 +35,11 @@ class GoalStack:
 
 
 def print_plan(plan, logs):
+    """
+    Prints the plan to the screen and to the log file
+    :param plan: the plan
+    :param logs: the log file
+    """
     for a in plan:
         if type(a) != str:
             a = a.name
@@ -45,6 +48,12 @@ def print_plan(plan, logs):
 
 
 def print_current_board(moves, player_obj: Player):
+    """
+    Print the board to the screen and updates the board with the location of the goal and starting point,
+    and updates all the location the player prefirmed
+    :param moves: the moves the player
+    :param player_obj:
+    """
     board_obj = board.Board()
     tmp_board = np.copy(board_obj.board_to_print)
     for i, (x, y) in enumerate(moves):
@@ -59,6 +68,11 @@ def print_current_board(moves, player_obj: Player):
 
 
 def matprint_backwards(mat, board_obj):
+    """
+    Prints the board to the screen according to the board properties and the agent actions
+    :param mat: the current board
+    :param board_obj: the board
+    """
     for i in range(len(mat) - 1, -1, -1):
         for j in range(len(mat[i]) - 1, -1, -1):
             if (i, j) == board_obj.starting_point:
@@ -69,7 +83,7 @@ def matprint_backwards(mat, board_obj):
                 continue
             elif mat[i][j] == "P":
                 print(Back.LIGHTRED_EX + Fore.BLACK + "\u0332|\u0332P", end='')
-            elif (i,j) in board.Board.orange_cells:
+            elif (i, j) in board.Board.orange_cells:
                 print(Back.YELLOW + Fore.BLACK + "\u0332|\u0332 ", end='')
             elif "surprise" in board_obj.transition_dict[(i, j)]:
                 print(Back.MAGENTA + Fore.BLACK + "\u0332|\u0332 ", end='')
@@ -85,6 +99,15 @@ def matprint_backwards(mat, board_obj):
 
 
 def matprint(mat, board_obj):
+    """
+    Prints the screen of the game, and defines the color of the special cells.
+    Surprise- purple
+    Wait turn- blue
+    Player- red with p
+    Circle- cell the agent visited
+    Yellow- orange cell
+    Grey- can step on this cell
+    """
     for i, x in enumerate(mat):
         for j, y in enumerate(x):
             if (i, j) == board_obj.starting_point:
@@ -95,7 +118,7 @@ def matprint(mat, board_obj):
                 continue
             elif mat[i][j] == "P":
                 print(Back.LIGHTRED_EX + Fore.BLACK + "\u0332|\u0332P", end='')
-            elif (i,j) in board.Board.orange_cells:
+            elif (i, j) in board.Board.orange_cells:
                 print(Back.RESET + Fore.BLACK + "\u0332|\u0332 ", end='')
             elif "surprise" in board_obj.transition_dict[(i, j)]:
                 print(Back.MAGENTA + Fore.BLACK + "\u0332|\u0332 ", end='')
@@ -111,6 +134,11 @@ def matprint(mat, board_obj):
 
 
 def handle_stop(plan):
+    """
+    Handles the case we need to wait turn/s
+    :param plan: the plan
+    :return: the description of the moves + number of turns
+    """
     all = []
     for move in plan:
         if 'Stop' in move.name:
@@ -121,22 +149,30 @@ def handle_stop(plan):
 
 
 def handle_payments(action, player):
+    """
+    Handle payment- update the player position and money attribute, and puts need_pay_spots on this cell.
+    Always makes sure the amount of money will be non negative.
+    The actions:
+    1. Pay 150 in order to move from one cell to the other, in a case tha target cell is orange and the agent
+        can land on it in 1,2,3 steps
+    2. Pay X amount since you landed on a cell that requires you to pay for a service
+    3. Surprise- earn or lose money
+    (Lottery is being handeled in the handle_move)
+    :param action: the action of the payment
+    :param player: the agent that preformed the move
+    :return: description of the move + turns
+    """
+    # Pink cell- the Surprise. Randomly choose amount of money
     if 'pay_surprise' in action.name:
-        cell = (int(action.name.split('_')[2]), int(action.name.split('_')[3]))
         amount = surprise_generator.get_surprise()
-        # if player.money + amount >= 0:
         player.money = min(player.money + amount, dc.NUM_OF_50_BILLS * 50)
         player.money = max(0, player.money)
-        # if cell in player.need_pay_spots:
-        #     player.need_pay_spots.remove(cell)
         sign = "+"
         if amount < 0:  # it is a payment and not get money
             sign = "-"
         return ["Got a surprise! Money " + sign + "= " + str(abs(amount))], 0
 
-        # else:
-        # player.owe.append(amount)
-
+    # Pay 150 to move to orange cell. update the player location
     if 'pay_150_from' in action.name:
         all = []
         cell = (int(action.name.split('_')[6]), int(action.name.split('_')[7]))
@@ -145,7 +181,7 @@ def handle_payments(action, player):
         all.append("Paid 150 to jump to (%s,%s)" % cell)
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
-        # need to match the exact name of the certificate
+        # handle the case a cell we are moving to provides a certificate
         for prop in action.add:
             if 'has' in prop.name:
                 # need to match the exact name of the certificate
@@ -156,6 +192,7 @@ def handle_payments(action, player):
                         all.append("Congrats! you hold the %s Certificate!" % cert.name)
         return all, 1
 
+    # Pay X money
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
         amount = int(action.name.split('_')[1])
@@ -170,6 +207,13 @@ def handle_payments(action, player):
 
 
 def handle_goto(action, player):
+    """
+    Handle Goto- update the player position, and removes come_back of this cell from the list. Can
+    only be preformed by the player if and only if a jump action was made
+    :param action: the action of the jump
+    :param player: the agent that preformed the move
+    :return: description of the move
+    """
     cell = int(action.split('_')[1]), int(action.split('_')[2])
     player.cell = cell
     if cell in player.come_back_spots:
@@ -178,6 +222,13 @@ def handle_goto(action, player):
 
 
 def handle_jump_to_entrance(action, player):
+    """
+    Handle jump- update the player position, and puts come_back on this cell. Can only be preformed if
+    the player can't preformed the action the cell requires him to preform (pay or present a certificate)
+    :param action: the action of the jump
+    :param player: the agent that preformed the move
+    :return: description of the move
+    """
     jump_to = (int(action.name.split("_")[3]), int(action.name.split("_")[4]))
     player.cell = jump_to
     player.come_back_spots.append((int(action.name.split('_')[6]), int(action.name.split('_')[7])))
@@ -185,7 +236,17 @@ def handle_jump_to_entrance(action, player):
 
 
 def handle_move(plan, player):
-    all = []
+    """
+    A function that handles the Move action. Since in a cell that we currently at can asks to present
+    certificate/be s lottery cell/be a surprise cell etc., we need to update the player properties in
+    order to build the next plan, and to hold the moves we preformed. The Move action can lead to other
+    action- goto, pay (all the types), jump, we will handle them too, and stop to process the plan when
+    we get to other Move action
+    :param plan: The plan A* build
+    :param player: the agent we need to update
+    :return: all the moves we processed + the amount of turns (usually 1, but in cases like Stop, can be more)
+    """
+    all_current_moves = []
     turns = 1
     action = plan[0]
     action_name = plan[0].name
@@ -193,14 +254,17 @@ def handle_move(plan, player):
         cell = (int(action_name.split('_')[5]), int(action_name.split('_')[6]))
         player.cell = cell
 
+        # update the moves we preformed so far in the cirrent round
         if cell not in board.Board.fake_cells:
-            all.append("Move to (%s,%s)" % player.cell)
+            all_current_moves.append("Move to (%s,%s)" % player.cell)
             if board.MESSAGE in board_game[cell]:
-                all.append(board_game[cell][board.MESSAGE])
+                all_current_moves.append(board_game[cell][board.MESSAGE])
 
+        # if we returned to a cell that we "owe" money or certificate, update the player
         if cell in player.come_back_spots:
             player.come_back_spots.remove(cell)
 
+        # check for certificate
         for prop in action.add:
             if 'has' in prop.name:
                 # need to match the exact name of the certificate
@@ -208,62 +272,79 @@ def handle_move(plan, player):
                 for cert in Certificates.Certificate.list():
                     if str(cert) == certificate and cert not in player.has_certificates:
                         player.has_certificates.append(cert)
-                        all.append("Congrats! you hold the %s Certificate!" % cert.name)
+                        all_current_moves.append("Congrats! you hold the %s Certificate!" % cert.name)
         for prop in action.pre:
             if 'has' in prop.name:
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
-                all.append("presented the certificate: " + certificate)
+                all_current_moves.append("presented the certificate: " + certificate)
 
+    # check if we are at the lottery- and preform another move that simulates the lottery
     if player.cell in board.Board.lotto_cells:
         dice_val = dice_obj.roll_dice()
-        all.append(ROLLING % player.dice_value)
+        all_current_moves.append(ROLLING % player.dice_value)
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
-            all.append("You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
-                board.BALANCE])
+            all_current_moves.append(
+                "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
+                    board.BALANCE])
         turns += 1
 
     for i, action in enumerate(plan):
-        # handle it already
+
+        # handle the move already
         if i == 0:
             continue
 
         # if we encounter another move- we finished the current round
-        if 'Move' in action.name:# or 'pay_150' in action.name:
+        if 'Move' in action.name:  # or 'pay_150' in action.name:
             break
 
+        # In a case the next move is payment, we will preform the payment (lottery, Surprise, a cell
+        # that requires  money, move that requires money) + update the player properties
         if 'pay' in action.name:
             pay, turn = handle_payments(action, player)
             turns += turn
-            all.extend(pay)
+            all_current_moves.extend(pay)
 
+        # In a case where the move we did led us to a cell that require us to wait X turns,
+        # we will wait X turns and update the moves the player did in this round + update the player properties
         elif 'Stop' in action.name:
             stops = handle_stop(plan[i:])
             turns += len(stops)
-            all.extend(stops)
+            all_current_moves.extend(stops)
             break
 
+        # In the case we can go back to a certain cell that we already visited + update the player properties
         elif 'Goto' in action.name:
             goto = handle_goto(action.name, player)
             turns += 1
-            all.extend(goto)
+            all_current_moves.extend(goto)
 
-        # elif 'place_comeback' in action.name:
-        #     cb_to = (action.name.split("_")[2], action.name.split("_")[3])
-        #     player.come_back_spots.append(cb_to)
-        #     all.append("placed comeback at (%s,%s)" % cb_to)
-
+        # In the case we can't pay or don't hold a certain certificate the cell requests we jump
+        # to a given cell + update the player properties + update the moves we did in the current round
         elif 'jump' in action.name:
             jump = handle_jump_to_entrance(action, player)
-            all.extend(jump)
+            all_current_moves.extend(jump)
 
-    return all, turns
+    return all_current_moves, turns
 
 
 def write_to_log(string, logs):
-    logs.write(string + "\n") if DEBUG else None
+    """
+    Writing to the log file of the current game
+    :param string: the string to write to the log file
+    :param logs: the file to write to
+    """
+    logs.write(string + "\n") if Constants.DEBUG else None
 
 
 def prints_game_over(moves, logs, player, elapsed):
+    """
+    Prints messages to the screen and to the log in a case of success
+    :param moves: the moves the player preformed
+    :param logs: the file we write to
+    :param player: the agent that plays
+    :param elapsed: the time in seconds
+    """
     print_plan(moves, logs)
     print("Money: %d" % player.money)
     write_to_log("Money: %d" % player.money, logs)
@@ -274,6 +355,12 @@ def prints_game_over(moves, logs, player, elapsed):
 
 
 def print_exit(logs, plan, moves):
+    """
+    Prints messages in the case the plan fails, and exit the game
+    :param logs: the file tp write to
+    :param plan: the plan the A* builded
+    :param moves: the moves so far the agent preformed
+    """
     print("plan doesn't start with move!!! The current action was:")
     write_to_log("plan doesn't start with move!!! The current action was:", logs)
     print(plan[0].name)
@@ -287,6 +374,13 @@ def print_exit(logs, plan, moves):
 
 
 def write_current_move_logs(inner_past_moves, inner_player, inner_turns, inner_logs):
+    """
+    Writes to the log file all the moves the agent preform in this round
+    :param inner_past_moves: all the moves up to this round
+    :param inner_player: the agent that plays
+    :param inner_turns: the number of turns the agent played s far
+    :param inner_logs: the file we are writing to
+    """
     write_to_log("round %s" % inner_turns, inner_logs)
     inner_past_moves.append((inner_player.cell[0], inner_player.cell[1]))
     print_current_board(inner_past_moves, inner_player)
@@ -309,7 +403,7 @@ if __name__ == '__main__':
     input_player = sys.argv[1]
     domain_file_name = 'domain.txt'
     problem_file_name = '{}_problem.txt'
-    player = Player(GOAL)
+    player = Player(Constants.GOAL)
 
     # Update the file names
     if input_player == Types.AVERAGE.value or input_player == Types.OPTIMISTIC.value:
@@ -370,7 +464,7 @@ if __name__ == '__main__':
                 moves.extend(move)
                 write_to_log("current moves done:", logs)
                 print_plan(move, logs)
-                write_current_move_logs(past_moves,player,turns,logs)
+                write_current_move_logs(past_moves, player, turns, logs)
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue
@@ -384,7 +478,7 @@ if __name__ == '__main__':
                 write_to_log("current moves done:", logs)
                 print_plan(move, logs)
                 moves.extend(move)
-                write_current_move_logs(past_moves,player,turns,logs)
+                write_current_move_logs(past_moves, player, turns, logs)
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue

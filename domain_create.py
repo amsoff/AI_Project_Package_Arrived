@@ -2,71 +2,63 @@ from Certificates import Certificate
 import board
 from dice import Dice
 from surprise import Surprise
-from Player_types import Types
+from Constants import Types
+import Constants
 
 # Action constants
-NAME = "Name: "
-PRE = "\npre: "
-ADD = "\nadd: "
-DEL = "\ndelete: "
+NAME = Constants.NAME
+PRE = Constants.PRE
+ADD = Constants.ADD
+DEL = Constants.DEL
 
 # Player constants
-AVERAGE = "average"
-OPTIMISTIC = "optimistic"
-AVERAGE_SURPRISE = -100
-OPTIMISTIC_SURPRISE = 100
+AVERAGE = Constants.AVERAGE
+OPTIMISTIC = Constants.OPTIMISTIC
 
-# Other constants
-MAX_STOPS = 4
-NUM_OF_50_BILLS = 80
 
 # PROPOSITIONS
-AT_FORMAT = "At_%s_%s"
-DICE_FORMAT = "dice_%s"
-MONEY_FORMAT = "Money_%s"
-CERTIFICATES_FORMAT = "has_%s"
-NOT_STOP_FORMAT = "Not_Stop_%s"
-NEED_PAY_CELL = "need_pay_%s_%s"
-COME_BACK_FORMAT = "Come_back_to_%s_%s"
-NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
-NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
-# NOT_OWE = "not_owe_%s"
-# OWE = "owe_%s"
+AT_FORMAT = Constants.AT_FORMAT
+DICE_FORMAT = Constants.DICE_FORMAT
+MONEY_FORMAT = Constants.MONEY_FORMAT
+CERTIFICATES_FORMAT = Constants.CERTIFICATES_FORMAT
+NOT_STOP_FORMAT = Constants.NOT_STOP_FORMAT
+NEED_PAY_CELL = Constants.NEED_PAY_CELL
+COME_BACK_FORMAT = Constants.COME_BACK_FORMAT
+NOT_NEED_PAY_CELL = Constants.NOT_NEED_PAY_CELL
+NOT_COME_BACK_FORMAT = Constants.NOT_COME_BACK_FORMAT
 # NOT_NEEDS_FORMAT = "not_needs_%s"
 
 
-board_game = board.Board(1).transition_dict
+board_game = board.Board().transition_dict
 
 # ACTIONS:
-
 # STOP:
-FIRST_STOP_FORMAT = NAME + "Stop_1_at_%s_%s" + PRE + AT_FORMAT + " " + ADD + NOT_STOP_FORMAT % 1 + DEL
+FIRST_STOP_FORMAT = Constants.FIRST_STOP_FORMAT
 # Name: stop1 pre: add: not_stop_1 delete:
-STOP_FORMAT = NAME + "Stop_%s_at_%s_%s" + PRE + AT_FORMAT + " " + NOT_STOP_FORMAT + ADD + NOT_STOP_FORMAT + DEL
+STOP_FORMAT = Constants.STOP_FORMAT
 # Name: stop(x) pre:stop(x-1) add: not_stop_x delete:
 
 # PAYMENTS:
-PAY_SURPRISE_FORMAT = NAME + "pay_surprise_%s_%s_from_%s" + PRE + AT_FORMAT + " " + NEED_PAY_CELL + " " + MONEY_FORMAT + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
+PAY_SURPRISE_FORMAT = Constants.PAY_SURPRISE_FORMAT
 # pay surprise p1 from m pre need pay p1 at p1 money m add money m-x not need pay p1 del money m
 # PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + " " + MONEY_FORMAT + " " + OWE + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + " " + NOT_OWE  + DEL + MONEY_FORMAT
 # pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
-PAY_CELL = NAME + "pay_%s_At_%s_%s_from_%s" + PRE + NEED_PAY_CELL + " " + AT_FORMAT + " " + MONEY_FORMAT + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + DEL + MONEY_FORMAT + " " + NEED_PAY_CELL
+PAY_CELL = Constants.PAY_CELL
 # pay x at p1 from m pre need_pay_p1 at p1 money m add money m-x not need pay p1 del money m need pay p1
 
 # jump to come back cell
-GOTO_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT  # FROM_COMEBACK
+GOTO_FORMAT = Constants.GOTO_FORMAT
 # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
-GOTO_MONEY_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + NOT_NEED_PAY_CELL + " " + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT # FROM_COMEBACK
+GOTO_MONEY_FORMAT = Constants.GOTO_MONEY_FORMAT
 # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
 # JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + DEL + AT_FORMAT
 # jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
 # jump to a nearby cell to search for certificate/money
-JUMP_TO_ENTRANCE = NAME + "jump_to_entrance_%s_%s_from_%s_%s" + PRE + AT_FORMAT + ADD + COME_BACK_FORMAT + " " + AT_FORMAT + DEL + AT_FORMAT + " " + NOT_COME_BACK_FORMAT
-
+JUMP_TO_ENTRANCE = Constants.JUMP_TO_ENTRANCE
 
 # jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
 
@@ -93,7 +85,7 @@ def create_move(player):
                 action[NAME] = "Move_from_%s_%s_to_%s_%s_with_dice_%s" % (tile1[0], tile1[1], tile2[0], tile2[1], d)
 
                 action[PRE] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
-                for s in range(1, MAX_STOPS + 1):
+                for s in range(1, Constants.MAX_STOPS + 1):
                     action[PRE] += " " + NOT_STOP_FORMAT % s
 
                 action[ADD] = AT_FORMAT % (tile2[0], tile2[1])
@@ -152,11 +144,11 @@ def create_pay_actions():
     actions = []
     for tile in board_game:
         if board.BALANCE in board_game[tile]:
-            for m in range(max(0, -board_game[tile][board.BALANCE]), 50 * NUM_OF_50_BILLS + 1, 50):
+            for m in range(max(0, -board_game[tile][board.BALANCE]), 50 * Constants.NUM_OF_50_BILLS + 1, 50):
                 actions.append(PAY_CELL %
                                (-board_game[tile][board.BALANCE], tile[0], tile[1], m, tile[0], tile[1], tile[0],
                                 tile[1], m,
-                                min(50 * NUM_OF_50_BILLS, m + board_game[tile][board.BALANCE]), tile[0], tile[1], m,
+                                min(50 * Constants.NUM_OF_50_BILLS, m + board_game[tile][board.BALANCE]), tile[0], tile[1], m,
                                 tile[0], tile[1]))
     return actions
 
@@ -191,9 +183,9 @@ def create_pay_surprise_actions(player):
                 surprise = Surprise.optimistic_expected_surprise
             elif player == AVERAGE:
                 surprise = Surprise.avg_player_expected_surprise
-            for m in range(max(0, -int(surprise)), 50 * NUM_OF_50_BILLS + 1, 50):
+            for m in range(max(0, -int(surprise)), 50 * Constants.NUM_OF_50_BILLS + 1, 50):
                 surprise_actions.append(PAY_SURPRISE_FORMAT % (
-                    tile[0], tile[1], m, tile[0], tile[1], tile[0], tile[1], m, min(50 * NUM_OF_50_BILLS, m + surprise),
+                    tile[0], tile[1], m, tile[0], tile[1], tile[0], tile[1], m, min(50 * Constants.NUM_OF_50_BILLS, m + surprise),
                     tile[0], tile[1], m, tile[0], tile[1]))
     return surprise_actions
 
@@ -207,10 +199,10 @@ def create_pay_150_actions():
     for tile in board_game:
         if board.ORANGE in board_game[tile]:
             for value in board_game[tile][board.ORANGE]:
-                for m in range(150, 50 * NUM_OF_50_BILLS + 1, 50):
+                for m in range(150, 50 * Constants.NUM_OF_50_BILLS + 1, 50):
                     name = pay_format % (tile[0], tile[1], value[0], value[1], m)
                     pre = [PRE, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
-                    for s in range(1, MAX_STOPS + 1):
+                    for s in range(1, Constants.MAX_STOPS + 1):
                         pre.append(NOT_STOP_FORMAT % s)
                     add = [ADD, AT_FORMAT % (value[0], value[1]), MONEY_FORMAT % (m - 150)]
                     delete = [DEL, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
@@ -288,7 +280,7 @@ def create_not_stop_props():
     :return: propositions for cells where we don't have to wait turns
     """
     not_stop_props = []
-    for x in range(1, MAX_STOPS + 1):
+    for x in range(1, Constants.MAX_STOPS + 1):
         not_stop_props.append(NOT_STOP_FORMAT % (str(x)))
     return not_stop_props
 
@@ -298,7 +290,7 @@ def create_has_money_props():
     :return: propositions for amount of money a player has
     """
     has_money_props = []
-    for x in range(0, 50 * NUM_OF_50_BILLS + 1, 50):
+    for x in range(0, 50 * Constants.NUM_OF_50_BILLS + 1, 50):
         has_money_props.append(MONEY_FORMAT % (str(x)))
     return has_money_props
 
@@ -413,8 +405,8 @@ def create_domain_file(domain_file_name, player):
     return file_name
 
 
-if __name__ == '__main__':
-    domain_file_name = 'domain.txt'
-    problem_file_name = 'problem.txt'
-
-    create_domain_file(domain_file_name, "average")
+# if __name__ == '__main__':
+#     domain_file_name = 'domain.txt'
+#     problem_file_name = 'problem.txt'
+#
+#     create_domain_file(domain_file_name, "average")

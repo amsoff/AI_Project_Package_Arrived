@@ -1,48 +1,31 @@
-from dice import Dice
 import board
 from Certificates import Certificate
-from Player_types import Types
-import Player_types
-from surprise import Surprise
-
-
-
+from Constants import Types
+import Constants
 import domain_create as dc
 certificates = Certificate.list()
 
-GOAL = Player_types.GOAL
-START = Player_types.START
-
-board_game = board.Board(1).transition_dict
+board_game = board.Board().transition_dict
 all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
-surprise_amounts = Surprise.surprises
-
-
 class Player:
     type = Types.AVERAGE.value
-    money = 1500
-    cell = START
+    money = Constants.PLAYER_STARTING_MONEY
+    cell = Constants.START
     has_certificates = []
-    dice_value = 3
+    dice_value = 0
     come_back_spots = []
     need_pay_spots = []
-    package_cost = 0
-    dice = Dice()
+    # package_cost = 0
 
-    def __init__(self,goal=GOAL):
+    def __init__(self,goal=Constants.GOAL):
         self.goal = goal
 
 
     def set_type(self, player_type):
         self.type = player_type
 
-    # def pay(self, amount):
-    #     if self.money >= amount:
-    #         self.money -= amount
-    #     else:
-    #         self.owe.append(amount)
 
 
     def get_goals(self):
@@ -50,7 +33,6 @@ class Player:
         goals.extend(dc.create_not_come_back_props())
         goals.extend(dc.create_not_need_pay_props())
         # goals.extend(dc.create_not_needs_items())
-        # goals.extend(dc.create_not_owe())
         return goals
 
     def get_certificates_props(self):
@@ -69,7 +51,7 @@ class Player:
 
     def get_stops(self):
         stops = []
-        for i in range(1, dc.MAX_STOPS + 1):
+        for i in range(1, Constants.MAX_STOPS + 1):
             stops.append(dc.NOT_STOP_FORMAT % i)
         return stops
 
@@ -78,13 +60,7 @@ class Player:
         pays = [dc.NOT_NEED_PAY_CELL % cell for cell in payment_spots.difference(self.need_pay_spots)]
         return pays
 
-    # def get_owes(self):
-    #     owes = [dc.OWE % amount for amount in self.owe]
-    #     return owes
-    
-    # def get_not_owes(self):
-    #     owes = [dc.NOT_OWE % abs(d) for d in surprise_amounts if d < 0 and abs(d) not in self.owe]
-    #     return owes
+
 
     def get_initial(self):
         initial = [dc.AT_FORMAT % self.cell,
@@ -121,5 +97,5 @@ class Player:
         problem_file.close()
 
 
-pla = Player(GOAL)
+pla = Player(Constants.GOAL)
 pla.build_problem()

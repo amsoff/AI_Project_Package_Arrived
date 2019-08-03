@@ -1,6 +1,6 @@
 import numpy as np
 from Certificates import Certificate
-import Player_types
+import Constants
 
 # All the types of actions and objects a node in the board can hold
 # A message to print to the board
@@ -52,7 +52,7 @@ class Board:
     fake_cells = {(11, 7), (3, 7), (3, 1)}
     orange_cells = [(11, 11), (11, 3), (8, 4), (6, 4), (6, 7), (5, 2), (4, 3), (1, 4), (0, 1), (5, 9),(8,9),(9,11)]
 
-    def __init__(self, num_players=1, starting_point=Player_types.START):
+    def __init__(self, num_players=1, starting_point=Constants.START):
         self.board_w = 12
         self.board_h = 12
         self.starting_point = starting_point
