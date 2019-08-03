@@ -56,6 +56,7 @@ class Board:
         self.num_players = num_players
         self.transition_dict = {}
         self.init_dict()
+        # self.init_test()
         self.board_to_print = self.build_board_for_print()
 
     def get_cell(self, cell):
@@ -589,8 +590,8 @@ class Board:
                                         2:[(2,2)], 
                                         3:[(2,2)]}
         
-        self.transition_dict[(2, 2)] = {1:[(0,0)],
-                                        2:[(0,0)],
-                                        3:[(0,0)],
-                                        HAS: Certificate.TAX,
-                                        GOTO:[(0, 1)]}
+        self.transition_dict[(2, 2)] = {1:[(0,0), (0,1)],
+                                        2:[(0,0), (0,1)],
+                                        3:[(0,0), (0,1)],
+                                        HAS: Certificate.TAX, 
+                                        GOTO:[(0,1)]}

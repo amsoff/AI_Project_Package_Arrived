@@ -28,7 +28,7 @@ class Player:
     package_cost = 0
     dice = Dice()
 
-    def __init__(self,goal):
+    def __init__(self,goal=(11,9)):
         self.goal = goal
 
 

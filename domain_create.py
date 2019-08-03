@@ -58,6 +58,9 @@ PAY_CELL = NAME + "pay_%s_At_%s_%s_from_%s" + PRE + NEED_PAY_CELL + " " + AT_FOR
 GOTO_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT  # FROM_COMEBACK
 # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
+GOTO_MONEY_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + NOT_NEED_PAY_CELL + " " + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT # FROM_COMEBACK
+# goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
+
 # JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + DEL + AT_FORMAT
 # jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
@@ -227,15 +230,18 @@ def create_goto_from_comeback():
     """
     :return: go back to where we left a "come back" sign actions
     """
-    goto_actions = []
+    goto = []
     for tile in board_game:
-        if board.GOTO in board_game[tile]:
-            for value in board_game[tile][board.GOTO]:
-                goto_actions.append(GOTO_FORMAT % (
-                    value[0], value[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1],
-                    value[0], value[1], value[0], value[1], tile[0], tile[1]))
-    return goto_actions
 
+        if board.JUMP in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
+            for value in board_game[tile][board.JUMP]:
+                                            # goto      p2      from      p1  pre  not need pay p1 comeback to p2              at p1   add        at p2                not CB p2     delete: pre
+                goto.append(GOTO_MONEY_FORMAT % (value[0], value[1], tile[0], tile[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
+        elif board.JUMP in board_game[tile]:
+            for value in board_game[tile][board.JUMP]:
+                                            # goto      p2      from      p1  pre comeback to p2              at p1   add        at p2                not CB p2     delete: pre
+                goto.append(GOTO_FORMAT % (value[0], value[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
+    return goto
 
 def create_stop_action():
     """

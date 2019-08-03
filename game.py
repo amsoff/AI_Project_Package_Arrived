@@ -188,8 +188,10 @@ def handle_move(plan, player):
     action_name = plan[0].name
     if 'Move' in plan[0].name:
         player.cell = (int(action_name.split('_')[5]), int(action_name.split('_')[6]))
-        if cell not in board.Board.lotto_cells:
-            all.append("Move to (%s,%s)" % player.cell)
+
+        if cell in player.come_back_spots:
+            player.come_back_spots.remove(cell)
+
         for prop in action.add:
             if 'has' in prop.name:
                 # need to match the exact name of the certificate
@@ -202,6 +204,10 @@ def handle_move(plan, player):
             if 'has' in prop.name:
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
                 all.append("presented the certificate: " + certificate)
+
+        if cell not in board.Board.lotto_cells:
+            all.append("Move to (%s,%s)" % player.cell)
+
     if player.cell in board.Board.lotto_cells:
         dice_val = dice_obj.roll_dice()
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
@@ -209,13 +215,14 @@ def handle_move(plan, player):
             all.append("You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
                 board.BALANCE])
         turns += 1
+
     for i, action in enumerate(plan):
         # handle it already
         if i == 0:
             continue
 
         # if we encounter another move- we finished the current round
-        if 'Move' in action.name or 'pay_150' in action.name:
+        if 'Move' in action.name:# or 'pay_150' in action.name:
             break
 
         if 'pay' in action.name:
@@ -334,6 +341,7 @@ if __name__ == '__main__':
                 cell = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
                 move = handle_jump_to_entrance(plan[0], player)
                 moves.extend(move)
+                write_current_move_logs(past_moves,player,turns,logs)
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue
@@ -341,7 +349,9 @@ if __name__ == '__main__':
             elif 'Goto' in plan[0].name:
                 cell = int(plan[0].name.split('_')[1]), int(plan[0].name.split('_')[2])
                 move = handle_goto(plan[0].name, player)
+                player.cell = cell
                 moves.extend(move)
+                write_current_move_logs(past_moves,player,turns,logs)
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue
