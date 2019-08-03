@@ -67,7 +67,7 @@ def matprint_backwards(mat, board_obj):
                 continue
             elif mat[i][j] == "P":
                 print(Back.LIGHTRED_EX + Fore.BLACK + "\u0332|\u0332P", end='')
-            elif "orange" in board_obj.transition_dict[(i, j)]:
+            elif (i,j) in board.Board.orange_cells:
                 print(Back.YELLOW + Fore.BLACK + "\u0332|\u0332 ", end='')
             elif "surprise" in board_obj.transition_dict[(i, j)]:
                 print(Back.MAGENTA + Fore.BLACK + "\u0332|\u0332 ", end='')
@@ -93,8 +93,8 @@ def matprint(mat, board_obj):
                 continue
             elif mat[i][j] == "P":
                 print(Back.LIGHTRED_EX + Fore.BLACK + "\u0332|\u0332P", end='')
-            elif "orange" in board_obj.transition_dict[(i, j)]:
-                print(Back.YELLOW + Fore.BLACK + "\u0332|\u0332 ", end='')
+            elif (i,j) in board.Board.orange_cells:
+                print(Back.RESET + Fore.BLACK + "\u0332|\u0332 ", end='')
             elif "surprise" in board_obj.transition_dict[(i, j)]:
                 print(Back.MAGENTA + Fore.BLACK + "\u0332|\u0332 ", end='')
             elif "wait" in board_obj.transition_dict[(i, j)]:
@@ -130,7 +130,7 @@ def handle_payments(action, player):
         sign = "+"
         if amount < 0:  # it is a payment and not get money
             sign = "-"
-        return ["got a surprise! money " + sign + "= " + str(abs(amount))], 0
+        return ["Got a surprise! Money " + sign + "= " + str(abs(amount))], 0
 
         # else:
         # player.owe.append(amount)
@@ -163,7 +163,7 @@ def handle_payments(action, player):
         sign = "+"
         if amount > 0:  # then it is a payment and not to get money
             sign = "-"
-        return ["money " + sign + "= " + str(abs(amount))], 0
+        return ["Money " + sign + "= " + str(abs(amount))], 0
     return None
 
 
@@ -179,7 +179,7 @@ def handle_jump_to_entrance(action, player):
     jump_to = (int(action.name.split("_")[3]), int(action.name.split("_")[4]))
     player.cell = jump_to
     player.come_back_spots.append((int(action.name.split('_')[6]), int(action.name.split('_')[7])))
-    return ["jumped to (%s,%s) to search" % jump_to]
+    return ["Jumped to (%s,%s) to search" % jump_to]
 
 
 def handle_move(plan, player):
@@ -318,7 +318,7 @@ if __name__ == '__main__':
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
-    moves = ["--- Welcome to the package Arrive Game.--- \nYou are positioned at (%s,%s)" % player.cell]
+    moves = ["--- Welcome to The Package Arrived game.--- \nYou are positioned at (%s,%s)" % player.cell]
     past_moves = [player.cell]
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
