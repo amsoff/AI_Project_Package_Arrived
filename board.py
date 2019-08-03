@@ -5,59 +5,49 @@ from Certificates import Certificate
 # A message to print to the board
 MESSAGE = "message"
 
-# Represent a jump to a node when we need to represent certificate or to pay amount of
-# money we don't have, so we are exiting the game
+# When we get a certificate/money we can jump to where we were asked to present the certificate/pay the money
 JUMP = 'jump'
 
-# The entrance to exit when we need to pay or present a certificate, but we don't have the money/certificate
+# A nearby cell to our current location to jump to once we need to search the board for a certificate/money
 ENTRANCE = 'entrance'
 
-# How much money we earn/lose in the current node
+# How much money we earn/lose in the current cell
 BALANCE = 'balance'
 
-# How much turns we need to wait in the current node
+# How many turns we need to wait in the current cell
 WAIT = 'wait'
 
-# The certificate we need to represent in current node. The player can't move from this node until
-# the player represent it, or go to some entrance
+# The certificate we need to display in the current cell.
 NEED = 'need'
 
-# The certificate we get in the current node
+# The certificate we get in the current cell
 HAS = 'has'
 
-# A node that represent surprise
+# A cell that represents surprise
 SURPRISE = 'surprise'
 
-# Represent a node that we can get to if we pay 150 + a player most step on
+# Represents a must go to cell. If we are one die throw away we can pay 150 and get there directly
 ORANGE = 150
 
-# The amount of tax a player need to pay in the node that requires tax payment
-TAX_PAYMENT = -50
+# Lottery prizes
 PRIZE_1 = 1000
 PRIZE_2 = 1500
 PRIZE_3 = 500
 
-# All the amount 0f Prises
-PRISE_1 = 1000
-PRISE_2 = 1500
-PRISE_3 = 500
-
-# Haircut payment
+# Costs
 HAIRCUT_COST = -50
-
-# Package payment
+TAX_COST = -50
 PACKAGE_COST = -500
 
 
 class Board:
     """
-    Represent the board of the game. For each location of the board, hold the locations the player
-    can go according to the dice. In each location we also hold extra information- if is a surprise,
-    if it is the hospital, the lottery, or if it
+    Represent the board game. For each location in the board, holds the locations the player
+    can get to according to the dic. We also hold extra information such as payments, surprise cells etc.
     """
 
     # All the lottery cells in the game!
-    loto_cells = {(10,7), (2,1), (4,7)}
+    lotto_cells = {(10, 7), (2, 1), (4, 7)}
 
     def __init__(self, num_players=1, starting_point=(1, 0)):
         self.board_w = 12
@@ -207,8 +197,7 @@ class Board:
                                         2: [(7, 5), (9, 3), (9, 7)],
                                         3: [(7, 6), (9, 8), (9, 2), (6, 5)],
                                         SURPRISE: True,
-                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}#,
-                                        #ENTRANCE: (8, 5)}
+                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
 
         self.transition_dict[(9, 6)] = {1: [(9, 7), (9, 5)],
                                         2: [(8, 5), (9, 4), (9, 8)],
@@ -272,7 +261,7 @@ class Board:
                                         BALANCE: HAIRCUT_COST,  # negative
                                         JUMP: [(11, 11)],
                                         HAS: Certificate.PASSPORT,
-                                        ENTRANCE: (8,5)}
+                                        ENTRANCE: (8, 5)}
 
         self.transition_dict[(8, 5)] = {1: [(7, 5), (9, 5), (8, 5)],
                                         2: [(7, 6), (6, 5), (9, 6), (9, 4), (8, 5)],
@@ -325,8 +314,7 @@ class Board:
                                         2: [(9, 1), (5, 1)],
                                         3: [(9, 2), (9, 0), (4, 1)],
                                         SURPRISE: True,
-                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}#,
-                                        #ENTRANCE: (6, 1)}
+                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
 
     def init_row6(self):
 
@@ -361,7 +349,7 @@ class Board:
                                         2: [(6, 4), (6, 2)],
                                         3: [(5, 2)],
                                         ORANGE: [(5, 2)],
-                                        MESSAGE: "!!! POLICE !!!You are at the police station"}
+                                        MESSAGE: "!!! POLICE !!! You are at the police station"}
 
         self.transition_dict[(6, 3)] = {1: [(6, 3), (6, 2)],
                                         2: [(5, 2)],
@@ -404,7 +392,6 @@ class Board:
                                         ORANGE: [(5, 9)],
                                         SURPRISE: True,
                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
-                                        #, ENTRANCE: (11, 8)}
 
         self.transition_dict[(5, 7)] = {1: [(5, 7), (5, 8), (5, 6)], 
                                         2: [(6, 8), (5, 5), (4, 6), (5, 9)],
@@ -495,8 +482,7 @@ class Board:
                                         2: [(4, 1), (3, 4), (2, 3), (1, 2)],
                                         3: [(5, 1), (3, 5), (2, 4), (1, 1)],
                                         SURPRISE: True,
-                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}#,
-                                        #ENTRANCE: (3, 3)}
+                                        JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}
 
     def init_row2(self):
         self.transition_dict[(2, 5)] = {1: [(2, 5), (1, 6)], 
@@ -537,6 +523,7 @@ class Board:
                                         ORANGE: [(1, 4)],
                                         NEED: [Certificate.PASSPORT], 
                                         ENTRANCE: (1, 2)}
+
         self.transition_dict[(1, 5)] = {1: [(1, 4)], 2: [(1, 5)], 3: [(1, 5)], 
                                         ORANGE: [(1, 4)],
                                         NEED: [Certificate.BIRTH], 
@@ -583,7 +570,6 @@ class Board:
                                         ORANGE: [(0, 1)],
                                         NEED: [Certificate.INTEGRITY], 
                                         ENTRANCE: (1, 0)}
-
 
     def init_test(self):
         self.transition_dict[(0, 0)] = {1:[(0,1)], 
