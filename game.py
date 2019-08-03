@@ -17,7 +17,18 @@ dice_obj = Dice()
 board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 DEBUG = True
+GOAL = (11,9)
+# goal_stack = []
 
+
+class Goal_stack:
+    def __init__(self):
+        self.stack = []
+    def push(self,obj):
+        self.stack.append(obj)
+
+    def pop(self,obj):
+        return self.stack.pop()
 
 def print_plan(plan, logs):
     for a in plan:
@@ -30,12 +41,42 @@ def print_plan(plan, logs):
 def print_current_board(moves, player_obj: Player):
     board_obj = board.Board()
     tmp_board = np.copy(board_obj.board_to_print)
-    for (x, y) in moves:
-        tmp_board[x][y] = "O"
+    for i, (x, y) in enumerate(moves):
+        try:
+            tmp_board[x][y] = "O%s" % i
+        except:
+            print(type(tmp_board[x][y]))
     tmp_board[player_obj.cell[0]][player_obj.cell[1]] = "P"
     tmp_board[player_obj.goal[0]][player_obj.goal[1]] = "G"
 
-    matprint(tmp_board, board_obj)
+    matprint_backwards(tmp_board, board_obj)
+
+def matprint_backwards(mat, board_obj):
+    for i in range (len(mat)-1,-1,-1):
+        for j in range(len(mat[i])-1,-1,-1):
+            if (i, j) == board_obj.starting_point:
+                print(Back.RED +Fore.BLACK+ "\u0332|\u0332S", end='')
+
+            elif mat[i][j] == "X":
+                print(Back.GREEN + Fore.BLACK + "\u0332|\u0332X", end='')
+                continue
+            elif mat[i][j] == "P":
+                print(Back.LIGHTRED_EX + Fore.BLACK + "\u0332|\u0332P", end='')
+            elif "orange" in board_obj.transition_dict[(i, j)]:
+                print(Back.YELLOW + Fore.BLACK + "\u0332|\u0332 ", end='')
+            elif "surprise" in board_obj.transition_dict[(i, j)]:
+                print(Back.MAGENTA + Fore.BLACK + "\u0332|\u0332 ", end='')
+            elif "wait" in board_obj.transition_dict[(i, j)]:
+                print(Back.BLUE + Fore.BLACK + "\u0332|\u0332 ", end='')
+            elif mat[i][j] == "G":
+                print(Back.LIGHTCYAN_EX + Fore.BLACK + "\u0332|\u0332G", end='')
+            elif mat[i][j] == "O":
+                print(Back.WHITE + Fore.BLACK + "\u0332|\u0332O", end='')
+            else:
+                print(Back.WHITE + "\u0332|\u0332 ", end='')
+        # background = Back.YELLOW if ("orange" in board_obj.transition_dict[(i,j)]) else  Back.MAGENTA if ("surprise" in board_obj.transition_dict[(i,j)]) else Back.BLUE if ("wait" in board_obj.transition_dict[(i,j)]) else Back.WHITE
+        # print((background+"{}").format(y), end="  ")
+        print(Back.RESET + "")
 
 
 def matprint(mat, board_obj):
@@ -59,7 +100,7 @@ def matprint(mat, board_obj):
             elif mat[i][j] == "G":
                 print(Back.LIGHTCYAN_EX + Fore.BLACK + "\u0332|\u0332G", end='')
             elif mat[i][j] == "O":
-                print(Back.LIGHTWHITE_EX + Fore.BLACK + "\u0332|\u0332O", end='')
+                print(Back.WHITE + Fore.BLACK + "\u0332|\u0332O", end='')
             else:
                 print(Back.WHITE + "\u0332|\u0332 ", end='')
         # background = Back.YELLOW if ("orange" in board_obj.transition_dict[(i,j)]) else  Back.MAGENTA if ("surprise" in board_obj.transition_dict[(i,j)]) else Back.BLUE if ("wait" in board_obj.transition_dict[(i,j)]) else Back.WHITE
@@ -231,6 +272,11 @@ def print_exit(logs, plan, moves):
     exit(1)
 
 
+def write_current_move_logs(inner_past_moves, inner_player,inner_turns,inner_logs):
+    write_to_log("round %s" % inner_turns, inner_logs)
+    inner_past_moves.append((inner_player.cell[0], inner_player.cell[1]))
+    print_current_board(inner_past_moves, inner_player)
+
 if __name__ == '__main__':
     """
     input = python3 game.py player
@@ -244,7 +290,7 @@ if __name__ == '__main__':
     input_player = sys.argv[1]
     domain_file_name = 'domain.txt'
     problem_file_name = '{}_problem.txt'
-    player = Player()
+    player = Player(GOAL)
 
     if input_player == Types.MEAN.value or input_player == Types.OPTIMISTIC.value:
         player.set_type(input_player)
@@ -270,12 +316,14 @@ if __name__ == '__main__':
                 write_to_log("current moves done:", logs)
                 print_plan(move,logs)
                 moves.extend(move)
+                write_current_move_logs(past_moves,player,turns,logs)
 
             elif 'pay_150' in plan[0].name:
                 cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
                 move, turn = handle_payments(plan[0], player)
                 turns += turn
                 moves.extend(move)
+                write_current_move_logs(past_moves,player,turns,logs)
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue
@@ -299,14 +347,13 @@ if __name__ == '__main__':
             else:
                 print_exit(logs, plan, moves)
 
-            write_to_log("round {}".format(turns),logs)
+            # write_current_move_logs()
 
             if board.MESSAGE in board_game[int(cell[0]), int(cell[1])]:
                 moves.append(board_game[int(cell[0]), int(cell[1])]["message"])
 
             # Starting new round- creating new problem.txt file
-            past_moves.append((player.cell[0], player.cell[1]))
-            print_current_board(past_moves, player)
+
 
             # New round- roll the dice
             actions = prob.get_actions()

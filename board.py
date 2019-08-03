@@ -33,6 +33,9 @@ ORANGE = 150
 
 # The amount of tax a player need to pay in the node that requires tax payment
 TAX_PAYMENT = -50
+PRIZE_1 = 1000
+PRIZE_2 = 1500
+PRIZE_3 = 500
 
 # All the amount 0f Prises
 PRISE_1 = 1000
@@ -164,7 +167,7 @@ class Board:
         self.transition_dict[(11, 7)] = {1: [(10, 6)],
                                          2: [(10, 5)],
                                          3: [(9, 5)],
-                                         BALANCE: PRISE_3,  # POSITIVE
+                                         BALANCE: PRIZE_3,  # POSITIVE
                                          JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                          MESSAGE: "Lottery! you won!"}
 
@@ -437,7 +440,7 @@ class Board:
         
         self.transition_dict[(3, 7)] = {1: [(5, 7)], 
                                         2: [(5, 8), (5, 6), (3, 6), (4, 5)],
-                                        3: [(6, 8), (5, 5), (4, 6), (4, 4), (5, 9)], BALANCE: PRISE_1,
+                                        3: [(6, 8), (5, 5), (4, 6), (4, 4), (5, 9)], BALANCE: PRIZE_1,
                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
         
@@ -524,7 +527,7 @@ class Board:
         self.transition_dict[(3, 1)] = {1: [(2, 2)], 
                                         2: [(2, 3), (3, 2)], 
                                         3: [(2, 4), (3, 3), (4, 2), (1, 1)],
-                                        BALANCE: PRISE_2, 
+                                        BALANCE: PRIZE_2,
                                         JUMP: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
 
