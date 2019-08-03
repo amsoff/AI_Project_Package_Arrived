@@ -1,7 +1,7 @@
 from enum import Enum
 
-GOAL = (4, 2)
-START = (1, 0)
+GOAL = (5, 10)
+START = (5, 8)
 
 
 class Types(Enum):
