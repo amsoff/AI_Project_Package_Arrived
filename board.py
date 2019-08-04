@@ -172,6 +172,7 @@ class Board:
         self.transition_dict[(10, 11)] = {1: [(11, 11)],
                                           2: [(10, 11)],
                                           3: [(10, 11)],
+                                          ORANGE: [(11, 11)],
                                           NEED: [Certificate.GRANDMA],
                                           ENTRANCE: big_entrance}
 
@@ -217,17 +218,16 @@ class Board:
                                         WAIT: 4,
                                         MESSAGE: "That was stupid. You are in Prison"}  # Prison
 
-        self.transition_dict[(9, 9)] = {1: [(9, 9), (9, 10)],
+        self.transition_dict[(9, 9)] = {1: [(9, 10)],
                                         2: [(9, 11)],
-                                        3: [(9, 9)],
+                                        3: [(10, 11)],
                                         NEED: [Certificate.TAX],
-                                        ORANGE: [(9, 11)],
                                         ENTRANCE: big_entrance}
 
-        self.transition_dict[(9, 10)] = {1: [(9, 11)],
-                                         2: [(9, 10)],
-                                         3: [(9, 10)],
-                                         ORANGE: [(9, 11)]}
+        self.transition_dict[(9, 10)] = {1: [(9, 10), (9, 11)],
+                                         2: [(9, 10), (10, 11)],
+                                         3: [(11, 11)],
+                                         ORANGE: [(11, 11)]}
 
         self.transition_dict[(9, 11)] = {1: [(10, 11), (9, 11)],
                                          2: [(11, 11)],
@@ -328,9 +328,9 @@ class Board:
                                          2: [(7, 10)],
                                          3: [(7, 9)]}
 
-        self.transition_dict[(6, 8)] = {1: [(5, 8), (7, 8)],
+        self.transition_dict[(6, 8)] = {1: [(6, 8), (5, 8), (7, 8)],
                                         2: [(5, 9), (5, 7), (8, 8)],
-                                        3: [(5, 6), (9, 8)],
+                                        3: [(6, 8), (5, 6), (9, 8)],
                                         ORANGE: [(5, 9)]}
 
         self.transition_dict[(6, 7)] = {1: [(6, 7), (5, 7)],

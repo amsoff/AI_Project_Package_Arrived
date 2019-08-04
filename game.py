@@ -76,25 +76,25 @@ def matprint_backwards(mat, board_obj):
     for i in range(len(mat) - 1, -1, -1):
         for j in range(len(mat[i]) - 1, -1, -1):
             if (i, j) == board_obj.starting_point:
-                print(Back.RED + Fore.BLACK + "\u0332|\u0332S", end='')
+                print(Back.RED + Fore.BLACK + "|\u0332S\u0332", end='')
 
             elif mat[i][j] == "X":
-                print(Back.GREEN + Fore.BLACK + "\u0332|\u0332X", end='')
+                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332", end='')
                 continue
             elif mat[i][j] == "P":
-                print(Back.LIGHTRED_EX + Fore.BLACK + "\u0332|\u0332P", end='')
+                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332", end='')
             elif (i, j) in board.Board.orange_cells:
-                print(Back.YELLOW + Fore.BLACK + "\u0332|\u0332 ", end='')
+                print(Back.YELLOW + Fore.BLACK + "|\u0332\u0332 ", end='')
             elif "surprise" in board_obj.transition_dict[(i, j)]:
-                print(Back.MAGENTA + Fore.BLACK + "\u0332|\u0332 ", end='')
+                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332 ", end='')
             elif "wait" in board_obj.transition_dict[(i, j)]:
-                print(Back.BLUE + Fore.BLACK + "\u0332|\u0332 ", end='')
+                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332 ", end='')
             elif mat[i][j] == "G":
-                print(Back.LIGHTCYAN_EX + Fore.BLACK + "\u0332|\u0332G", end='')
+                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332", end='')
             elif mat[i][j] == "O":
-                print(Back.WHITE + Fore.BLACK + "\u0332|\u0332O", end='')
+                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332", end='')
             else:
-                print(Back.WHITE + "\u0332|\u0332 ", end='')
+                print(Back.WHITE + "|\u0332\u0332 ", end='')
         print(Back.RESET + "")
 
 
@@ -111,25 +111,25 @@ def matprint(mat, board_obj):
     for i, x in enumerate(mat):
         for j, y in enumerate(x):
             if (i, j) == board_obj.starting_point:
-                print(Back.RED + Fore.BLACK + "\u0332|\u0332S", end='')
+                print(Back.RED + Fore.BLACK + "|\u0332S\u0332|", end='')
 
             elif mat[i][j] == "X":
-                print(Back.GREEN + Fore.BLACK + "\u0332|\u0332X", end='')
+                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332|", end='')
                 continue
             elif mat[i][j] == "P":
-                print(Back.LIGHTRED_EX + Fore.BLACK + "\u0332|\u0332P", end='')
+                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332|", end='')
             elif (i, j) in board.Board.orange_cells:
-                print(Back.RESET + Fore.BLACK + "\u0332|\u0332 ", end='')
+                print(Back.RESET + Fore.BLACK + "|\u0332\u0332| ", end='')
             elif "surprise" in board_obj.transition_dict[(i, j)]:
-                print(Back.MAGENTA + Fore.BLACK + "\u0332|\u0332 ", end='')
+                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332| ", end='')
             elif "wait" in board_obj.transition_dict[(i, j)]:
-                print(Back.BLUE + Fore.BLACK + "\u0332|\u0332 ", end='')
+                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332| ", end='')
             elif mat[i][j] == "G":
-                print(Back.LIGHTCYAN_EX + Fore.BLACK + "\u0332|\u0332G", end='')
+                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332|", end='')
             elif mat[i][j] == "O":
-                print(Back.WHITE + Fore.BLACK + "\u0332|\u0332O", end='')
+                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332|", end='')
             else:
-                print(Back.WHITE + "\u0332|\u0332 ", end='')
+                print(Back.WHITE + "|\u0332\u0332| ", end='')
         print(Back.RESET + "")
 
 
@@ -276,7 +276,7 @@ def handle_move(plan, player):
         for prop in action.pre:
             if 'has' in prop.name:
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
-                all_current_moves.append("presented the certificate: " + certificate)
+                all_current_moves.append("Presented the certificate: " + certificate)
 
     # check if at lottery- and perform another move that simulates the lottery
     if player.cell in board.Board.lotto_cells:
@@ -428,6 +428,7 @@ if __name__ == '__main__':
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
+    print(Constants.GOAL)
 
     # All the moves the player does in the game
     moves = [START % player.cell]
