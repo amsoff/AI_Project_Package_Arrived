@@ -497,6 +497,7 @@ if __name__ == '__main__':
             player.dice_value = dice_obj.roll_dice()
             player.build_problem()
             expanded.append(str(prob.expanded))
+            print(moves)
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             plan = a_star_search(prob, heuristic=level_sum)
 
