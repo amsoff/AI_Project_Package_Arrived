@@ -1,8 +1,8 @@
 from enum import Enum
 
 # Change goal here
-GOAL = (11, 9)
-START = (1, 0)
+GOAL = (5, 7)
+START = (4, 6)
 DEBUG = True
 PLAYER_STARTING_MONEY = 1500
 DUMMY_DICE = [1,2]

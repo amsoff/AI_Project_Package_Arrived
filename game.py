@@ -280,7 +280,7 @@ def handle_move(plan, player):
 
     # check if at lottery- and perform another move that simulates the lottery
     if player.cell in board.Board.lotto_cells:
-        dice_val = dice_obj.roll_dice()
+        dice_val = 1
         all_current_moves.append(ROLLING % player.dice_value)
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
             all_current_moves.append(
@@ -500,7 +500,7 @@ if __name__ == '__main__':
             player.dice_value = dice_obj.roll_dice()
             player.build_problem()
             expanded.append(str(prob.expanded))
-            print(moves)
+            #print(moves)
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             plan = a_star_search(prob, heuristic=level_sum)
             print_plan(plan, logs)
