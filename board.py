@@ -420,7 +420,7 @@ class Board:
                                         2: [(3, 2), (4, 1)],
                                         3: [(5, 1), (2, 2), (3, 3)],
                                         HAS: Certificate.INTEGRITY,
-                                        GOTO: [(5, 11)]}
+                                        GOTO: [(5, 11), (0, 0)]}
 
         self.transition_dict[(5, 1)] = {1: [(6, 1), (4, 1)],
                                         2: [(7, 1), (4, 2)],
