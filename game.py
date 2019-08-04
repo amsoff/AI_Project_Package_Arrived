@@ -428,6 +428,7 @@ if __name__ == '__main__':
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
+    print(Constants.GOAL)
 
     # All the moves the player does in the game
     moves = [START % player.cell]
