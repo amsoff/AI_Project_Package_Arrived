@@ -435,6 +435,7 @@ if __name__ == '__main__':
     past_moves = [player.cell]
     with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
+            print_plan(plan, logs)
 
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
