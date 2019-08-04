@@ -135,10 +135,10 @@ class Board:
                                           ORANGE: [(11, 9)]}
 
         self.transition_dict[(11, 11)] = {1: [(11, 10)],
-                                          2: [(11, 11)],
+                                          2: [(11, 9)],
                                           3: [(11, 11)],
                                           BALANCE: PACKAGE_COST,
-                                          ENTRANCE: [(11, 8)]}
+                                          ENTRANCE: big_entrance}
 
     def init_row10(self):
         self.transition_dict[(10, 0)] = {1: [(9, 0), (11, 0)],
@@ -383,7 +383,7 @@ class Board:
                                          2: [(6, 11)],
                                          3: [(7, 11)],
                                          BALANCE: -100,
-                                         ENTRANCE: [(11, 8)]}
+                                         ENTRANCE: big_entrance}
 
         self.transition_dict[(5, 9)] = {1: [(5, 10)],
                                         2: [(5, 11)],
