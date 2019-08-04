@@ -159,13 +159,12 @@ def create_jump_to_entrance_actions():
     """
     jump_to_entrance_actions = []
     for tile in board_game:
-        if (board.NEED in board_game[tile] or (
-                board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in \
-                board_game[tile]:
-            tile2 = board_game[tile][board.ENTRANCE]
-            jump_to_entrance_actions.append(JUMP_TO_ENTRANCE % (
-                tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile2[0], tile2[1], tile[0],
-                tile[1], tile[0], tile[1]))
+        if (board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in board_game[tile]:
+
+            for tile2 in board_game[tile][board.ENTRANCE]:
+                jump_to_entrance_actions.append(JUMP_TO_ENTRANCE % (
+                    tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile2[0], tile2[1], tile[0],
+                    tile[1], tile[0], tile[1]))
 
     return jump_to_entrance_actions
 
