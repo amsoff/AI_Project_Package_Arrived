@@ -14,8 +14,8 @@ import sys
 import time
 import datetime
 
-ROLLING = "--You rolled a %s --"
-START = "--- Welcome to The Package Arrived game --- \nYou are positioned at (%s,%s)"
+ROLLING = "-- You rolled a %s --"
+START = "--- Welcome to The Package Arrived game.--- \nYou are positioned at (%s,%s)"
 
 ### Game Objects ###
 dice_obj = Dice()
@@ -388,7 +388,7 @@ def write_current_move_logs(inner_past_moves, inner_player, inner_turns, inner_l
 
 def print_plan_test(plan):
     for p in plan:
-        print(p.name)
+        print(p)
 
 
 if __name__ == '__main__':
@@ -428,8 +428,6 @@ if __name__ == '__main__':
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
 
-    print_plan_test(plan)
-
     # All the moves the player does in the game
     moves = [START % player.cell]
     past_moves = [player.cell]
@@ -450,7 +448,6 @@ if __name__ == '__main__':
 
             # Move from one cell to "orange" cell, and pay 150, if it is achievable according to the dice
             elif 'pay_150' in plan[0].name:
-                moves.append(ROLLING % player.dice_value)
                 cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
                 move, turn = handle_payments(plan[0], player)
                 turns += turn
@@ -465,7 +462,6 @@ if __name__ == '__main__':
             # Jump to a certain entrance if you don't have enough money to pay, or if you don't hold the
             # requested certificate
             elif 'jump' in plan[0].name:
-                moves.append(ROLLING % player.dice_value)
                 cell = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
                 move = handle_jump_to_entrance(plan[0], player)
                 moves.extend(move)
@@ -478,7 +474,6 @@ if __name__ == '__main__':
 
             # Go back to a cell you already visited, given you npw have the certificate/enough money to pay
             elif 'Goto' in plan[0].name:
-                moves.append(ROLLING % player.dice_value)
                 cell = int(plan[0].name.split('_')[1]), int(plan[0].name.split('_')[2])
                 move = handle_goto(plan[0].name, player)
                 player.cell = cell
