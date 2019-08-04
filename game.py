@@ -15,7 +15,7 @@ import time
 import datetime
 
 ROLLING = "--You rolled a %s --"
-START = "--- Welcome to The Package Arrived game.--- \nYou are positioned at (%s,%s)"
+START = "--- Welcome to The Package Arrived game --- \nYou are positioned at (%s,%s)"
 
 ### Game Objects ###
 dice_obj = Dice()
@@ -49,9 +49,9 @@ def print_plan(plan, logs):
 
 def print_current_board(moves, player_obj: Player):
     """
-    Print the board to the screen and updates the board with the location of the goal and starting point,
-    and updates all the location the player prefirmed
-    :param moves: the moves the player
+    Prints the board to the screen and updates the board with the location of
+    the goal and starting point. Also updates the path the player went through.
+    :param moves: the player's moves
     :param player_obj:
     """
     board_obj = board.Board()
@@ -69,7 +69,7 @@ def print_current_board(moves, player_obj: Player):
 
 def matprint_backwards(mat, board_obj):
     """
-    Prints the board to the screen according to the board properties and the agent actions
+    Prints the board to the screen according to the board properties and the agent's actions
     :param mat: the current board
     :param board_obj: the board
     """
@@ -150,22 +150,22 @@ def handle_stop(plan):
 
 def handle_payments(action, player):
     """
-    Handle payment- update the player position and money attribute, and puts need_pay_spots on this cell.
+    Handle payment- update the player's position and money, and puts need_pay on this cell.
     Always makes sure the amount of money will be non negative.
     The actions:
-    1. Pay 150 in order to move from one cell to the other, in a case tha target cell is orange and the agent
+    1. Pay 150 in order to move from one cell to an orange cell in case the agent
         can land on it in 1,2,3 steps
-    2. Pay X amount since you landed on a cell that requires you to pay for a service
+    2. Pay X amount if landed on a cell that requires payment
     3. Surprise- earn or lose money
-    (Lottery is being handeled in the handle_move)
+    (Lottery is being handled in the handle_move)
     :param action: the action of the payment
-    :param player: the agent that preformed the move
+    :param player: the agent that performed the move
     :return: description of the move + turns
     """
     # Pink cell- the Surprise. Randomly choose amount of money
     if 'pay_surprise' in action.name:
         amount = surprise_generator.get_surprise()
-        player.money = min(player.money + amount, dc.NUM_OF_50_BILLS * 50)
+        player.money = min(player.money + amount, Constants.NUM_OF_50_BILLS * 50)
         player.money = max(0, player.money)
         sign = "+"
         if amount < 0:  # it is a payment and not get money
@@ -208,9 +208,9 @@ def handle_payments(action, player):
 
 def handle_goto(action, player):
     """
-    Handle Goto- update the player position, and removes come_back of this cell from the list. Can
-    only be preformed by the player if and only if a jump action was made
-    :param action: the action of the jump
+    Handle Goto- update the player's position, and removes come_back from this cell.
+    Can only be performed by the player if a jump action was made
+    :param action: the jump action
     :param player: the agent that preformed the move
     :return: description of the move
     """
@@ -223,8 +223,8 @@ def handle_goto(action, player):
 
 def handle_jump_to_entrance(action, player):
     """
-    Handle jump- update the player position, and puts come_back on this cell. Can only be preformed if
-    the player can't preformed the action the cell requires him to preform (pay or present a certificate)
+    Handle jump- update the player's position, and puts come_back on this cell.
+    Can only be performed if the player can't preformed the action the cell requires him to preform (pay or present a certificate)
     :param action: the action of the jump
     :param player: the agent that preformed the move
     :return: description of the move
