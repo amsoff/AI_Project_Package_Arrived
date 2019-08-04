@@ -293,7 +293,7 @@ class Board:
                                          2: [(8, 9)],
                                          3: [(9, 9)],
                                          BALANCE: -100,
-                                         ENTRANCE: [(11, 8)]}
+                                         ENTRANCE: big_entrance}
 
         self.transition_dict[(7, 9)] = {1: [(8, 9)],
                                         2: [(9, 9)],
