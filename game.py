@@ -426,7 +426,7 @@ if __name__ == '__main__':
     # All the moves the player does in the game
     moves = [START % player.cell]
     past_moves = [player.cell]
-    with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
+    with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
 
             # Each plan most start with a movement from one cell to other cell
