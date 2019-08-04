@@ -276,7 +276,7 @@ def handle_move(plan, player):
         for prop in action.pre:
             if 'has' in prop.name:
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
-                all_current_moves.append("presented the certificate: " + certificate)
+                all_current_moves.append("Presented the certificate: " + certificate)
 
     # check if at lottery- and perform another move that simulates the lottery
     if player.cell in board.Board.lotto_cells:
@@ -428,11 +428,12 @@ if __name__ == '__main__':
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
+    print(Constants.GOAL)
 
     # All the moves the player does in the game
     moves = [START % player.cell]
     past_moves = [player.cell]
-    with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
+    with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
 
             # Each plan most start with a movement from one cell to other cell
