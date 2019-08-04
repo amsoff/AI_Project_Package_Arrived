@@ -588,6 +588,7 @@ class Board:
                                         NEED: [Certificate.TAX],
                                         ENTRANCE: [(1, 2)]}
 
+        # Set this as goal
         self.transition_dict[(0, 2)] = {1: [(0, 2)],
                                         2: [(0, 2)],
                                         3: [(0, 2)]}
