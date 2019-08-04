@@ -211,7 +211,7 @@ def handle_goto(action, player):
     Handle Goto- update the player's position, and removes come_back from this cell.
     Can only be performed by the player if a jump action was made
     :param action: the jump action
-    :param player: the agent that preformed the move
+    :param player: the agent that performed the move
     :return: description of the move
     """
     cell = int(action.split('_')[1]), int(action.split('_')[2])
@@ -224,9 +224,9 @@ def handle_goto(action, player):
 def handle_jump_to_entrance(action, player):
     """
     Handle jump- update the player's position, and puts come_back on this cell.
-    Can only be performed if the player can't preformed the action the cell requires him to preform (pay or present a certificate)
-    :param action: the action of the jump
-    :param player: the agent that preformed the move
+    Can only be performed if the player doesn't have the certificate/money the cell requires.
+    :param action: the jump action
+    :param player: the agent that performed the move
     :return: description of the move
     """
     jump_to = (int(action.name.split("_")[3]), int(action.name.split("_")[4]))
@@ -237,11 +237,11 @@ def handle_jump_to_entrance(action, player):
 
 def handle_move(plan, player):
     """
-    A function that handles the Move action. Since in a cell that we currently at can asks to present
-    certificate/be s lottery cell/be a surprise cell etc., we need to update the player properties in
-    order to build the next plan, and to hold the moves we preformed. The Move action can lead to other
-    action- goto, pay (all the types), jump, we will handle them too, and stop to process the plan when
-    we get to other Move action
+    A function that handles the Move action. Updates the player properties in
+    order to build the next plan, and to remember the moves we already made.
+    The Move action can lead to another action- goto, pay (all the types), jump,
+    we will handle them too, and stop to process the plan when
+    we get to the next Move action
     :param plan: The plan A* build
     :param player: the agent we need to update
     :return: all the moves we processed + the amount of turns (usually 1, but in cases like Stop, can be more)
@@ -254,13 +254,13 @@ def handle_move(plan, player):
         cell = (int(action_name.split('_')[5]), int(action_name.split('_')[6]))
         player.cell = cell
 
-        # update the moves we preformed so far in the cirrent round
+        # update the moves we performed so far in the current round
         if cell not in board.Board.fake_cells:
             all_current_moves.append("Move to (%s,%s)" % player.cell)
             if board.MESSAGE in board_game[cell]:
                 all_current_moves.append(board_game[cell][board.MESSAGE])
 
-        # if we returned to a cell that we "owe" money or certificate, update the player
+        # if we come back to a cell to pay money or show certificate, update the player
         if cell in player.come_back_spots:
             player.come_back_spots.remove(cell)
 
@@ -278,7 +278,7 @@ def handle_move(plan, player):
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
                 all_current_moves.append("presented the certificate: " + certificate)
 
-    # check if we are at the lottery- and preform another move that simulates the lottery
+    # check if at lottery- and perform another move that simulates the lottery
     if player.cell in board.Board.lotto_cells:
         dice_val = dice_obj.roll_dice()
         all_current_moves.append(ROLLING % player.dice_value)
@@ -290,22 +290,22 @@ def handle_move(plan, player):
 
     for i, action in enumerate(plan):
 
-        # handle the move already
+        # handled the move already
         if i == 0:
             continue
 
         # if we encounter another move- we finished the current round
-        if 'Move' in action.name:  # or 'pay_150' in action.name:
+        if 'Move' in action.name:
             break
 
-        # In a case the next move is payment, we will preform the payment (lottery, Surprise, a cell
+        # In case the next move is payment, we will perform the payment (lottery, Surprise, a cell
         # that requires  money, move that requires money) + update the player properties
         if 'pay' in action.name:
             pay, turn = handle_payments(action, player)
             turns += turn
             all_current_moves.extend(pay)
 
-        # In a case where the move we did led us to a cell that require us to wait X turns,
+        # In case the move we did led us to a cell that require us to wait X turns,
         # we will wait X turns and update the moves the player did in this round + update the player properties
         elif 'Stop' in action.name:
             stops = handle_stop(plan[i:])
@@ -313,14 +313,14 @@ def handle_move(plan, player):
             all_current_moves.extend(stops)
             break
 
-        # In the case we can go back to a certain cell that we already visited + update the player properties
+        # In case we can go back to a certain cell that we already visited + update the player properties
         elif 'Goto' in action.name:
             goto = handle_goto(action.name, player)
             turns += 1
             all_current_moves.extend(goto)
 
-        # In the case we can't pay or don't hold a certain certificate the cell requests we jump
-        # to a given cell + update the player properties + update the moves we did in the current round
+        # In case we can't pay or don't hold a certain certificate the cell requests we jump
+        # to a nearby cell + update the player properties + update the moves we did in the current round
         elif 'jump' in action.name:
             jump = handle_jump_to_entrance(action, player)
             all_current_moves.extend(jump)
@@ -339,8 +339,8 @@ def write_to_log(string, logs):
 
 def prints_game_over(moves, logs, player, elapsed):
     """
-    Prints messages to the screen and to the log in a case of success
-    :param moves: the moves the player preformed
+    Prints messages to the screen and to the log in case of success
+    :param moves: the moves the player performed
     :param logs: the file we write to
     :param player: the agent that plays
     :param elapsed: the time in seconds
@@ -356,10 +356,10 @@ def prints_game_over(moves, logs, player, elapsed):
 
 def print_exit(logs, plan, moves):
     """
-    Prints messages in the case the plan fails, and exit the game
+    Prints messages in case the plan fails, and exits the game
     :param logs: the file tp write to
-    :param plan: the plan the A* builded
-    :param moves: the moves so far the agent preformed
+    :param plan: the plan the A* built
+    :param moves: the moves so far the agent performed
     """
     print("plan doesn't start with move!!! The current action was:")
     write_to_log("plan doesn't start with move!!! The current action was:", logs)
@@ -375,10 +375,10 @@ def print_exit(logs, plan, moves):
 
 def write_current_move_logs(inner_past_moves, inner_player, inner_turns, inner_logs):
     """
-    Writes to the log file all the moves the agent preform in this round
+    Writes to the log file all the moves the agent performed in this round
     :param inner_past_moves: all the moves up to this round
     :param inner_player: the agent that plays
-    :param inner_turns: the number of turns the agent played s far
+    :param inner_turns: the number of turns the agent played so far
     :param inner_logs: the file we are writing to
     """
     write_to_log("round %s" % inner_turns, inner_logs)
@@ -472,7 +472,7 @@ if __name__ == '__main__':
                     plan = plan[1:]
                     continue
 
-            # Go back to a cell you already visited, given you npw have the certificate/enough money to pay
+            # Go back to a cell already visited, if the player has the certificate/money to pay
             elif 'Goto' in plan[0].name:
                 cell = int(plan[0].name.split('_')[1]), int(plan[0].name.split('_')[2])
                 move = handle_goto(plan[0].name, player)
@@ -486,10 +486,10 @@ if __name__ == '__main__':
                     continue
 
             else:
-                # A plan can only start with a move from one cell to the other
+                # A plan can only start with a move from one cell to another
                 print_exit(logs, plan, moves)
 
-            # Starting new round- creating new problem.txt file
+            # Starting a new round- creating a new problem.txt file
             # New round- roll the dice, and build a new plan according to the previous move
             actions = prob.get_actions()
             propositions = prob.get_propositions()
