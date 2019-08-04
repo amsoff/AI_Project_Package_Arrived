@@ -276,7 +276,7 @@ def handle_move(plan, player):
         for prop in action.pre:
             if 'has' in prop.name:
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
-                all_current_moves.append("presented the certificate: " + certificate)
+                all_current_moves.append("Presented the certificate: " + certificate)
 
     # check if we are at the lottery- and preform another move that simulates the lottery
     if player.cell in board.Board.lotto_cells:
@@ -509,6 +509,7 @@ if __name__ == '__main__':
         elapsed = time.process_time() - start
         if moves is not None and plan != "failed":
             prints_game_over(moves, logs, player, elapsed)
+            print(player.has_certificates[0])
         else:
             print("Could not find a plan in %.2f seconds" % elapsed)
             write_to_log("Could not find a plan in %.2f seconds" % elapsed, logs)
