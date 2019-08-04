@@ -284,8 +284,9 @@ def handle_move(plan, player):
         all_current_moves.append(ROLLING % player.dice_value)
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
             all_current_moves.append(
-                "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
-                    board.BALANCE])
+                "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][board.BALANCE])
+        else:
+            all_current_moves.append("You lose! You didn't gain money! Maybe next time :)")
         turns += 1
 
     for i, action in enumerate(plan):
@@ -337,7 +338,7 @@ def write_to_log(string, logs):
     logs.write(string + "\n") if Constants.DEBUG else None
 
 
-def prints_game_over(moves, logs, player, elapsed):
+def prints_game_over(moves, logs, player, elapsed, turns):
     """
     Prints messages to the screen and to the log in a case of success
     :param moves: the moves the player preformed
@@ -349,9 +350,9 @@ def prints_game_over(moves, logs, player, elapsed):
     print("Money: %d" % player.money)
     write_to_log("Money: %d" % player.money, logs)
     # print()
-    print("--- Game finished after %d turns in %.2f seconds ---" % (len(moves) - 1, elapsed))
+    print("--- Game finished after %d turns in %.2f seconds ---" % (turns, elapsed))
     print("The number of expanding nodes in each turn:\n%s" % "\n".join(expanded))
-    write_to_log("game finished after %d turns in %.2f seconds" % (len(moves) - 1, elapsed), logs)
+    write_to_log("game finished after %d turns in %.2f seconds" % (turns, elapsed), logs)
 
 
 def print_exit(logs, plan, moves):
@@ -510,7 +511,7 @@ if __name__ == '__main__':
 
         elapsed = time.process_time() - start
         if moves is not None and plan != "failed":
-            prints_game_over(moves, logs, player, elapsed)
+            prints_game_over(moves, logs, player, elapsed, turns)
         else:
             print("Could not find a plan in %.2f seconds" % elapsed)
             write_to_log("Could not find a plan in %.2f seconds" % elapsed, logs)
