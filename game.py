@@ -386,6 +386,11 @@ def write_current_move_logs(inner_past_moves, inner_player, inner_turns, inner_l
     print_current_board(inner_past_moves, inner_player)
 
 
+def print_plan_test(plan):
+    for p in plan:
+        print(p.name)
+
+
 if __name__ == '__main__':
     """
     Input = python3 game.py player
@@ -423,10 +428,12 @@ if __name__ == '__main__':
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
 
+    print_plan_test(plan)
+
     # All the moves the player does in the game
     moves = [START % player.cell]
     past_moves = [player.cell]
-    with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
+    with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
 
             # Each plan most start with a movement from one cell to other cell

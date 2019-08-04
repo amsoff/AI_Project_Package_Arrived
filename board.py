@@ -50,7 +50,7 @@ class Board:
     # All the lottery cells in the game!
     lotto_cells = {(10, 7), (2, 1), (4, 7)}
     fake_cells = {(11, 7), (3, 7), (3, 1)}
-    orange_cells = [(11, 11), (11, 3), (8, 4), (6, 4), (6, 7), (5, 2), (4, 3), (1, 4), (0, 1), (5, 9),(8,9),(9,11)]
+    orange_cells = [(11, 11), (11, 3), (8, 4), (6, 4), (6, 7), (5, 2), (4, 3), (1, 4), (0, 1), (5, 9),(8,9), (9,11)]
 
     def __init__(self, num_players=1, starting_point=Constants.START):
         self.board_w = 12
@@ -280,7 +280,7 @@ class Board:
                                         2: [(8, 9), (9, 10)],
                                         3: [(9, 11)],
                                         NEED: [Certificate.ID],
-                                        ORANGE: [(9, 11)],
+                                        ORANGE: [(9, 11), (9,9)],
                                         ENTRANCE: (11, 8)}
 
     def init_row7(self):
@@ -587,7 +587,7 @@ class Board:
         self.transition_dict[(0, 1)] = {1: [(0, 2)],
                                         2: [(0, 2)],
                                         3: [(0, 2)],
-                                        NEED: [Certificate.TAX],
+                                        NEED: [Certificate.INTEGRITY],
                                         ENTRANCE: (1, 2)}
 
         self.transition_dict[(0, 2)] = {1: [(0, 2)],
@@ -601,5 +601,5 @@ class Board:
         self.transition_dict[(2, 2)] = {1: [(0, 0), (0, 1)],
                                         2: [(0, 0), (0, 1)],
                                         3: [(0, 0), (0, 1)],
-                                        HAS: Certificate.TAX,
+                                        HAS: Certificate.INTEGRITY,
                                         GOTO: [(0, 1)]}
