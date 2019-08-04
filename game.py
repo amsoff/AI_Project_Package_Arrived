@@ -1,6 +1,6 @@
 from graphplan.search import a_star_search
 from domain_create import Types
-from graphplan.planning_problem import PlanningProblem, max_level, level_sum
+from graphplan.planning_problem import PlanningProblem, level_sum
 import domain_create as dc
 import Constants
 from surprise import Surprise
