@@ -433,7 +433,8 @@ if __name__ == '__main__':
     # All the moves the player does in the game
     moves = [START % player.cell]
     past_moves = [player.cell]
-    with open("logs/log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
+    with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
+        print_plan(plan,logs)
         while len(plan) != 0 and plan != 'failed':
 
             # Each plan most start with a movement from one cell to other cell
@@ -500,6 +501,7 @@ if __name__ == '__main__':
             expanded.append(str(prob.expanded))
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             plan = a_star_search(prob, heuristic=level_sum)
+            print_plan(plan, logs)
 
             if len(plan) == 0:
                 write_to_log("## LAST ##", logs)
