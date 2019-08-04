@@ -1,5 +1,6 @@
 from enum import Enum
 
+# Change goal here
 GOAL = (11, 9)
 START = (1, 0)
 DEBUG = True
