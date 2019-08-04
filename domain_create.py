@@ -94,10 +94,12 @@ def create_move(player):
                 if player == AVERAGE:
                     # action[ADD] += " " + DICE_FORMAT % 3
                     # if True: # Todo add here certain cells
-                    action[ADD] += " " + DICE_FORMAT % 1
                     for i in Dice.values:
-                        if i not in [1]:
+                        if i not in Constants.DUMMY_DICE:
                             action[DEL] += " " + DICE_FORMAT % i
+                        else:
+                            action[ADD] += " " + DICE_FORMAT % i
+
                 elif player == OPTIMISTIC:
                     for d1 in Dice.values:
                         action[ADD] += " " + DICE_FORMAT % d1
