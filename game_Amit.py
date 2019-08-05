@@ -171,7 +171,7 @@ def handle_payments(action, player):
         sign = "+"
         if amount < 0:  # it is a payment and not get money
             sign = "-"
-        return ["Got a surprise! Money " + sign + "= " + str(abs(amount))  + "\nMoney Balance: " + player.money], 0
+        return ["Got a surprise! Money " + sign + "= " + str(abs(amount))  + "\nMoney Balance: " + str(player.money)], 0
 
     # Pay 150 to move to orange cell. update the player location
     if 'pay_150_from' in action.name:
@@ -181,7 +181,7 @@ def handle_payments(action, player):
         cell = (int(action.name.split('_')[6]), int(action.name.split('_')[7]))
         player.money -= 150
         player.cell = cell
-        all.append("Paid 150 to jump to (%s,%s)" % cell  + "\nMoney Balance: " + player.money)
+        all.append("Paid 150 to jump to (%s,%s)" % cell  + "\nMoney Balance: " + str(player.money))
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
         # handle the case a cell we are moving to provides a certificate
