@@ -1,0 +1,783 @@
+/usr/bin/python3.6 /cs/usr/sofferam/AI/AI_Project_Package_Arrived/game.py optimistic
+finished parsing actions and propositions, round 1
+finished parsing problem, round 1
+reached aStar
+(11, 9)
+Move_from_1_0_to_2_2_with_dice_3
+Move_from_2_2_to_3_4_with_dice_3
+Move_from_3_4_to_4_6_with_dice_3
+Move_from_4_6_to_5_6_with_dice_1
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_1_0_to_2_2_with_dice_3
+Move_from_2_2_to_3_4_with_dice_3
+Move_from_3_4_to_4_6_with_dice_3
+Move_from_4_6_to_5_6_with_dice_1
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move to (2,2)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲P̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 2
+reached aStar
+Move_from_2_2_to_1_2_with_dice_1
+Move_from_1_2_to_3_3_with_dice_3
+Move_from_3_3_to_3_6_with_dice_3
+Move_from_3_6_to_5_6_with_dice_2
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_2_2_to_1_2_with_dice_1
+Move_from_1_2_to_3_3_with_dice_3
+Move_from_3_3_to_3_6_with_dice_3
+Move_from_3_6_to_5_6_with_dice_2
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move to (1,2)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲P̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 3
+reached aStar
+Move_from_1_2_to_2_3_with_dice_2
+Move_from_2_3_to_3_5_with_dice_3
+Move_from_3_5_to_4_7_with_dice_3
+Move_from_4_7_to_5_6_with_dice_2
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_1_2_to_2_3_with_dice_2
+Move_from_2_3_to_3_5_with_dice_3
+Move_from_3_5_to_4_7_with_dice_3
+Move_from_4_7_to_5_6_with_dice_2
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move to (2,3)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲P̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 4
+reached aStar
+Move_from_2_3_to_3_5_with_dice_3
+Move_from_3_5_to_4_7_with_dice_3
+Move_from_4_7_to_5_6_with_dice_2
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_2_3_to_3_5_with_dice_3
+Move_from_3_5_to_4_7_with_dice_3
+Move_from_4_7_to_5_6_with_dice_2
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move to (3,5)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲P̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 5
+reached aStar
+Move_from_3_5_to_4_6_with_dice_2
+Move_from_4_6_to_5_6_with_dice_1
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_3_5_to_4_6_with_dice_2
+Move_from_4_6_to_5_6_with_dice_1
+Move_from_5_6_to_7_5_with_dice_3
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move to (4,6)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲P̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 6
+reached aStar
+Move_from_4_6_to_5_5_with_dice_2
+Move_from_5_5_to_7_5_with_dice_2
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_4_6_to_5_5_with_dice_2
+Move_from_5_5_to_7_5_with_dice_2
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move to (5,5)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲P̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 7
+reached aStar
+Move_from_5_5_to_7_5_with_dice_2
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_5_5_to_7_5_with_dice_2
+Move_from_7_5_to_6_7_with_dice_3
+Move_from_6_7_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1500
+Move_from_11_11_to_11_9_with_dice_2
+Move to (7,5)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲P̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 8
+reached aStar
+pay_150_from_7_5_to_6_7_with_1500
+Move_from_6_7_to_5_7_with_dice_1
+Move_from_5_7_to_5_9_with_dice_2
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+pay_150_from_7_5_to_6_7_with_1500
+Move_from_6_7_to_5_7_with_dice_1
+Move_from_5_7_to_5_9_with_dice_2
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Paid 150 to jump to (6,7)
+Congrats! you hold the PORT Certificate!
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲P̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+Move_from_6_7_to_5_7_with_dice_1
+Move_from_5_7_to_5_9_with_dice_2
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (5,7)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲P̲|̲̲ |̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 9
+reached aStar
+Move_from_5_7_to_5_6_with_dice_1
+Move_from_5_6_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_5_7_to_5_6_with_dice_1
+Move_from_5_6_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (5,6)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲P̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 10
+reached aStar
+Move_from_5_6_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_5_6_to_5_9_with_dice_3
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (5,9)
+WOW! You are now entering the port. Good Luck
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲P̲|̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 11
+reached aStar
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_5_9_to_6_11_with_dice_3
+Move_from_6_11_to_7_9_with_dice_3
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (6,11)
+Presented the certificate: port
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲P̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 12
+reached aStar
+Move_from_6_11_to_7_11_with_dice_1
+Stop_1_at_7_11
+Stop_2_at_7_11
+Move_from_7_11_to_7_9_with_dice_2
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_6_11_to_7_11_with_dice_1
+Stop_1_at_7_11
+Stop_2_at_7_11
+Move_from_7_11_to_7_9_with_dice_2
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (7,11)
+Wait 1 turn
+Wait 1 turn
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲P̲|̲̲ |̲̲ |̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 13
+reached aStar
+Move_from_7_11_to_7_9_with_dice_2
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_7_11_to_7_9_with_dice_2
+Move_from_7_9_to_9_10_with_dice_3
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (7,9)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲P̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 14
+reached aStar
+Move_from_7_9_to_9_9_with_dice_2
+jump_to_entrance_2_2_from_9_9
+Move_from_2_2_to_1_0_with_dice_3
+Move_from_1_0_to_0_1_with_dice_2
+Goto_9_9_from_0_1
+Move_from_9_9_to_9_10_with_dice_1
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_7_9_to_9_9_with_dice_2
+jump_to_entrance_2_2_from_9_9
+Move_from_2_2_to_1_0_with_dice_3
+Move_from_1_0_to_0_1_with_dice_2
+Goto_9_9_from_0_1
+Move_from_9_9_to_9_10_with_dice_1
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (9,9)
+Jumped to (2,2) to search
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲P̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 15
+reached aStar
+Move_from_2_2_to_1_1_with_dice_2
+Move_from_1_1_to_0_1_with_dice_3
+Goto_9_9_from_0_1
+Move_from_9_9_to_9_10_with_dice_1
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_2_2_to_1_1_with_dice_2
+Move_from_1_1_to_0_1_with_dice_3
+Goto_9_9_from_0_1
+Move_from_9_9_to_9_10_with_dice_1
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (1,1)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲P̲|̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 16
+reached aStar
+Move_from_1_1_to_0_1_with_dice_3
+Goto_9_9_from_0_1
+Move_from_9_9_to_9_10_with_dice_1
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_1_1_to_0_1_with_dice_3
+Goto_9_9_from_0_1
+Move_from_9_9_to_9_10_with_dice_1
+pay_150_from_9_10_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (0,1)
+Congrats! you hold the TAX Certificate!
+Go back to (9,9)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲P̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 17
+reached aStar
+Move_from_9_9_to_10_11_with_dice_3
+jump_to_entrance_8_1_from_10_11
+Move_from_8_1_to_8_0_with_dice_3
+Goto_10_11_from_8_0
+pay_150_from_10_11_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_9_9_to_10_11_with_dice_3
+jump_to_entrance_8_1_from_10_11
+Move_from_8_1_to_8_0_with_dice_3
+Goto_10_11_from_8_0
+pay_150_from_10_11_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (10,11)
+Presented the certificate: tax
+Jumped to (8,1) to search
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲P̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 18
+reached aStar
+Move_from_8_1_to_9_1_with_dice_1
+Move_from_9_1_to_8_0_with_dice_2
+Goto_10_11_from_8_0
+pay_150_from_10_11_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_8_1_to_9_1_with_dice_1
+Move_from_9_1_to_8_0_with_dice_2
+Goto_10_11_from_8_0
+pay_150_from_10_11_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (9,1)
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲P̲|̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 19
+reached aStar
+Move_from_9_1_to_8_0_with_dice_2
+Goto_10_11_from_8_0
+pay_150_from_10_11_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move_from_9_1_to_8_0_with_dice_2
+Goto_10_11_from_8_0
+pay_150_from_10_11_to_11_11_with_1350
+Move_from_11_11_to_11_9_with_dice_2
+Move to (8,0)
+Congrats! you hold the GRANDMA Certificate!
+Go back to (10,11)
+Paid 150 to jump to (11,11)
+|̲P̲|̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 20
+reached aStar
+jump_to_entrance_6_5_from_11_11
+Move_from_6_5_to_9_5_with_dice_3
+pay_surprise_9_5_from_1200
+Goto_11_11_from_9_5
+Move_from_11_11_to_11_9_with_dice_2
+jump_to_entrance_6_5_from_11_11
+Move_from_6_5_to_9_5_with_dice_3
+pay_surprise_9_5_from_1200
+Goto_11_11_from_9_5
+Move_from_11_11_to_11_9_with_dice_2
+Jumped to (6,5) to search
+|̲̲ |̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲P̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+Move_from_6_5_to_9_5_with_dice_3
+pay_surprise_9_5_from_1200
+Goto_11_11_from_9_5
+Move_from_11_11_to_11_9_with_dice_2
+Move to (9,5)
+Got a surprise! Money -= 300
+Go back to (11,11)
+|̲P̲|̲̲ |̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 21
+reached aStar
+Move_from_11_11_to_11_10_with_dice_1
+Move_from_11_10_to_11_9_with_dice_1
+Move_from_11_11_to_11_10_with_dice_1
+Move_from_11_10_to_11_9_with_dice_1
+Move to (11,10)
+|̲̲ |̲P̲|̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 22
+reached aStar
+pay_150_from_11_10_to_11_9_with_900
+pay_150_from_11_10_to_11_9_with_900
+Paid 150 to jump to (11,9)
+|̲̲ |̲O̲|̲G̲|̲̲ |̲̲ |̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ 
+|̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲|̲X̲|̲X̲|̲X̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲̲ 
+|̲̲ |̲̲ |̲O̲|̲̲ |̲X̲|̲̲ |̲O̲|̲X̲|̲X̲|̲X̲|̲̲ |̲X̲
+|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲O̲|̲X̲|̲X̲|̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲̲ |̲̲ |̲̲ |̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲O̲|̲O̲|̲̲ |̲X̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ |̲̲ |̲O̲|̲O̲|̲S̲
+|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲X̲|̲̲ |̲̲ |̲̲ 
+finished parsing problem, round 23
+reached aStar
+--- Welcome to The Package Arrived game.--- 
+You are positioned at (1,0)
+-- You rolled a 3 --
+Move to (2,2)
+-- You rolled a 1 --
+Move to (1,2)
+-- You rolled a 2 --
+Move to (2,3)
+-- You rolled a 3 --
+Move to (3,5)
+-- You rolled a 2 --
+Move to (4,6)
+-- You rolled a 2 --
+Move to (5,5)
+-- You rolled a 2 --
+Move to (7,5)
+Paid 150 to jump to (6,7)
+Congrats! you hold the PORT Certificate!
+-- You rolled a 1 --
+Move to (5,7)
+-- You rolled a 1 --
+Move to (5,6)
+-- You rolled a 3 --
+Move to (5,9)
+WOW! You are now entering the port. Good Luck
+-- You rolled a 3 --
+Move to (6,11)
+Presented the certificate: port
+-- You rolled a 1 --
+Move to (7,11)
+Wait 1 turn
+Wait 1 turn
+-- You rolled a 2 --
+Move to (7,9)
+-- You rolled a 2 --
+Move to (9,9)
+Jumped to (2,2) to search
+-- You rolled a 2 --
+Move to (1,1)
+-- You rolled a 3 --
+Move to (0,1)
+Congrats! you hold the TAX Certificate!
+Go back to (9,9)
+-- You rolled a 3 --
+Move to (10,11)
+Presented the certificate: tax
+Jumped to (8,1) to search
+-- You rolled a 1 --
+Move to (9,1)
+-- You rolled a 2 --
+Move to (8,0)
+Congrats! you hold the GRANDMA Certificate!
+Go back to (10,11)
+Paid 150 to jump to (11,11)
+Jumped to (6,5) to search
+-- You rolled a 3 --
+Move to (9,5)
+Got a surprise! Money -= 300
+Go back to (11,11)
+-- You rolled a 1 --
+Move to (11,10)
+Paid 150 to jump to (11,9)
+Money: 750
+--- Game finished after 29 turns in 293.04 seconds ---
+The number of expanding nodes in each turn:
+13
+13
+13
+12
+11
+9
+8
+8
+7
+6
+5
+7
+4
+8
+6
+5
+6
+5
+4
+7
+2
+1
+
+Process finished with exit code 0
+
