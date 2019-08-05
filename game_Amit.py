@@ -464,6 +464,7 @@ if __name__ == '__main__':
 
     # All the moves the player does in the game
     moves = [START % player.cell]
+    moves.append("Amount of money: %s " % player.money)
     past_moves = [player.cell]
     with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         print_plan(plan, logs)
