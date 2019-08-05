@@ -11,7 +11,7 @@ payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile
 
 class Player:
     type = Types.AVERAGE.value
-    money = 0
+    money = Constants.PLAYER_STARTING_MONEY
     cell = Constants.START
     has_certificates = []
     dice_value = 0

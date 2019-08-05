@@ -1,0 +1,174 @@
+﻿--- Welcome to The Package Arrived game.--- 
+You are positioned at (1,0)
+-- You rolled a 1 --
+Move to (1,1)
+-- You rolled a 2 --
+Move to (2,2)
+-- You rolled a 3 --
+Move to (3,4)
+-- You rolled a 3 --
+Move to (4,6)
+-- You rolled a 1 --
+Move to (5,6)
+-- You rolled a 2 --
+Move to (6,5)
+-- You rolled a 3 --
+Move to (4,6)
+-- You rolled a 2 --
+Move to (5,5)
+-- You rolled a 2 --
+Move to (7,5)
+-- You rolled a 2 --
+Move to (5,5)
+-- You rolled a 1 --
+Move to (6,5)
+-- You rolled a 1 --
+Move to (7,5)
+-- You rolled a 1 --
+Move to (6,5)
+-- You rolled a 1 --
+Move to (7,5)
+-- You rolled a 1 --
+Move to (6,5)
+-- You rolled a 3 --
+Move to (4,6)
+-- You rolled a 3 --
+Move to (5,5)
+-- You rolled a 1 --
+Move to (6,5)
+-- You rolled a 3 --
+Move to (4,6)
+-- You rolled a 1 --
+Move to (5,6)
+-- You rolled a 2 --
+Move to (6,5)
+-- You rolled a 1 --
+Move to (7,5)
+-- You rolled a 1 --
+Move to (6,5)
+-- You rolled a 1 --
+Move to (7,5)
+-- You rolled a 1 --
+Move to (6,5)
+-- You rolled a 3 --
+Move to (4,6)
+-- You rolled a 1 --
+Move to (5,6)
+-- You rolled a 2 --
+Move to (6,5)
+-- You rolled a 3 --
+Move to (4,6)
+-- You rolled a 1 --
+Move to (5,6)
+-- You rolled a 1 --
+Move to (5,5)
+-- You rolled a 1 --
+Move to (6,5)
+-- You rolled a 2 --
+Move to (5,6)
+-- You rolled a 2 --
+Move to (6,5)
+-- You rolled a 1 --
+Move to (7,5)
+-- You rolled a 2 --
+Move to (5,5)
+-- You rolled a 3 --
+Move to (8,5)
+-- You rolled a 1 --
+Move to (7,5)
+-- You rolled a 3 --
+Move to (6,7)
+Congrats! you hold the PORT Certificate!
+-- You rolled a 3 --
+Move to (5,9)
+WOW! You are now entering the port. Good Luck
+Jumped to (6,5) to search
+-- You rolled a 2 --
+Move to (5,6)
+-- You rolled a 1 --
+Move to (5,7)
+-- You rolled a 2 --
+Move to (5,9)
+WOW! You are now entering the port. Good Luck
+Jumped to (6,5) to search
+-- You rolled a 2 --
+Move to (5,6)
+-- You rolled a 1 --
+Move to (5,7)
+-- You rolled a 2 --
+Move to (5,9)
+WOW! You are now entering the port. Good Luck
+-- You rolled a 3 --
+Move to (6,11)
+Presented the certificate: port
+-- You rolled a 3 --
+Move to (7,9)
+-- You rolled a 3 --
+Move to (9,10)
+-- You rolled a 3 --
+Move to (11,11)
+Jumped to (2,2) to search
+-- You rolled a 1 --
+Move to (3,2)
+Got a surprise! Money += 300
+Go back to (11,11)
+-- You rolled a 1 --
+Move to (11,10)
+-- You rolled a 1 --
+Move to (11,9)
+Money: 300
+--- Game finished after 54 turns in 2195.91 seconds ---
+The number of expanding nodes in each turn:
+44
+43
+0
+0
+0
+41
+41
+39
+0
+39
+40
+0
+41
+0
+41
+41
+39
+40
+41
+0
+41
+0
+41
+0
+41
+41
+0
+41
+41
+0
+39
+40
+39
+41
+0
+39
+41
+0
+0
+0
+38
+37
+0
+38
+37
+0
+0
+0
+0
+0
+5
+2
+0

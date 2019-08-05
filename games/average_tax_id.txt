@@ -1,0 +1,115 @@
+--- Welcome to The Package Arrived game.--- 
+You are positioned at (1,0)
+-- You rolled a 1 --
+Move to (1,1)
+-- You rolled a 1 --
+Move to (2,1)
+Lottery! you have a chance to earn some money!
+-- You rolled a 1 --
+You lose! You didn't gain money! Maybe next time :)
+-- You rolled a 1 --
+Move to (2,2)
+-- You rolled a 2 --
+Move to (3,3)
+-- You rolled a 3 --
+Move to (3,6)
+-- You rolled a 2 --
+Move to (5,6)
+-- You rolled a 2 --
+Move to (6,5)
+-- You rolled a 2 --
+Move to (5,6)
+-- You rolled a 2 --
+Move to (6,5)
+-- You rolled a 1 --
+Move to (7,5)
+Paid 150 to jump to (6,7)
+Congrats! you hold the PORT Certificate!
+Paid 150 to jump to (5,9)
+-- You rolled a 1 --
+Move to (5,10)
+Presented the certificate: port
+Money -= 100
+-- You rolled a 2 --
+Move to (6,11)
+-- You rolled a 1 --
+Move to (7,11)
+Wait 1 turn
+Wait 1 turn
+-- You rolled a 3 --
+Move to (8,9)
+Jumped to (2,2) to search
+-- You rolled a 3 --
+Move to (2,5)
+Money -= 50
+Paid 150 to jump to (1,4)
+Congrats! you hold the ID Certificate!
+Go back to (8,9)
+-- You rolled a 1 --
+Move to (9,9)
+Presented the certificate: id
+Jumped to (2,2) to search
+-- You rolled a 1 --
+Move to (1,2)
+-- You rolled a 2 --
+Move to (1,0)
+-- You rolled a 2 --
+Move to (0,1)
+Congrats! you hold the TAX Certificate!
+Go back to (9,9)
+-- You rolled a 1 --
+Move to (9,10)
+Presented the certificate: tax
+Paid 150 to jump to (11,11)
+Jumped to (11,8) to search
+-- You rolled a 2 --
+Move to (10,7)
+Lottery! you have a chance to earn some money!
+-- You rolled a 2 --
+You win the lottery. YAY! You earned 500
+-- You rolled a 2 --
+Move to (10,5)
+-- You rolled a 1 --
+Move to (9,5)
+Got a surprise! Money -= 100
+Go back to (11,11)
+Jumped to (11,8) to search
+-- You rolled a 3 --
+Move to (9,7)
+-- You rolled a 2 --
+Move to (9,5)
+Got a surprise! Money -= 100
+Go back to (11,11)
+-- You rolled a 1 --
+Move to (11,10)
+Paid 150 to jump to (11,9)
+Money: 400
+--- Game finished after 39 turns in 954.78 seconds ---
+The number of expanding nodes in each turn:
+47
+47
+46
+45
+45
+44
+43
+44
+43
+42
+30
+28
+13
+25
+22
+9
+8
+7
+6
+4
+9
+7
+5
+7
+5
+2
+1
