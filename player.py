@@ -19,8 +19,11 @@ class Player:
     need_pay_spots = []
     # package_cost = 0
 
-    def __init__(self,goal=Constants.GOAL):
+    def __init__(self, player_type, goal=Constants.GOAL, start = Constants.START, money = Constants.PLAYER_STARTING_MONEY):
+        self.type = player_type
         self.goal = goal
+        self.cell = start
+        self.money = money
 
 
     def set_type(self, player_type):
