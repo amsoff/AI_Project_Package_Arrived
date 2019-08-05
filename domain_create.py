@@ -128,9 +128,10 @@ def create_move(player):
                         action[PRE] += " " + CERTIFICATES_FORMAT % cert
 
                 # wait turns
-                if board.WAIT in board_game[tile2]:
-                    for i in range(1, board_game[tile2][board.WAIT] + 1):
-                        action[DEL] += " " + NOT_STOP_FORMAT % i
+                if tile1 != tile2:
+                    if board.WAIT in board_game[tile2]:
+                        for i in range(1, board_game[tile2][board.WAIT] + 1):
+                            action[DEL] += " " + NOT_STOP_FORMAT % i
 
                 moves[(tile1, tile2, d)] = action
 

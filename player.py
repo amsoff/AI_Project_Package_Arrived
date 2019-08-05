@@ -17,6 +17,8 @@ class Player:
     dice_value = 0
     come_back_spots = []
     need_pay_spots = []
+    goal = Constants.GOAL
+    start = Constants.START
     # package_cost = 0
 
     def __init__(self, player_type, goal=Constants.GOAL, start = Constants.START, money = Constants.PLAYER_STARTING_MONEY):
