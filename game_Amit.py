@@ -262,8 +262,8 @@ def handle_move(plan, player):
         # update the moves we performed so far in the current round
         if cell not in board.Board.fake_cells:
             all_current_moves.append("Move to (%s,%s)" % player.cell)
-            if board.MESSAGE in board_game[cell]:
-                all_current_moves.append(board_game[cell][board.MESSAGE])
+        if board.MESSAGE in board_game[cell]:
+            all_current_moves.append(board_game[cell][board.MESSAGE])
 
         # if we come back to a cell to pay money or show certificate, update the player
         if cell in player.come_back_spots:
@@ -291,7 +291,7 @@ def handle_move(plan, player):
             all_current_moves.append(
                 "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
                     board.BALANCE])
-            player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
+            # player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
         else:
             all_current_moves.append("You lose! You didn't gain money! Maybe next time :)")
         turns += 1
@@ -463,7 +463,7 @@ if __name__ == '__main__':
     dice_val = dice_obj.roll_dice()
     player.dice_value = dice_val
     player.build_problem()
-    print("REUT: " + ROLLING % player.dice_value)
+    print("REUT: " + ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
@@ -540,7 +540,7 @@ if __name__ == '__main__':
             loc, last_dice = find_last_dice(plan)
             player.build_problem()
             expanded.append(str(prob.expanded))
-            print("REUT: " + ROLLING % player.dice_value)
+            print("REUT: " + ROLLING % player.dice_value + "MONEY: " + str(player.money))
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             if last_dice == player.dice_value and last_dice is not None:
                 plan = plan[loc:]
