@@ -415,23 +415,42 @@ if __name__ == '__main__':
     until the agent gets to the final cell
     """
     start = time.process_time()
-    if len(sys.argv) != 2:
-        print("Usage: game.py player(optimistic or average). Bad input")
+    if len(sys.argv) != 2 and len(sys.argv) != 3 and len(sys.argv) != 4 and len(sys.argv) != 5:
+        print("Usage: game.py player: optimistic \ average optional--> goal_point: x,y start point: x,y starting money: m. Bad input")
         exit()
 
     input_player = sys.argv[1]
+    if input_player != Types.AVERAGE.value and input_player != Types.OPTIMISTIC.value:
+        print("Usage: game.py player: optimistic \ average optional--> goal_point: x,y start point: x,y starting money: m. Bad input")
+        exit()
+
+    if len(sys.argv) == 2:
+        player = Player(input_player)
+    else:
+        goal = sys.argv[2]
+        goal = goal.split(",")
+        goal = (int(goal[0]), int(goal[1]))
+        if len(sys.argv) == 3:
+            player = Player(input_player, goal)
+        else:
+            start_cell = sys.argv[3]
+            start_cell = start_cell.split(",")
+            start_cell = (int(start_cell[0]), int(start_cell[1]))
+            if len(sys.argv) == 4:
+                player = Player(input_player, goal, start_cell)
+
+            else:
+                money = int(sys.argv[4])
+                player = Player(input_player, goal, start_cell, money)
+
+
     domain_file_name = 'domain.txt'
     problem_file_name = '{}_problem.txt'
-    player = Player(Constants.GOAL)
 
     # Update the file names
-    if input_player == Types.AVERAGE.value or input_player == Types.OPTIMISTIC.value:
-        player.set_type(input_player)
-        problem_file_name = problem_file_name.format(input_player.lower())
-        domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
-    else:
-        print("Usage: game.py player(optimistic or average). Bad type player.")
-        exit()
+    domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
+    problem_file_name = problem_file_name.format(input_player.lower())
+
 
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
@@ -441,7 +460,7 @@ if __name__ == '__main__':
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
-    print(Constants.GOAL)
+    print(player.goal)
 
     # All the moves the player does in the game
     moves = [START % player.cell]

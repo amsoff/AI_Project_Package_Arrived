@@ -407,18 +407,18 @@ if __name__ == '__main__':
         exit()
 
     input_player = sys.argv[1]
-    domain_file_name = 'domain.txt'
-    problem_file_name = '{}_problem.txt'
-    player = Player(Constants.GOAL)
-
-    # Update the file names
-    if input_player == Types.AVERAGE.value or input_player == Types.OPTIMISTIC.value:
-        player.set_type(input_player)
-        problem_file_name = problem_file_name.format(input_player.lower())
-        domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
-    else:
+    if input_player != Types.AVERAGE.value and input_player != Types.OPTIMISTIC.value:
         print("Usage: game.py player(optimistic or average). Bad type player.")
         exit()
+
+    domain_file_name = 'domain.txt'
+    problem_file_name = '{}_problem.txt'
+    player = Player(input_player)
+
+    # Update the file names
+    problem_file_name = problem_file_name.format(input_player.lower())
+    domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
+
 
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
