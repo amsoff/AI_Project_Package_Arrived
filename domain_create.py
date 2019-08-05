@@ -89,7 +89,9 @@ def create_move(player):
                     action[PRE] += " " + NOT_STOP_FORMAT % s
 
                 action[ADD] = AT_FORMAT % (tile2[0], tile2[1])
-                action[DEL] = AT_FORMAT % (tile1[0], tile1[1])
+                action[DEL] = ""
+                if tile1 != tile2:
+                    action[DEL] += AT_FORMAT % (tile1[0], tile1[1])
 
                 if player == AVERAGE:
                     # action[ADD] += " " + DICE_FORMAT % 3

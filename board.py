@@ -39,7 +39,7 @@ PRIZE_3 = Constants.PRIZE_3
 HAIRCUT_COST = Constants.HAIRCUT_COST
 TAX_COST = Constants.TAX_COST
 PACKAGE_COST = Constants.PACKAGE_COST
-big_entrance = [(8,1), (6,5), (2,2)]
+big_entrance = [(11, 8), (8,1), (6,5), (2,2)]
 
 
 class Board:
@@ -426,14 +426,15 @@ class Board:
 
     def init_row4(self):
         self.transition_dict[(4, 7)] = {1: [(3, 7)],
-                                        2: [(4, 7), (5, 8), (5, 6), (4, 5)],
+                                        2: [(4, 7), (5, 8), (5, 6)],
                                         3: [(6, 8), (5, 5), (4, 6), (5, 9)],
                                         ORANGE: [(5, 9)],
                                         MESSAGE: "Lottery! you have a chance to earn some money!"}
 
         self.transition_dict[(3, 7)] = {1: [(5, 7)],
-                                        2: [(5, 8), (5, 6), (4, 5)],
-                                        3: [(6, 8), (5, 5), (4, 6), (5, 9)], BALANCE: PRIZE_1,
+                                        2: [(5, 8), (5, 6)],
+                                        3: [(6, 8), (5, 5), (4, 6), (5, 9)],
+                                        BALANCE: PRIZE_1,
                                         GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
 
