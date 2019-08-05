@@ -462,6 +462,7 @@ if __name__ == '__main__':
     dice_val = dice_obj.roll_dice()
     player.dice_value = dice_val
     player.build_problem()
+    print("REUT: " + ROLLING % player.dice_value)
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
@@ -538,6 +539,7 @@ if __name__ == '__main__':
             loc, last_dice = find_last_dice(plan)
             player.build_problem()
             expanded.append(str(prob.expanded))
+            print("REUT: " + ROLLING % player.dice_value)
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             if last_dice == player.dice_value and last_dice is not None:
                 plan = plan[loc:]

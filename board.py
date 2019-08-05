@@ -433,7 +433,8 @@ class Board:
 
         self.transition_dict[(3, 7)] = {1: [(5, 7)],
                                         2: [(5, 8), (5, 6)],
-                                        3: [(6, 8), (5, 5), (4, 6), (5, 9)], BALANCE: PRIZE_1,
+                                        3: [(6, 8), (5, 5), (4, 6), (5, 9)],
+                                        BALANCE: PRIZE_1,
                                         GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
 
