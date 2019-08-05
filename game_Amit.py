@@ -174,6 +174,8 @@ def handle_payments(action, player):
 
     # Pay 150 to move to orange cell. update the player location
     if 'pay_150_from' in action.name:
+        if player.money < 150:
+            return [], 0
         all = []
         cell = (int(action.name.split('_')[6]), int(action.name.split('_')[7]))
         player.money -= 150
@@ -196,6 +198,8 @@ def handle_payments(action, player):
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
         amount = int(action.name.split('_')[1])
+        if player.money < amount:
+            return [], 0
         player.money -= amount
         if cell in player.need_pay_spots:
             player.need_pay_spots.remove(cell)
