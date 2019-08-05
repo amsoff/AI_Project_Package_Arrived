@@ -392,9 +392,9 @@ class Board:
                                         ENTRANCE: big_entrance,
                                         MESSAGE: "WOW! You are now entering the port. Good Luck"}
 
-        self.transition_dict[(5, 8)] = {1: [(5, 9)],
-                                        2: [(5, 8)],
-                                        3: [(5, 8)],
+        self.transition_dict[(5, 8)] = {1: [(5, 9), (6, 8), (5, 7)],
+                                        2: [(5, 8), (7, 8), (5, 6)],
+                                        3: [(8, 8), (5, 5), (4, 6)],
                                         ORANGE: [(5, 9)],
                                         SURPRISE: True,
                                         GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)]}

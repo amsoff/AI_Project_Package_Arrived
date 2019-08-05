@@ -105,9 +105,10 @@ def create_move(player):
                         action[ADD] += " " + DICE_FORMAT % d1
 
                 # payments:
-                if board.BALANCE in board_game[tile2] or board.SURPRISE in board_game[tile2]:
-                    action[DEL] += " " + NOT_NEED_PAY_CELL % tile2
-                    action[ADD] += " " + NEED_PAY_CELL % tile2
+                if tile2 != tile1:
+                    if board.BALANCE in board_game[tile2] or board.SURPRISE in board_game[tile2]:
+                        action[DEL] += " " + NOT_NEED_PAY_CELL % tile2
+                        action[ADD] += " " + NEED_PAY_CELL % tile2
 
                 if board.BALANCE in board_game[tile1] or board.SURPRISE in board_game[tile1]:
                     action[PRE] += " " + NOT_NEED_PAY_CELL % tile1
