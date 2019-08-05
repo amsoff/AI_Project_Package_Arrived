@@ -39,7 +39,7 @@ PRIZE_3 = Constants.PRIZE_3
 HAIRCUT_COST = Constants.HAIRCUT_COST
 TAX_COST = Constants.TAX_COST
 PACKAGE_COST = Constants.PACKAGE_COST
-big_entrance = [(11, 8), (8,1), (6,5), (2,2)]
+big_entrance = [(8,1), (6,5), (2,2)]
 
 
 class Board:
