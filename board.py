@@ -40,6 +40,8 @@ HAIRCUT_COST = Constants.HAIRCUT_COST
 TAX_COST = Constants.TAX_COST
 PACKAGE_COST = Constants.PACKAGE_COST
 big_entrance = [(8, 1), (6, 5), (2, 2)]
+snake = [(5,9), (5,10), (5,11), (6,11), (7,11), (7,10), (7,9), (8,9),(9,9), (9,10), (9,11), (10,11),(11,11), (11,10), (11,9)]
+
 
 
 class Board:
