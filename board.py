@@ -91,15 +91,15 @@ class Board:
         self.transition_dict[(11, 0)] = {1: [(11, 1), (10, 0)],
                                          2: [(11, 2), (9, 0)],
                                          3: [(8, 0), (9, 1), (11, 3)],
-                                         ORANGE: [(11, 3)],
-                                         MESSAGE: "You entered the Hospital!"}
+                                         ORANGE: [(11, 3)]}
 
         self.transition_dict[(11, 1)] = {1: [(11, 2)],
                                          2: [(11, 3)],
                                          3: [(11, 1)],
                                          ORANGE: [(11, 3)],
                                          NEED: [Certificate.GRANDMA],
-                                         ENTRANCE: [(11, 5)]}
+                                         ENTRANCE: [(11, 5)],
+                                         MESSAGE: "You entered the Hospital!"}
 
         self.transition_dict[(11, 2)] = {1: [(11, 3)],
                                          2: [(11, 2)],
