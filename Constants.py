@@ -1,5 +1,9 @@
 from enum import Enum
 
+# File names
+DOMAIN_FILE_NAME = 'domain.txt'
+PROBLEM_FILE_NAME = '{}_problem.txt'
+
 # Change goal here
 GOAL = (11,9)
 START = (1,0)
