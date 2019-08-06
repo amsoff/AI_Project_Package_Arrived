@@ -107,5 +107,5 @@ class Player:
         problem_file.close()
 
 
-pla = Player(Constants.GOAL)
-pla.build_problem()
+# pla = Player(Constants.GOAL)
+# pla.build_problem()
