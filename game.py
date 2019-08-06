@@ -425,6 +425,7 @@ if __name__ == '__main__':
     dice_val = dice_obj.roll_dice()
     player.dice_value = dice_val
     player.build_problem()
+    print("REUT: "+  ROLLING % dice_val + " MONEY: " + str(player.money) )
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
@@ -499,6 +500,9 @@ if __name__ == '__main__':
             player.dice_value = dice_obj.roll_dice()
             player.build_problem()
             expanded.append(str(prob.expanded))
+            print(
+                "REUT: " + ROLLING % dice_val + " MONEY: " + str(player.money))
+
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             plan = a_star_search(prob, heuristic=level_sum)
             print_plan(plan, logs)
