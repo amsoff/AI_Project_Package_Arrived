@@ -3,7 +3,6 @@ In search.py, you will implement generic search algorithms
 """
 
 import graphplan.util as util
-
 COUNTER = 0
 CURR_NODE = 0
 SUCCESSOR = 0
@@ -133,11 +132,11 @@ def sort_successors(successors):
             stop.append(successor)
         else:
             print("##### in search forgot " + successor[1].name + " ###########")
-    ret.extend(pay)
-    ret.extend(goto)
-    ret.extend(move)
-    ret.extend(jump)
     ret.extend(stop)
+    ret.extend(jump)
+    ret.extend(move)
+    ret.extend(goto)
+    ret.extend(pay)
 
     return ret
 

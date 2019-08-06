@@ -291,6 +291,7 @@ def handle_move(plan, player):
             all_current_moves.append(
                 "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
                     board.BALANCE])
+            # player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
         else:
             all_current_moves.append("You lose! You didn't gain money! Maybe next time :)")
         turns += 1
@@ -473,8 +474,7 @@ if __name__ == '__main__':
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
     dice_val = dice_obj.roll_dice()
-    player.dice_value = 2
-    # player.dice_value = dice_val
+    player.dice_value = dice_val
     player.build_problem()
     print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
@@ -488,7 +488,6 @@ if __name__ == '__main__':
     past_moves = [player.cell]
     with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
-            print_plan(player.get_initial(), logs)
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
             if 'Move' in plan[0].name:
@@ -558,6 +557,7 @@ if __name__ == '__main__':
                 plan = plan[loc:]
             else:
                 plan = a_star_search(prob, heuristic=level_sum)
+            print_plan(plan, logs)
 
             if len(plan) == 0:
                 write_to_log("## LAST ##", logs)

@@ -13,7 +13,7 @@ class Player:
     type = Types.AVERAGE.value
     money = Constants.PLAYER_STARTING_MONEY
     cell = Constants.START
-    has_certificates = [Certificate.PORT]
+    has_certificates = []
     dice_value = 0
     come_back_spots = []
     need_pay_spots = []
@@ -31,12 +31,7 @@ class Player:
     def set_type(self, player_type):
         self.type = player_type
 
-    def set_init_from_file(self):
-        init = []
-        with open("df.txt", 'r') as f:
-            for row in f.readlines():
-                init.append(row)
-        return init
+
 
     def get_goals(self):
         goals = [dc.AT_FORMAT % self.goal]

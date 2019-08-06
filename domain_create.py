@@ -26,7 +26,6 @@ NEED_PAY_CELL = Constants.NEED_PAY_CELL
 COME_BACK_FORMAT = Constants.COME_BACK_FORMAT
 NOT_NEED_PAY_CELL = Constants.NOT_NEED_PAY_CELL
 NOT_COME_BACK_FORMAT = Constants.NOT_COME_BACK_FORMAT
-FINISH_FORMAT = "finish_until_%s_%s"
 # NOT_NEEDS_FORMAT = "not_needs_%s"
 
 
@@ -120,20 +119,15 @@ def create_move(player):
                 if board.HAS in board_game[tile2]:
                     action[ADD] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
 
-                # if board.NEED in board_game[tile2] or (board.BALANCE in board_game[tile2] and
-                #                                        board_game[tile2][board.BALANCE] < 0):
-                #     action[DEL] += " " + COME_BACK_FORMAT % tile2
-                #     action[ADD] += " " + NOT_COME_BACK_FORMAT % tile2
+                if board.NEED in board_game[tile2] or (board.BALANCE in board_game[tile2] and
+                                                       board_game[tile2][board.BALANCE] < 0):
+                    action[DEL] += " " + COME_BACK_FORMAT % tile2
+                    action[ADD] += " " + NOT_COME_BACK_FORMAT % tile2
 
                 # show certificate:
                 if board.NEED in board_game[tile1]:
                     for cert in board_game[tile1][board.NEED]:
                         action[PRE] += " " + CERTIFICATES_FORMAT % cert
-
-                if tile1 in board.Board.snake:
-                    i = board.Board.snake.index(tile1)
-                    for j in range(i + 1, len(board.Board.snake)):
-                        action[PRE] += " " + NOT_COME_BACK_FORMAT % board.Board.snake[j]
 
                 # wait turns
                 if tile1 != tile2:
@@ -249,6 +243,8 @@ def create_pay_150_actions(player):
                         pre.append(CERTIFICATES_FORMAT % board_game[tile][board.NEED][0])
                     if board.GOTO in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
                         pre.append(NOT_NEED_PAY_CELL % tile)
+                    if board.BALANCE in board_game[tile]:
+                        pre.append(NOT_NEED_PAY_CELL % tile)
                     for d in [1, 2, 3]:
                         if d in Constants.DUMMY_DICE:
                             add.append(DICE_FORMAT % d)
@@ -256,6 +252,17 @@ def create_pay_150_actions(player):
                             add.append(DICE_FORMAT % d)
                         else:
                             delete.append(DICE_FORMAT % d)
+
+                    # SNAKE
+                    if value in board.snake:
+                        for cell in board.snake:
+                            if cell == value:
+                                break
+                            # if can have come back sign
+                            if board.NEED in board_game[cell] or (
+                                    board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0):
+                                pre.append(" " + NOT_COME_BACK_FORMAT % cell)
+
 
                     pre = " ".join(pre)
                     add = " ".join(add)
@@ -312,14 +319,6 @@ def create_stop_action():
 
 
 # CREATE PROPOSITIONS
-
-def create_finish_until_prop():
-    prop = []
-    snake = [(5,9), (5,10), (5,11), (6,11), (7,11),(7,10),(7,9),(8,9),(9,9),(9,10),(9,11),(10,11),(11,11),(10,11),(11,9)]
-    for p in snake:
-        prop.append(FINISH_FORMAT % p)
-    return prop
-
 
 def create_not_need_pay_props():
     """
@@ -436,7 +435,6 @@ def get_propositions():
     props.extend(create_has_money_props())
     props.extend(create_not_stop_props())
     props.extend(create_need_pay_props())
-    props.extend(create_finish_until_prop())
     return props
 
 
