@@ -143,6 +143,24 @@ def create_move(player):
                         if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 ):
                             action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
 
+                # ID SNAKE
+                if tile2 in board.id_mini_snake:
+                    for cell in board.id_mini_snake:
+                        if cell == tile2:
+                            break
+                        # if can have come back sign
+                        if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 ):
+                            action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
+
+                # PASSPORT SNAKE
+                if tile2 in board.passport_mini_snake:
+                    for cell in board.passport_mini_snake:
+                        if cell == tile2:
+                            break
+                        # if can have come back sign
+                        if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 ):
+                            action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
+
 
                 moves[(tile1, tile2, d)] = action
 
