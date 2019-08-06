@@ -23,16 +23,6 @@ board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 
 
-class GoalStack:
-    def __init__(self):
-        self.stack = []
-
-    def push(self, obj):
-        self.stack.append(obj)
-
-    def pop(self, obj):
-        return self.stack.pop()
-
 
 def print_plan(plan, logs):
     """
@@ -509,9 +499,9 @@ if __name__ == '__main__':
 
             if len(plan) == 0:
                 write_to_log("## LAST ##", logs)
-            write_to_log("###########ACTIONS##########", logs)
-            for action in actions:
-                write_to_log(action.name, logs)
+            # write_to_log("###########ACTIONS##########", logs)
+            # for action in actions:
+            #     write_to_log(action.name, logs)
             write_to_log("@@@@@@@@@@@PROPOSITIONS@@@@@@@@@@@", logs)
             for state in prob.initialState:
                 write_to_log(state.name, logs)
