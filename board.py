@@ -40,6 +40,9 @@ HAIRCUT_COST = Constants.HAIRCUT_COST
 TAX_COST = Constants.TAX_COST
 PACKAGE_COST = Constants.PACKAGE_COST
 big_entrance = [(8, 1), (6, 5), (2, 2)]
+snake = [(5,9), (5,10), (5,11), (6,11), (7,11), (7,10), (7,9), (8,9),(9,9), (9,10), (9,11), (10,11),(11,11), (11,10), (11,9)]
+id_mini_snake = [(2,4), (2,5), (1,6), (1,5),(1,4)]
+passport_mini_snake = [(8,2), (8,3), (8,4)]
 
 
 class Board:
@@ -134,6 +137,7 @@ class Board:
                                           2: [(11, 9)],
                                           3: [(11, 11)],
                                           BALANCE: PACKAGE_COST,
+                                          ORANGE: [(11,9)],
                                           ENTRANCE: big_entrance}
 
     def init_row10(self):
