@@ -561,9 +561,9 @@ if __name__ == '__main__':
 
             if len(plan) == 0:
                 write_to_log("## LAST ##", logs)
-            write_to_log("###########ACTIONS##########", logs)
-            for action in actions:
-                write_to_log(action.name, logs)
+            # write_to_log("###########ACTIONS##########", logs)
+            # for action in actions:
+            #     write_to_log(action.name, logs)
             write_to_log("@@@@@@@@@@@PROPOSITIONS@@@@@@@@@@@", logs)
             for state in prob.initialState:
                 write_to_log(state.name, logs)
