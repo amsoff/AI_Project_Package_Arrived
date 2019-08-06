@@ -262,8 +262,8 @@ def handle_move(plan, player):
         # update the moves we performed so far in the current round
         if cell not in board.Board.fake_cells:
             all_current_moves.append("Move to (%s,%s)" % player.cell)
-            if board.MESSAGE in board_game[cell]:
-                all_current_moves.append(board_game[cell][board.MESSAGE])
+        if board.MESSAGE in board_game[cell]:
+            all_current_moves.append(board_game[cell][board.MESSAGE])
 
         # if we come back to a cell to pay money or show certificate, update the player
         if cell in player.come_back_spots:
@@ -410,6 +410,19 @@ def find_last_dice(plan):
     return None, None
 
 
+def print_init(param):
+    pass
+
+def goal_difference_from_current_state(player):
+    diff = []
+    for p in player.get_initial():
+        if p not in player.get_goals():
+            diff.append(p)
+    for p in player.get_goals():
+        if p not in player.get_initial():
+            diff.append(p)
+    return diff
+
 if __name__ == '__main__':
     """
     Input = python3 game.py player
@@ -460,8 +473,10 @@ if __name__ == '__main__':
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
     dice_val = dice_obj.roll_dice()
-    player.dice_value = dice_val
+    player.dice_value = 2
+    # player.dice_value = dice_val
     player.build_problem()
+    print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
@@ -472,9 +487,8 @@ if __name__ == '__main__':
     moves.append("Amount of money: %s " % player.money)
     past_moves = [player.cell]
     with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
-        print_plan(plan, logs)
         while len(plan) != 0 and plan != 'failed':
-
+            print_plan(player.get_initial(), logs)
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
             if 'Move' in plan[0].name:
@@ -544,7 +558,6 @@ if __name__ == '__main__':
                 plan = plan[loc:]
             else:
                 plan = a_star_search(prob, heuristic=level_sum)
-            print_plan(plan, logs)
 
             if len(plan) == 0:
                 write_to_log("## LAST ##", logs)

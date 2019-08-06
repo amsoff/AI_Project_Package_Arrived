@@ -6,14 +6,14 @@ import domain_create as dc
 certificates = Certificate.list()
 
 board_game = board.Board().transition_dict
-all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
+all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)}
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
 class Player:
     type = Types.AVERAGE.value
     money = Constants.PLAYER_STARTING_MONEY
     cell = Constants.START
-    has_certificates = []
+    has_certificates = [Certificate.PORT]
     dice_value = 0
     come_back_spots = []
     need_pay_spots = []
@@ -31,7 +31,12 @@ class Player:
     def set_type(self, player_type):
         self.type = player_type
 
-
+    def set_init_from_file(self):
+        init = []
+        with open("df.txt", 'r') as f:
+            for row in f.readlines():
+                init.append(row)
+        return init
 
     def get_goals(self):
         goals = [dc.AT_FORMAT % self.goal]
