@@ -58,7 +58,7 @@ GOTO_MONEY_FORMAT = Constants.GOTO_MONEY_FORMAT
 # jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
 
 # jump to a nearby cell to search for certificate/money
-JUMP_TO_ENTRANCE = Constants.JUMP_TO_ENTRANCE
+JUMP_TO_ENTRANCE_ = Constants.JUMP_TO_ENTRANCE
 
 # jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
 
@@ -159,18 +159,35 @@ def create_pay_actions():
     return actions
 
 
-def create_jump_to_entrance_actions():
+def create_jump_to_entrance_actions(player):
     """
     :return: jump to nearby cells actions
     """
     jump_to_entrance_actions = []
+
     for tile in board_game:
         if (board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in board_game[tile]:
-
             for tile2 in board_game[tile][board.ENTRANCE]:
-                jump_to_entrance_actions.append(JUMP_TO_ENTRANCE % (
-                    tile2[0], tile2[1], tile[0], tile[1], tile[0], tile[1], tile[0], tile[1], tile2[0], tile2[1], tile[0],
-                    tile[1], tile[0], tile[1]))
+                action = dict()
+                action[Constants.NAME] = "jump_to_entrance_%s_%s" % tile2 + "_from_%s_%s" % tile
+                action[Constants.PRE] = AT_FORMAT % tile
+                action[Constants.ADD] = COME_BACK_FORMAT % tile + " " + AT_FORMAT % tile2
+                action[Constants.DEL] = AT_FORMAT % tile + " " + NOT_COME_BACK_FORMAT % tile
+                for d in [1,2,3]:
+                    if d in Constants.DUMMY_DICE:
+                        action[Constants.ADD] += " " + DICE_FORMAT % d
+                    elif player == OPTIMISTIC:
+                        action[Constants.ADD] += " " + DICE_FORMAT % d
+                    else:
+                        action[Constants.DEL] += " " + DICE_FORMAT % d
+                jump_action = ''.join(
+                        ['%s%s' % (k, v) for k, v in action.items()])
+                jump_to_entrance_actions.append(jump_action)
+
+
+
+
+
 
     return jump_to_entrance_actions
 
@@ -195,7 +212,7 @@ def create_pay_surprise_actions(player):
     return surprise_actions
 
 
-def create_pay_150_actions():
+def create_pay_150_actions(player):
     """
     :return: Pay 150 in order to jump directly to an orange cell actions
     """
@@ -217,6 +234,15 @@ def create_pay_150_actions():
                         pre.append(CERTIFICATES_FORMAT % board_game[tile][board.NEED][0])
                     if board.GOTO in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
                         pre.append(NOT_NEED_PAY_CELL % tile)
+                    for d in [1, 2, 3]:
+                        if d in Constants.DUMMY_DICE:
+                            add.append(DICE_FORMAT % d)
+                        elif player == OPTIMISTIC:
+                            add.append(DICE_FORMAT % d)
+                        else:
+                            delete.append(DICE_FORMAT % d)
+
+
 
                     pre = " ".join(pre)
                     add = " ".join(add)
@@ -225,20 +251,36 @@ def create_pay_150_actions():
     return direct_jump_actions
 
 
-def create_goto_from_comeback():
+def create_goto_from_comeback(player):
     """
     :return: go back to where we left a "come back" sign actions
     """
     goto = []
+    GOTO_MONEY_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + NOT_NEED_PAY_CELL + " " + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT  # FROM_COMEBACK
+    # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
+
     for tile in board_game:
-        if board.GOTO in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
-            for value in board_game[tile][board.GOTO]:
-                                            # goto      p2      from      p1  pre  not need pay p1 comeback to p2              at p1   add        at p2                not CB p2     delete: pre
-                goto.append(GOTO_MONEY_FORMAT % (value[0], value[1], tile[0], tile[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
-        elif board.GOTO in board_game[tile]:
-            for value in board_game[tile][board.GOTO]:
-                                            # goto      p2      from      p1  pre comeback to p2              at p1   add        at p2                not CB p2     delete: pre
-                goto.append(GOTO_FORMAT % (value[0], value[1], tile[0], tile[1], value[0], value[1], tile[0], tile[1], value[0], value[1], value[0], value[1], value[0], value[1], tile[0], tile[1]))
+        if board.GOTO in board_game[tile]:
+            for tile2 in board_game[tile][board.GOTO]:
+                action = dict()
+                action[NAME] = "Goto_%s_%s" % tile2 + "_from_%s_%s" % tile
+                action[PRE] = COME_BACK_FORMAT % tile2 + " " + AT_FORMAT % tile
+                action[ADD] = AT_FORMAT % tile2 + " " + NOT_COME_BACK_FORMAT % tile2
+                action[DEL] = COME_BACK_FORMAT % tile2 + " " + AT_FORMAT % tile
+
+                if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]:
+                    action[PRE] += " " + NOT_NEED_PAY_CELL % tile2
+
+                for d in [1, 2, 3]:
+                    if d in Constants.DUMMY_DICE:
+                        action[Constants.ADD] += " " + DICE_FORMAT % d
+                    elif player == OPTIMISTIC:
+                        action[Constants.ADD] += " " + DICE_FORMAT % d
+                    else:
+                        action[Constants.DEL] += " " + DICE_FORMAT % d
+                goto_action = ''.join(['%s%s' % (k, v) for k, v in action.items()])
+                goto.append(goto_action)
+
     return goto
 
 def create_stop_action():
@@ -380,11 +422,11 @@ def get_actions(player):
     actions = []
     actions.extend(create_move(player))
     actions.extend(create_pay_actions())
-    actions.extend(create_jump_to_entrance_actions())
+    actions.extend(create_jump_to_entrance_actions(player))
     actions.extend(create_pay_surprise_actions(player))
-    actions.extend(create_pay_150_actions())
+    actions.extend(create_pay_150_actions(player))
     actions.extend(create_stop_action())
-    actions.extend(create_goto_from_comeback())
+    actions.extend(create_goto_from_comeback(player))
 
     return actions
 
