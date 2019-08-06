@@ -291,11 +291,11 @@ def handle_move(plan, player):
             all_current_moves.append(
                 "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
                     board.BALANCE])
+            turns += 1
             # player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
         else:
             all_current_moves.append("You lose! You didn't gain money! Maybe next time :)")
-        turns += 1
-
+            # TODO --> MAKE HIM MAKE A MOVE WITH THAT DICE
     for i, action in enumerate(plan):
 
         # handled the move already
