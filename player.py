@@ -6,7 +6,7 @@ import domain_create as dc
 certificates = Certificate.list()
 
 board_game = board.Board().transition_dict
-all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)}
+all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
 class Player:
