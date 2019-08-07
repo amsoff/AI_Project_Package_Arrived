@@ -13,7 +13,7 @@ class Player:
     type = Types.AVERAGE.value
     money = Constants.PLAYER_STARTING_MONEY
     cell = Constants.START
-    has_certificates = []
+    has_certificates = [Certificate.GRANDMA]
     dice_value = 0
     come_back_spots = []
     need_pay_spots = []

@@ -23,16 +23,6 @@ board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 
 
-class GoalStack:
-    def __init__(self):
-        self.stack = []
-
-    def push(self, obj):
-        self.stack.append(obj)
-
-    def pop(self, obj):
-        return self.stack.pop()
-
 
 def print_plan(plan, logs):
     """
@@ -514,6 +504,9 @@ if __name__ == '__main__':
                 print_plan(move, logs)
                 moves.extend(move)
                 write_current_move_logs(past_moves, player, turns, logs)
+                if len(plan) > 1 and 'pay_500' in plan[1].name:
+                    move, turn = handle_payments(plan[0], player)
+                    moves.extend(move)
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue
