@@ -195,19 +195,27 @@ def handle_payments(action, player):
                     if str(cert) == certificate and cert not in player.has_certificates:
                         player.has_certificates.append(cert)
                         all.append("Congrats! you hold the %s Certificate!" % cert.name)
+
+            # Next cell has payment
+            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
+                player.need_pay_spots.append(cell)
         return all, 1
 
     # Pay X money
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
         amount = int(action.name.split('_')[1])
-        if player.money < amount:
-            if cell not in player.need_pay_spots:
-                 player.need_pay_spots.append(cell)
-            return [], 0
-        player.money -= amount
-        if cell in player.need_pay_spots:
+        amount = player.money - amount
+
+        # In cell we already visited and we have enough money
+        if cell in player.need_pay_spots and amount >= 0:
             player.need_pay_spots.remove(cell)
+        elif amount < 0:
+            if cell not in player.need_pay_spots:
+                player.need_pay_spots.append(cell)
+            return [], 0
+
+        player.money = amount
         sign = "+"
         if amount > 0:  # then it is a payment and not to get money
             sign = "-"
@@ -282,6 +290,11 @@ def handle_move(plan, player):
                     if str(cert) == certificate and cert not in player.has_certificates:
                         player.has_certificates.append(cert)
                         all_current_moves.append("Congrats! you hold the %s Certificate!" % cert.name)
+
+            # Next cell has payment
+            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
+                    player.need_pay_spots.append(cell)
+
         for prop in action.pre:
             if 'has' in prop.name:
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
@@ -415,19 +428,6 @@ def find_last_dice(plan):
     return None, None
 
 
-def print_init(param):
-    pass
-
-def goal_difference_from_current_state(player):
-    diff = []
-    for p in player.get_initial():
-        if p not in player.get_goals():
-            diff.append(p)
-    for p in player.get_goals():
-        if p not in player.get_initial():
-            diff.append(p)
-    return diff
-
 if __name__ == '__main__':
     """
     Input = python3 game.py player
@@ -478,7 +478,7 @@ if __name__ == '__main__':
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
     dice_val = dice_obj.roll_dice()
-    player.dice_value = dice_val
+    player.dice_value = 1
     player.build_problem()
     print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
