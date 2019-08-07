@@ -186,9 +186,13 @@ def handle_payments(action, player):
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
         amount = int(action.name.split('_')[1])
-        player.money -= amount
-        if cell in player.need_pay_spots:
+        if cell in player.need_pay_spots and (player.money - amount) >= 0:
+            amount = player.money - amount
+            player.money = max(0, amount)
             player.need_pay_spots.remove(cell)
+        elif (player.money - amount) < 0:
+            if cell not in player.need_pay_spots:
+                player.need_pay_spots.append(cell)
         sign = "+"
         if amount > 0:  # then it is a payment and not to get money
             sign = "-"
