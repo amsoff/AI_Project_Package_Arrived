@@ -13,7 +13,7 @@ class Player:
     type = Types.AVERAGE.value
     money = Constants.PLAYER_STARTING_MONEY
     cell = Constants.START
-    has_certificates = [Certificate.GRANDMA]
+    has_certificates = []
     dice_value = 0
     come_back_spots = []
     need_pay_spots = []
@@ -63,6 +63,7 @@ class Player:
 
     def get_pays(self):
         pays = [dc.NOT_NEED_PAY_CELL % cell for cell in payment_spots.difference(self.need_pay_spots)]
+        pays.extend([dc.NEED_PAY_CELL % cell for cell in self.need_pay_spots])
         return pays
 
 
