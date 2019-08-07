@@ -23,16 +23,6 @@ board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 
 
-class GoalStack:
-    def __init__(self):
-        self.stack = []
-
-    def push(self, obj):
-        self.stack.append(obj)
-
-    def pop(self, obj):
-        return self.stack.pop()
-
 
 def print_plan(plan, logs):
     """
@@ -280,7 +270,7 @@ def handle_move(plan, player):
 
     # check if at lottery- and perform another move that simulates the lottery
     if player.cell in board.Board.lotto_cells:
-        dice_val = 1
+        dice_val = dice_obj.roll_dice()
         all_current_moves.append(ROLLING % player.dice_value)
         if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
             all_current_moves.append(
@@ -407,9 +397,13 @@ if __name__ == '__main__':
         exit()
 
     input_player = sys.argv[1]
+    if input_player != Types.AVERAGE.value and input_player != Types.OPTIMISTIC.value:
+        print("Usage: game.py player(optimistic or average). Bad type player.")
+        exit()
+
     domain_file_name = 'domain.txt'
     problem_file_name = '{}_problem.txt'
-    player = Player(Constants.GOAL)
+    player = Player(input_player)
 
     # Update the file names
     if input_player == Types.AVERAGE.value or input_player == Types.OPTIMISTIC.value:
@@ -425,6 +419,7 @@ if __name__ == '__main__':
     dice_val = dice_obj.roll_dice()
     player.dice_value = dice_val
     player.build_problem()
+    print("REUT: "+  ROLLING % dice_val + " MONEY: " + str(player.money) )
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
@@ -436,7 +431,6 @@ if __name__ == '__main__':
     with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         print_plan(plan,logs)
         while len(plan) != 0 and plan != 'failed':
-            print_plan(plan, logs)
 
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
@@ -500,16 +494,18 @@ if __name__ == '__main__':
             player.dice_value = dice_obj.roll_dice()
             player.build_problem()
             expanded.append(str(prob.expanded))
-            #print(moves)
+            print(
+                "REUT: " + ROLLING % dice_val + " MONEY: " + str(player.money))
+
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             plan = a_star_search(prob, heuristic=level_sum)
             print_plan(plan, logs)
 
             if len(plan) == 0:
                 write_to_log("## LAST ##", logs)
-            write_to_log("###########ACTIONS##########", logs)
-            for action in actions:
-                write_to_log(action.name, logs)
+            # write_to_log("###########ACTIONS##########", logs)
+            # for action in actions:
+            #     write_to_log(action.name, logs)
             write_to_log("@@@@@@@@@@@PROPOSITIONS@@@@@@@@@@@", logs)
             for state in prob.initialState:
                 write_to_log(state.name, logs)

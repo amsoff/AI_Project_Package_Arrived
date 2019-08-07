@@ -6,7 +6,7 @@ import domain_create as dc
 certificates = Certificate.list()
 
 board_game = board.Board().transition_dict
-all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
+all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)}
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
 class Player:
@@ -17,10 +17,15 @@ class Player:
     dice_value = 0
     come_back_spots = []
     need_pay_spots = []
+    goal = Constants.GOAL
+    start = Constants.START
     # package_cost = 0
 
-    def __init__(self,goal=Constants.GOAL):
+    def __init__(self, player_type, goal=Constants.GOAL, start = Constants.START, money = Constants.PLAYER_STARTING_MONEY):
+        self.type = player_type
         self.goal = goal
+        self.cell = start
+        self.money = money
 
 
     def set_type(self, player_type):
@@ -97,5 +102,5 @@ class Player:
         problem_file.close()
 
 
-pla = Player(Constants.GOAL)
-pla.build_problem()
+# pla = Player(Constants.GOAL)
+# pla.build_problem()
