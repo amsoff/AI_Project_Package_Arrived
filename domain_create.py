@@ -134,14 +134,28 @@ def create_move(player):
                     if board.WAIT in board_game[tile2]:
                         for i in range(1, board_game[tile2][board.WAIT] + 1):
                             action[DEL] += " " + NOT_STOP_FORMAT % i
+
                 # SNAKE
                 if tile2 in board.snake:
                     for cell in board.snake:
                         if cell == tile2:
                             break
                         # if can have come back sign
-                        if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 ):
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0)) and cell != tile1:
                             action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
+                        if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                            action[PRE] += " " + NOT_NEED_PAY_CELL % cell
+
+                # BIRTH SNAKE
+                if tile2 in board.birth_snake:
+                    for cell in board.birth_snake:
+                        if cell == tile2:
+                            break
+                        # if can have come back sign
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0)) and cell != tile1:
+                            action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
+                        if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                            action[PRE] += " " + NOT_NEED_PAY_CELL % cell
 
                 # ID SNAKE
                 if tile2 in board.id_mini_snake:
@@ -149,8 +163,10 @@ def create_move(player):
                         if cell == tile2:
                             break
                         # if can have come back sign
-                        if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 ):
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 )) and cell != tile1:
                             action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
+                        if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                            action[PRE] += " " + NOT_NEED_PAY_CELL % cell
 
                 # PASSPORT SNAKE
                 if tile2 in board.passport_mini_snake:
@@ -158,8 +174,10 @@ def create_move(player):
                         if cell == tile2:
                             break
                         # if can have come back sign
-                        if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 ):
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 )) and cell != tile1:
                             action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
+                        if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                            action[PRE] += " " + NOT_NEED_PAY_CELL % cell
 
 
                 moves[(tile1, tile2, d)] = action
@@ -277,9 +295,45 @@ def create_pay_150_actions(player):
                             if cell == value:
                                 break
                             # if can have come back sign
-                            if board.NEED in board_game[cell] or (
-                                    board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0):
-                                pre.append(" " + NOT_COME_BACK_FORMAT % cell)
+                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                                pre.append(NOT_COME_BACK_FORMAT % cell)
+                            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                                pre.append(NOT_NEED_PAY_CELL % cell)
+
+                    # BIRTH SNAKE
+                    if value in board.birth_snake:
+                        for cell in board.birth_snake:
+                            if cell == value:
+                                break
+                            # if can have come back sign
+                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                                pre.append(NOT_COME_BACK_FORMAT % cell)
+                            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                                pre.append(NOT_NEED_PAY_CELL % cell)
+
+                    # ID SNAKE
+                    if value in board.id_mini_snake:
+                        for cell in board.id_mini_snake:
+                            if cell == value:
+                                break
+                            # if can have come back sign
+                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                                pre.append(NOT_COME_BACK_FORMAT % cell)
+                            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                                pre.append(NOT_NEED_PAY_CELL % cell)
+
+                    # PASSPORT SNAKE
+                    if value in board.passport_mini_snake:
+                        for cell in board.passport_mini_snake:
+                            if cell == value:
+                                break
+                            # if can have come back sign
+                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                                pre.append(NOT_COME_BACK_FORMAT % cell)
+                            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                                pre.append(NOT_NEED_PAY_CELL % cell)
+
+
 
 
                     pre = " ".join(pre)
