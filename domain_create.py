@@ -365,8 +365,8 @@ def create_goto_from_comeback(player):
                 action[ADD] = AT_FORMAT % tile2 + " " + NOT_COME_BACK_FORMAT % tile2
                 action[DEL] = COME_BACK_FORMAT % tile2 + " " + AT_FORMAT % tile
 
-                if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]:
-                    action[PRE] += " " + NOT_NEED_PAY_CELL % tile2
+                # if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]:
+                #     action[PRE] += " " + NOT_NEED_PAY_CELL % tile2
 
                 for d in [1, 2, 3]:
                     if d in Constants.DUMMY_DICE:

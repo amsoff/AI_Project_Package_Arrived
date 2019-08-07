@@ -174,8 +174,8 @@ class Board:
                                           2: [(10, 11)],
                                           3: [(10, 11)],
                                           ORANGE: [(11, 11)],
-                                          NEED: [Certificate.GRANDMA],
-                                          ENTRANCE: big_entrance}
+                                          ENTRANCE: big_entrance,
+                                          NEED: [Certificate.GRANDMA]}
 
     def init_row9(self):
         self.transition_dict[(9, 0)] = {1: [(8, 0), (9, 1), (10, 0)],
