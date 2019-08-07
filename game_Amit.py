@@ -183,6 +183,8 @@ def handle_payments(action, player):
         player.cell = cell
         all.append("Paid 150 to jump to (%s,%s)" % cell  + "\nMoney Balance: " + str(player.money))
         if cell in player.need_pay_spots:
+            if cell not in player.need_pay_spots:
+                 player.need_pay_spots.append(cell)
             player.need_pay_spots.remove(cell)
         # handle the case a cell we are moving to provides a certificate
         for prop in action.add:
@@ -200,6 +202,8 @@ def handle_payments(action, player):
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
         amount = int(action.name.split('_')[1])
         if player.money < amount:
+            if cell not in player.need_pay_spots:
+                 player.need_pay_spots.append(cell)
             return [], 0
         player.money -= amount
         if cell in player.need_pay_spots:
@@ -208,7 +212,7 @@ def handle_payments(action, player):
         if amount > 0:  # then it is a payment and not to get money
             sign = "-"
         return ["Money " + sign + "= " + str(abs(amount)) + "\nMoney Balance: " + str(player.money)], 0
-    return None
+    return [], 0
 
 
 def handle_goto(action, player):
@@ -488,6 +492,7 @@ if __name__ == '__main__':
     past_moves = [player.cell]
     with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
+            print_plan(plan, logs)
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
             if 'Move' in plan[0].name:
