@@ -3,7 +3,6 @@ In search.py, you will implement generic search algorithms
 """
 
 import graphplan.util as util
-
 COUNTER = 0
 CURR_NODE = 0
 SUCCESSOR = 0
@@ -84,33 +83,11 @@ def get_path(curr_node):
     """
     path = []
     curr = curr_node
-    first_path = False
-    if len(first_plan) == 0:
-        first_path = True
     while curr.get_parent():
         path.append(curr.get_action())
         curr = curr.get_parent()
-        if first_path:
-            build_first_plan_dict(curr, path[::-1])
+
     return path[::-1]
-
-
-def get_past_path(cur_node):
-    path = []
-    curr = cur_node
-    while curr.get_parent():
-        path.append(curr.get_action())
-        curr = curr.get_parent()
-
-    return path[::-1] + first_plan[cur_node.get_node()]
-
-
-def is_visited_by_plan(curr_get_node: frozenset):
-    return curr_get_node in first_plan
-
-
-def build_first_plan_dict(curr_node: PQItem, path):
-    first_plan[curr_node.get_node()] = path
 
 
 def sort_successors(successors):
@@ -161,18 +138,27 @@ def general_search(problem, fringe):
         if problem.is_goal_state(curr.get_node()):
             return get_path(curr)
 
-        elif is_visited_by_plan(curr.get_node()):
-            print("VISITED!")
-            return get_past_path(curr)
-
         elif curr.get_node() not in closed:
             successors = problem.get_successors(curr.get_node())
+            # if i % 1 == 0:
+                # print("Num_successors = %d" % len(successors))
             successors = sort_successors(successors)
             for i in range(len(successors)):
                 fringe.push(PQItem((successors[i][0], successors[i][1], successors[i][2] + curr.get_cost(), curr)))
             closed.add(curr.get_node())
-        i += 1
     return "failed"
+
+
+# def write_to_tmp_log(curr, i, successors, tmp):
+#     next_state, action, cost = successors[i]
+#     str_state = "\n".join([x.name for x in list(next_state)])
+#     str_actions = "\n".join([x.name for x in (curr.get_action())])
+#     str_action = action.name
+#     tmp.write(
+#         "WRITING NEXT NODE:\n###### NEXT STATE:######\n%s\n######END OF STATE######\n######START OF ACTIONS######: %s\nAND NEW ACTION:\n%s\n######END OF ACTIONS######\n ######COSTS: %s \n" % (
+#         str_state,
+#         str_actions, str_action, curr.get_cost() + cost))
+#     return action, cost, next_state
 
 
 def depth_first_search(problem):

@@ -183,6 +183,8 @@ def handle_payments(action, player):
         player.cell = cell
         all.append("Paid 150 to jump to (%s,%s)" % cell  + "\nMoney Balance: " + str(player.money))
         if cell in player.need_pay_spots:
+            if cell not in player.need_pay_spots:
+                 player.need_pay_spots.append(cell)
             player.need_pay_spots.remove(cell)
         # handle the case a cell we are moving to provides a certificate
         for prop in action.add:
@@ -193,22 +195,32 @@ def handle_payments(action, player):
                     if str(cert) == certificate and cert not in player.has_certificates:
                         player.has_certificates.append(cert)
                         all.append("Congrats! you hold the %s Certificate!" % cert.name)
+
+            # Next cell has payment
+            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
+                player.need_pay_spots.append(cell)
         return all, 1
 
     # Pay X money
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
         amount = int(action.name.split('_')[1])
-        if player.money < amount:
-            return [], 0
-        player.money -= amount
-        if cell in player.need_pay_spots:
+        amount = player.money - amount
+
+        # In cell we already visited and we have enough money
+        if cell in player.need_pay_spots and amount >= 0:
             player.need_pay_spots.remove(cell)
+        elif amount < 0:
+            if cell not in player.need_pay_spots:
+                player.need_pay_spots.append(cell)
+            return [], 0
+
+        player.money = amount
         sign = "+"
         if amount > 0:  # then it is a payment and not to get money
             sign = "-"
         return ["Money " + sign + "= " + str(abs(amount)) + "\nMoney Balance: " + str(player.money)], 0
-    return None
+    return [], 0
 
 
 def handle_goto(action, player):
@@ -278,6 +290,11 @@ def handle_move(plan, player):
                     if str(cert) == certificate and cert not in player.has_certificates:
                         player.has_certificates.append(cert)
                         all_current_moves.append("Congrats! you hold the %s Certificate!" % cert.name)
+
+            # Next cell has payment
+            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
+                    player.need_pay_spots.append(cell)
+
         for prop in action.pre:
             if 'has' in prop.name:
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
@@ -461,9 +478,9 @@ if __name__ == '__main__':
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
     dice_val = dice_obj.roll_dice()
-    player.dice_value = dice_val
+    player.dice_value = 1
     player.build_problem()
-    print("REUT: " + ROLLING % player.dice_value + "MONEY: " + str(player.money))
+    print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
@@ -474,9 +491,8 @@ if __name__ == '__main__':
     moves.append("Amount of money: %s " % player.money)
     past_moves = [player.cell]
     with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
-        print_plan(plan, logs)
         while len(plan) != 0 and plan != 'failed':
-
+            print_plan(plan, logs)
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
             if 'Move' in plan[0].name:
@@ -540,7 +556,7 @@ if __name__ == '__main__':
             loc, last_dice = find_last_dice(plan)
             player.build_problem()
             expanded.append(str(prob.expanded))
-            print("REUT: " + ROLLING % player.dice_value + "MONEY: " + str(player.money))
+            print(ROLLING % player.dice_value)
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
             if last_dice == player.dice_value and last_dice is not None:
                 plan = plan[loc:]
@@ -550,9 +566,9 @@ if __name__ == '__main__':
 
             if len(plan) == 0:
                 write_to_log("## LAST ##", logs)
-            write_to_log("###########ACTIONS##########", logs)
-            for action in actions:
-                write_to_log(action.name, logs)
+            # write_to_log("###########ACTIONS##########", logs)
+            # for action in actions:
+            #     write_to_log(action.name, logs)
             write_to_log("@@@@@@@@@@@PROPOSITIONS@@@@@@@@@@@", logs)
             for state in prob.initialState:
                 write_to_log(state.name, logs)
