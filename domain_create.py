@@ -263,6 +263,11 @@ def create_pay_150_actions(player):
                         pre.append(NOT_NEED_PAY_CELL % tile)
                     if board.BALANCE in board_game[tile]:
                         pre.append(NOT_NEED_PAY_CELL % tile)
+                    if board.BALANCE in board_game[value]:
+                        add.append(NEED_PAY_CELL % value)
+                        add.append(NOT_COME_BACK_FORMAT % value)
+                        delete.append(NOT_NEED_PAY_CELL % value)
+                        delete.append(COME_BACK_FORMAT % value)
                     for d in [1, 2, 3]:
                         if d in Constants.DUMMY_DICE:
                             add.append(DICE_FORMAT % d)
