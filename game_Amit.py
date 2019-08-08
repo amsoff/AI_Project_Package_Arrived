@@ -207,7 +207,7 @@ def handle_payments(action, player):
 
         player.money = total_amount
         sign = "+"
-        if amount < 0:  # then it is a payment and not to get money
+        if amount > 0:  # then it is a payment and not to get money
             sign = "-"
         return ["Money " + sign + "= " + str(abs(amount)) + "\nMoney Balance: " + str(player.money)], 0
     return [], 0
@@ -299,7 +299,6 @@ def handle_move(plan, player):
                 "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
                     board.BALANCE])
             turns += 1
-            # player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
         else:
             all_current_moves.append("You lose! You didn't gain money! Maybe next time :)")
             # TODO --> MAKE HIM MAKE A MOVE WITH THAT DICE
@@ -468,7 +467,7 @@ if __name__ == '__main__':
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
     dice_val = dice_obj.roll_dice()
-    player.dice_value = 1
+    player.dice_value = dice_val
     player.build_problem()
     print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
@@ -482,7 +481,6 @@ if __name__ == '__main__':
     past_moves = [player.cell]
     with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
-            print_plan(player.get_initial(), logs)
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
             if 'Move' in plan[0].name:
@@ -505,8 +503,9 @@ if __name__ == '__main__':
                 moves.extend(move)
                 write_current_move_logs(past_moves, player, turns, logs)
                 if len(plan) > 1 and 'pay_500' in plan[1].name:
-                    move, turn = handle_payments(plan[0], player)
+                    move, turn = handle_payments(plan[1], player)
                     moves.extend(move)
+                    plan = plan[1:]
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue
