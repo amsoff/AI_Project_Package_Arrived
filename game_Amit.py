@@ -195,19 +195,19 @@ def handle_payments(action, player):
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
         amount = int(action.name.split('_')[1])
-        amount = player.money - amount
+        total_amount = player.money - amount
 
         # In cell we already visited and we have enough money
-        if cell in player.need_pay_spots and amount >= 0:
+        if cell in player.need_pay_spots and total_amount >= 0:
             player.need_pay_spots.remove(cell)
-        elif amount < 0:
+        elif total_amount < 0:
             if cell not in player.need_pay_spots:
                 player.need_pay_spots.append(cell)
             return [], 0
 
-        player.money = amount
+        player.money = total_amount
         sign = "+"
-        if amount > 0:  # then it is a payment and not to get money
+        if amount < 0:  # then it is a payment and not to get money
             sign = "-"
         return ["Money " + sign + "= " + str(abs(amount)) + "\nMoney Balance: " + str(player.money)], 0
     return [], 0
