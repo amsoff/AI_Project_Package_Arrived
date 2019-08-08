@@ -1,0 +1,66 @@
+--- Welcome to The Package Arrived game.---
+You are positioned at (1,0)
+Amount of money: 1000
+-- You rolled a 3 --
+Move to (2,2)
+-- You rolled a 2 --
+Move to (3,3)
+-- You rolled a 1 --
+Move to (3,4)
+-- You rolled a 2 --
+Move to (3,6)
+-- You rolled a 2 --
+Move to (5,6)
+-- You rolled a 2 --
+Move to (6,5)
+-- You rolled a 1 --
+Move to (7,5)
+-- You rolled a 3 --
+Move to (6,7)
+Congrats! you hold the PORT Certificate!
+-- You rolled a 3 --
+Move to (5,9)
+WOW! You are now entering the port. Good Luck
+-- You rolled a 3 --
+Move to (6,11)
+Presented the certificate: port
+-- You rolled a 3 --
+Move to (7,9)
+-- You rolled a 1 --
+Move to (8,9)
+Jumped to (2,2) to search
+-- You rolled a 3 --
+Move to (2,5)
+Money -= 50
+Money Balance: 950
+Paid 150 to jump to (1,4)
+Money Balance: 800
+Congrats! you hold the ID Certificate!
+Go back to (8,9)
+-- You rolled a 2 --
+Move to (9,10)
+Presented the certificate: id
+Paid 150 to jump to (11,11)
+Money Balance: 650
+Money -= 500
+Money Balance: 150
+-- You rolled a 2 --
+Move to (11,9)
+Money: 150
+--- Game finished after 17 turns in 434.47 seconds ---
+The number of expanding nodes in each turn:
+15
+13
+14
+12
+0
+12
+0
+0
+0
+0
+0
+10
+0
+6
+3
