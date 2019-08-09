@@ -169,7 +169,7 @@ class Board:
         self.transition_dict[(11, 8)] = {1: [(10, 6)],
                                          2: [(10, 5)],
                                          3: [(9, 5), (11, 5)],
-                                         MESSAGE: "Lottery! you won!"}
+                                         MESSAGE: "You lost! better luck next time"}
 
         self.transition_dict[(10, 8)] = {1: [(9, 8), (10, 7)],
                                          2: [(9, 7), (8, 8)],
