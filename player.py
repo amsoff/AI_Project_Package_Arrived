@@ -16,7 +16,7 @@ class Player:
     has_certificates = []
     dice_value = 0
     come_back_spots = []
-    need_pay_spots = []
+    need_pay_spots = [(11,11)]
     goal = Constants.GOAL
     start = Constants.START
     # package_cost = 0
