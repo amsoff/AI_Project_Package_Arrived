@@ -291,18 +291,6 @@ def handle_move(plan, player):
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
                 all_current_moves.append("Presented the certificate: " + certificate)
 
-    # # check if at lottery- and perform another move that simulates the lottery
-    # if player.cell in board.Board.lotto_cells:
-    #     dice_val = dice_obj.roll_dice()
-    #     all_current_moves.append(ROLLING % player.dice_value)
-    #     if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
-    #         all_current_moves.append(
-    #             "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
-    #                 board.BALANCE])
-    #         turns += 1
-    #     else:
-    #         all_current_moves.append("You lose! You didn't gain money! Maybe next time :)")
-    #         # TODO --> MAKE HIM MAKE A MOVE WITH THAT DICE
     for i, action in enumerate(plan):
 
         # handled the move already
@@ -453,7 +441,7 @@ def init_player(input_player):
     return player_init
 
 
-def play_for_pay_150(turns, plan, moves, logs):
+def play_for_pay_150(turns, plan, moves, logs, player):
     # cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
     is_continue = False
     move, turn = handle_payments(plan[0], player)
@@ -471,7 +459,7 @@ def play_for_pay_150(turns, plan, moves, logs):
     return turns, plan, is_continue
 
 
-def play_for_move(turns, plan, moves, logs):
+def play_for_move(turns, plan, moves, logs, player):
     moves.append(ROLLING % player.dice_value)
     # cell = (int(plan[0].name.split('_')[5]), int(plan[0].name.split('_')[6]))
     move, turn = handle_move(plan, player)
@@ -482,7 +470,7 @@ def play_for_move(turns, plan, moves, logs):
     return turns, moves
 
 
-def play_for_jump(turns, plan, moves, logs):
+def play_for_jump(turns, plan, moves, logs, player):
     is_continue = False
     # cell = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
     move = handle_jump_to_entrance(plan[0], player)
@@ -495,7 +483,7 @@ def play_for_jump(turns, plan, moves, logs):
     return turns, plan, moves, is_continue
 
 
-def play_for_goto(plan, moves, logs):
+def play_for_goto(plan, moves, logs, player):
     is_continue = False
     cell = int(plan[0].name.split('_')[1]), int(plan[0].name.split('_')[2])
     move = handle_goto(plan[0].name, player)
@@ -522,6 +510,7 @@ def run_game(player, domain_file_name, problem_file_name):
     print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
+
     turns, expanded = 0, []
     print(player.goal)
     # All the moves the player does in the game
@@ -533,20 +522,20 @@ def run_game(player, domain_file_name, problem_file_name):
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
             if 'Move' in plan[0].name:
-                turns, moves = play_for_move(turns, plan, moves, logs)
+                turns, moves = play_for_move(turns, plan, moves, logs, player)
             # Move from one cell to "orange" cell, and pay 150, if it is achievable according to the dice
             elif 'pay_150' in plan[0].name:
-                turns, plan, isContinue = play_for_pay_150(turns, plan, moves, logs)
+                turns, plan, isContinue = play_for_pay_150(turns, plan, moves, logs, player)
                 if isContinue: continue
                 # Jump to a certain entrance if you don't have enough money to pay, or if you don't hold the
             # requested certificate
             elif 'jump' in plan[0].name:
-                turns, plan, moves, isContinue = play_for_jump(turns, plan, moves, logs)
+                turns, plan, moves, isContinue = play_for_jump(turns, plan, moves, logs, player)
                 if isContinue: continue
 
             # Go back to a cell already visited, if the player has the certificate/money to pay
             elif 'Goto' in plan[0].name:
-                plan, moves, isContinue = play_for_goto(plan, moves, logs)
+                plan, moves, isContinue = play_for_goto(plan, moves, logs, player)
                 if isContinue: continue
 
             else:
@@ -564,7 +553,7 @@ def run_game(player, domain_file_name, problem_file_name):
             expanded.append(str(prob.expanded))
             print(ROLLING % player.dice_value)
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
-            if last_dice == player.dice_value and last_dice is not None:
+            if last_dice == player.dice_value and last_dice is not None and len(player.need_pay_spots) == 0:
                 plan = plan[loc:]
             else:
                 plan = a_star_search(prob, heuristic=level_sum)
