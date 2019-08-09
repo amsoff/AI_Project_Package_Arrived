@@ -207,7 +207,7 @@ def handle_payments(action, player):
 
         player.money = total_amount
         sign = "+"
-        if amount > 0:  # then it is a payment and not to get money
+        if amount < 0:  # then it is a payment and not to get money
             sign = "-"
         return ["Money " + sign + "= " + str(abs(amount)) + "\nMoney Balance: " + str(player.money)], 0
     return [], 0
@@ -492,6 +492,7 @@ def play_for_jump(turns, plan, moves, logs):
     if len(plan[1:]) != 0:
         plan = plan[1:]
         is_continue = True
+
     return turns, plan, moves, is_continue
 
 
@@ -522,6 +523,8 @@ def run_game(player, domain_file_name, problem_file_name):
     print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
+    for p in plan:
+        print(p)
     turns, expanded = 0, []
     print(player.goal)
     # All the moves the player does in the game
