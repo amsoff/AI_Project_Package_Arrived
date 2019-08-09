@@ -6,10 +6,9 @@ import matplotlib.pyplot as plt
 X = [i for i in range(2250)]
 
 
-def load_csv():
-    f = pd.read_csv(Constants.FILE)
-
 def compare_time_money():
+    f = pd.read_csv(Constants.FILE)
+    a = 0
     # for index, row in df.iterrows():
     pass
 
@@ -28,3 +27,5 @@ def compare_average_optimi():
 
 def compare_money():
     pass
+
+compare_time_money()
