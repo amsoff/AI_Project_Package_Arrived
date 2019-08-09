@@ -23,7 +23,6 @@ board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 
 
-
 def print_plan(plan, logs):
     """
     Prints the plan to the screen and to the log file
@@ -161,7 +160,7 @@ def handle_payments(action, player):
         sign = "+"
         if amount < 0:  # it is a payment and not get money
             sign = "-"
-        return ["Got a surprise! Money " + sign + "= " + str(abs(amount))  + "\nMoney Balance: " + str(player.money)], 0
+        return ["Got a surprise! Money " + sign + "= " + str(abs(amount)) + "\nMoney Balance: " + str(player.money)], 0
 
     # Pay 150 to move to orange cell. update the player location
     if 'pay_150_from' in action.name:
@@ -171,10 +170,10 @@ def handle_payments(action, player):
         cell = (int(action.name.split('_')[6]), int(action.name.split('_')[7]))
         player.money -= 150
         player.cell = cell
-        all.append("Paid 150 to jump to (%s,%s)" % cell  + "\nMoney Balance: " + str(player.money))
+        all.append("Paid 150 to jump to (%s,%s)" % cell + "\nMoney Balance: " + str(player.money))
         if cell in player.need_pay_spots:
             if cell not in player.need_pay_spots:
-                 player.need_pay_spots.append(cell)
+                player.need_pay_spots.append(cell)
             player.need_pay_spots.remove(cell)
         # handle the case a cell we are moving to provides a certificate
         for prop in action.add:
@@ -187,7 +186,8 @@ def handle_payments(action, player):
                         all.append("Congrats! you hold the %s Certificate!" % cert.name)
 
         # Next cell has payment
-        if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
+        if board.BALANCE in board_game[cell] and board_game[cell][
+            board.BALANCE] < 0 and cell not in player.need_pay_spots:
             player.need_pay_spots.append(cell)
         return all, 1
 
@@ -282,8 +282,9 @@ def handle_move(plan, player):
                         all_current_moves.append("Congrats! you hold the %s Certificate!" % cert.name)
 
         # Next cell has payment
-        if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
-                player.need_pay_spots.append(cell)
+        if board.BALANCE in board_game[cell] and board_game[cell][
+            board.BALANCE] < 0 and cell not in player.need_pay_spots:
+            player.need_pay_spots.append(cell)
 
         for prop in action.pre:
             if 'has' in prop.name:
@@ -351,7 +352,7 @@ def write_to_log(string, logs):
     logs.write(string + "\n") if Constants.DEBUG else None
 
 
-def prints_game_over(moves, logs, player, elapsed, turns):
+def prints_game_over(moves, logs, player, elapsed, turns, expanded):
     """
     Prints messages to the screen and to the log in case of success
     :param moves: the moves the player performed
@@ -366,6 +367,7 @@ def prints_game_over(moves, logs, player, elapsed, turns):
     print("--- Game finished after %d turns in %.2f seconds ---" % (turns, elapsed))
     print("The number of expanding nodes in each turn:\n%s" % "\n".join(expanded))
     write_to_log("game finished after %d turns in %.2f seconds" % (turns, elapsed), logs)
+    write_to_log("The number of expanding nodes in each turn:\n%s" % "\n".join(expanded), logs)
 
 
 def print_exit(logs, plan, moves):
@@ -417,53 +419,97 @@ def find_last_dice(plan):
     return None, None
 
 
-if __name__ == '__main__':
-    """
-    Input = python3 game.py player
-    Output = print all moves + position on the board at each round
-
-    Runs the game. It build the initial plan (domain and problem) according to a given player, and at every plan the A* 
-    search builds, it creates a new problem (the domain stays the same), update the board, and run the search again
-    until the agent gets to the final cell
-    """
-    start = time.process_time()
+def assert_arguments():
     if len(sys.argv) != 2 and len(sys.argv) != 3 and len(sys.argv) != 4 and len(sys.argv) != 5:
-        print("Usage: game.py player: optimistic \ average optional--> goal_point: x,y start point: x,y starting money: m. Bad input")
+        print(
+            "Usage: game.py player: optimistic \ average optional--> goal_point: x,y start point: x,y starting money: m. Bad input")
         exit()
 
-    input_player = sys.argv[1]
-    if input_player != Types.AVERAGE.value and input_player != Types.OPTIMISTIC.value:
-        print("Usage: game.py player: optimistic \ average optional--> goal_point: x,y start point: x,y starting money: m. Bad input")
+    if sys.argv[1] != Types.AVERAGE.value and sys.argv[1] != Types.OPTIMISTIC.value:
+        print(
+            "Usage: game.py player: optimistic \ average optional--> goal_point: x,y start point: x,y starting money: m. Bad input")
         exit()
 
+
+def init_player(input_player):
     if len(sys.argv) == 2:
-        player = Player(input_player)
+        player_init = Player(input_player)
     else:
         goal = sys.argv[2]
         goal = goal.split(",")
         goal = (int(goal[0]), int(goal[1]))
         if len(sys.argv) == 3:
-            player = Player(input_player, goal)
+            player_init = Player(input_player, goal)
         else:
             start_cell = sys.argv[3]
             start_cell = start_cell.split(",")
             start_cell = (int(start_cell[0]), int(start_cell[1]))
             if len(sys.argv) == 4:
-                player = Player(input_player, goal, start_cell)
+                player_init = Player(input_player, goal, start_cell)
 
             else:
                 money = int(sys.argv[4])
-                player = Player(input_player, goal, start_cell, money)
+                player_init = Player(input_player, goal, start_cell, money)
+    return player_init
 
 
-    domain_file_name = 'domain.txt'
-    problem_file_name = '{}_problem.txt'
+def play_for_pay_150(turns, plan, moves, logs):
+    # cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
+    is_continue = False
+    move, turn = handle_payments(plan[0], player)
+    turns += turn
+    write_to_log("current moves done:", logs)
+    print_plan(move, logs)
+    moves.extend(move)
+    if len(plan) > 1 and 'pay_500' in plan[1].name:
+        move, turn = handle_payments(plan[1], player)
+        moves.extend(move)
+        plan = plan[1:]
+    if len(plan[1:]) != 0:
+        plan = plan[1:]
+        is_continue = True
+    return turns, plan, is_continue
 
-    # Update the file names
-    domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
-    problem_file_name = problem_file_name.format(input_player.lower())
+
+def play_for_move(turns, plan, moves, logs):
+    moves.append(ROLLING % player.dice_value)
+    # cell = (int(plan[0].name.split('_')[5]), int(plan[0].name.split('_')[6]))
+    move, turn = handle_move(plan, player)
+    turns += turn
+    write_to_log("current moves done:", logs)
+    print_plan(move, logs)
+    moves.extend(move)
+    return turns, moves
 
 
+def play_for_jump(turns, plan, moves, logs):
+    is_continue = False
+    # cell = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
+    move = handle_jump_to_entrance(plan[0], player)
+    moves.extend(move)
+    write_to_log("current moves done:", logs)
+    print_plan(move, logs)
+    if len(plan[1:]) != 0:
+        plan = plan[1:]
+        is_continue = True
+    return turns, plan, moves, is_continue
+
+
+def play_for_goto(plan, moves, logs):
+    is_continue = False
+    cell = int(plan[0].name.split('_')[1]), int(plan[0].name.split('_')[2])
+    move = handle_goto(plan[0].name, player)
+    player.cell = cell
+    write_to_log("current moves done:", logs)
+    print_plan(move, logs)
+    moves.extend(move)
+    if len(plan[1:]) != 0:
+        plan = plan[1:]
+        is_continue = True
+    return plan, moves, is_continue
+
+
+def run_game(player, domain_file_name, problem_file_name):
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
     dice_val = dice_obj.roll_dice()
@@ -474,7 +520,6 @@ if __name__ == '__main__':
     plan = a_star_search(prob, heuristic=level_sum)
     turns, expanded = 0, []
     print(player.goal)
-
     # All the moves the player does in the game
     moves = [START % player.cell]
     moves.append("Amount of money: %s " % player.money)
@@ -484,57 +529,21 @@ if __name__ == '__main__':
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
             if 'Move' in plan[0].name:
-                moves.append(ROLLING % player.dice_value)
-                cell = (int(plan[0].name.split('_')[5]), int(plan[0].name.split('_')[6]))
-                move, turn = handle_move(plan, player)
-                turns += turn
-                write_to_log("current moves done:", logs)
-                print_plan(move, logs)
-                moves.extend(move)
-                write_current_move_logs(past_moves, player, turns, logs)
-
+                turns, moves = play_for_move(turns, plan, moves, logs)
             # Move from one cell to "orange" cell, and pay 150, if it is achievable according to the dice
             elif 'pay_150' in plan[0].name:
-                cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
-                move, turn = handle_payments(plan[0], player)
-                turns += turn
-                write_to_log("current moves done:", logs)
-                print_plan(move, logs)
-                moves.extend(move)
-                write_current_move_logs(past_moves, player, turns, logs)
-                if len(plan) > 1 and 'pay_500' in plan[1].name:
-                    move, turn = handle_payments(plan[1], player)
-                    moves.extend(move)
-                    plan = plan[1:]
-                if len(plan[1:]) != 0:
-                    plan = plan[1:]
-                    continue
-
-            # Jump to a certain entrance if you don't have enough money to pay, or if you don't hold the
+                turns, plan, isContinue = play_for_pay_150(turns, plan, moves, logs)
+                if isContinue: continue
+                # Jump to a certain entrance if you don't have enough money to pay, or if you don't hold the
             # requested certificate
             elif 'jump' in plan[0].name:
-                cell = (int(plan[0].name.split("_")[3]), int(plan[0].name.split("_")[4]))
-                move = handle_jump_to_entrance(plan[0], player)
-                moves.extend(move)
-                write_to_log("current moves done:", logs)
-                print_plan(move, logs)
-                write_current_move_logs(past_moves, player, turns, logs)
-                if len(plan[1:]) != 0:
-                    plan = plan[1:]
-                    continue
+                turns, plan, moves, isContinue = play_for_jump(turns, plan, moves, logs)
+                if isContinue: continue
 
             # Go back to a cell already visited, if the player has the certificate/money to pay
             elif 'Goto' in plan[0].name:
-                cell = int(plan[0].name.split('_')[1]), int(plan[0].name.split('_')[2])
-                move = handle_goto(plan[0].name, player)
-                player.cell = cell
-                write_to_log("current moves done:", logs)
-                print_plan(move, logs)
-                moves.extend(move)
-                write_current_move_logs(past_moves, player, turns, logs)
-                if len(plan[1:]) != 0:
-                    plan = plan[1:]
-                    continue
+                plan, moves, isContinue = play_for_goto(plan, moves, logs)
+                if isContinue: continue
 
             else:
                 # A plan can only start with a move from one cell to another
@@ -542,6 +551,7 @@ if __name__ == '__main__':
 
             # Starting a new round- creating a new problem.txt file
             # New round- roll the dice, and build a new plan according to the previous move
+            write_current_move_logs(past_moves, player, turns, logs)
             actions = prob.get_actions()
             propositions = prob.get_propositions()
             player.dice_value = dice_obj.roll_dice()
@@ -567,7 +577,31 @@ if __name__ == '__main__':
 
         elapsed = time.process_time() - start
         if moves is not None and plan != "failed":
-            prints_game_over(moves, logs, player, elapsed, turns)
+            prints_game_over(moves, logs, player, elapsed, turns, expanded)
         else:
             print("Could not find a plan in %.2f seconds" % elapsed)
             write_to_log("Could not find a plan in %.2f seconds" % elapsed, logs)
+
+
+if __name__ == '__main__':
+    """
+    Input = python3 game.py player
+    Output = print all moves + position on the board at each round
+
+    Runs the game. It build the initial plan (domain and problem) according to a given player, and at every plan the A* 
+    search builds, it creates a new problem (the domain stays the same), update the board, and run the search again
+    until the agent gets to the final cell
+    """
+    start = time.process_time()
+    assert_arguments()
+    input_player = sys.argv[1]
+    player = init_player(input_player)
+
+    domain_file_name = 'domain.txt'
+    problem_file_name = '{}_problem.txt'
+
+    # Update the file names
+    domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
+    problem_file_name = problem_file_name.format(input_player.lower())
+
+    run_game(player, domain_file_name, problem_file_name)
