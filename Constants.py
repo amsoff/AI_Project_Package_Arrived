@@ -52,6 +52,7 @@ MONEY = "amount at start"
 TURNS = "number of turns"
 EXPANDED = "list of expanded per turn"
 TIME = "time took to finish"
+FILE = "games.csv"
 
 # ACTIONS:
 # STOP:
