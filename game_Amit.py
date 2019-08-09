@@ -503,6 +503,7 @@ def run_game(player, domain_file_name, problem_file_name):
     # plan
 
     # Update the file names
+    start = time.process_time()
     domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
     problem_file_name = problem_file_name.format(input_player.lower())
     dice_val = dice_obj.roll_dice()
@@ -588,7 +589,6 @@ if __name__ == '__main__':
     search builds, it creates a new problem (the domain stays the same), update the board, and run the search again
     until the agent gets to the final cell
     """
-    start = time.process_time()
     assert_arguments()
     input_player = sys.argv[1]
     player = init_player(input_player)
