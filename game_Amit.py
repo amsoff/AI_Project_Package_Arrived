@@ -504,8 +504,8 @@ def run_game(player, domain_file_name, problem_file_name):
 
     # Update the file names
     start = time.process_time()
-    domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
-    problem_file_name = problem_file_name.format(input_player.lower())
+    domain_file_name = dc.create_domain_file(domain_file_name, player.type)
+    problem_file_name = problem_file_name.format(player.type)
     dice_val = dice_obj.roll_dice()
     player.dice_value = dice_val
     player.build_problem()
@@ -598,4 +598,4 @@ if __name__ == '__main__':
     domain_file_name = 'domain.txt'
     problem_file_name = '{}_problem.txt'
 
-    run_game(player, domain_file_name, problem_file_name)
+    run_game(player, domain_file_name, problem_file_name,input_player)
