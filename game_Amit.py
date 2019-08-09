@@ -598,4 +598,4 @@ if __name__ == '__main__':
     domain_file_name = 'domain.txt'
     problem_file_name = '{}_problem.txt'
 
-    run_game(player, domain_file_name, problem_file_name,input_player)
+    run_game(player, domain_file_name, problem_file_name)
