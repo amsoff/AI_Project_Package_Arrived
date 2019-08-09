@@ -54,7 +54,7 @@ class Board:
 
     # All the lottery cells in the game!
     lotto_cells = {(10, 7), (2, 1), (4, 7)}
-    fake_cells = {(11, 7), (3, 7), (3, 1)}
+    fake_cells = {(11, 7), (3, 7), (3, 1), (3,0), (3,8), (11,8)}
     orange_cells = [(11, 11), (11, 3), (8, 4), (6, 7), (5, 2), (4, 3), (1, 4), (0, 1), (5, 9)]
 
     def __init__(self, num_players=1, starting_point=Constants.START):
