@@ -5,8 +5,16 @@ from ast import literal_eval
 import matplotlib.pyplot as plt
 import numpy as np
 
+files = ["output_gen1.csv", "output_gen2.csv", "output_gen3.csv"]
+colors = ['r', 'b', 'g']
+
 
 def string_arr_to_int(arr):
+    """
+    String arrat in csv file to inr array
+    :param arr: string array
+    :return: int array
+    """
     int_arr = []
     arr = arr.replace('[', '').replace(']', '').replace('\'', '').split(',')
     for a in arr:
@@ -15,19 +23,73 @@ def string_arr_to_int(arr):
 
 
 def compare_time_money():
-    f = pd.read_csv(Constants.FILE)
-    data = pd.DataFrame(f)
-    time_arr = []
-    for index, row in data.iterrows():
-        time_arr.append((row[Constants.MONEY], row[Constants.TIME]))
+    """
+    Plots graph of money vs running time
+    """
+    for i,f in enumerate(files):
+        data = pd.read_csv(f)
+        data = pd.DataFrame(data)
+        time_arr = []
+        for index, row in data.iterrows():
+            time_arr.append((row[Constants.MONEY], row[Constants.TIME]))
+        time_arr = sorted(time_arr, key=lambda x: x[0])
+        plot_data(time_arr, colors[i])
+    plt.xlabel('Money')
+    plt.ylabel('Time in Seconds')
+    plt.title('Running time as function of money:')
+    plt.show()
 
 
 def compare_expended_nodes_money():
-    f = pd.read_csv(Constants.FILE)
-    data = pd.DataFrame(f)
-    time_arr = []
-    for index, row in data.iterrows():
-        time_arr.append((row[Constants.MONEY], row[Constants.TIME]))
+    """
+    Plots the average number of expended nodes vs amount of money
+    :return:
+    """
+    for i,f in enumerate(files):
+        data = pd.read_csv(f)
+        data = pd.DataFrame(data)
+        time_arr = []
+        for index, row in data.iterrows():
+            time_arr.append((row[Constants.MONEY], np.average(string_arr_to_int(row[Constants.EXPANDED]))))
+        time_arr = sorted(time_arr, key=lambda x: x[0])
+        plot_data(time_arr, colors[i])
+    plt.xlabel('Money')
+    plt.ylabel('Number of expended nodes in average in round')
+    plt.title('Expended nodes as function of money:')
+    plt.show()
+
+
+def compare_turns_money():
+    """
+    Plots turns per game vs amount of money
+    :return:
+    """
+    for i,f in enumerate(files):
+        data = pd.read_csv(f)
+        data = pd.DataFrame(data)
+        time_arr = []
+        for index, row in data.iterrows():
+            time_arr.append((row[Constants.MONEY], row[Constants.TURNS]))
+        time_arr = sorted(time_arr, key=lambda x: x[0])
+        plot_data(time_arr, colors[i])
+    plt.xlabel('Money')
+    plt.ylabel('Number of Turns in the game')
+    plt.title('Turns as function of money:')
+    plt.show()
+
+
+def connectpoints(x,y,p1,p2, color):
+    x1, x2 = x[p1], x[p2]
+    y1, y2 = y[p1], y[p2]
+    plt.plot([x1,x2],[y1,y2], color)
+
+
+def plot_data(data, color):
+    x = [d[0] for d in data]
+    y = [d[1] for d in data]
+    plt.plot(x,y, '%so' % color)
+    for i in range(0, len(x) - 1):
+        connectpoints(x, y, i, i+1, '%s-' % color)
 
 
 def compare_average_optimi():
@@ -87,6 +149,7 @@ def compare_average_optimi():
     plt.show()
     # plt.savefig('avg_vs_opt.png')
 
+
 def autolabel(rects, ax):
     """Attach a text label above each bar in *rects*, displaying its height."""
     for rect in rects:
@@ -97,5 +160,8 @@ def autolabel(rects, ax):
                     textcoords="offset points",
                     ha='center', va='bottom')
 
-# compare_time_money()
+
+compare_time_money()
 compare_average_optimi()
+compare_expended_nodes_money()
+compare_turns_money()
