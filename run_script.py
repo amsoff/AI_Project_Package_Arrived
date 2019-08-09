@@ -10,7 +10,7 @@ import pandas as pd
 
 def run_script(type, amount,domain_file_name,problem_file_name):
     player_init = player.Player(type, (11, 9), (11,10), amount)
-    return game_Amit.run_game(player_init,domain_file_name,problem_file_name,type)
+    return game_Amit.run_game(player_init,domain_file_name,problem_file_name)
 
 
 if __name__ == "__main__":
@@ -23,7 +23,7 @@ if __name__ == "__main__":
         type = sys.argv[3]
     else:
         type = Constants.OPTIMISTIC
-    for amnt in range(start_money,end_money,200):
+    for amnt in range(start_money,end_money+1,200):
         elapsed, expanded, turns = run_script(type,amnt,domain_file_name,problem_file_name)
         res.append([type, amnt, turns,expanded, elapsed])
 
