@@ -6,14 +6,14 @@ import domain_create as dc
 certificates = Certificate.list()
 
 board_game = board.Board().transition_dict
-all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or board.SURPRISE in board_game[tile] or board.BALANCE in board_game[tile]}
+all_come_backs = {tile for tile in board_game if (board.NEED in board_game[tile]) or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)}
 payment_spots = {tile for tile in board_game if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]}
 
 class Player:
     type = Types.AVERAGE.value
     money = Constants.PLAYER_STARTING_MONEY
     cell = Constants.START
-    has_certificates = [Certificate.PORT]
+    has_certificates = []
     dice_value = 0
     come_back_spots = []
     need_pay_spots = []
@@ -63,6 +63,7 @@ class Player:
 
     def get_pays(self):
         pays = [dc.NOT_NEED_PAY_CELL % cell for cell in payment_spots.difference(self.need_pay_spots)]
+        pays.extend([dc.NEED_PAY_CELL % cell for cell in self.need_pay_spots])
         return pays
 
 

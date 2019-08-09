@@ -23,16 +23,6 @@ board_game = board.Board().transition_dict
 surprise_generator = Surprise()
 
 
-class GoalStack:
-    def __init__(self):
-        self.stack = []
-
-    def push(self, obj):
-        self.stack.append(obj)
-
-    def pop(self, obj):
-        return self.stack.pop()
-
 
 def print_plan(plan, logs):
     """
@@ -196,26 +186,26 @@ def handle_payments(action, player):
                         player.has_certificates.append(cert)
                         all.append("Congrats! you hold the %s Certificate!" % cert.name)
 
-            # Next cell has payment
-            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
-                player.need_pay_spots.append(cell)
+        # Next cell has payment
+        if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
+            player.need_pay_spots.append(cell)
         return all, 1
 
     # Pay X money
     if 'pay' in action.name:
         cell = (int(action.name.split('_')[3]), int(action.name.split('_')[4]))
         amount = int(action.name.split('_')[1])
-        amount = player.money - amount
+        total_amount = player.money - amount
 
         # In cell we already visited and we have enough money
-        if cell in player.need_pay_spots and amount >= 0:
+        if cell in player.need_pay_spots and total_amount >= 0:
             player.need_pay_spots.remove(cell)
-        elif amount < 0:
+        elif total_amount < 0:
             if cell not in player.need_pay_spots:
                 player.need_pay_spots.append(cell)
             return [], 0
 
-        player.money = amount
+        player.money = total_amount
         sign = "+"
         if amount > 0:  # then it is a payment and not to get money
             sign = "-"
@@ -291,9 +281,9 @@ def handle_move(plan, player):
                         player.has_certificates.append(cert)
                         all_current_moves.append("Congrats! you hold the %s Certificate!" % cert.name)
 
-            # Next cell has payment
-            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
-                    player.need_pay_spots.append(cell)
+        # Next cell has payment
+        if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 and cell not in player.need_pay_spots:
+                player.need_pay_spots.append(cell)
 
         for prop in action.pre:
             if 'has' in prop.name:
@@ -309,7 +299,6 @@ def handle_move(plan, player):
                 "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
                     board.BALANCE])
             turns += 1
-            # player.money += board_game[board_game[player.cell][dice_val][0]][board.BALANCE]
         else:
             all_current_moves.append("You lose! You didn't gain money! Maybe next time :)")
             # TODO --> MAKE HIM MAKE A MOVE WITH THAT DICE
@@ -492,7 +481,6 @@ if __name__ == '__main__':
     past_moves = [player.cell]
     with open("logs\log-{}.txt".format(str(datetime.datetime.now()).replace(":", "")), "w") as logs:
         while len(plan) != 0 and plan != 'failed':
-            print_plan(plan, logs)
             # Each plan most start with a movement from one cell to other cell
             # Move- move from one cell to the other, according to the dice
             if 'Move' in plan[0].name:
@@ -514,6 +502,10 @@ if __name__ == '__main__':
                 print_plan(move, logs)
                 moves.extend(move)
                 write_current_move_logs(past_moves, player, turns, logs)
+                if len(plan) > 1 and 'pay_500' in plan[1].name:
+                    move, turn = handle_payments(plan[1], player)
+                    moves.extend(move)
+                    plan = plan[1:]
                 if len(plan[1:]) != 0:
                     plan = plan[1:]
                     continue

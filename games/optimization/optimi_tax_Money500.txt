@@ -1,0 +1,92 @@
+--- Welcome to The Package Arrived game.---
+You are positioned at (1,0)
+Amount of money: 500
+-- You rolled a 1 --
+Move to (1,1)
+-- You rolled a 1 --
+Move to (2,1)
+Lottery! you have a chance to earn some money!
+-- You rolled a 1 --
+You lose! You didn't gain money! Maybe next time :)
+-- You rolled a 2 --
+Lottery! you won!
+Money += 1500
+Money Balance: 2000
+-- You rolled a 2 --
+Move to (1,2)
+-- You rolled a 3 --
+Move to (3,3)
+-- You rolled a 3 --
+Move to (3,6)
+-- You rolled a 3 --
+Move to (5,5)
+-- You rolled a 2 --
+Move to (7,5)
+-- You rolled a 3 --
+Move to (6,7)
+Congrats! you hold the PORT Certificate!
+-- You rolled a 3 --
+Move to (5,9)
+WOW! You are now entering the port. Good Luck
+Jumped to (6,5) to search
+-- You rolled a 2 --
+Move to (7,5)
+-- You rolled a 3 --
+Move to (6,7)
+Go back to (5,9)
+-- You rolled a 1 --
+Move to (5,10)
+Presented the certificate: port
+Money -= 100
+Money Balance: 1900
+-- You rolled a 3 --
+Move to (7,11)
+Wait 1 turn
+Wait 1 turn
+-- You rolled a 1 --
+Move to (7,10)
+Money -= 100
+Money Balance: 1800
+-- You rolled a 1 --
+Move to (7,9)
+-- You rolled a 2 --
+Move to (9,9)
+Jumped to (2,2) to search
+-- You rolled a 2 --
+Move to (1,1)
+Paid 150 to jump to (0,1)
+Money Balance: 1650
+Congrats! you hold the TAX Certificate!
+Go back to (9,9)
+-- You rolled a 1 --
+Move to (9,10)
+Presented the certificate: tax
+Paid 150 to jump to (11,11)
+Money Balance: 1500
+Money -= 500
+Money Balance: 1000
+-- You rolled a 1 --
+Move to (11,9)
+Money: 1000
+--- Game finished after 25 turns in 475.22 seconds ---
+The number of expanding nodes in each turn:
+15
+14
+15
+14
+0
+0
+10
+0
+0
+0
+12
+0
+8
+8
+7
+0
+9
+7
+6
+3

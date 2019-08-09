@@ -119,10 +119,10 @@ def create_move(player):
                 if board.HAS in board_game[tile2]:
                     action[ADD] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
 
-                if board.NEED in board_game[tile2] or (board.BALANCE in board_game[tile2] and
-                                                       board_game[tile2][board.BALANCE] < 0):
-                    action[DEL] += " " + COME_BACK_FORMAT % tile2
-                    action[ADD] += " " + NOT_COME_BACK_FORMAT % tile2
+                # if board.NEED in board_game[tile2] or (board.BALANCE in board_game[tile2] and
+                #                                        board_game[tile2][board.BALANCE] < 0):
+                #     action[DEL] += " " + COME_BACK_FORMAT % tile2
+                #     action[ADD] += " " + NOT_COME_BACK_FORMAT % tile2
 
                 # show certificate:
                 if board.NEED in board_game[tile1]:
@@ -283,9 +283,7 @@ def create_pay_150_actions(player):
                         pre.append(NOT_NEED_PAY_CELL % tile)
                     if board.BALANCE in board_game[value]:
                         add.append(NEED_PAY_CELL % value)
-                        add.append(NOT_COME_BACK_FORMAT % value)
                         delete.append(NOT_NEED_PAY_CELL % value)
-                        delete.append(COME_BACK_FORMAT % value)
                     for d in [1, 2, 3]:
                         if d in Constants.DUMMY_DICE:
                             add.append(DICE_FORMAT % d)
