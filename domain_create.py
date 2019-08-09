@@ -26,7 +26,8 @@ NEED_PAY_CELL = Constants.NEED_PAY_CELL
 COME_BACK_FORMAT = Constants.COME_BACK_FORMAT
 NOT_NEED_PAY_CELL = Constants.NOT_NEED_PAY_CELL
 NOT_COME_BACK_FORMAT = Constants.NOT_COME_BACK_FORMAT
-# NOT_NEEDS_FORMAT = "not_needs_%s"
+NOT_HAS_FORMAT = Constants.NOT_HAS_FORMAT
+
 
 
 board_game = board.Board().transition_dict
@@ -118,6 +119,7 @@ def create_move(player):
                 # take certificate:
                 if board.HAS in board_game[tile2]:
                     action[ADD] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
+                    action[DEL] += " " + NOT_HAS_FORMAT % (board_game[tile2][board.HAS])
 
                 # if board.NEED in board_game[tile2] or (board.BALANCE in board_game[tile2] and
                 #                                        board_game[tile2][board.BALANCE] < 0):
@@ -218,6 +220,9 @@ def create_jump_to_entrance_actions(player):
                 action[Constants.PRE] = AT_FORMAT % tile
                 action[Constants.ADD] = COME_BACK_FORMAT % tile + " " + AT_FORMAT % tile2
                 action[Constants.DEL] = AT_FORMAT % tile + " " + NOT_COME_BACK_FORMAT % tile
+                if board.NEED in board_game[tile]:
+                    for cert in board_game[tile][board.NEED]:
+                        action[Constants.PRE] += " " + NOT_HAS_FORMAT % cert
                 for d in [1,2,3]:
                     if d in Constants.DUMMY_DICE:
                         action[Constants.ADD] += " " + DICE_FORMAT % d
@@ -275,6 +280,7 @@ def create_pay_150_actions(player):
                     delete = [DEL, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
                     if board.HAS in board_game[board_game[tile][board.ORANGE][0]]:
                         add.append(CERTIFICATES_FORMAT % (board_game[board_game[tile][board.ORANGE][0]][board.HAS]))
+                        delete.append((NOT_HAS_FORMAT % (board_game[board_game[tile][board.ORANGE][0]][board.HAS])))
                     if board.NEED in board_game[tile]:
                         pre.append(CERTIFICATES_FORMAT % board_game[tile][board.NEED][0])
                     if board.GOTO in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
@@ -496,6 +502,21 @@ def create_certificates_props():
                     CERTIFICATES_FORMAT % Certificate.HAIRCUT}
     return certificates
 
+def create_not_has_props():
+    """
+    :return: all the possible certificates in the game
+    """
+    not_has_cert = {NOT_HAS_FORMAT % Certificate.GRANDMA,
+                    NOT_HAS_FORMAT % Certificate.INTEGRITY,
+                    NOT_HAS_FORMAT % Certificate.BIRTH,
+                    NOT_HAS_FORMAT % Certificate.ID,
+                    NOT_HAS_FORMAT % Certificate.PASSPORT,
+                    NOT_HAS_FORMAT % Certificate.TAX,
+                    NOT_HAS_FORMAT % Certificate.PORT,
+                    NOT_HAS_FORMAT % Certificate.HAIRCUT}
+
+    return not_has_cert
+
 
 #############################################################################
 
@@ -507,6 +528,7 @@ def get_propositions():
     props.extend(create_not_come_back_props())
     props.extend(create_at_props())
     props.extend(create_dice_props())
+    props.extend(create_not_has_props())
     props.extend(create_has_money_props())
     props.extend(create_not_stop_props())
     props.extend(create_need_pay_props())

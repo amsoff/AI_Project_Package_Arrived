@@ -44,6 +44,8 @@ NEED_PAY_CELL = "need_pay_%s_%s"
 COME_BACK_FORMAT = "Come_back_to_%s_%s"
 NOT_NEED_PAY_CELL = "not_need_pay_%s_%s"
 NOT_COME_BACK_FORMAT = "Not_Come_back_%s_%s"
+NOT_HAS_FORMAT = "not_has_%s"
+
 
 # ACTIONS:
 # STOP:
