@@ -366,6 +366,7 @@ def prints_game_over(moves, logs, player, elapsed, turns):
     print("--- Game finished after %d turns in %.2f seconds ---" % (turns, elapsed))
     print("The number of expanding nodes in each turn:\n%s" % "\n".join(expanded))
     write_to_log("game finished after %d turns in %.2f seconds" % (turns, elapsed), logs)
+    write_to_log("The number of expanding nodes in each turn:\n%s" % "\n".join(expanded), logs)
 
 
 def print_exit(logs, plan, moves):

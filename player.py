@@ -42,9 +42,11 @@ class Player:
 
     def get_certificates_props(self):
         certs = []
-        for cert in self.has_certificates:
-            certs.append(dc.CERTIFICATES_FORMAT % cert)
-            # certs.append(dc.NOT_NEEDS_FORMAT % certificates[i])
+        for cert in certificates:
+            if cert in self.has_certificates:
+                certs.append(dc.CERTIFICATES_FORMAT % cert)
+            else:
+                certs.append(dc.NOT_HAS_FORMAT % cert)
         return certs
 
     def get_comeback_props(self):
