@@ -430,7 +430,6 @@ class Board:
         self.transition_dict[(4, 7)] = {1: [(3, 7)],
                                         2: [(3, 8)],
                                         3: [(3, 8)],
-                                        ORANGE: [(5, 9)],
                                         MESSAGE: "Lottery! you have a chance to earn some money!"}
 
         self.transition_dict[(3, 7)] = {1: [(5, 7)],
