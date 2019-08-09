@@ -464,7 +464,7 @@ def play_for_pay_150(turns, plan, moves, logs):
     if len(plan) > 1 and 'pay_500' in plan[1].name:
         move, turn = handle_payments(plan[1], player)
         moves.extend(move)
-        plan = plan[1:]
+        plan = plan[2:]
     if len(plan[1:]) != 0:
         plan = plan[1:]
         is_continue = True

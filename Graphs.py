@@ -1,8 +1,13 @@
 import pandas as pd
+import csv
+import Constants
 import matplotlib.pyplot as plt
 
 X = [i for i in range(2250)]
 
+
+def load_csv():
+    f = pd.read_csv(Constants.FILE)
 
 def compare_time_money():
     # for index, row in df.iterrows():
