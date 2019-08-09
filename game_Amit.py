@@ -478,7 +478,7 @@ if __name__ == '__main__':
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
     dice_val = dice_obj.roll_dice()
-    player.dice_value = 1
+    player.dice_value = dice_val
     player.build_problem()
     print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)

@@ -154,8 +154,8 @@ class Board:
                                          2: [(9, 5), (11, 5)],
                                          3: [(9, 6), (8, 5), (9, 4)]}
 
-        self.transition_dict[(10, 7)] = {1: [(10, 6)],
-                                         2: [(10, 5)],
+        self.transition_dict[(10, 7)] = {1: [(11, 8)],
+                                         2: [(11, 8)],
                                          3: [(11, 7)],
                                          MESSAGE: "Lottery! you have a chance to earn some money!"}
 
@@ -164,6 +164,11 @@ class Board:
                                          3: [(9, 5), (11, 5)],
                                          BALANCE: PRIZE_3,  # POSITIVE
                                          GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
+                                         MESSAGE: "Lottery! you won!"}
+
+        self.transition_dict[(11, 8)] = {1: [(10, 6)],
+                                         2: [(10, 5)],
+                                         3: [(9, 5), (11, 5)],
                                          MESSAGE: "Lottery! you won!"}
 
         self.transition_dict[(10, 8)] = {1: [(9, 8), (10, 7)],
@@ -423,8 +428,8 @@ class Board:
 
     def init_row4(self):
         self.transition_dict[(4, 7)] = {1: [(3, 7)],
-                                        2: [(5, 8), (5, 6)],
-                                        3: [(6, 8), (5, 5), (4, 6), (5, 9)],
+                                        2: [(3, 8)],
+                                        3: [(3, 8)],
                                         ORANGE: [(5, 9)],
                                         MESSAGE: "Lottery! you have a chance to earn some money!"}
 
@@ -433,7 +438,14 @@ class Board:
                                         3: [(6, 8), (5, 5), (4, 6), (5, 9)],
                                         BALANCE: PRIZE_1,
                                         GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
+                                        ORANGE: [(5, 9)],
                                         MESSAGE: "Lottery! you won!"}
+
+        self.transition_dict[(3, 8)] = {1: [(5, 7)],
+                                        2: [(5, 8), (5, 6)],
+                                        3: [(6, 8), (5, 5), (4, 6), (5, 9)],
+                                        ORANGE: [(5, 9)],
+                                        MESSAGE: "You lost! better luck next time"}
 
         self.transition_dict[(4, 6)] = {1: [(4, 7), (3, 6), (5, 6), (4, 5)],
                                         2: [(5, 7), (5, 5), (4, 4), (3, 5)],
@@ -511,9 +523,9 @@ class Board:
                                         2: [(1, 1), (4, 2), (2, 4), (3, 3)],
                                         3: [(2, 5), (4, 1), (3, 4), (2, 1), (1, 0)]}
 
-        self.transition_dict[(2, 1)] = {1: [(2, 2)],
+        self.transition_dict[(2, 1)] = {1: [(3, 0)],
                                         2: [(3, 1)],
-                                        3: [(2, 4), (3, 3), (4, 2), (1, 1)],
+                                        3: [(3, 0)],
                                         MESSAGE: "Lottery! you have a chance to earn some money!"}
 
         self.transition_dict[(3, 1)] = {1: [(2, 2)],
@@ -522,6 +534,11 @@ class Board:
                                         BALANCE: PRIZE_2,
                                         GOTO: [(2, 5), (5, 10), (7, 10), (8, 4), (11, 11)],
                                         MESSAGE: "Lottery! you won!"}
+
+        self.transition_dict[(3, 0)] = {1: [(2, 2)],
+                                        2: [(2, 3), (3, 2), (1, 2)],
+                                        3: [(2, 4), (3, 3), (4, 2), (1, 1)],
+                                        MESSAGE: "You lost! better luck next time"}
 
     def init_row1(self):
         self.transition_dict[(1, 6)] = {1: [(1, 5)],
