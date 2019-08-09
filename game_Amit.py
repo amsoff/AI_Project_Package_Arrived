@@ -207,7 +207,7 @@ def handle_payments(action, player):
 
         player.money = total_amount
         sign = "+"
-        if amount > 0:  # then it is a payment and not to get money
+        if amount < 0:  # then it is a payment and not to get money
             sign = "-"
         return ["Money " + sign + "= " + str(abs(amount)) + "\nMoney Balance: " + str(player.money)], 0
     return [], 0
@@ -480,6 +480,7 @@ def play_for_jump(turns, plan, moves, logs, player):
     if len(plan[1:]) != 0:
         plan = plan[1:]
         is_continue = True
+
     return turns, plan, moves, is_continue
 
 
@@ -502,6 +503,7 @@ def run_game(player, domain_file_name, problem_file_name):
     # plan
 
     # Update the file names
+    start = time.process_time()
     domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
     problem_file_name = problem_file_name.format(input_player.lower())
     dice_val = dice_obj.roll_dice()
@@ -511,6 +513,8 @@ def run_game(player, domain_file_name, problem_file_name):
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=level_sum)
 
+    for p in plan:
+        print(p)
     turns, expanded = 0, []
     print(player.goal)
     # All the moves the player does in the game
@@ -585,7 +589,6 @@ if __name__ == '__main__':
     search builds, it creates a new problem (the domain stays the same), update the board, and run the search again
     until the agent gets to the final cell
     """
-    start = time.process_time()
     assert_arguments()
     input_player = sys.argv[1]
     player = init_player(input_player)
