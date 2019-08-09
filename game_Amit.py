@@ -505,7 +505,7 @@ def run_game(player, domain_file_name, problem_file_name):
     # Update the file names
     start = time.process_time()
     domain_file_name = dc.create_domain_file(domain_file_name, player.type)
-    problem_file_name = problem_file_name.format(input_player.lower())
+    problem_file_name = problem_file_name.format(player.type)
     dice_val = dice_obj.roll_dice()
     player.dice_value = dice_val
     player.build_problem()
