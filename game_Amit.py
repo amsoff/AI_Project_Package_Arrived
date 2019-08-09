@@ -585,7 +585,7 @@ def run_game(player, domain_file_name, problem_file_name):
         else:
             print("Could not find a plan in %.2f seconds" % elapsed)
             write_to_log("Could not find a plan in %.2f seconds" % elapsed, logs)
-
+    return elapsed, expanded, turns
 
 if __name__ == '__main__':
     """
