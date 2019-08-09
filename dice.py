@@ -2,6 +2,10 @@ import random
 
 
 def gen_dice():
+    """
+    Created generator in order to compare between games
+    :return: generator that simulates die
+    """
     rolls = [3, 2, 1, 1, 2, 2, 3, 3, 1, 1, 3, 1, 3, 1, 2, 3, 3, 2, 1, 1, 2,
              1, 3, 1, 2, 3, 3, 2, 3, 3, 1, 1, 2, 2, 1, 1, 1, 1, 2, 3, 1, 2,
              3, 1, 1, 1, 3, 2, 2, 2, 1, 2, 1, 2, 2, 3, 1, 2, 3, 2, 2, 1, 2,
