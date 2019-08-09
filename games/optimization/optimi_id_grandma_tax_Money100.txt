@@ -1,0 +1,193 @@
+--- Welcome to The Package Arrived game.---
+You are positioned at (1,0)
+Amount of money: 100
+-- You rolled a 1 --
+Move to (1,1)
+-- You rolled a 2 --
+Move to (2,2)
+-- You rolled a 3 --
+Move to (3,4)
+-- You rolled a 2 --
+Move to (3,6)
+-- You rolled a 1 --
+Move to (4,6)
+-- You rolled a 3 --
+Move to (6,5)
+-- You rolled a 3 --
+Move to (4,6)
+-- You rolled a 2 --
+Move to (5,5)
+-- You rolled a 3 --
+Move to (8,5)
+-- You rolled a 3 --
+Move to (5,5)
+-- You rolled a 2 --
+Move to (7,5)
+-- You rolled a 3 --
+Move to (6,7)
+Congrats! you hold the PORT Certificate!
+-- You rolled a 1 --
+Move to (5,7)
+-- You rolled a 2 --
+Move to (5,9)
+WOW! You are now entering the port. Good Luck
+-- You rolled a 3 --
+Move to (6,11)
+Presented the certificate: port
+-- You rolled a 3 --
+Move to (7,9)
+-- You rolled a 1 --
+Move to (8,9)
+Jumped to (2,2) to search
+-- You rolled a 3 --
+Move to (2,5)
+Money -= 50
+Money Balance: 50
+Jumped to (1,2) to search
+-- You rolled a 2 --
+Move to (3,2)
+Got a surprise! Money += 0
+Money Balance: 50
+Go back to (2,5)
+-- You rolled a 3 --
+Move to (1,4)
+Congrats! you hold the ID Certificate!
+Go back to (8,9)
+-- You rolled a 1 --
+Move to (9,9)
+Presented the certificate: id
+Jumped to (2,2) to search
+-- You rolled a 2 --
+Move to (1,1)
+-- You rolled a 3 --
+Move to (0,1)
+Congrats! you hold the TAX Certificate!
+Go back to (9,9)
+-- You rolled a 3 --
+Move to (10,11)
+Presented the certificate: tax
+Jumped to (8,1) to search
+-- You rolled a 2 --
+Move to (9,2)
+-- You rolled a 3 --
+Move to (9,5)
+Got a surprise! Money -= 100
+Money Balance: 0
+-- You rolled a 2 --
+Move to (9,7)
+-- You rolled a 2 --
+Move to (9,5)
+Got a surprise! Money -= 300
+Money Balance: 0
+-- You rolled a 1 --
+Move to (9,4)
+-- You rolled a 2 --
+Move to (9,2)
+-- You rolled a 3 --
+Move to (9,5)
+Got a surprise! Money -= 100
+Money Balance: 0
+-- You rolled a 2 --
+Move to (9,7)
+-- You rolled a 1 --
+Move to (9,6)
+-- You rolled a 1 --
+Move to (9,5)
+Got a surprise! Money += 200
+Money Balance: 200
+-- You rolled a 1 --
+Move to (9,4)
+-- You rolled a 2 --
+Move to (9,2)
+-- You rolled a 2 --
+Move to (9,0)
+-- You rolled a 2 --
+Move to (11,0)
+-- You rolled a 3 --
+Move to (8,0)
+Congrats! you hold the GRANDMA Certificate!
+Go back to (10,11)
+-- You rolled a 2 --
+Move to (10,11)
+Presented the certificate: grandma
+-- You rolled a 1 --
+Move to (11,11)
+Presented the certificate: grandma
+Jumped to (2,2) to search
+-- You rolled a 2 --
+Move to (3,3)
+-- You rolled a 2 --
+Move to (2,2)
+-- You rolled a 1 --
+Move to (3,2)
+Got a surprise! Money += 200
+Money Balance: 400
+Go back to (11,11)
+Jumped to (2,2) to search
+-- You rolled a 3 --
+Move to (3,2)
+Got a surprise! Money += 200
+Money Balance: 600
+Go back to (11,11)
+Money -= 500
+Money Balance: 100
+-- You rolled a 1 --
+Move to (11,10)
+-- You rolled a 2 --
+Move to (11,10)
+-- You rolled a 2 --
+Move to (11,10)
+-- You rolled a 1 --
+Move to (11,9)
+Money: 100
+--- Game finished after 55 turns in 4369.41 seconds ---
+The number of expanding nodes in each turn:
+78
+78
+0
+75
+76
+75
+76
+0
+75
+73
+0
+0
+70
+0
+0
+0
+43
+0
+106
+0
+80
+45
+0
+61
+51
+0
+66
+0
+53
+53
+0
+66
+52
+0
+26
+26
+26
+26
+0
+15
+0
+6
+6
+0
+6
+2
+2
+2
+0
