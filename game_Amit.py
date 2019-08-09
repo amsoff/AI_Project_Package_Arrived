@@ -290,18 +290,18 @@ def handle_move(plan, player):
                 certificate = prop.name.split('has_')[1].split(".")[1].lower()
                 all_current_moves.append("Presented the certificate: " + certificate)
 
-    # check if at lottery- and perform another move that simulates the lottery
-    if player.cell in board.Board.lotto_cells:
-        dice_val = dice_obj.roll_dice()
-        all_current_moves.append(ROLLING % player.dice_value)
-        if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
-            all_current_moves.append(
-                "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
-                    board.BALANCE])
-            turns += 1
-        else:
-            all_current_moves.append("You lose! You didn't gain money! Maybe next time :)")
-            # TODO --> MAKE HIM MAKE A MOVE WITH THAT DICE
+    # # check if at lottery- and perform another move that simulates the lottery
+    # if player.cell in board.Board.lotto_cells:
+    #     dice_val = dice_obj.roll_dice()
+    #     all_current_moves.append(ROLLING % player.dice_value)
+    #     if board.BALANCE in board_game[board_game[player.cell][dice_val][0]]:
+    #         all_current_moves.append(
+    #             "You win the lottery. YAY! You earned %s" % board_game[board_game[player.cell][dice_val][0]][
+    #                 board.BALANCE])
+    #         turns += 1
+    #     else:
+    #         all_current_moves.append("You lose! You didn't gain money! Maybe next time :)")
+    #         # TODO --> MAKE HIM MAKE A MOVE WITH THAT DICE
     for i, action in enumerate(plan):
 
         # handled the move already
