@@ -512,6 +512,10 @@ def play_for_goto(plan, moves, logs):
 def run_game(player, domain_file_name, problem_file_name):
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
+
+    # Update the file names
+    domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
+    problem_file_name = problem_file_name.format(input_player.lower())
     dice_val = dice_obj.roll_dice()
     player.dice_value = dice_val
     player.build_problem()
@@ -597,11 +601,9 @@ if __name__ == '__main__':
     input_player = sys.argv[1]
     player = init_player(input_player)
 
+
+
     domain_file_name = 'domain.txt'
     problem_file_name = '{}_problem.txt'
-
-    # Update the file names
-    domain_file_name = dc.create_domain_file(domain_file_name, input_player.lower())
-    problem_file_name = problem_file_name.format(input_player.lower())
 
     run_game(player, domain_file_name, problem_file_name)
