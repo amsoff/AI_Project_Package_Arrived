@@ -58,7 +58,7 @@ class Dice:
     Possible dice values
     """
     values = [1, 2, 3]
-    gen = gen_dice()
+    gen = gen_dice2()
 
     # def roll_dice(self):
     #     return random.choice(self.values)
