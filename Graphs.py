@@ -11,7 +11,7 @@ colors = ['r', 'b', 'g']
 
 def string_arr_to_int(arr):
     """
-    String arrat in csv file to inr array
+    String array in csv file to int array
     :param arr: string array
     :return: int array
     """
@@ -40,7 +40,7 @@ def compare_time_money():
     plt.show()
 
 
-def compare_expended_nodes_money():
+def compare_expanded_nodes_money():
     """
     Plots the average number of expended nodes vs amount of money
     :return:
@@ -94,8 +94,8 @@ def plot_data(data, color):
 
 def compare_average_optimi():
     """
-    Comparing 4 parameters: time, total expended nodes, turns, maximum of expended nodes, comparing between
-    the average palyer and the optimistic player for 1500 and 300 (amount of money)
+    Comparing 4 parameters: time, total expanded nodes, turns, maximum of expanded nodes. Comparison between
+    the average player and the optimistic player for 1500 and 300 (amounts of money)
     """
     labels = ['Time (1500)', 'Turns (1500)', 'Average Nodes (1500)', 'Max Nodes (1500)',
               'Time (300)', 'Turns (300)', 'Average Nodes (300)', 'Max Nodes (300)']
@@ -163,5 +163,5 @@ def autolabel(rects, ax):
 
 compare_time_money()
 compare_average_optimi()
-compare_expended_nodes_money()
+compare_expanded_nodes_money()
 compare_turns_money()
