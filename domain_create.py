@@ -182,6 +182,18 @@ def create_move(player):
                             action[PRE] += " " + NOT_NEED_PAY_CELL % cell
 
 
+                # Tax snake
+                if tile2 in board.tax_snake:
+                    for cell in board.tax_snake:
+                        if cell == tile2:
+                            break
+                        # if can have come back sign
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 )) and cell != tile1:
+                            action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
+                        if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                            action[PRE] += " " + NOT_NEED_PAY_CELL % cell
+
+
                 moves[(tile1, tile2, d)] = action
 
     for move in moves:
@@ -342,8 +354,15 @@ def create_pay_150_actions(player):
                             if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                                 pre.append(NOT_NEED_PAY_CELL % cell)
 
-
-
+                    if value in board.tax_snake:
+                        for cell in board.tax_snake:
+                            if cell == value:
+                                break
+                            # if can have come back sign
+                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                                pre.append(NOT_COME_BACK_FORMAT % cell)
+                            if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
+                                pre.append(NOT_NEED_PAY_CELL % cell)
 
                     pre = " ".join(pre)
                     add = " ".join(add)
