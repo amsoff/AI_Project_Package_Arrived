@@ -207,7 +207,7 @@ def handle_payments(action, player):
 
         player.money = total_amount
         sign = "+"
-        if amount < 0:  # then it is a payment and not to get money
+        if amount > 0:  # then it is a payment and not to get money
             sign = "-"
         return ["Money " + sign + "= " + str(abs(amount)) + "\nMoney Balance: " + str(player.money)], 0
     return [], 0
