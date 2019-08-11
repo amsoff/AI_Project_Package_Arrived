@@ -42,7 +42,7 @@ def compare_time_money():
 
 def compare_expanded_nodes_money():
     """
-    Plots the average number of expended nodes vs amount of money
+    Plots the average number of expanded nodes vs amount of money
     :return:
     """
     for i,f in enumerate(files):
@@ -54,8 +54,8 @@ def compare_expanded_nodes_money():
         time_arr = sorted(time_arr, key=lambda x: x[0])
         plot_data(time_arr, colors[i])
     plt.xlabel('Money')
-    plt.ylabel('Number of expended nodes in average in round')
-    plt.title('Expended nodes as function of money:')
+    plt.ylabel('Number of expanded nodes in average in round')
+    plt.title('expanded nodes as function of money:')
     plt.show()
 
 
