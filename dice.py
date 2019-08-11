@@ -38,6 +38,7 @@ def gen_dice2():
     for roll in rolls:
         yield roll
 
+
 def gen_dice3():
     rolls = [3, 1, 2, 2, 1, 3, 3, 3, 1, 1, 3, 1, 1, 2, 2, 3, 1, 1, 1, 3, 1, 3, 2, 3, 2, 2, 3, 1, 3, 3, 1, 1, 1, 3,
              2, 2, 3, 2, 1, 1, 2, 3, 3, 3, 2, 2, 2, 3, 3, 2, 2, 2, 3, 3, 2, 2, 1, 1, 1, 2, 3, 2, 2, 3, 3, 3, 3, 2,
@@ -52,6 +53,9 @@ def gen_dice3():
         yield roll
 
 
+def roll_dice():
+    return next(Dice.gen)
+
 
 class Dice:
     """
@@ -59,11 +63,3 @@ class Dice:
     """
     values = [1, 2, 3]
     gen = gen_dice2()
-
-    # def roll_dice(self):
-    #     return random.choice(self.values)
-
-    def roll_dice(self):
-        return next(Dice.gen)
-
-

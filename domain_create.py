@@ -15,10 +15,9 @@ DEL = Constants.DEL
 AVERAGE = Constants.AVERAGE
 OPTIMISTIC = Constants.OPTIMISTIC
 
-
 # PROPOSITIONS
 AT_FORMAT = Constants.AT_FORMAT
-DICE_FORMAT = Constants.DICE_FORMAT
+DIE_FORMAT = Constants.DIE_FORMAT
 MONEY_FORMAT = Constants.MONEY_FORMAT
 CERTIFICATES_FORMAT = Constants.CERTIFICATES_FORMAT
 NOT_STOP_FORMAT = Constants.NOT_STOP_FORMAT
@@ -27,8 +26,6 @@ COME_BACK_FORMAT = Constants.COME_BACK_FORMAT
 NOT_NEED_PAY_CELL = Constants.NOT_NEED_PAY_CELL
 NOT_COME_BACK_FORMAT = Constants.NOT_COME_BACK_FORMAT
 NOT_HAS_FORMAT = Constants.NOT_HAS_FORMAT
-
-
 
 board_game = board.Board().transition_dict
 
@@ -42,8 +39,6 @@ STOP_FORMAT = Constants.STOP_FORMAT
 # PAYMENTS:
 PAY_SURPRISE_FORMAT = Constants.PAY_SURPRISE_FORMAT
 # pay surprise p1 from m pre need pay p1 at p1 money m add money m-x not need pay p1 del money m
-# PAY_FIRST_SURPRISE = NAME + "pay_%s_surprise_%s_%s_from_%s" +PRE + AT_FORMAT + " " + MONEY_FORMAT + " " + OWE + ADD + MONEY_FORMAT + " " + NOT_NEED_PAY_CELL + " " + NOT_OWE  + DEL + MONEY_FORMAT
-# pay x surprise of p1 from m pre at p1 money m add money m-x not need pay p1 not owe x del money m
 
 PAY_CELL = Constants.PAY_CELL
 # pay x at p1 from m pre need_pay_p1 at p1 money m add money m-x not need pay p1 del money m need pay p1
@@ -52,24 +47,12 @@ PAY_CELL = Constants.PAY_CELL
 GOTO_FORMAT = Constants.GOTO_FORMAT
 # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
-GOTO_MONEY_FORMAT = Constants.GOTO_MONEY_FORMAT
-# goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
-
-# JUMP_TO_ENTRANCE = NAME + "jump_to_%s_%s_from_%s_%s" + PRE + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + DEL + AT_FORMAT
-# jump to p2 from p1 pre comeback to p1 at p1 add at p2 del at p1
-
 # jump to a nearby cell to search for certificate/money
 JUMP_TO_ENTRANCE_ = Constants.JUMP_TO_ENTRANCE
 
-# jump to p2 from p1 pre at p1 add cb_to_p1 at p2 del at p1
-
-# # no need for take certificate?
-# TAKE_CERTIFICATE = "Name: Take_%s\npre: At_%s_%s\nadd: has_%s\ndelete:"
-# # take id pre at p1 add has id
-# SHOW_CERTIFICATE = "Name: Show_%s\npre: has_%s\nadd: not_needs_%s\ndelete:"
-# show id pre has id add not needs id
 
 # CREATE ACTIONS
+
 
 def create_move(player):
     """
@@ -85,7 +68,7 @@ def create_move(player):
                 action = dict()
                 action[NAME] = "Move_from_%s_%s_to_%s_%s_with_dice_%s" % (tile1[0], tile1[1], tile2[0], tile2[1], d)
 
-                action[PRE] = DICE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
+                action[PRE] = DIE_FORMAT % d + " " + AT_FORMAT % (tile1[0], tile1[1])
                 for s in range(1, Constants.MAX_STOPS + 1):
                     action[PRE] += " " + NOT_STOP_FORMAT % s
 
@@ -95,17 +78,15 @@ def create_move(player):
                     action[DEL] += AT_FORMAT % (tile1[0], tile1[1])
 
                 if player == AVERAGE:
-                    # action[ADD] += " " + DICE_FORMAT % 3
-                    # if True: # Todo add here certain cells
                     for i in Dice.values:
                         if i not in Constants.DUMMY_DICE:
-                            action[DEL] += " " + DICE_FORMAT % i
+                            action[DEL] += " " + DIE_FORMAT % i
                         else:
-                            action[ADD] += " " + DICE_FORMAT % i
+                            action[ADD] += " " + DIE_FORMAT % i
 
                 elif player == OPTIMISTIC:
                     for d1 in Dice.values:
-                        action[ADD] += " " + DICE_FORMAT % d1
+                        action[ADD] += " " + DIE_FORMAT % d1
 
                 # payments:
                 if tile2 != tile1:
@@ -120,11 +101,6 @@ def create_move(player):
                 if board.HAS in board_game[tile2]:
                     action[ADD] += " " + CERTIFICATES_FORMAT % (board_game[tile2][board.HAS])
                     action[DEL] += " " + NOT_HAS_FORMAT % (board_game[tile2][board.HAS])
-
-                # if board.NEED in board_game[tile2] or (board.BALANCE in board_game[tile2] and
-                #                                        board_game[tile2][board.BALANCE] < 0):
-                #     action[DEL] += " " + COME_BACK_FORMAT % tile2
-                #     action[ADD] += " " + NOT_COME_BACK_FORMAT % tile2
 
                 # show certificate:
                 if board.NEED in board_game[tile1]:
@@ -143,7 +119,8 @@ def create_move(player):
                         if cell == tile2:
                             break
                         # if can have come back sign
-                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0)) and cell != tile1:
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][
+                            board.BALANCE] < 0)) and cell != tile1:
                             action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
                         if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                             action[PRE] += " " + NOT_NEED_PAY_CELL % cell
@@ -154,7 +131,8 @@ def create_move(player):
                         if cell == tile2:
                             break
                         # if can have come back sign
-                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0)) and cell != tile1:
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][
+                            board.BALANCE] < 0)) and cell != tile1:
                             action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
                         if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                             action[PRE] += " " + NOT_NEED_PAY_CELL % cell
@@ -165,7 +143,8 @@ def create_move(player):
                         if cell == tile2:
                             break
                         # if can have come back sign
-                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 )) and cell != tile1:
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][
+                            board.BALANCE] < 0)) and cell != tile1:
                             action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
                         if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                             action[PRE] += " " + NOT_NEED_PAY_CELL % cell
@@ -176,11 +155,11 @@ def create_move(player):
                         if cell == tile2:
                             break
                         # if can have come back sign
-                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 )) and cell != tile1:
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][
+                            board.BALANCE] < 0)) and cell != tile1:
                             action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
                         if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                             action[PRE] += " " + NOT_NEED_PAY_CELL % cell
-
 
                 # Tax snake
                 if tile2 in board.tax_snake:
@@ -188,11 +167,11 @@ def create_move(player):
                         if cell == tile2:
                             break
                         # if can have come back sign
-                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0 )) and cell != tile1:
+                        if (board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][
+                            board.BALANCE] < 0)) and cell != tile1:
                             action[PRE] += " " + NOT_COME_BACK_FORMAT % cell
                         if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                             action[PRE] += " " + NOT_NEED_PAY_CELL % cell
-
 
                 moves[(tile1, tile2, d)] = action
 
@@ -213,7 +192,8 @@ def create_pay_actions():
                 actions.append(PAY_CELL %
                                (-board_game[tile][board.BALANCE], tile[0], tile[1], m, tile[0], tile[1], tile[0],
                                 tile[1], m,
-                                min(50 * Constants.NUM_OF_50_BILLS, m + board_game[tile][board.BALANCE]), tile[0], tile[1], m,
+                                min(50 * Constants.NUM_OF_50_BILLS, m + board_game[tile][board.BALANCE]), tile[0],
+                                tile[1], m,
                                 tile[0], tile[1]))
     return actions
 
@@ -225,7 +205,9 @@ def create_jump_to_entrance_actions(player):
     jump_to_entrance_actions = []
 
     for tile in board_game:
-        if (board.NEED in board_game[tile] or (board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in board_game[tile]:
+        if (board.NEED in board_game[tile] or (
+                board.BALANCE in board_game[tile] and board_game[tile][board.BALANCE] < 0)) and board.ENTRANCE in \
+                board_game[tile]:
             for tile2 in board_game[tile][board.ENTRANCE]:
                 action = dict()
                 action[Constants.NAME] = "jump_to_entrance_%s_%s" % tile2 + "_from_%s_%s" % tile
@@ -235,21 +217,16 @@ def create_jump_to_entrance_actions(player):
                 if board.NEED in board_game[tile]:
                     for cert in board_game[tile][board.NEED]:
                         action[Constants.PRE] += " " + NOT_HAS_FORMAT % cert
-                for d in [1,2,3]:
+                for d in [1, 2, 3]:
                     if d in Constants.DUMMY_DICE:
-                        action[Constants.ADD] += " " + DICE_FORMAT % d
+                        action[Constants.ADD] += " " + DIE_FORMAT % d
                     elif player == OPTIMISTIC:
-                        action[Constants.ADD] += " " + DICE_FORMAT % d
+                        action[Constants.ADD] += " " + DIE_FORMAT % d
                     else:
-                        action[Constants.DEL] += " " + DICE_FORMAT % d
+                        action[Constants.DEL] += " " + DIE_FORMAT % d
                 jump_action = ''.join(
-                        ['%s%s' % (k, v) for k, v in action.items()])
+                    ['%s%s' % (k, v) for k, v in action.items()])
                 jump_to_entrance_actions.append(jump_action)
-
-
-
-
-
 
     return jump_to_entrance_actions
 
@@ -269,7 +246,8 @@ def create_pay_surprise_actions(player):
                 surprise = Surprise.avg_player_expected_surprise
             for m in range(max(0, -int(surprise)), 50 * Constants.NUM_OF_50_BILLS + 1, 50):
                 surprise_actions.append(PAY_SURPRISE_FORMAT % (
-                    tile[0], tile[1], m, tile[0], tile[1], tile[0], tile[1], m, min(50 * Constants.NUM_OF_50_BILLS, m + surprise),
+                    tile[0], tile[1], m, tile[0], tile[1], tile[0], tile[1], m,
+                    min(50 * Constants.NUM_OF_50_BILLS, m + surprise),
                     tile[0], tile[1], m, tile[0], tile[1]))
     return surprise_actions
 
@@ -285,17 +263,18 @@ def create_pay_150_actions(player):
             for value in board_game[tile][board.ORANGE]:
                 for m in range(150, 50 * Constants.NUM_OF_50_BILLS + 1, 50):
                     name = pay_format % (tile[0], tile[1], value[0], value[1], m)
-                    pre = [PRE, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
+                    pre = [PRE, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % m]
                     for s in range(1, Constants.MAX_STOPS + 1):
                         pre.append(NOT_STOP_FORMAT % s)
                     add = [ADD, AT_FORMAT % (value[0], value[1]), MONEY_FORMAT % (m - 150)]
-                    delete = [DEL, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % (m)]
+                    delete = [DEL, AT_FORMAT % (tile[0], tile[1]), MONEY_FORMAT % m]
                     if board.HAS in board_game[board_game[tile][board.ORANGE][0]]:
                         add.append(CERTIFICATES_FORMAT % (board_game[board_game[tile][board.ORANGE][0]][board.HAS]))
                         delete.append((NOT_HAS_FORMAT % (board_game[board_game[tile][board.ORANGE][0]][board.HAS])))
                     if board.NEED in board_game[tile]:
                         pre.append(CERTIFICATES_FORMAT % board_game[tile][board.NEED][0])
-                    if board.GOTO in board_game[tile] and (board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
+                    if board.GOTO in board_game[tile] and (
+                            board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]):
                         pre.append(NOT_NEED_PAY_CELL % tile)
                     if board.BALANCE in board_game[tile]:
                         pre.append(NOT_NEED_PAY_CELL % tile)
@@ -304,11 +283,11 @@ def create_pay_150_actions(player):
                         delete.append(NOT_NEED_PAY_CELL % value)
                     for d in [1, 2, 3]:
                         if d in Constants.DUMMY_DICE:
-                            add.append(DICE_FORMAT % d)
+                            add.append(DIE_FORMAT % d)
                         elif player == OPTIMISTIC:
-                            add.append(DICE_FORMAT % d)
+                            add.append(DIE_FORMAT % d)
                         else:
-                            delete.append(DICE_FORMAT % d)
+                            delete.append(DIE_FORMAT % d)
 
                     # SNAKE
                     if value in board.snake:
@@ -316,7 +295,9 @@ def create_pay_150_actions(player):
                             if cell == value:
                                 break
                             # if can have come back sign
-                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                            if board.NEED in board_game[cell] or (
+                                    board.BALANCE in board_game[cell] and board_game[cell][
+                                board.BALANCE] < 0) and cell != tile:
                                 pre.append(NOT_COME_BACK_FORMAT % cell)
                             if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                                 pre.append(NOT_NEED_PAY_CELL % cell)
@@ -327,7 +308,9 @@ def create_pay_150_actions(player):
                             if cell == value:
                                 break
                             # if can have come back sign
-                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                            if board.NEED in board_game[cell] or (
+                                    board.BALANCE in board_game[cell] and board_game[cell][
+                                board.BALANCE] < 0) and cell != tile:
                                 pre.append(NOT_COME_BACK_FORMAT % cell)
                             if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                                 pre.append(NOT_NEED_PAY_CELL % cell)
@@ -338,7 +321,9 @@ def create_pay_150_actions(player):
                             if cell == value:
                                 break
                             # if can have come back sign
-                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                            if board.NEED in board_game[cell] or (
+                                    board.BALANCE in board_game[cell] and board_game[cell][
+                                board.BALANCE] < 0) and cell != tile:
                                 pre.append(NOT_COME_BACK_FORMAT % cell)
                             if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                                 pre.append(NOT_NEED_PAY_CELL % cell)
@@ -349,7 +334,9 @@ def create_pay_150_actions(player):
                             if cell == value:
                                 break
                             # if can have come back sign
-                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                            if board.NEED in board_game[cell] or (
+                                    board.BALANCE in board_game[cell] and board_game[cell][
+                                board.BALANCE] < 0) and cell != tile:
                                 pre.append(NOT_COME_BACK_FORMAT % cell)
                             if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                                 pre.append(NOT_NEED_PAY_CELL % cell)
@@ -359,7 +346,9 @@ def create_pay_150_actions(player):
                             if cell == value:
                                 break
                             # if can have come back sign
-                            if board.NEED in board_game[cell] or (board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0) and cell != tile:
+                            if board.NEED in board_game[cell] or (
+                                    board.BALANCE in board_game[cell] and board_game[cell][
+                                board.BALANCE] < 0) and cell != tile:
                                 pre.append(NOT_COME_BACK_FORMAT % cell)
                             if board.BALANCE in board_game[cell] and board_game[cell][board.BALANCE] < 0:
                                 pre.append(NOT_NEED_PAY_CELL % cell)
@@ -376,8 +365,6 @@ def create_goto_from_comeback(player):
     :return: go back to where we left a "come back" sign actions
     """
     goto = []
-    GOTO_MONEY_FORMAT = NAME + "Goto_%s_%s_from_%s_%s" + PRE + NOT_NEED_PAY_CELL + " " + COME_BACK_FORMAT + " " + AT_FORMAT + ADD + AT_FORMAT + " " + NOT_COME_BACK_FORMAT + DEL + COME_BACK_FORMAT + " " + AT_FORMAT  # FROM_COMEBACK
-    # goto p2 from p1, pre comeback to p2, at p1, add at p2 not_CB_p2 del comeback p2 At_p1
 
     for tile in board_game:
         if board.GOTO in board_game[tile]:
@@ -388,20 +375,18 @@ def create_goto_from_comeback(player):
                 action[ADD] = AT_FORMAT % tile2 + " " + NOT_COME_BACK_FORMAT % tile2
                 action[DEL] = COME_BACK_FORMAT % tile2 + " " + AT_FORMAT % tile
 
-                # if board.BALANCE in board_game[tile] or board.SURPRISE in board_game[tile]:
-                #     action[PRE] += " " + NOT_NEED_PAY_CELL % tile2
-
                 for d in [1, 2, 3]:
                     if d in Constants.DUMMY_DICE:
-                        action[Constants.ADD] += " " + DICE_FORMAT % d
+                        action[Constants.ADD] += " " + DIE_FORMAT % d
                     elif player == OPTIMISTIC:
-                        action[Constants.ADD] += " " + DICE_FORMAT % d
+                        action[Constants.ADD] += " " + DIE_FORMAT % d
                     else:
-                        action[Constants.DEL] += " " + DICE_FORMAT % d
+                        action[Constants.DEL] += " " + DIE_FORMAT % d
                 goto_action = ''.join(['%s%s' % (k, v) for k, v in action.items()])
                 goto.append(goto_action)
 
     return goto
+
 
 def create_stop_action():
     """
@@ -462,13 +447,13 @@ def create_has_money_props():
     return has_money_props
 
 
-def create_dice_props():
+def create_die_props():
     """
     :return: dice values
     """
     dice = []
     for d in Dice.values:
-        dice.append(DICE_FORMAT % (str(d)))
+        dice.append(DIE_FORMAT % (str(d)))
     return dice
 
 
@@ -521,6 +506,7 @@ def create_certificates_props():
                     CERTIFICATES_FORMAT % Certificate.HAIRCUT}
     return certificates
 
+
 def create_not_has_props():
     """
     :return: all the possible certificates in the game
@@ -546,7 +532,7 @@ def get_propositions():
     props.extend(create_come_back_props())
     props.extend(create_not_come_back_props())
     props.extend(create_at_props())
-    props.extend(create_dice_props())
+    props.extend(create_die_props())
     props.extend(create_not_has_props())
     props.extend(create_has_money_props())
     props.extend(create_not_stop_props())

@@ -40,11 +40,12 @@ HAIRCUT_COST = Constants.HAIRCUT_COST
 TAX_COST = Constants.TAX_COST
 PACKAGE_COST = Constants.PACKAGE_COST
 big_entrance = [(8, 1), (6, 5), (2, 2)]
-snake = [(5,9), (5,10), (5,11), (6,11), (7,11), (7,10), (7,9), (8,9),(9,9), (9,10), (9,11), (10,11),(11,11), (11,10), (11,9)]
-birth_snake = [(11,1), (11,2), (11,3), (11,4)]
-id_mini_snake = [(2,4), (2,5), (1,6), (1,5),(1,4)]
-passport_mini_snake = [(8,2), (8,3), (8,4)]
-tax_snake = [(0,0), (0,1)]
+snake = [(5, 9), (5, 10), (5, 11), (6, 11), (7, 11), (7, 10), (7, 9), (8, 9), (9, 9), (9, 10), (9, 11), (10, 11),
+         (11, 11), (11, 10), (11, 9)]
+birth_snake = [(11, 1), (11, 2), (11, 3), (11, 4)]
+id_mini_snake = [(2, 4), (2, 5), (1, 6), (1, 5), (1, 4)]
+passport_mini_snake = [(8, 2), (8, 3), (8, 4)]
+tax_snake = [(0, 0), (0, 1)]
 
 
 class Board:
@@ -55,7 +56,7 @@ class Board:
 
     # All the lottery cells in the game!
     lotto_cells = {(10, 7), (2, 1), (4, 7)}
-    fake_cells = {(11, 7), (3, 7), (3, 1), (3,0), (3,8), (11,8)}
+    fake_cells = {(11, 7), (3, 7), (3, 1), (3, 0), (3, 8), (11, 8)}
     orange_cells = [(11, 11), (11, 3), (8, 4), (6, 7), (5, 2), (4, 3), (1, 4), (0, 1), (5, 9)]
 
     def __init__(self, num_players=1, starting_point=Constants.START):
@@ -139,7 +140,7 @@ class Board:
                                           2: [(11, 9)],
                                           3: [(11, 11)],
                                           BALANCE: PACKAGE_COST,
-                                          ORANGE: [(11,9)],
+                                          ORANGE: [(11, 9)],
                                           ENTRANCE: big_entrance}
 
     def init_row10(self):
