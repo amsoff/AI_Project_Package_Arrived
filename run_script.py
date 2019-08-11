@@ -10,7 +10,7 @@ import pandas as pd
 
 def run_script(type, amount, domain_file_name, problem_file_name):
     player_init = player.Player(type, (11, 9), (1, 0), amount)
-    return game_no_opt.run_game(player_init, domain_file_name, problem_file_name)
+    return game.run_game(player_init, domain_file_name, problem_file_name)
 
 
 if __name__ == "__main__":
