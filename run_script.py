@@ -26,5 +26,5 @@ if __name__ == "__main__":
 
     df = pd.DataFrame(res,
                       columns=[Constants.TYPE, Constants.MONEY, Constants.TURNS, Constants.EXPANDED, Constants.TIME])
-    df.to_csv(type + "_" + heuristic + "-" + str(amnt) + "_gen" + str(gen_flag) + '.csv', header=True)
+    df.to_csv(r'' + type + "_" + heuristic + "-" + str(amnt) + "_gen" + str(gen_flag) + '.csv', header=True)
 
