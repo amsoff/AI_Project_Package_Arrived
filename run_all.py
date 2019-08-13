@@ -4,7 +4,7 @@ import os
 def run():
     for type in ["optimistic"]: #, "average"]:
         for heuristic in ["sum", "max"]:
-            for gen_flag in range(2, 3):
+            for gen_flag in range(2, 4):
                 gen = "gen_%d" % gen_flag
                 for amnt in range(0, 2201, 200):
                     x = 0
