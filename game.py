@@ -35,7 +35,7 @@ def print_plan(plan, logs):
         write_to_log(a, logs)
 
 
-def print_current_board(moves, player_obj: Player):
+def print_current_board(moves, player_obj):
     """
     Prints the board to the screen and updates the board with the location of
     the goal and starting point. Also updates the path the player went through.
@@ -65,25 +65,25 @@ def matprint_backwards(mat, board_obj, player_obj):
     for i in range(len(mat) - 1, -1, -1):
         for j in range(len(mat[i]) - 1, -1, -1):
             if (i, j) == player_obj.start:
-                print(Back.RED + Fore.BLACK + "|\u0332S\u0332", end='')
+                print(Back.RED + Fore.BLACK + "|\u0332S\u0332 ")
 
             elif mat[i][j] == "X":
-                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332", end='')
+                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332 ")
                 continue
             elif mat[i][j] == "P":
-                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332", end='')
+                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332 ")
             elif (i, j) in board.Board.orange_cells:
-                print(Back.YELLOW + Fore.BLACK + "|\u0332\u0332 ", end='')
+                print(Back.YELLOW + Fore.BLACK + "|\u0332\u0332 ")
             elif "surprise" in board_obj.transition_dict[(i, j)]:
-                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332 ", end='')
+                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332 ")
             elif "wait" in board_obj.transition_dict[(i, j)]:
-                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332 ", end='')
+                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332 ")
             elif mat[i][j] == "G":
-                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332", end='')
+                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332 ")
             elif mat[i][j] == "O":
-                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332", end='')
+                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332 ")
             else:
-                print(Back.WHITE + "|\u0332\u0332 ", end='')
+                print(Back.WHITE + "|\u0332\u0332 ")
         print(Back.RESET + "")
 
 
@@ -100,25 +100,25 @@ def matprint(mat, board_obj, player_obj):
     for i, x in enumerate(mat):
         for j, y in enumerate(x):
             if (i, j) == player_obj.start:
-                print(Back.RED + Fore.BLACK + "|\u0332S\u0332|", end='')
+                print(Back.RED + Fore.BLACK + "|\u0332S\u0332| ")
 
             elif mat[i][j] == "X":
-                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332|", end='')
+                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332| ")
                 continue
             elif mat[i][j] == "P":
-                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332|", end='')
+                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332| ")
             elif (i, j) in board.Board.orange_cells:
-                print(Back.RESET + Fore.BLACK + "|\u0332\u0332| ", end='')
+                print(Back.RESET + Fore.BLACK + "|\u0332\u0332| ")
             elif "surprise" in board_obj.transition_dict[(i, j)]:
-                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332| ", end='')
+                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332| ")
             elif "wait" in board_obj.transition_dict[(i, j)]:
-                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332| ", end='')
+                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332| ")
             elif mat[i][j] == "G":
-                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332|", end='')
+                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332| ")
             elif mat[i][j] == "O":
-                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332|", end='')
+                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332| ")
             else:
-                print(Back.WHITE + "|\u0332\u0332| ", end='')
+                print(Back.WHITE + "|\u0332\u0332| ")
         print(Back.RESET + "")
 
 

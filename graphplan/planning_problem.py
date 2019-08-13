@@ -63,6 +63,29 @@ class PlanningProblem:
 
         Note that a state *must* be hashable!! Therefore, you might want to represent a state as a frozenset
         """
+        self.expanded += 1
+        successors = []
+        for act in self.actions:
+            if act.all_preconds_in_list(state) and not act.is_noop():
+                delete = frozenset(act.get_delete())
+                add = frozenset(act.get_add())
+                succ = frozenset(state)
+                succ = succ.difference(delete)
+                succ = succ.union(add)
+                cost = 1
+                if "pay" in act.name:
+                    cost = 6
+                elif "Goto" in act.name:
+                    cost = 5
+                elif "Move" in act.name:
+                    cost = 4
+                elif "jump" in act.name:
+                    cost = 3
+                elif "Stop" in act.name:
+                    cost = 2
+                current = (succ, act, cost)
+                successors.append(current)
+        return successors
         # self.expanded += 1
         # successors = []
         # for act in self.actions:
