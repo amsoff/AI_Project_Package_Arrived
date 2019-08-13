@@ -74,15 +74,15 @@ class PlanningProblem:
                 succ = succ.union(add)
                 cost = 1
                 if "pay" in act.name:
-                    cost = 2
+                    cost = 1
                 elif "Goto" in act.name:
-                    cost = 3
-                elif "Move" in act.name:
                     cost = 4
+                elif "Move" in act.name:
+                    cost = 16
                 elif "jump" in act.name:
-                    cost = 5
+                    cost = 32
                 elif "Stop" in act.name:
-                    cost = 6
+                    cost = 64
                 current = (succ, act, cost)
                 successors.append(current)
         return successors
