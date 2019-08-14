@@ -1,9 +1,9 @@
 import random
 
 RANDOM = 0
-GEN1 = 1
-GEN2 = 2
-GEN3 = 3
+GEN1 = "1"
+GEN2 = "2"
+GEN3 = "3"
 
 
 def gen_dice():
@@ -81,10 +81,13 @@ class Dice:
 
     def __init__(self, gen_flag):
         if gen_flag == GEN1:
+            print("first")
             self.gen = gen_dice()
         elif gen_flag == GEN2:
+            print("second")
             self.gen = gen_dice2()
         elif gen_flag == GEN3:
+            print("third")
             self.gen = gen_dice3()
 
 
