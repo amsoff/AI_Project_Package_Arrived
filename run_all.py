@@ -8,7 +8,7 @@ def run():
                 gen = "gen_%d" % gen_flag
                 for amnt in range(0, 1001, 200):
                     x = 0
-                    os.system("python run_script.py {} {} {} {}".format(amnt, type, heuristic, gen_flag))
+                    os.system("python3 run_script.py {} {} {} {}".format(amnt, type, heuristic, gen_flag))
                     print("###########################################################")
                     print("FINISHED ROUND %d: type       - %s\n"
                           "                   heuristic - %s\n"
