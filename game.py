@@ -52,7 +52,7 @@ def print_current_board(moves, player_obj):
     tmp_board[player_obj.cell[0]][player_obj.cell[1]] = "P"
     tmp_board[player_obj.goal[0]][player_obj.goal[1]] = "G"
 
-    # matprint_backwards(tmp_board, board_obj, player_obj)
+    matprint_backwards(tmp_board, board_obj, player_obj)
 
 
 def matprint_backwards(mat, board_obj, player_obj):
