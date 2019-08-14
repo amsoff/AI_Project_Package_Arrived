@@ -52,7 +52,7 @@ def print_current_board(moves, player_obj):
     tmp_board[player_obj.cell[0]][player_obj.cell[1]] = "P"
     tmp_board[player_obj.goal[0]][player_obj.goal[1]] = "G"
 
-    matprint_backwards(tmp_board, board_obj, player_obj)
+    # matprint_backwards(tmp_board, board_obj, player_obj)
 
 
 def matprint_backwards(mat, board_obj, player_obj):
@@ -65,25 +65,25 @@ def matprint_backwards(mat, board_obj, player_obj):
     for i in range(len(mat) - 1, -1, -1):
         for j in range(len(mat[i]) - 1, -1, -1):
             if (i, j) == player_obj.start:
-                print(Back.RED + Fore.BLACK + "|\u0332S\u0332 ")
+                print(Back.RED + Fore.BLACK + "|\u0332S\u0332", end='')
 
             elif mat[i][j] == "X":
-                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332 ")
+                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332", end='')
                 continue
             elif mat[i][j] == "P":
-                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332 ")
+                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332", end='')
             elif (i, j) in board.Board.orange_cells:
-                print(Back.YELLOW + Fore.BLACK + "|\u0332\u0332 ")
+                print(Back.YELLOW + Fore.BLACK + "|\u0332\u0332 ", end='')
             elif "surprise" in board_obj.transition_dict[(i, j)]:
-                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332 ")
+                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332 ", end='')
             elif "wait" in board_obj.transition_dict[(i, j)]:
-                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332 ")
+                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332 ", end='')
             elif mat[i][j] == "G":
-                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332 ")
+                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332", end='')
             elif mat[i][j] == "O":
-                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332 ")
+                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332", end='')
             else:
-                print(Back.WHITE + "|\u0332\u0332 ")
+                print(Back.WHITE + "|\u0332\u0332 ", end='')
         print(Back.RESET + "")
 
 
@@ -100,25 +100,25 @@ def matprint(mat, board_obj, player_obj):
     for i, x in enumerate(mat):
         for j, y in enumerate(x):
             if (i, j) == player_obj.start:
-                print(Back.RED + Fore.BLACK + "|\u0332S\u0332| ")
+                print(Back.RED + Fore.BLACK + "|\u0332S\u0332|", end='')
 
             elif mat[i][j] == "X":
-                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332| ")
+                print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332|", end='')
                 continue
             elif mat[i][j] == "P":
-                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332| ")
+                print(Back.LIGHTRED_EX + Fore.BLACK + "|\u0332P\u0332|", end='')
             elif (i, j) in board.Board.orange_cells:
-                print(Back.RESET + Fore.BLACK + "|\u0332\u0332| ")
+                print(Back.RESET + Fore.BLACK + "|\u0332\u0332| ", end='')
             elif "surprise" in board_obj.transition_dict[(i, j)]:
-                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332| ")
+                print(Back.MAGENTA + Fore.BLACK + "|\u0332\u0332| ", end='')
             elif "wait" in board_obj.transition_dict[(i, j)]:
-                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332| ")
+                print(Back.BLUE + Fore.BLACK + "|\u0332\u0332| ", end='')
             elif mat[i][j] == "G":
-                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332| ")
+                print(Back.LIGHTCYAN_EX + Fore.BLACK + "|\u0332G\u0332|", end='')
             elif mat[i][j] == "O":
-                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332| ")
+                print(Back.WHITE + Fore.BLACK + "|\u0332O\u0332|", end='')
             else:
-                print(Back.WHITE + "|\u0332\u0332| ")
+                print(Back.WHITE + "|\u0332\u0332| ", end='')
         print(Back.RESET + "")
 
 
