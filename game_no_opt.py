@@ -510,8 +510,7 @@ def run_game(player, domain_file_name, problem_file_name): # todo fix here
     player.build_problem()
     print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
-    plan = a_star_search(prob, heuristic=level_sum) # todo fix here
-
+    plan = a_star_search(prob, heuristic=level_sum)# todo fix here
     for p in plan:
         print(p)
     turns, expanded = 0, []
