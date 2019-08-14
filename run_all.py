@@ -4,9 +4,9 @@ import os
 def run():
     for type in ["optimistic"]: #, "average"]:
         for heuristic in ["sum", "max"]:
-            for gen_flag in range(1, 2):
+            for gen_flag in range(1, 4):
                 gen = "gen_%d" % gen_flag
-                for amnt in range(1800, 2201, 200):
+                for amnt in range(0, 2201, 200):
                     x = 0
                     os.system("python3 run_script.py {} {} {} {}".format(amnt, type, heuristic, gen_flag))
                     print("###########################################################")
