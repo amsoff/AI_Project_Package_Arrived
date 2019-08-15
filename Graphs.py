@@ -101,7 +101,7 @@ def compare_average_optimi():
               'Time (300)', 'Turns (300)', 'Average Nodes (300)', 'Max Nodes (300)']
     max_expanded = 3
     loc_dic = {Constants.TIME: 0, Constants.TURNS: 1, Constants.EXPANDED: 2}
-    f = pd.read_csv(Constants.FILE)
+    f = pd.read_csv(Constants.FILE_average_vs_optimi_NO_OPT)
     data = pd.DataFrame(f)
     avg_arr = [0] * 8
     opt_arr = [0] * 8

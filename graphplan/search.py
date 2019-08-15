@@ -158,6 +158,8 @@ def general_search(problem, fringe):
     while not fringe.isEmpty():
         i = 1
         curr = fringe.pop()
+        print("LENGTH OF FRINGE", len(fringe.heap))
+
         if problem.is_goal_state(curr.get_node()):
             build_first_plan_dict(curr)
             return curr.get_action()
