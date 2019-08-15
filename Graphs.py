@@ -101,53 +101,57 @@ def compare_average_optimi():
               'Time (300)', 'Turns (300)', 'Average Nodes (300)', 'Max Nodes (300)']
     max_expanded = 3
     loc_dic = {Constants.TIME: 0, Constants.TURNS: 1, Constants.EXPANDED: 2}
-    f = pd.read_csv(Constants.FILE_average_vs_optimi_NO_OPT)
-    data = pd.DataFrame(f)
-    avg_arr = [0] * 8
-    opt_arr = [0] * 8
-    for index, row in data.iterrows():
-        if row[Constants.TYPE] == Constants.OPTIMISTIC and row[Constants.MONEY] == 1500:
-            opt_arr[loc_dic[Constants.TIME]] = round(row[Constants.TIME], 2)
-            opt_arr[loc_dic[Constants.TURNS]] = row[Constants.TURNS]
-            opt_arr[loc_dic[Constants.EXPANDED]] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
-            opt_arr[max_expanded] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
-        elif row[Constants.TYPE] == Constants.OPTIMISTIC and row[Constants.MONEY] == 300:
-            opt_arr[loc_dic[Constants.TIME] + 4] = round(row[Constants.TIME], 2)
-            opt_arr[loc_dic[Constants.TURNS] + 4] = row[Constants.TURNS]
-            opt_arr[loc_dic[Constants.EXPANDED] + 4] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
-            opt_arr[max_expanded + 4] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
+    title_text = ["using optimization", "without using optimization"]
+    file_name = [Constants.FILE_average_vs_optimi, Constants.FILE_average_vs_optimi_NO_OPT]
+    for i in range(2):
+        f = pd.read_csv(file_name[i])
+        data = pd.DataFrame(f)
+        avg_arr = [0] * 8
+        opt_arr = [0] * 8
+        for index, row in data.iterrows():
+            if row[Constants.TYPE] == Constants.OPTIMISTIC and row[Constants.MONEY] == 1500:
+                opt_arr[loc_dic[Constants.TIME]] = round(row[Constants.TIME], 2)
+                opt_arr[loc_dic[Constants.TURNS]] = row[Constants.TURNS]
+                opt_arr[loc_dic[Constants.EXPANDED]] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
+                opt_arr[max_expanded] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
+            elif row[Constants.TYPE] == Constants.OPTIMISTIC and row[Constants.MONEY] == 300:
+                opt_arr[loc_dic[Constants.TIME] + 4] = round(row[Constants.TIME], 2)
+                opt_arr[loc_dic[Constants.TURNS] + 4] = row[Constants.TURNS]
+                opt_arr[loc_dic[Constants.EXPANDED] + 4] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
+                opt_arr[max_expanded + 4] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
 
-        elif row[Constants.TYPE] == Constants.AVERAGE and row[Constants.MONEY] == 1500:
-            avg_arr[loc_dic[Constants.TIME]] = round(row[Constants.TIME], 2)
-            avg_arr[loc_dic[Constants.TURNS]] = row[Constants.TURNS]
-            avg_arr[loc_dic[Constants.EXPANDED]] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
-            avg_arr[max_expanded] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
-        elif row[Constants.TYPE] == Constants.AVERAGE and row[Constants.MONEY] == 300:
-            avg_arr[loc_dic[Constants.TIME] + 4] = round(row[Constants.TIME], 2)
-            avg_arr[loc_dic[Constants.TURNS] + 4] = row[Constants.TURNS]
-            avg_arr[loc_dic[Constants.EXPANDED] + 4] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
-            avg_arr[max_expanded + 4] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
+            elif row[Constants.TYPE] == Constants.AVERAGE and row[Constants.MONEY] == 1500:
+                avg_arr[loc_dic[Constants.TIME]] = round(row[Constants.TIME], 2)
+                avg_arr[loc_dic[Constants.TURNS]] = row[Constants.TURNS]
+                avg_arr[loc_dic[Constants.EXPANDED]] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
+                avg_arr[max_expanded] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
+            elif row[Constants.TYPE] == Constants.AVERAGE and row[Constants.MONEY] == 300:
+                avg_arr[loc_dic[Constants.TIME] + 4] = round(row[Constants.TIME], 2)
+                avg_arr[loc_dic[Constants.TURNS] + 4] = row[Constants.TURNS]
+                avg_arr[loc_dic[Constants.EXPANDED] + 4] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
+                avg_arr[max_expanded + 4] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
 
-    x = np.arange(len(labels))  # the label locations
-    width = 0.2  # the width of the bars
+        x = np.arange(len(labels))  # the label locations
+        width = 0.2  # the width of the bars
 
-    fig, ax = plt.subplots()
-    rects1 = ax.bar(x - width / 2, avg_arr, width, label='Average')
-    rects2 = ax.bar(x + width / 2, opt_arr, width, label='Optimistic')
+        fig, ax = plt.subplots()
+        rects1 = ax.bar(x - width / 2, avg_arr, width, label='Average')
+        rects2 = ax.bar(x + width / 2, opt_arr, width, label='Optimistic')
 
-    # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_xlabel('Parameters + Amount of money')
-    ax.set_ylabel('Values')
-    ax.set_title('Comparison of the two players:')
-    ax.set_xticks(x)
-    ax.set_xticklabels(labels, fontdict={'fontsize': 7})
-    ax.legend()
+        # Add some text for labels, title and custom x-axis tick labels, etc.
+        ax.set_xlabel('Parameters + Amount of money')
+        ax.set_ylabel('Values')
+        ax.set_title("Comparison of the two players %s" % title_text[i])
+        ax.set_xticks(x)
+        ax.set_xticklabels(labels, fontdict={'fontsize': 7})
+        ax.legend()
 
-    autolabel(rects1, ax)
-    autolabel(rects2, ax)
-    fig.tight_layout()
-    plt.show()
-    # plt.savefig('avg_vs_opt.png')
+        autolabel(rects1, ax)
+        autolabel(rects2, ax)
+        fig.tight_layout()
+        plt.show()
+        # plt.savefig('avg_vs_opt.png')
+
 
 
 def autolabel(rects, ax):
