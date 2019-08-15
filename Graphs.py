@@ -5,7 +5,7 @@ from ast import literal_eval
 import matplotlib.pyplot as plt
 import numpy as np
 
-files = ["output_gen1.csv", "output_gen2.csv", "output_gen3.csv"]
+files = ["output_gen1_sum.csv", "output_gen2_sum.csv", "output_gen3_sum.csv"]
 colors = ['r', 'b', 'g']
 
 
