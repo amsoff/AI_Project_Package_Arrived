@@ -6,7 +6,7 @@ def run():
         for heuristic in [ "max"]: # "sum",
             for gen_flag in range(1, 3):
                 gen = "gen_%d" % gen_flag
-                for amnt in range(400, 1001, 200):
+                for amnt in range(600, 1600, 200):
                     x = 0
                     print("running python run_script.py {} {} {} {}".format(amnt, type, heuristic, gen_flag))
                     os.system("python run_script.py {} {} {} {}".format(amnt, type, heuristic, gen_flag))
