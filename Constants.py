@@ -53,6 +53,9 @@ TURNS = "number of turns"
 EXPANDED = "list of expanded per turn"
 TIME = "time took to finish"
 FILE = "output.csv"
+FILE_average_vs_optimi = "output_players_and_optimizations.csv"
+FILE_average_vs_optimi_NO_OPT = "optimistic_vs_average_no_optimization.csv"
+
 
 # ACTIONS:
 # STOP:
