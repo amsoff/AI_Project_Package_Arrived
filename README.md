@@ -43,7 +43,7 @@ it is created in the file player.py
 ###############################################################################
 
 the game itself is constructed by many different classes:
-1. game.py 		   - it is the engine of the game.
+1. game.py 	   - it is the engine of the game.
 2. player.py       - class that represents a player, holds the player's current
 		     state and creates the problem file mentioned earlier.
 3. dice.py         - represents the dice in the game. can be a generator that 
