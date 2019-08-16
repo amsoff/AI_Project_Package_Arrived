@@ -1,6 +1,6 @@
 from graphplan.search import a_star_search
 from domain_create import Types
-from graphplan.planning_problem import PlanningProblem, level_sum
+from graphplan.planning_problem import PlanningProblem, level_sum, max_level
 import domain_create as dc
 import Constants
 from surprise import Surprise
@@ -497,20 +497,25 @@ def play_for_goto(plan, moves, logs, player):
     return plan, moves, is_continue
 
 
-def run_game(player, domain_file_name, problem_file_name): # todo fix here
+def run_game(heuristic_name,player, domain_file_name, problem_file_name, gen_flag): # todo fix here
     # Start the first round: roll a dice, and build the first problem, and creates the first
     # plan
 
     # Update the file names
     start = time.process_time()
+    heuristic = max_level
+    if heuristic_name == "sum":
+        heuristic = level_sum
+    dice_obj = Dice(gen_flag)
     domain_file_name = dc.create_domain_file(domain_file_name, player.type)
     problem_file_name = problem_file_name.format(player.type)
-    dice_val = dice_obj.roll_dice(0) # todo fix here
+    dice_val = dice_obj.roll_dice()
+
     player.dice_value = dice_val
     player.build_problem()
     print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
-    plan = a_star_search(prob, heuristic=level_sum)# todo fix here
+    plan = a_star_search(prob, heuristic=heuristic)# todo fix here
     for p in plan:
         print(p)
     turns, expanded = 0, []
@@ -549,7 +554,7 @@ def run_game(player, domain_file_name, problem_file_name): # todo fix here
             write_current_move_logs(past_moves, player, turns, logs)
             actions = prob.get_actions()
             propositions = prob.get_propositions()
-            player.dice_value = dice_obj.roll_dice(0) # todo fix here
+            player.dice_value = dice_obj.roll_dice()
             loc, last_dice = find_last_dice(plan)
             player.build_problem()
             expanded.append(str(prob.expanded))
@@ -558,7 +563,7 @@ def run_game(player, domain_file_name, problem_file_name): # todo fix here
             # if last_dice == player.dice_value and last_dice is not None and len(player.need_pay_spots) == 0:
             #     plan = plan[loc:]
             # else:
-            plan = a_star_search(prob, heuristic=level_sum) # todo fix here
+            plan = a_star_search(prob, heuristic=level_sum)
             print_plan(plan, logs)
 
             if len(plan) == 0:
