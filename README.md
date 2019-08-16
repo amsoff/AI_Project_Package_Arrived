@@ -1,4 +1,4 @@
-#AI PROJECT - THE PACKAGE ARRIVED
+AI PROJECT - THE PACKAGE ARRIVED
 submitted by:
 Reut Rabenou - 312416621 - reut
 
