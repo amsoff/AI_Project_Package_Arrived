@@ -178,44 +178,86 @@ def plot_data_legend(data, color, num):
         connectpoints(x, y, i, i + 1, '%s-' % color)
 
 
+def plot_average_optimi_by_time(time_data_list):
+    labels = ['Time (1500)', 'Time (300)']
+    data = pd.concat(time_data_list)
+    avg_arr = [0] * 2
+    opt_arr = [0] * 2
+    for index, row in data.iterrows():
+        if row[Constants.TYPE] == Constants.OPTIMISTIC and row[Constants.MONEY] == 1500:
+            opt_arr[0] = round(row[Constants.TIME], 2)
+        elif row[Constants.TYPE] == Constants.OPTIMISTIC and row[Constants.MONEY] == 300:
+            opt_arr[1] = round(row[Constants.TIME], 2)
+
+        elif row[Constants.TYPE] == Constants.AVERAGE and row[Constants.MONEY] == 1500:
+            avg_arr[0] = round(row[Constants.TIME], 2)
+        elif row[Constants.TYPE] == Constants.AVERAGE and row[Constants.MONEY] == 300:
+            avg_arr[1] = round(row[Constants.TIME], 2)
+
+    x = np.arange(len(labels))  # the label locations
+    width = 0.2  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width / 2, avg_arr, width, label='Average')
+    rects2 = ax.bar(x + width / 2, opt_arr, width, label='Optimistic')
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_xlabel('Parameters + Amount of money')
+    ax.set_ylabel('Values')
+    ax.set_title("time Comparison of the two players ")
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontdict={'fontsize': 7})
+    ax.legend()
+
+    autolabel(rects1, ax)
+    autolabel(rects2, ax)
+    fig.tight_layout()
+    plt.show()
+
+
 def compare_average_optimi():
     """
     Comparing 4 parameters: time, total expanded nodes, turns, maximum of expanded nodes. Comparison between
     the average player and the optimistic player for 1500 and 300 (amounts of money)
     """
-    labels = ['Time (1500)', 'Turns (1500)', 'Average Nodes (1500)', 'Max Nodes (1500)',
-              'Time (300)', 'Turns (300)', 'Average Nodes (300)', 'Max Nodes (300)']
-    max_expanded = 3
-    loc_dic = {Constants.TIME: 0, Constants.TURNS: 1, Constants.EXPANDED: 2}
+    labels = ['Turns (1500)', 'Average Nodes (1500)', 'Max Nodes (1500)'
+              , 'Turns (300)', 'Average Nodes (300)', 'Max Nodes (300)']
+    max_expanded = 2
+    loc_dic = {Constants.TURNS: 0, Constants.EXPANDED: 1}
     title_text = ["using optimization", "without using optimization"]
     file_name = [Constants.FILE_average_vs_optimi, Constants.FILE_average_vs_optimi_NO_OPT]
+    test_type = ["average","optimi"]
+    time_data_list = []
     for i in range(2):
         f = pd.read_csv(file_name[i])
         data = pd.DataFrame(f)
-        avg_arr = [0] * 8
-        opt_arr = [0] * 8
+        data.insert(5,"testType",test_type[i]*4,True)
+        time_data_list.append(data[[Constants.TIME,Constants.MONEY,Constants.TYPE]])
+        del data[Constants.TIME]
+        avg_arr = [0] * 6
+        opt_arr = [0] * 6
         for index, row in data.iterrows():
             if row[Constants.TYPE] == Constants.OPTIMISTIC and row[Constants.MONEY] == 1500:
-                opt_arr[loc_dic[Constants.TIME]] = round(row[Constants.TIME], 2)
+                # opt_arr[loc_dic[Constants.TIME]] = round(row[Constants.TIME], 2)
                 opt_arr[loc_dic[Constants.TURNS]] = row[Constants.TURNS]
                 opt_arr[loc_dic[Constants.EXPANDED]] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
                 opt_arr[max_expanded] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
             elif row[Constants.TYPE] == Constants.OPTIMISTIC and row[Constants.MONEY] == 300:
-                opt_arr[loc_dic[Constants.TIME] + 4] = round(row[Constants.TIME], 2)
-                opt_arr[loc_dic[Constants.TURNS] + 4] = row[Constants.TURNS]
-                opt_arr[loc_dic[Constants.EXPANDED] + 4] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
-                opt_arr[max_expanded + 4] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
+                # opt_arr[loc_dic[Constants.TIME] + 4] = round(row[Constants.TIME], 2)
+                opt_arr[loc_dic[Constants.TURNS] + 3] = row[Constants.TURNS]
+                opt_arr[loc_dic[Constants.EXPANDED] + 3] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
+                opt_arr[max_expanded + 3] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
 
             elif row[Constants.TYPE] == Constants.AVERAGE and row[Constants.MONEY] == 1500:
-                avg_arr[loc_dic[Constants.TIME]] = round(row[Constants.TIME], 2)
+                # avg_arr[loc_dic[Constants.TIME]] = round(row[Constants.TIME], 2)
                 avg_arr[loc_dic[Constants.TURNS]] = row[Constants.TURNS]
                 avg_arr[loc_dic[Constants.EXPANDED]] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
                 avg_arr[max_expanded] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
             elif row[Constants.TYPE] == Constants.AVERAGE and row[Constants.MONEY] == 300:
-                avg_arr[loc_dic[Constants.TIME] + 4] = round(row[Constants.TIME], 2)
-                avg_arr[loc_dic[Constants.TURNS] + 4] = row[Constants.TURNS]
-                avg_arr[loc_dic[Constants.EXPANDED] + 4] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
-                avg_arr[max_expanded + 4] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
+                # avg_arr[loc_dic[Constants.TIME] + 4] = round(row[Constants.TIME], 2)
+                avg_arr[loc_dic[Constants.TURNS] + 3] = row[Constants.TURNS]
+                avg_arr[loc_dic[Constants.EXPANDED] + 3] = round(np.average(string_arr_to_int(row[Constants.EXPANDED])), 2)
+                avg_arr[max_expanded + 3] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
 
         x = np.arange(len(labels))  # the label locations
         width = 0.2  # the width of the bars
@@ -237,7 +279,7 @@ def compare_average_optimi():
         fig.tight_layout()
         plt.show()
         # plt.savefig('avg_vs_opt.png')
-
+    plot_average_optimi_by_time(time_data_list)
 
 
 def autolabel(rects, ax):
@@ -251,6 +293,7 @@ def autolabel(rects, ax):
                     ha='center', va='bottom')
 
 
+compare_average_optimi()
 # compare_time_money()
 # compare_expanded_nodes_money()
 # compare_turns_money()

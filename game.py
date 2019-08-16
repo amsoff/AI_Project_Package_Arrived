@@ -457,7 +457,6 @@ def play_for_pay_150(turns, plan, moves, logs, player):
         is_continue = True
     return turns, plan, is_continue
 
-
 def play_for_move(turns, plan, moves, logs, player):
     moves.append(ROLLING % player.dice_value)
     # cell = (int(plan[0].name.split('_')[5]), int(plan[0].name.split('_')[6]))
@@ -495,6 +494,7 @@ def play_for_goto(plan, moves, logs, player):
         plan = plan[1:]
         is_continue = True
     return plan, moves, is_continue
+
 
 
 def run_game(heuristic_name, player, domain_file_name, problem_file_name, gen_flag):
@@ -582,7 +582,6 @@ def run_game(heuristic_name, player, domain_file_name, problem_file_name, gen_fl
             print("Could not find a plan in %.2f seconds" % elapsed)
             write_to_log("Could not find a plan in %.2f seconds" % elapsed, logs)
     return elapsed, expanded, turns
-
 
 if __name__ == '__main__':
     """
