@@ -173,6 +173,35 @@ def general_search(problem, fringe):
         i += 1
     return "failed"
 
+ # fringe.push(PQItem((problem.get_start_state(), [], 0, None)))  # curr_node, action, cost, parent
+ #    closed = set()
+ #    with open(("logs/ temp_fringes average %d" % time.time()),'w') as tmp:
+ #
+ #        while not fringe.isEmpty():
+ #            i = 1
+ #            curr = fringe.pop()
+ #            print("LENGTH OF FRINGE", len(fringe.heap))
+ #            tmp.write("SIZE OF FRINGE IS %s" % len(fringe.heap))
+ #            if problem.is_goal_state(curr.get_node()):
+ #                build_first_plan_dict(curr)
+ #                return curr.get_action()
+ #            elif is_visited_by_plan(curr.get_node()):
+ #                print("VISITED!")
+ #                return get_past_path(curr.get_action())
+ #            elif curr.get_node() not in closed:
+ #                successors = problem.get_successors(curr.get_node())
+ #                for i in range(len(successors)):
+ #                    next_state, action, cost = successors[i]
+ #                    action, cost, next_state = write_to_tmp_log(curr, next_state,action,cost, tmp,heuristic,problem)
+ #                    fringe.push(PQItem((next_state,
+ #                                        curr.get_action() + [action],
+ #                                        cost + curr.get_cost(),
+ #                                        None)))
+ #                closed.add(curr.get_node())
+ #        i += 1
+ #    return "failed"
+
+
 
 def depth_first_search(problem):
     """

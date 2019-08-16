@@ -163,6 +163,7 @@ def handle_payments(action, player):
 
     # Pay 150 to move to orange cell. update the player location
     if 'pay_150_from' in action.name:
+        print("#### arrived here to pay 150 ####")
         if player.money < 150:
             return [], 0
         all = []
@@ -440,7 +441,7 @@ def init_player(input_player):
     return player_init
 
 
-def play_for_pay_150(turns, plan, moves, logs, player):
+def play_for_pay_150(turns, plan, moves, logs, player,prob,heuristic):
     # cell = (plan[0].name.split('_')[6], plan[0].name.split('_')[7])
     is_continue = False
     move, turn = handle_payments(plan[0], player)
@@ -449,10 +450,14 @@ def play_for_pay_150(turns, plan, moves, logs, player):
     print_plan(move, logs)
     moves.extend(move)
     if len(plan) > 1 and 'pay_500' in plan[1].name:
-        move, turn = handle_payments(plan[1], player)
+        print("#### arrived here to pay 500 ####")
+        plan = a_star_search(prob, heuristic=heuristic)
+        player.build_problem()
+        move, turn = handle_payments(plan, player)
         moves.extend(move)
-        plan = plan[2:]
     if len(plan[1:]) != 0:
+        print("#### arrived here to print plan after run ####")
+        print_plan(plan,logs)
         plan = plan[1:]
         is_continue = True
     return turns, plan, is_continue
@@ -509,9 +514,8 @@ def run_game(heuristic_name, player, domain_file_name, problem_file_name, gen_fl
     start = time.process_time()
     domain_file_name = dc.create_domain_file(domain_file_name, player.type)
     problem_file_name = problem_file_name.format(player.type)
-    dice_val = dice_obj.roll_dice()
-    player.dice_value = dice_val
-    player.build_problem()
+    # player.mock_problem(domain_file_name,problem_file_name)
+    roll_dice_and_build_problem(dice_obj,player)
     print(ROLLING % player.dice_value + "MONEY: " + str(player.money))
     prob = PlanningProblem(domain_file_name, problem_file_name, None, None)
     plan = a_star_search(prob, heuristic=heuristic)
@@ -532,7 +536,8 @@ def run_game(heuristic_name, player, domain_file_name, problem_file_name, gen_fl
                 turns, moves = play_for_move(turns, plan, moves, logs, player)
             # Move from one cell to "orange" cell, and pay 150, if it is achievable according to the dice
             elif 'pay_150' in plan[0].name:
-                turns, plan, isContinue = play_for_pay_150(turns, plan, moves, logs, player)
+                print("#### arrived here to pay 150 ####")
+                turns, plan, isContinue = play_for_pay_150(turns, plan, moves, logs, player,prob,heuristic)
                 if isContinue: continue
                 # Jump to a certain entrance if you don't have enough money to pay, or if you don't hold the
             # requested certificate
@@ -554,9 +559,8 @@ def run_game(heuristic_name, player, domain_file_name, problem_file_name, gen_fl
             write_current_move_logs(past_moves, player, turns, logs)
             actions = prob.get_actions()
             propositions = prob.get_propositions()
-            player.dice_value = dice_obj.roll_dice()
+            roll_dice_and_build_problem(dice_obj, player)
             loc, last_dice = find_last_dice(plan)
-            player.build_problem()
             expanded.append(str(prob.expanded))
             print(ROLLING % player.dice_value)
             prob = PlanningProblem(domain_file_name, problem_file_name, actions, propositions)
@@ -582,6 +586,11 @@ def run_game(heuristic_name, player, domain_file_name, problem_file_name, gen_fl
             print("Could not find a plan in %.2f seconds" % elapsed)
             write_to_log("Could not find a plan in %.2f seconds" % elapsed, logs)
     return elapsed, expanded, turns
+
+
+def roll_dice_and_build_problem(dice_obj, player):
+    player.dice_value = dice_obj.roll_dice()
+    player.build_problem()
 
 
 if __name__ == '__main__':
