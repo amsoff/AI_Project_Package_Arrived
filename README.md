@@ -1,4 +1,5 @@
-AI PROJECT - THE PACKAGE ARRIVED
+#AI PROJECT - THE PACKAGE ARRIVED#
+
 submitted by:
 Reut Rabenou - 312416621 - reut
 
@@ -44,17 +45,17 @@ it is created in the file player.py
 the game itself is constructed by many different classes:
 1. game.py 		   - it is the engine of the game.
 2. player.py       - class that represents a player, holds the player's current
-					 state and creates the problem file mentioned earlier.
+		     state and creates the problem file mentioned earlier.
 3. dice.py         - represents the dice in the game. can be a generator that 
-					 uses a list that was randomly generated (we used it for 
-					 comparing the results) or purely random.
+		     uses a list that was randomly generated (we used it for 
+		     comparing the results) or purely random.
 4. certificates.py - enum class of all of the certificates you can receive in 
-					 the game.
+		     the game.
 5. surprise.py     - represents the surprises in the game. can be a generator 
-					 that uses a list that was randomly generated (we used it
-					 for comparing the results) or purely random.
+		     that uses a list that was randomly generated (we used it
+		     for comparing the results) or purely random.
 6. constants.py	   - contains all of the constants throughout the game to keep
-					 the code organized.
+		     the code organized.
 
 ###############################################################################
 #                                   RESULTS                                   #
