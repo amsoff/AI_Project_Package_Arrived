@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 files = ["output_gen1_sum.csv", "output_gen2_sum.csv", "output_gen3_sum.csv"]
+files_heuristics = ["output_gen2_sum.csv", "output_gen2_max.csv"]
 colors = ['r', 'b', 'g']
 
 
@@ -26,15 +27,20 @@ def compare_time_money():
     """
     Plots graph of money vs running time
     """
-    for i,f in enumerate(files):
+    time_arr = []
+    for i, f in enumerate(files):
         data = pd.read_csv(f)
         data = pd.DataFrame(data)
-        time_arr = []
+        time_arr1 = []
         for index, row in data.iterrows():
-            time_arr.append((row[Constants.MONEY], row[Constants.TIME]))
-        time_arr = sorted(time_arr, key=lambda x: x[0])
-        plot_data(time_arr, colors[i])
+            time_arr1.append((row[Constants.MONEY], row[Constants.TIME]))
+        time_arr1 = sorted(time_arr1, key=lambda x: x[0])
+        time_arr.append(time_arr1)
+
+    time_arr = np.mean(time_arr, axis=0)
+    plot_data(time_arr, colors[0])
     plt.xlabel('Money')
+    plt.xticks([0, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200])
     plt.ylabel('Time in Seconds')
     plt.title('Running time as function of money:')
     plt.show()
@@ -45,51 +51,131 @@ def compare_expanded_nodes_money():
     Plots the average number of expanded nodes vs amount of money
     :return:
     """
-    for i,f in enumerate(files):
+    time_arr = []
+    for i, f in enumerate(files):
+        data = pd.read_csv(f)
+        data = pd.DataFrame(data)
+        time_arr1 = []
+        for index, row in data.iterrows():
+            time_arr1.append((row[Constants.MONEY], np.average(string_arr_to_int(row[Constants.EXPANDED]))))
+        time_arr1 = sorted(time_arr1, key=lambda x: x[0])
+        time_arr.append(time_arr1)
+
+    time_arr = np.mean(time_arr, axis=0)
+    plot_data(time_arr, colors[0])
+    plt.xlabel('Money')
+    plt.xticks([0, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200])
+    plt.ylabel('Number of expanded nodes in average in round')
+    plt.title('expanded nodes as function of money:')
+    plt.show()
+
+
+def compare_max_sum_heuristics_expanded_average():
+    for i, f in enumerate(files_heuristics):
         data = pd.read_csv(f)
         data = pd.DataFrame(data)
         time_arr = []
         for index, row in data.iterrows():
             time_arr.append((row[Constants.MONEY], np.average(string_arr_to_int(row[Constants.EXPANDED]))))
         time_arr = sorted(time_arr, key=lambda x: x[0])
-        plot_data(time_arr, colors[i])
+        plot_data_legend(time_arr, colors[i], i)
     plt.xlabel('Money')
     plt.ylabel('Number of expanded nodes in average in round')
-    plt.title('expanded nodes as function of money:')
+    plt.title('Average expanded nodes as function of money:')
     plt.show()
 
+
+def compare_max_sum_heuristics_expanded_max():
+    for i, f in enumerate(files_heuristics):
+        data = pd.read_csv(f)
+        data = pd.DataFrame(data)
+        time_arr = []
+        for index, row in data.iterrows():
+            time_arr.append((row[Constants.MONEY], np.max(string_arr_to_int(row[Constants.EXPANDED]))))
+        time_arr = sorted(time_arr, key=lambda x: x[0])
+        plot_data_legend(time_arr, colors[i], i)
+    plt.xlabel('Money')
+    plt.ylabel('Number of maximum expanded nodes in round')
+    plt.title('Max expanded nodes as function of money:')
+    plt.show()
+
+
+def compare_max_sum_heuristics_time():
+    for i,f in enumerate(files_heuristics):
+        data = pd.read_csv(f)
+        data = pd.DataFrame(data)
+        time_arr = []
+        for index, row in data.iterrows():
+            time_arr.append((row[Constants.MONEY], row[Constants.TIME]))
+        time_arr = sorted(time_arr, key=lambda x: x[0])
+        plot_data_legend(time_arr, colors[i], i)
+    plt.xlabel('Money')
+    plt.ylabel('Time in Seconds')
+    plt.title('Running time as function of money:')
+    plt.show()
 
 def compare_turns_money():
     """
     Plots turns per game vs amount of money
     :return:
     """
-    for i,f in enumerate(files):
+    time_arr = []
+    for i, f in enumerate(files):
         data = pd.read_csv(f)
         data = pd.DataFrame(data)
-        time_arr = []
+        time_arr1 = []
         for index, row in data.iterrows():
-            time_arr.append((row[Constants.MONEY], row[Constants.TURNS]))
-        time_arr = sorted(time_arr, key=lambda x: x[0])
-        plot_data(time_arr, colors[i])
+            time_arr1.append((row[Constants.MONEY], row[Constants.TURNS]))
+        time_arr1 = sorted(time_arr1, key=lambda x: x[0])
+        time_arr.append(time_arr1)
+
+    time_arr = np.mean(time_arr, axis=0)
+    plot_data(time_arr, colors[0])
     plt.xlabel('Money')
+    plt.xticks([0, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200])
     plt.ylabel('Number of Turns in the game')
     plt.title('Turns as function of money:')
     plt.show()
 
+def calc_optimization_improvement():
+    p, total = 0, 0
+    for i, f in enumerate(files):
+        data = pd.read_csv(f)
+        data = pd.DataFrame(data)
+        for index, row in data.iterrows():
+            list1 = string_arr_to_int(row[Constants.EXPANDED])
+            for l in list1:
+                if l == 0:
+                    p += 1
+            total += len(list1)
+    print(p / total)
 
-def connectpoints(x,y,p1,p2, color):
+def connectpoints(x, y, p1, p2, color):
     x1, x2 = x[p1], x[p2]
     y1, y2 = y[p1], y[p2]
-    plt.plot([x1,x2],[y1,y2], color)
+    plt.plot([x1, x2], [y1, y2], color)
 
 
 def plot_data(data, color):
     x = [d[0] for d in data]
     y = [d[1] for d in data]
-    plt.plot(x,y, '%so' % color)
+    plt.plot(x, y, '%so' % color, label="Max heuristic")
+    plt.legend()
     for i in range(0, len(x) - 1):
-        connectpoints(x, y, i, i+1, '%s-' % color)
+        connectpoints(x, y, i, i + 1, '%s-' % color)
+
+
+def plot_data_legend(data, color, num):
+    x = [d[0] for d in data]
+    y = [d[1] for d in data]
+    if num == 0:
+        label = "Sum heuristic"
+    else:
+        label = "Max heuristic"
+    plt.plot(x, y, '%so' % color, label=label)
+    plt.legend()
+    for i in range(0, len(x) - 1):
+        connectpoints(x, y, i, i + 1, '%s-' % color)
 
 
 def compare_average_optimi():
@@ -165,7 +251,10 @@ def autolabel(rects, ax):
                     ha='center', va='bottom')
 
 
-compare_time_money()
-compare_average_optimi()
-compare_expanded_nodes_money()
-compare_turns_money()
+# compare_time_money()
+# compare_expanded_nodes_money()
+# compare_turns_money()
+# calc_optimization_improvement()
+compare_max_sum_heuristics_time()
+compare_max_sum_heuristics_expanded_average()
+compare_max_sum_heuristics_expanded_max()
