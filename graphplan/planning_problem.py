@@ -70,31 +70,6 @@ class PlanningProblem:
                 next_state = frozenset(state.union(set(action.get_add())).difference(set(action.get_delete())))
                 successors.append((next_state, action, 1))
         return successors
-        # self.expanded += 1
-        # successors = []
-        # for act in self.actions:
-        #     if act.all_preconds_in_list(state) and not act.is_noop():
-        #         delete = frozenset(act.get_delete())
-        #         add = frozenset(act.get_add())
-        #         succ = frozenset(state)
-        #         succ = succ.difference(delete)
-        #         succ = succ.union(add)
-        #         cost = 1
-        #         if "pay" in act.name:
-        #             cost = 1
-        #         elif "Goto" in act.name:
-        #             cost = 4
-        #         elif "Move" in act.name:
-        #             cost = 16
-        #         elif "jump" in act.name:
-        #             cost = 32
-        #         elif "Stop" in act.name:
-        #             cost = 64
-        #         current = (succ, act, cost)
-        #         successors.append(current)
-        # return successors
-
-
 
     @staticmethod
     def get_cost_of_actions(actions):
