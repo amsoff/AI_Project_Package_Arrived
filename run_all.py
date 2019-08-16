@@ -3,13 +3,11 @@ import os
 
 def run():
     for type in ["optimistic"]: #, "average"]:
-        for heuristic in [ "max"]: # "sum",
-            for gen_flag in range(1, 2):
+        for heuristic in ["sum"]:
+            for gen_flag in range(1, 4):
                 gen = "gen_%d" % gen_flag
-                for amnt in range(0, 801, 200):
-                    if amnt == 400 :continue
+                for amnt in range(400, 1001, 200):
                     x = 0
-                    print("running python run_script.py {} {} {} {}".format(amnt, type, heuristic, gen_flag))
                     os.system("python run_script.py {} {} {} {}".format(amnt, type, heuristic, gen_flag))
                     print("###########################################################")
                     print("FINISHED ROUND %d: type       - %s\n"

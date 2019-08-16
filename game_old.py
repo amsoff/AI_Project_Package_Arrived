@@ -67,7 +67,7 @@ def matprint_backwards(mat, board_obj, player_obj):
     for i in range(len(mat) - 1, -1, -1):
         for j in range(len(mat[i]) - 1, -1, -1):
             if (i, j) == player_obj.start:
-                print(Back.RED + Fore.BLACK + "|\u0332S\u0332 ")
+                print(Back.RED + Fore.BLACK + "|\u0332S\u0332 ", end='')
 
             elif mat[i][j] == "X":
                 print(Back.GREEN + Fore.BLACK + "|\u0332X\u0332 ")
@@ -397,7 +397,7 @@ def write_current_move_logs(inner_past_moves, inner_player, inner_turns, inner_l
     """
     write_to_log("round %s" % inner_turns, inner_logs)
     inner_past_moves.append((inner_player.cell[0], inner_player.cell[1]))
-    print_current_board(inner_past_moves, inner_player)
+    # print_current_board(inner_past_moves, inner_player)
 
 
 def print_plan_test(plan):
