@@ -1,7 +1,8 @@
 # AI PROJECT - THE PACKAGE ARRIVED #
 
-submitted by:
-Reut Rabenou - 312416621 - reut
+submitted by:\
+Reut Rabenou - 312416621 - reut\
+Erez Kaufman - 305605255 - erez
 
 
 
