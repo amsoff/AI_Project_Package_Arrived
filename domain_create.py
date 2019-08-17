@@ -558,7 +558,7 @@ def create_domain_file(domain_file_name, player):
     if player == AVERAGE:
         agent = Types.AVERAGE.value
     file_name = agent + "_" + domain_file_name
-    domain_file = open(file_name, 'w')  # use domain_file.write(str) to write to domain_file
+    domain_file = open(file_name, 'w')
 
     # write propositions to file
     domain_file.write("Propositions:\n")

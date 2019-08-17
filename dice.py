@@ -87,9 +87,7 @@ class Dice:
         elif gen_flag == GEN3:
             self.gen = gen_dice3()
 
-
     def roll_dice(self):
         if self.gen is None:
             return random.choice(self.values)
         return next(self.gen)
-

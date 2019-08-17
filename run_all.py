@@ -2,7 +2,7 @@ import os
 
 
 def run():
-    for type in ["optimistic", "average"]: #, "average"]:
+    for type in ["average"]: #, "average"]:
         for heuristic in ["max"]:
             for gen_flag in range(1, 2):
                 gen = "gen_%d" % gen_flag

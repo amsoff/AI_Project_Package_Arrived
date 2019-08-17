@@ -457,6 +457,7 @@ def play_for_pay_150(turns, plan, moves, logs, player):
         is_continue = True
     return turns, plan, is_continue
 
+
 def play_for_move(turns, plan, moves, logs, player):
     moves.append(ROLLING % player.dice_value)
     # cell = (int(plan[0].name.split('_')[5]), int(plan[0].name.split('_')[6]))
@@ -494,7 +495,6 @@ def play_for_goto(plan, moves, logs, player):
         plan = plan[1:]
         is_continue = True
     return plan, moves, is_continue
-
 
 
 def run_game(heuristic_name, player, domain_file_name, problem_file_name, gen_flag):
@@ -568,9 +568,6 @@ def run_game(heuristic_name, player, domain_file_name, problem_file_name, gen_fl
 
             if len(plan) == 0:
                 write_to_log("## LAST ##", logs)
-            # write_to_log("###########ACTIONS##########", logs)
-            # for action in actions:
-            #     write_to_log(action.name, logs)
             write_to_log("@@@@@@@@@@@PROPOSITIONS@@@@@@@@@@@", logs)
             for state in prob.initialState:
                 write_to_log(state.name, logs)
@@ -583,9 +580,10 @@ def run_game(heuristic_name, player, domain_file_name, problem_file_name, gen_fl
             write_to_log("Could not find a plan in %.2f seconds" % elapsed, logs)
     return elapsed, expanded, turns
 
+
 if __name__ == '__main__':
-    """
-    Input = python3 game_old.py player
+    """“
+    Input = python3 game.py player
     Output = print all moves + position on the board at each round
 
     Runs the game. It build the initial plan (domain and problem) according to a given player, and at every plan the A* 

@@ -10,7 +10,7 @@ import pandas as pd
 
 def run_script(heuristic, type, amount, domain_file_name, problem_file_name, gen_flag):
     player_init = player.Player(type, (11, 9), (1, 0), amount)
-    return game_no_opt.run_game(heuristic, player_init, domain_file_name, problem_file_name, gen_flag)
+    return game.run_game(heuristic, player_init, domain_file_name, problem_file_name, gen_flag)
 
 
 if __name__ == "__main__":
