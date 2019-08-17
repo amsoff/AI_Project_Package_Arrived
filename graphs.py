@@ -215,7 +215,7 @@ def compare_average_optimi():
     turns_his_labels = ["Turns (1500) Opt","Turns (300) Opt","Turns (1500) Not Opt","Turns (300) Not Opt"]
     average_nodes_his_labels = ["Average Nodes (1500) Opt","Average Nodes (300) Opt","Average Nodes (1500) Not Opt","Average Nodes (300) Not Opt"]
     max_nodes_his_labels = ["Max Nodes (1500) Opt","Max Nodes (300) Opt","Max Nodes (1500) Not Opt","Max Nodes (300) Not Opt"]
-    f = pd.read_csv("output_players_and_optimizations2.csv")
+    f = pd.read_csv("output_players_and_optimizations.csv")
     data = pd.DataFrame(f)
     avg_arr_time  = [0] * 4
     opt_arr_time  = [0] * 4
@@ -327,7 +327,6 @@ def text_plotter(x_data, y_data, text_positions, axis, txt_width, txt_height):
             axis.arrow(x, t, 0, y - t, color='red', alpha=0.3, width=txt_width * 0.1,
                        head_width=txt_width, head_length=txt_height * 0.5,
                        zorder=0, length_includes_head=True)
-
 
 
 compare_average_optimi()
