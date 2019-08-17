@@ -3,7 +3,8 @@
 Submitted by:\
 Reut Rabenou - 312416621 - reut\
 Erez Kaufman - 305605255 - erez\
-Nitzan Wagner - 205872963 - nitzan.wagner1
+Nitzan Wagner - 205872963 - nitzan.wagner1\
+Amit Soffer - 312484207 - sofferam
 
 
 
