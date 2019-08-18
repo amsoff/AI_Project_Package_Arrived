@@ -14,4 +14,7 @@ def run():
 
 
 if __name__ == "__main__":
+    os.system("pip3 install numpy")
+    os.system("pip3 install pandas")
+    os.system("pip3 install colorama")
     run()
