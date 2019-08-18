@@ -273,17 +273,17 @@ def compare_average_optimi():
                 avg_arr_max_nodes[3] = np.max(string_arr_to_int(row[Constants.EXPANDED]))
 
     plot_average_optimi(avg_arr_time,opt_arr_time,time_his_labels,
-                        "time divided by optimize run and not",
-                        "time comparison of two players")
+                        "Initial money by player, with/without optimization",
+                        "Time comparison of the two players")
     plot_average_optimi(avg_arr_turns, opt_arr_turns, turns_his_labels,
-                        "turns divided by optimize run and not",
-                        "number of turns comparison of two players")
+                        "Initial money by player, with/without optimization",
+                        "Number of turns comparison of the two players")
     plot_average_optimi(avg_arr_avg_node, opt_arr_avg_node, average_nodes_his_labels,
-                        "average expanded nodes per game divided by optimize run and not",
-                        "average expanded nodes comparison of two players")
+                        "Initial money by player, with/without optimization",
+                        "Average expanded nodes comparison of the two players")
     plot_average_optimi(avg_arr_max_nodes, opt_arr_max_nodes, max_nodes_his_labels,
-                        "highest expansions per game divided by optimize run and not",
-                        "maximum number of expansions comparison of two players")
+                        "Initial money by player, with/without optimization",
+                        "Maximum number of expansions per game comparison of the two players")
 
 
 def autolabel(rects, ax):
