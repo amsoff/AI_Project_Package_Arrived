@@ -1,6 +1,5 @@
 import random
 
-RANDOM = 0
 GEN1 = "1"
 GEN2 = "2"
 GEN3 = "3"
