@@ -8,7 +8,7 @@ import player
 import pandas as pd
 
 
-def run_script(heuristic, type, amount, domain_file_name, problem_file_name, gen_flag):
+def run_script(heuristic, type, amount, domain_file_name, problem_file_name, gen_flag=2):
     player_init = player.Player(type, (11, 9), (1, 0), amount)
     return game.run_game(heuristic, player_init, domain_file_name, problem_file_name, gen_flag)
 
