@@ -10,7 +10,7 @@ def run():
   """
   play with parameters at the beginning of the file to run the game
   """
-  os.system("python3 run_script.py {} {} {} {}".format(AMOUNT, TYPE, HEURISTIC))
+  os.system("python3 run_script.py {} {} {}".format(AMOUNT, TYPE, HEURISTIC))
 
 
 if __name__ == "__main__":
