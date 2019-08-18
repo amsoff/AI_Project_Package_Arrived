@@ -3,7 +3,6 @@ import game
 import Constants
 import sys
 
-import game_no_opt
 import player
 import pandas as pd
 

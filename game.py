@@ -350,7 +350,6 @@ def prints_game_over(moves, logs, player, elapsed, turns, expanded):
     print_plan(moves, logs)
     print("Money: %d" % player.money)
     write_to_log("Money: %d" % player.money, logs)
-    # print()
     print("--- Game finished after %d turns in %.2f seconds ---" % (turns, elapsed))
     print("The number of expanding nodes in each turn:\n%s" % "\n".join(expanded))
     write_to_log("game finished after %d turns in %.2f seconds" % (turns, elapsed), logs)

@@ -131,8 +131,6 @@ def sort_successors(successors):
             move.append(successor)
         elif "Stop" in successor[1].name:
             stop.append(successor)
-        else:
-            print("##### in search forgot " + successor[1].name + " ###########")
     ret.extend(pay)
     ret.extend(goto)
     ret.extend(move)
@@ -162,7 +160,6 @@ def general_search(problem, fringe):
             build_first_plan_dict(curr)
             return curr.get_action()
         elif is_visited_by_plan(curr.get_node()):
-            print("VISITED!")
             return get_past_path(curr.get_action())
         elif curr.get_node() not in closed:
             successors = problem.get_successors(curr.get_node())
@@ -216,7 +213,6 @@ def a_star_search(problem, heuristic=null_heuristic):
     """
     Search the node that has the lowest combined cost and heuristic first.
     """
-    print("reached aStar")
     fringe = util.PriorityQueueWithFunction(lambda x: x.get_cost() + heuristic(x.get_node(), problem))
     return general_search(problem, fringe)
 
