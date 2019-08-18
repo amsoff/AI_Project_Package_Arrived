@@ -20,10 +20,11 @@ if __name__ == "__main__":
     amnt = int(sys.argv[1])
     type = sys.argv[2]
     heuristic = sys.argv[3]
-    gen_flag = sys.argv[4]
+    gen_flag = 2
+    if len(sys.argv) == 5:
+        gen_flag = sys.argv[4]
     elapsed, expanded, turns = run_script(heuristic, type, amnt, domain_file_name, problem_file_name, gen_flag)
     res.append([type, amnt, turns, expanded, elapsed])
-
     df = pd.DataFrame(res,
                       columns=[Constants.TYPE, Constants.MONEY, Constants.TURNS, Constants.EXPANDED, Constants.TIME])
     df.to_csv(r'' + type + "_" + heuristic + "-" + str(amnt) + "_gen" + str(gen_flag) + '.csv', header=True)
